@@ -1,0 +1,193 @@
+import React, { Component, Fragment } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { Nav, Navbar, NavItem } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import './App.css';
+import Routes from "./Routes";
+import { Auth } from "aws-amplify";
+//import Iframe from 'react-iframe'
+
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuthenticated: false,
+      isAuthenticating: true,
+      email: "",
+      username: "",
+      basket: [],
+      basketTotal: 0,
+      IncludesEventTicket: false,
+      EventTicketCount: 0
+    };
+  }
+
+  async componentDidMount() {
+  try {
+    if (await Auth.currentSession()) {
+       this.userHasAuthenticated(true);
+       let user = await Auth.currentAuthenticatedUser();
+       this.setState({ email: user.attributes.name });
+       this.setState({ username: user.username });
+    }
+  }
+  catch(e) {
+    if (e !== 'No current user') {
+      alert(e);
+    }
+  }
+
+  this.hydrateStateWithLocalStorage();
+
+  window.addEventListener(
+    "beforeunload",
+    this.saveStateToLocalStorage.bind(this)
+  );
+
+  this.setState({ isAuthenticating: false });
+}
+
+componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+
+    this.saveStateToLocalStorage();
+}
+
+  userHasAuthenticated = authenticatedDetail => {
+    this.setState({ isAuthenticated: authenticatedDetail.authenticated });
+    this.setState({ email: authenticatedDetail.email });
+    this.setState({ username: authenticatedDetail.username });
+  }
+
+  hydrateStateWithLocalStorage() {
+      for (let key in this.state) {
+        if (localStorage.hasOwnProperty(key)) {
+          let value = localStorage.getItem(key);
+
+          try {
+            value = JSON.parse(value);
+            this.setState({ [key]: value });
+          } catch (e) {
+            this.setState({ [key]: value });
+          }
+        }
+      }
+    }
+
+  saveStateToLocalStorage() {
+  for (let key in this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
+  addToBasket = basketItem => {
+    var splitBasketItem = basketItem.split(";");
+    var basketTotalCalc = this.state.basketTotal + (splitBasketItem[1] * splitBasketItem[2]);
+
+    const index = this.state.basket.findIndex(bsk => bsk.ProductName === splitBasketItem[0]);
+
+    if(index === -1) {
+      this.state.basket.push({"ProductName":splitBasketItem[0], "Quantity": splitBasketItem[1], "Price": splitBasketItem[2], "Type": splitBasketItem[3]});
+    }
+    else {
+      const basketCopy = [...this.state.basket];
+      basketCopy[index].Quantity = parseInt(basketCopy[index].Quantity, 10) + parseInt(splitBasketItem[1], 10);
+      this.setState({basket: basketCopy});
+    }
+
+    if(splitBasketItem[3] === "Event")
+    {
+      const eventIndex = this.state.basket.findIndex(bsk => bsk.Type === "Event");
+      this.setState({ IncludesEventTicket: true });
+      this.setState({ EventTicketCount: this.state.basket[eventIndex].Quantity });
+    }
+
+    this.setState({ basketTotal: basketTotalCalc });
+  }
+
+  clearCheckout = event => {
+    this.setState({basket: []});
+    this.setState({basketTotal: 0})
+    this.setState({IncludesEventTicket: false})
+    this.setState({EventTicketCount: 0})
+  }
+
+  handleLogout = async event => {
+    await Auth.signOut();
+
+    this.userHasAuthenticated({authenticated:false,username:"",email:""});
+
+    this.props.history.push("/login");
+  }
+
+  render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated,
+      basket: this.state.basket,
+      addToBasket: this.addToBasket,
+      basketTotal: this.state.basketTotal,
+      clearCheckout: this.clearCheckout,
+      email: this.state.email,
+      username: this.state.username,
+      IncludesEventTicket: this.state.IncludesEventTicket,
+      EventTicketCount: this.state.EventTicketCount
+    };
+
+    return (
+      !this.state.isAuthenticating &&
+      <div>
+        <div className="App container">
+          <Navbar fluid collapseOnSelect>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <Link to="/">ScotLAN</Link>
+              </Navbar.Brand>
+              <Navbar.Brand>
+                <Link to="/Products">Products</Link>
+              </Navbar.Brand>
+              <Navbar.Brand>
+                <Link to="/Checkout">Checkout</Link>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav pullRight>
+                {this.state.isAuthenticated
+                  ? [<Navbar.Header><Navbar.Brand><Link to="/orders">My Account</Link></Navbar.Brand></Navbar.Header>,<NavItem onClick={this.handleLogout}>Logout</NavItem>]
+                  : <Fragment>
+                      <LinkContainer to="/signup">
+                        <NavItem>Signup</NavItem>
+                      </LinkContainer>
+                      <LinkContainer to="/login">
+                        <NavItem>Login</NavItem>
+                      </LinkContainer>
+                    </Fragment>
+                }
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+          <Routes childProps={childProps} />
+        </div>
+
+      </div>
+    );
+  }
+}
+
+//<Iframe url="https://ptb.discordapp.com/widget?id=132976447638863873&theme=dark"
+//width="300px"
+//height="450px"
+//id="myId"
+//className="Discord"
+//display="initial"
+//position="relative"
+//allowFullScreen/>
+
+export default withRouter(App);
