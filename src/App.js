@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
+//import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import './App.css';
+//import './App.css';
+import './main.css';
 import Routes from "./Routes";
 import { Auth } from "aws-amplify";
 //import Iframe from 'react-iframe'
@@ -21,7 +22,8 @@ class App extends Component {
       basket: [],
       basketTotal: 0,
       IncludesEventTicket: false,
-      EventTicketCount: 0
+      EventTicketCount: 0,
+      Authorization: ""
     };
   }
 
@@ -32,6 +34,7 @@ class App extends Component {
        let user = await Auth.currentAuthenticatedUser();
        this.setState({ email: user.attributes.name });
        this.setState({ username: user.username });
+       this.setState({ Authorization: user.signInUserSession.idToken.jwtToken })
     }
   }
   catch(e) {
@@ -63,6 +66,7 @@ componentWillUnmount() {
     this.setState({ isAuthenticated: authenticatedDetail.authenticated });
     this.setState({ email: authenticatedDetail.email });
     this.setState({ username: authenticatedDetail.username });
+    this.setState({ Authorization: authenticatedDetail.jwtToken })
   }
 
   hydrateStateWithLocalStorage() {
@@ -137,45 +141,58 @@ componentWillUnmount() {
       email: this.state.email,
       username: this.state.username,
       IncludesEventTicket: this.state.IncludesEventTicket,
-      EventTicketCount: this.state.EventTicketCount
+      EventTicketCount: this.state.EventTicketCount,
+      authorization: this.state.Authorization
     };
+
+
+//    <li className="nav-item active">
+//      <a className="nav-link" href="#">About Us <span className="sr-only">(current)</span></a>
+//    </li>
+//    <li className="nav-item">
+//      <a className="nav-link" href="#">Our Next Event</a>
+//    </li>
+//    <li className="nav-item">
+//      <a className="nav-link" href="#">Previous Events</a>
+//    </li>
+//    <li className="nav-item">
+//      <a className="nav-link" href="#">Gallery</a>
+//    </li>
 
     return (
       !this.state.isAuthenticating &&
       <div>
-        <div className="App container">
-          <Navbar fluid collapseOnSelect>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <Link to="/">ScotLAN</Link>
-              </Navbar.Brand>
-              <Navbar.Brand>
-                <Link to="/Products">Products</Link>
-              </Navbar.Brand>
-              <Navbar.Brand>
-                <Link to="/Checkout">Checkout</Link>
-              </Navbar.Brand>
-              <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-              <Nav pullRight>
+      <div class="SL-header-background">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <Link className="navbar-brand" to="/"><img class="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
+            </div>
+            <nav class="col-lg-6 navbar navbar-default navbar-static-top">
+              <ul class="nav nav-pills">
+                <li class="nav-item active">
+                  <Link className="nav-link" to="/Products">Products</Link>
+                </li>
+                <li class="nav-item">
+                  <Link className="nav-link" to="/Checkout">Checkout</Link>
+                </li>
                 {this.state.isAuthenticated
-                  ? [<Navbar.Header><Navbar.Brand><Link to="/orders">My Account</Link></Navbar.Brand></Navbar.Header>,<NavItem onClick={this.handleLogout}>Logout</NavItem>]
-                  : <Fragment>
-                      <LinkContainer to="/signup">
-                        <NavItem>Signup</NavItem>
-                      </LinkContainer>
-                      <LinkContainer to="/login">
-                        <NavItem>Login</NavItem>
-                      </LinkContainer>
-                    </Fragment>
-                }
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-          <Routes childProps={childProps} />
+                      ? [<li className="nav-item"><Link className="nav-link" to="/orders">My Account</Link></li>,<a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a>]
+                      : <Fragment>
+                          <li className="nav-item">
+                            <Link className="nav-link" to="/signup">Signup</Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link className="nav-link" to="/login">Login</Link>
+                          </li>
+                        </Fragment>
+                    }
+              </ul>
+            </nav>
+          </div>
         </div>
-
+      </div>
+      <Routes childProps={childProps} />
       </div>
     );
   }

@@ -16,6 +16,7 @@ export default class Checkout extends Component {
   }
 
 async onToken(token) {
+
   const res = await fetch(config.stripe.API_URL, {
     method: 'POST',
     body: JSON.stringify({
@@ -70,7 +71,7 @@ async onToken(token) {
   render() {
     if(this.state.orderID !== ""){
       return (
-      <div className="Checkout">
+      <div className="container">
       <h1>Order Confirmation</h1>
       <h2>Thank you for your order.</h2>
       <h3>Your order ID is: {this.state.orderID}</h3>
@@ -78,7 +79,7 @@ async onToken(token) {
     )
     } else {
       return (
-        <div className="Checkout">
+        <div className="container">
         <h1>Checkout</h1>
         {}
         {!this.state.isLoading && this.renderCheckout()}

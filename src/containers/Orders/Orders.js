@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {  Table, Modal, Button } from "react-bootstrap";
 import "./Orders.css";
 import "../../components/Loading.css";
-import { API } from "aws-amplify";
+import { API, Auth } from "aws-amplify";
 
 export default class Orders extends Component {
   constructor(props) {
@@ -30,8 +30,12 @@ export default class Orders extends Component {
       }
   }
 
-  orders(UserID) {
-    return API.get("orders", `/orders?UserID=${UserID}`);
+  async orders(UserID) {
+    let user = await Auth.currentAuthenticatedUser();
+    let authHeader = {
+      headers: { Authorization: user.signInUserSession.idToken.jwtToken }
+    }
+    return await API.get("orders", `/orders?UserID=${UserID}`, authHeader);
   }
 
   handleChange = event => {
@@ -62,6 +66,7 @@ export default class Orders extends Component {
       }
     }
     this.setState({ showModal: true });
+
   }
 
 
@@ -69,21 +74,24 @@ export default class Orders extends Component {
     if(this.state.isLoading)
     {
       return (
-        <div className="Loading"></div>
+        <div className="loading--text">
+          <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
+          <h4>Please wait ... We are loading your orders</h4>
+        </div>
       )
     }
     else {
     return (
-      <div className="Orders">
+      <div className="container">
       {this.state.showModal &&
         <div className="static-modal">
-         <Modal show={this.state.showModal} onHide={this.closeModal}>
+         <Modal.Dialog>
             <Modal.Header>
               <Modal.Title>Order Details</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <h4>Order ID: {this.state.selectedOrder.OrderID.S}</h4>
-              <h4>Order Date: {this.state.selectedOrder.CreateDate.S}</h4>
+              <h4>Order Date: { new Intl.DateTimeFormat('en-GB').format(new Date(this.state.selectedOrder.CreateDate.S))}</h4>
               <h4>Order Email: {this.state.selectedOrder.PaymentEmail.S}</h4>
               <h4>Last 4 digits of card: {this.state.selectedOrder.CardLast4.S}</h4>
               <br/>
@@ -106,11 +114,12 @@ export default class Orders extends Component {
               </tbody>
               </Table>
               <h4>Total Order Cost: £{this.state.selectedOrder.BasketTotal.S}</h4>
+              {this.state.selectedOrder.EventTicketIncluded.BOOL ? [<h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></h3>] : <div></div>}
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.handleClose}>Close</Button>
+              <Button onClick={this.closeModal}>Close</Button>
             </Modal.Footer>
-           </Modal>
+           </Modal.Dialog>
         </div>
       }
 
@@ -136,10 +145,10 @@ export default class Orders extends Component {
       <tbody>
       {this.state.orders.map(item => (
         <tr>
-        <td><a onClick={()=>{this.showModal(item.OrderID.S)}}>{item.OrderID.S}</a></td>
+        <td><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>{item.OrderID.S}</a></td>
         <td>£{item.BasketTotal.S}</td>
-        <td>{item.CreateDate.S}</td>
-        {item.EventTicketIncluded.BOOL ? [<td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to select your seats.</Link>.</td>] : <td>This order did not contain an event ticket.</td>}
+        <td>{new Intl.DateTimeFormat('en-GB').format(new Date(item.CreateDate.S))}</td>
+        {item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</td>] : <td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to select your seats</Link>.</td>}
         </tr>
       ))}
       </tbody>

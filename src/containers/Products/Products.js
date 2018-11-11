@@ -45,12 +45,15 @@ export default class Products extends Component {
     if(this.state.isLoading)
     {
       return (
-        <div className="Loading"></div>
+        <div className="loading--text">
+          <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
+          <h4>Please wait ... We are loading the products</h4>
+        </div>
       )
     }
     else {
     return (
-      <div className="Products">
+      <div className="container">
       <h1>Products</h1>
       {!this.state.isLoading && this.renderProducts(this.state.products)}
       </div>
