@@ -110,6 +110,8 @@ componentWillUnmount() {
       const eventIndex = this.state.basket.findIndex(bsk => bsk.Type === "Event");
       this.setState({ IncludesEventTicket: true });
       this.setState({ EventTicketCount: this.state.basket[eventIndex].Quantity });
+      //console.log(parseInt(this.state.EventTicketCount,10) + parseInt(splitBasketItem[1],10));
+      this.setState({ EventTicketCount: parseInt(this.state.EventTicketCount,10) + parseInt(splitBasketItem[1],10) });
     }
 
     this.setState({ basketTotal: basketTotalCalc });
@@ -162,18 +164,18 @@ componentWillUnmount() {
     return (
       !this.state.isAuthenticating &&
       <div>
-      <div class="SL-header-background">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <Link className="navbar-brand" to="/"><img class="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
+      <div className="SL-header-background">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
-            <nav class="col-lg-6 navbar navbar-default navbar-static-top">
-              <ul class="nav nav-pills">
-                <li class="nav-item active">
+            <nav className="col-lg-6 navbar navbar-default navbar-static-top">
+              <ul className="nav nav-pills">
+                <li className="nav-item active">
                   <Link className="nav-link" to="/Products">Products</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link" to="/Checkout">Checkout</Link>
                 </li>
                 {this.state.isAuthenticated

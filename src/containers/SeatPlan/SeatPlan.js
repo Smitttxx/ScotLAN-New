@@ -6,9 +6,6 @@ import { API, Auth } from "aws-amplify";
 import 'react-tippy/dist/tippy.css'
 import {  Tooltip } from 'react-tippy';
 
-
-const $ = window.$;
-
 export default class SeatPlan extends Component {
   constructor(props) {
     super(props);
@@ -85,7 +82,7 @@ export default class SeatPlan extends Component {
     let authHeader = {
       headers: { Authorization: user.signInUserSession.idToken.jwtToken }
     }
-    return API.get("seatPlan", `/seatplan?EventName=${EventName}`, authHeader);
+    return API.get("seatPlan", `/seatplan?EventName=${EventName.split(" - ")[0]}`, authHeader);
   }
 
   async order(OrderID) {
@@ -116,7 +113,7 @@ export default class SeatPlan extends Component {
 
       let request = {
           body: {
-            "EventName": this.state.eventName,
+            "EventName": this.state.eventName.split(" - ")[0],
             "SeatName": this.state.selectedSeat,
             "Username": this.state.gamerName,
             "OrderID": this.props.match.params.OrderID,
@@ -128,9 +125,6 @@ export default class SeatPlan extends Component {
       let authHeader = {
         headers: { Authorization: this.state.authToken }
       }
-      console.log(authHeader);
-      console.log(request);
-
 
       API.post("selectseat", `/selectseat`, request, authHeader).then(response => {
         if(newSeatCount >= parseInt(this.state.order[0].EventTicketCount.S, 10)){
@@ -141,7 +135,7 @@ export default class SeatPlan extends Component {
         this.setState({ showModal: false});
         this.setState({ isLoading: false });
 
-        API.get("seatPlan", `/seatplan?EventName=${this.state.eventName}`, authHeader).then(response => {
+        API.get("seatPlan", `/seatplan?EventName=${this.state.eventName.split(" - ")[0]}`, authHeader).then(response => {
           this.setState({ seatPlan: response });
           this.seatPlanSplit(response);
         });
@@ -163,9 +157,12 @@ export default class SeatPlan extends Component {
     if(this.state.isLoading)
     {
       return (
-        <div className="loading--text">
-          <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
-          <h4>Please wait ... We are loading the seat plan</h4>
+        <div className="container">
+          <div className="loading--text">
+            <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
+            <h4>Please wait ... We are loading the product</h4>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          </div>
         </div>
       )
     }
@@ -208,51 +205,51 @@ export default class SeatPlan extends Component {
 
   renderSeatingPlan96Person() {
     return (
-      <div class="large-floorplan">
-       <div class="large-floorplan--image">
-         <img src="/Images/ScotLAN-BIG.JPG" alt="Seating-plan-image" />
+      <div className="large-floorplan">
+       <div className="large-floorplan--image">
+         <img src="/Images/ScotLAN-BIG.JPG" />
        </div>
-       <div class="row large-floorplan--areas">
-         <div class="col-lg-7">
-           <div class="large-floorplan--rows">
-             <div class="large-floorplan--block large-floorplan--block--A">
-               <div class="large-floorplan--row large-floorplan--row-1">
+       <div className="row large-floorplan--areas">
+         <div className="col-lg-7">
+           <div className="large-floorplan--rows">
+             <div className="large-floorplan--block large-floorplan--block--A">
+               <div className="large-floorplan--row large-floorplan--row-1">
                 {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                </div>
-               <div class="large-floorplan--row large-floorplan--row-2">
+               <div className="large-floorplan--row large-floorplan--row-2">
                  {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
                </div>
              </div>
-             <div class="large-floorplan--block large-floorplan--block--B">
-               <div class="large-floorplan--row large-floorplan--row-3">
+             <div className="large-floorplan--block large-floorplan--block--B">
+               <div className="large-floorplan--row large-floorplan--row-3">
                  {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
                </div>
-               <div class="large-floorplan--row large-floorplan--row-4">
+               <div className="large-floorplan--row large-floorplan--row-4">
                 {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
                </div>
              </div>
-             <div class="large-floorplan--block large-floorplan--block--C">
-               <div class="large-floorplan--row large-floorplan--row-5">
+             <div className="large-floorplan--block large-floorplan--block--C">
+               <div className="large-floorplan--row large-floorplan--row-5">
                  {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
                </div>
-               <div class="large-floorplan--row large-floorplan--row-6">
+               <div className="large-floorplan--row large-floorplan--row-6">
                 {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
                </div>
              </div>
-             <div class="large-floorplan--row-admin">
-               <button class="large-floorplan--support"> | Support and Registration | </button>
+             <div className="large-floorplan--row-admin">
+               <button className="large-floorplan--support"> | Support and Registration | </button>
              </div>
-             <div class="large-floorplan--console-corner">
-               <button class="large-floorplan--console-corner-design"> | Console Area | </button>
+             <div className="large-floorplan--console-corner">
+               <button className="large-floorplan--console-corner-design"> | Console Area | </button>
              </div>
            </div>
          </div>
-         <div class="col-lg-5">
-           <div class="large-floorplan--sleeping-area">
-             <button class="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
+         <div className="col-lg-5">
+           <div className="large-floorplan--sleeping-area">
+             <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
            </div>
-           <div class="large-floorplan--boardgames-area">
-             <button class="large-floorplan--boardgames-area-design"> | Board Game Area | </button>
+           <div className="large-floorplan--boardgames-area">
+             <button className="large-floorplan--boardgames-area-design"> | Board Game Area | </button>
            </div>
          </div>
        </div>
@@ -270,23 +267,23 @@ export default class SeatPlan extends Component {
 
       if(seat.S === "Available" && this.state.canSelectSeats) {
         return (
-          <Tooltip title={seat.S}>
-            <button class="seat seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}} title={seat.S}></button>
+          <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
+            <button className="seat seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
           </Tooltip>
         )
       }
       else if(seat.S === "Available" && !this.state.canSelectSeats)
       {
         return (
-          <Tooltip title={seat.S}>
-            <button class="seat seat--avalible" data-toggle="tooltip" data-placement="top" title={seat.S}></button>
+          <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
+            <button className="seat seat--avalible" data-toggle="tooltip" data-placement="top"></button>
           </Tooltip>
         )
       }
       else {
         return (
-          <Tooltip title={seat.S}>
-            <button class="seat seat--taken"></button>
+          <Tooltip title={"Seat " + (seed + i + 1) + " - " + JSON.parse(seat.S).Username}>
+            <button className="seat seat--taken"></button>
           </Tooltip>
         )
       }
