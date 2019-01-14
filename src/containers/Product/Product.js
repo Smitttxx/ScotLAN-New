@@ -4,6 +4,23 @@ import { Label } from "react-bootstrap";
 import "./Product.css";
 import "../../components/Loading.css";
 import { API } from "aws-amplify";
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => (
+  <div style={{
+    color: 'white',
+    background: 'red',
+    padding: '10px 10px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '100%',
+    transform: 'translate(-50%, -50%)'
+  }}>
+    {text}
+  </div>
+);
 
 export default class Product extends Component {
   constructor(props) {
@@ -14,7 +31,12 @@ export default class Product extends Component {
       message:"",
       quantityStd:"0",
       quantityVip:"0",
-      redirectToCheckout: false
+      redirectToCheckout: false,
+      center: {
+        lat: 55.995980,
+        lng: -3.786270
+      },
+      zoom: 16
     };
   }
 
@@ -215,7 +237,7 @@ renderProductDetail(){
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li>Gamers : 96 ( {parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li>Gamers : 96 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
             <li>Event : 18:00, 01-03 March 2019</li>
             <li>Parking Avalible : Yes </li>
             <li>Ticket Price: from £40</li>
@@ -223,7 +245,21 @@ renderProductDetail(){
           </ul>
       </div>
       <div className="col-md-4">
-        <div id="falkirkMaplocation"></div>
+
+        <div style={{ height: '200px', width: '100%' }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
+              defaultCenter={this.state.center}
+              defaultZoom={this.state.zoom}
+            >
+              <AnyReactComponent
+                lat={55.995980}
+                lng={-3.786270}
+                text={''}
+              />
+            </GoogleMapReact>
+          </div>
+
       </div>
     </div>
     <h2 className="product-heading">Choose Your Tickets<span className="text-muted"></span></h2>

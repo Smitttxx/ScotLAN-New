@@ -10,8 +10,11 @@ import Orders from "./containers/Orders/Orders";
 import SeatPlan from "./containers/SeatPlan/SeatPlan";
 import AppliedRoute from "./components/AppliedRoute";
 import NotFound from "./containers/NotFound/NotFound";
+import Gallery from "./containers/Gallery/Gallery";
+import FAQS from "./containers/FAQS/FAQS";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
+
 
 
 export default ({ childProps }) =>
@@ -20,6 +23,8 @@ export default ({ childProps }) =>
     <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
     <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
     <AppliedRoute path="/Products" exact component={Products} props={childProps} />
+    <AppliedRoute path="/Gallery" exact component={Gallery} props={childProps} />
+    <AppliedRoute path="/FAQS" exact component={FAQS} props={childProps} />
     <AppliedRoute path="/Product/:Type/:Name" exact component={Product} props={childProps} />
     <AuthenticatedRoute path="/Checkout" exact component={Checkout} props={childProps} />
     <AuthenticatedRoute path="/Orders" exact component={Orders} props={childProps} />

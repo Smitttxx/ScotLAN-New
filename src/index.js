@@ -6,6 +6,10 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Amplify from "aws-amplify";
 import config from "./config";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-9881080-4');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 Amplify.configure({
   Auth: {
