@@ -128,7 +128,6 @@ export default class Signup extends Component {
         <FormGroup controlId="email" bsSize="large">
           <ControlLabel>Email</ControlLabel>
           <FormControl
-            autoFocus
             type="email"
             value={this.state.email}
             onChange={this.handleChange}
@@ -137,7 +136,6 @@ export default class Signup extends Component {
         <FormGroup controlId="gamername" bsSize="large">
           <ControlLabel>Gamer Name</ControlLabel>
           <FormControl
-            autoFocus
             type="gamername"
             value={this.state.gamername}
             onChange={this.handleChange}
@@ -174,10 +172,12 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
-        {this.state.newUser === null
-          ? this.renderForm()
-          : this.renderConfirmationForm()}
+      <div class="sl--sitecontainer--background__keyboard">
+        <div className="container">
+          {this.state.newUser === null
+            ? this.renderForm()
+            : this.renderConfirmationForm()}
+        </div>
       </div>
     );
   }

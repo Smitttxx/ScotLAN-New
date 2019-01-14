@@ -74,17 +74,20 @@ export default class Orders extends Component {
     if(this.state.isLoading)
     {
       return (
+        <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
           <div className="loading--text">
             <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
-            <h4>Please wait ... We are loading the product</h4>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <h4>Please wait ... We are loading your previous orders</h4>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
+        </div>
         </div>
       )
     }
     else {
     return (
+      <div class="sl--sitecontainer--background__keyboard">
       <div className="container">
       {this.state.showModal &&
         <div className="static-modal">
@@ -124,10 +127,12 @@ export default class Orders extends Component {
             </Modal.Footer>
            </Modal.Dialog>
         </div>
+
       }
 
       <h1>Previous Orders</h1>
       {!this.state.isLoading && this.renderOrders()}
+      </div>
       </div>
     );
   }
@@ -141,7 +146,7 @@ export default class Orders extends Component {
       <tr>
       <th>Order ID</th>
       <th>Cost</th>
-      <th>Date</th>
+      <th>Order Date</th>
       <th>Comment</th>
       </tr>
       </thead>

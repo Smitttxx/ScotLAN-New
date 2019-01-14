@@ -43,8 +43,10 @@ export default class Login extends Component {
 
   render() {
     return (
+      <div class="sl-signup-background">
       <div className="container">
         <form onSubmit={this.handleSubmit}>
+        <div class="sl-signup-header">Log In to your account</div>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
@@ -62,6 +64,7 @@ export default class Login extends Component {
               type="password"
             />
           </FormGroup>
+          <div class="sl-signup-buttons">
           <LoaderButton
             block
             bsSize="large"
@@ -74,9 +77,11 @@ export default class Login extends Component {
           <div className="Signup">
             <h3>Or</h3>
             <br/>
-            <h4><Link to={`/Signup`}>Signup here</Link></h4>
+            <Link className="sl-btn sl-btn--secondary" to={`/Signup`}>Signup here</Link>
+          </div>
           </div>
         </form>
+      </div>
       </div>
     );
   }

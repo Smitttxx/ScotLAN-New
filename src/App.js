@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 //import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 //import './App.css';
 import './main.css';
 import Routes from "./Routes";
@@ -148,42 +147,37 @@ componentWillUnmount() {
     };
 
 
-//    <li className="nav-item active">
-//      <a className="nav-link" href="#">About Us <span className="sr-only">(current)</span></a>
-//    </li>
-//    <li className="nav-item">
-//      <a className="nav-link" href="#">Our Next Event</a>
-//    </li>
-//    <li className="nav-item">
-//      <a className="nav-link" href="#">Previous Events</a>
-//    </li>
-//    <li className="nav-item">
-//      <a className="nav-link" href="#">Gallery</a>
-//    </li>
-
     return (
       !this.state.isAuthenticating &&
       <div>
       <div className="SL-header-background">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
-            <nav className="col-lg-6 navbar navbar-default navbar-static-top">
+            <nav className="col-lg-7 navbar navbar-default navbar-static-top">
               <ul className="nav nav-pills">
                 <li className="nav-item active">
-                  <Link className="nav-link" to="/Products">Products</Link>
+                  <Link className="nav-link" to="/About">About Us <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Checkout">Checkout</Link>
+                  <a className="nav-link" >Our Events <i className="fas fa-chevron-down"></i></a>
+                    <ul>
+                      <Link to="/PreviousEvents"><li>Previous Events</li></Link>
+                      <Link to="/NextEvents"><li>Next Events</li></Link>
+                      <Link to="/Gallery"><li>Gallery</li></Link>
+                    </ul>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Merchandise">Merchandice</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/FAQS">FAQ's</Link>
                 </li>
                 {this.state.isAuthenticated
-                      ? [<li className="nav-item"><Link className="nav-link" to="/orders">My Account</Link></li>,<a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a>]
+                      ? [<li class="nav-item"><Link className="nav-link" to="/orders">My Account <i class="fas fa-chevron-down"></i></Link><ul><Link className="nav-link" to="/orders">My Orders</Link><a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
                       : <Fragment>
-                          <li className="nav-item">
-                            <Link className="nav-link" to="/signup">Signup</Link>
-                          </li>
                           <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
                           </li>
@@ -195,7 +189,46 @@ componentWillUnmount() {
         </div>
       </div>
       <Routes childProps={childProps} />
+      <footer className="SL-footer-background" >
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-4">
+                      <h4>ORGANIZERS</h4>
+                      <strong>Head Organiser</strong>
+                      <p>Rob Whyte - rob@scotlan.events</p>
+                      <strong>Partners</strong>
+                      <div>David Mack - david@scotlan.events</div>
+                      <div>Laura Smith - laura@scotlan.events</div>
+
+                      <strong><p>You can also send us a message at our social media channels, on Facebook or Discord!</p></strong>
+                    </div>
+                    <div className="col-lg-3">
+                      <h4>SOCIAL MEDIA</h4>
+                      <a href=""><li><i className="fab fa-facebook"> </i> Facebook</li></a>
+                      <a href=""><li><i className="fab fa-twitter-square"> </i> Twitter</li></a>
+                      <a href=""><li><i className="fab fa-instagram"></i> Instagram</li></a>
+                      <a href=""><li><i className="fab fa-discord"></i> Discord</li></a>
+                      <a href=""><li><i className="fab fa-linkedin"></i>LinkedIn</li></a>
+                      <a href=""><li><i className="fab fa-snapchat-square"></i>SnapChat</li></a>
+                    </div>
+                    <div className="col-lg-3">
+                      <h4>USEFUL LINKS</h4>
+                      <ul>
+                        <a href="/ourteam.html"><li>Meet the Team</li></a>
+                        <a href="/contactus/html"><li>Contact Us</li></a>
+                        <a href="/ourpartners"><li>Our Partners</li></a>
+                        <a href="/payment.html"><li>Event</li></a>
+                        <a href="/gallery.html"><li>Gallery</li></a>
+                        <a href="/Guide"><li>Guide</li></a>
+                      </ul>
+                    </div>
+                    <div className="col-lg-2">
+                    </div>
+                  </div>
+                </div>
+              </footer>
       </div>
+
     );
   }
 }

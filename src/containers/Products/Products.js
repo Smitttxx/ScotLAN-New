@@ -45,12 +45,14 @@ export default class Products extends Component {
     if(this.state.isLoading)
     {
       return (
+        <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
           <div className="loading--text">
             <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
-            <h4>Please wait ... We are loading the product</h4>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <h4>Please wait ... We are loading the products</h4>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
+        </div>
         </div>
       )
     }
