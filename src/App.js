@@ -158,8 +158,13 @@ componentWillUnmount() {
             </div>
             <nav className="col-lg-7 navbar navbar-default navbar-static-top">
               <ul className="nav nav-pills">
-                <li className="nav-item active">
-                  <Link className="nav-link" to="/About">About Us <span className="sr-only">(current)</span></Link>
+                <li className="nav-item">
+                  <a className="nav-link" >About Us <i className="fas fa-chevron-down"></i></a>
+                    <ul>
+                      <Link to="/AboutUs"><li>Meet the team</li></Link>
+                      <Link to="/Contact"><li>Contact Us</li></Link>
+                      <Link to="/Partners"><li>Our Partners</li></Link>
+                    </ul>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" >Our Events <i className="fas fa-chevron-down"></i></a>
@@ -168,9 +173,6 @@ componentWillUnmount() {
                       <Link to="/NextEvents"><li>Next Events</li></Link>
                       <Link to="/Gallery"><li>Gallery</li></Link>
                     </ul>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/Merchandise">Merchandice</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/FAQS">FAQ's</Link>
@@ -192,16 +194,6 @@ componentWillUnmount() {
       <footer className="SL-footer-background" >
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-4">
-                      <h4>ORGANIZERS</h4>
-                      <strong>Head Organiser</strong>
-                      <p>Rob Whyte - rob@scotlan.events</p>
-                      <strong>Partners</strong>
-                      <div>David Mack - david@scotlan.events</div>
-                      <div>Laura Smith - laura@scotlan.events</div>
-
-                      <strong><p>You can also send us a message at our social media channels, on Facebook or Discord!</p></strong>
-                    </div>
                     <div className="col-lg-3">
                       <h4>SOCIAL MEDIA</h4>
                       <a href=""><li><i className="fab fa-facebook"> </i> Facebook</li></a>
@@ -210,18 +202,7 @@ componentWillUnmount() {
                       <a href=""><li><i className="fab fa-discord"></i> Discord</li></a>
                       <a href=""><li><i className="fab fa-linkedin"></i>LinkedIn</li></a>
                       <a href=""><li><i className="fab fa-snapchat-square"></i>SnapChat</li></a>
-                    </div>
-                    <div className="col-lg-3">
-                      <h4>USEFUL LINKS</h4>
-                      <ul>
-                        <a href="/ourteam.html"><li>Meet the Team</li></a>
-                        <a href="/contactus/html"><li>Contact Us</li></a>
-                        <a href="/ourpartners"><li>Our Partners</li></a>
-                        <a href="/payment.html"><li>Event</li></a>
-                        <a href="/gallery.html"><li>Gallery</li></a>
-                        <a href="/Guide"><li>Guide</li></a>
-                      </ul>
-                    </div>
+                    </div>        
                     <div className="col-lg-2">
                     </div>
                   </div>
