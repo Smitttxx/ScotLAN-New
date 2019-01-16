@@ -65,6 +65,7 @@ export default class Login extends Component {
             />
           </FormGroup>
           <div class="sl-signup-buttons">
+          <Link to="/login/reset">Forgot password?</Link>
           <LoaderButton
             block
             bsSize="large"

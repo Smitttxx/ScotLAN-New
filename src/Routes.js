@@ -20,11 +20,13 @@ import WhatToBring from "./containers/WhatToBring/WhatToBring";
 import FAQS from "./containers/FAQS/FAQS";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
+import ResetPassword from "./containers/ResetPassword/ResetPassword";
 
 export default ({ childProps }) =>
   <Switch>
     <AppliedRoute path="/" exact component={Home} props={childProps} />
     <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
+    <UnauthenticatedRoute path="/login/reset" exact component={ResetPassword} props={childProps} />
     <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
     <AppliedRoute path="/Products" exact component={Products} props={childProps} />
     <AppliedRoute path="/Gallery" exact component={Gallery} props={childProps} />

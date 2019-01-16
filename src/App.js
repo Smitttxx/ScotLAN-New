@@ -195,15 +195,12 @@ componentWillUnmount() {
                 <div className="container">
                   <div className="row">
                     <div className="col-lg-3">
-                      <h4>SOCIAL MEDIA</h4>
                       <a href=""><li><i className="fab fa-facebook"> </i> Facebook</li></a>
                       <a href=""><li><i className="fab fa-twitter-square"> </i> Twitter</li></a>
                       <a href=""><li><i className="fab fa-instagram"></i> Instagram</li></a>
                       <a href=""><li><i className="fab fa-discord"></i> Discord</li></a>
                       <a href=""><li><i className="fab fa-linkedin"></i>LinkedIn</li></a>
                       <a href=""><li><i className="fab fa-snapchat-square"></i>SnapChat</li></a>
-                    </div>        
-                    <div className="col-lg-2">
                     </div>
                   </div>
                 </div>
