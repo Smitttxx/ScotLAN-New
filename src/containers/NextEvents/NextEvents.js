@@ -1,11 +1,33 @@
 import React, { Component } from "react";
 import {  ListGroup, ListGroupItem } from "react-bootstrap";
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => (
+  <div style={{
+    color: 'white',
+    background: 'red',
+    padding: '10px 10px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '100%',
+    transform: 'translate(-50%, -50%)'
+  }}>
+    {text}
+  </div>
+);
 
 export default class NextEvents extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      center: {
+        lat: 55.995980,
+        lng: -3.786270
+      },
+      zoom: 16
     };
   }
 
@@ -13,7 +35,21 @@ export default class NextEvents extends Component {
     return (
       <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
+
           <h2 class="product-heading">Next Events<span class="text-muted"></span></h2>
+          <div style={{ height: '200px', width: '100%' }}>
+              <GoogleMapReact
+                bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
+                defaultCenter={this.state.center}
+                defaultZoom={this.state.zoom}
+              >
+                <AnyReactComponent
+                  lat={55.995980}
+                  lng={-3.786270}
+                  text={''}
+                />
+              </GoogleMapReact>
+            </div>
           <div>
           <ListGroup>
             <ListGroupItem> Dates: Fri 15th March 6pm – Sun 17th March 6pm (48 Hours) </ListGroupItem>
