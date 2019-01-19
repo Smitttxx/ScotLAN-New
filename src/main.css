@@ -915,13 +915,6 @@ h5 {
   background-color: #e2f4db;
   color: black;
 }
-.wp-caption-text {
-  text-align: center;
-  font-size: 1.5em;
-  font-family: 'Give You Glory', cursive;
-  width: 150px;
-  padding: 0.5em 1em 1em 1em;
-}
 .sl-signup-background {
   background-image: url("https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-position: center;
@@ -1052,6 +1045,7 @@ h5 {
   height: fit-content;
   min-height: 740px;
   overflow: -webkit-paged-x;
+  padding-top: 5em;
 }
 .sl--sitecontainer--background__keyboard .container {
   background-color: rgba(65, 65, 65, 0.7);
@@ -1064,4 +1058,71 @@ h5 {
 .text--align--right {
   width: 100%;
   text-align: right;
+}
+.modal-dialog {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 800px;
+  max-width: 800px;
+}
+.modal-content {
+  border: 9px solid #4c96d7;
+  background: #414141;
+  border-radius: 15px;
+}
+.modal-body h4 {
+  font-size: 1em;
+  color: white;
+}
+.modal-body a {
+  color: #73d14c;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+.sl--partners--container img {
+  width: 240px;
+}
+.sl-ourteam-container img {
+  border-radius: 15px;
+}
+.sl-ourteam-container .col-lg-3 {
+  text-align: center;
+}
+.sl-ourteam-container .wp-caption-text {
+  font-size: 2.2em;
+  width: fit-content;
+  font-family: 'Give You Glory', cursive;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sl-ourteam-container .social-icons {
+  text-align: right;
+  margin-right: 2em;
+}
+.sl-ourteam-container .fab,
+.sl-ourteam-container .far {
+  font-size: 1.8em;
+  padding: 0 0.3em;
+}
+.sl-ourteam-container a {
+  color: white;
+}
+.sl-ourteam-container .row {
+  position: relative;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+.sl-ourteam-container .gradient-line {
+  display: block;
+  border: none;
+  color: white;
+  height: 3px;
+  margin: auto;
+  border-radius: 50%;
+  width: 90%;
+  background: black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#4c96d7), to(#73d14c));
 }
