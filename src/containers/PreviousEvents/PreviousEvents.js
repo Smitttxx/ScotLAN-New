@@ -12,7 +12,6 @@ export default class PreviousEvents extends Component {
     return (
       <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
-          <br/><br/><br/>
           <h2 class="product-heading">Previous Events<span class="text-muted"></span></h2>
         </div>
       </div>

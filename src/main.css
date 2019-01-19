@@ -85,23 +85,42 @@ body {
 }
 h1 {
   font-size: 3em;
-  color: #4c96d7;
+  color: black;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 h2 {
   font-size: 2.5em;
-  color: #73d14c;
+  width: fit-content;
+  color: black;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 h3 {
   font-size: 2em;
-  color: #4c96d7;
+  width: fit-content;
+  color: black;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 h4 {
   font-size: 1.5em;
-  color: #73d14c;
+  width: fit-content;
+  color: black;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 h5 {
   font-size: 1em;
-  color: #4c96d7;
+  width: fit-content;
+  color: black;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .sl-checkbox + label:before {
   background: #ffffff;
@@ -656,6 +675,20 @@ h5 {
   cursor: pointer;
   font-size: 0.9em;
 }
+.large-floorplan--rows .seat--avalible--maxlimitreached {
+  border: 2px solid #73d14c;
+  background-color: #e2f4db;
+  cursor: not-allowed;
+}
+.large-floorplan--rows .seat--avalible--maxlimitreached:before {
+  content: '\f234';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #73d14c;
+  cursor: pointer;
+  font-size: 0.9em;
+  cursor: not-allowed;
+}
 .large-floorplan--rows .seat--taken {
   border: 2px solid #4c96d7;
   background-color: #e5f0f9;
@@ -788,16 +821,6 @@ h5 {
   -webkit-box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
   box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
   height: 220px;
-}
-.product-heading {
-  background: linear-gradient(to bottom, #414141 0, #545454 0, #181818 100%);
-  padding: 0.5em;
-  margin: -1em -1em 0.5em;
-  font-size: 1.5em;
-  font-size: 1.8em;
-  position: relative;
-  border-radius: 5px;
-  font-family: 'Quicksand', sans-serif;
 }
 .accordion-vip {
   border: 2px solid #4c96d7;
@@ -1081,7 +1104,44 @@ h5 {
   font-size: 1.5em;
 }
 .sl--partners--container img {
-  width: 240px;
+  width: 180px;
+}
+.sl--partners--container .gradient-line {
+  width: 97%;
+}
+.sl--partners--container .col-md-5 {
+  text-align: right;
+}
+.sl--partners--container .container {
+  margin: 0 0 0 0;
+}
+.sl--partners--container .row {
+  padding: 1em;
+}
+.sl--partners--container .partner-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  align-items: center;
+}
+.sl--partners--container .partner-logo {
+  text-align: right;
+}
+.sl--partners--header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.sl--partners--header h2 {
+  margin: auto;
+}
+.sl-ourteam-container .container {
+  margin: 0 0 0 0;
+}
+.sl-ourteam-container .product-heading {
+  margin: auto;
+  padding-bottom: 1em;
 }
 .sl-ourteam-container img {
   border-radius: 15px;
@@ -1106,8 +1166,18 @@ h5 {
   font-size: 1.8em;
   padding: 0 0.3em;
 }
+.sl-ourteam-container .fab:hover,
+.sl-ourteam-container .far:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .sl-ourteam-container a {
   color: white;
+}
+.sl-ourteam-container a:hover {
+  text-decoration: none;
 }
 .sl-ourteam-container .row {
   position: relative;
@@ -1115,7 +1185,7 @@ h5 {
   display: flex;
   align-items: center;
 }
-.sl-ourteam-container .gradient-line {
+.gradient-line {
   display: block;
   border: none;
   color: white;

@@ -131,27 +131,46 @@ justify-content: center;
 
 h1 {
 font-size: 3em;
-color: @primary-col;
+color: black;
+background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 h2 {
 font-size: 2.5em;
-color: @secondary-col;
+width: fit-content;
+color: black;
+background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 h3 {
 font-size: 2em;
-color: @primary-col;
+width: fit-content;
+color: black;
+background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 h4 {
 font-size: 1.5em;
-color: @secondary-col;
+width: fit-content;
+color: black;
+background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 h5 {
 font-size: 1em;
-color: @primary-col;
+width: fit-content;
+color: black;
+background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 // ----------------------------------------------------------------------------
 // ENF OF GENERAL STYLES
@@ -921,6 +940,21 @@ position: relative;
 				font-size: 0.9em;
 			}
 		}
+		&--avalible--maxlimitreached {
+			border: 2px solid @secondary-col;
+			background-color: @background-col__green;
+			cursor: not-allowed;
+
+			&:before {
+				content: '\f234';
+				font-weight: bold;
+				font-family: 'Font Awesome 5 free';
+				color: @secondary-col;
+				cursor: pointer;
+				font-size: 0.9em;
+				cursor: not-allowed;
+			}
+		}
 
 		&--taken {
 			border: 2px solid @primary-col;
@@ -1080,16 +1114,6 @@ position: relative;
 	}
 }
 
-&-heading {
-	background: linear-gradient(to bottom, #414141 0, #545454 0, #181818 100%);
-	padding: 0.5em;
-	margin: -1em -1em 0.5em;
-	font-size: 1.5em;
-	font-size: 1.8em;
-	position: relative;
-	border-radius: 5px;
-.quicksand()
-}
 }
 
 .accordion {
@@ -1418,10 +1442,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 		}
 }
 
+////////////// OUR PARTNERS /////////////////////////////////////////
 
-.sl--partners--container{
+.sl--partners{
+  &--container{
     img{
-    width: 240px;
+    width: 180px;
+  }
+  .gradient-line{
+    width: 97%;
+  }
+  .col-md-5{
+    text-align: right;
+  }
+  .container{
+    margin: 0 0 0 0;
+  }
+  .row{
+    padding: 1em;
+  }
+  .partner{
+    &-header{
+    display: flex;
+      justify-content: space-between;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      align-items: center;
+    }
+    &-logo{
+      text-align: right;
+    }
+  }
+  }
+  &--header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+    h2{
+      margin: auto;
+    }
   }
 }
 
@@ -1429,6 +1488,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 ////////////// MEET THE TEAM /////////////////////////////////////////
 
 .sl-ourteam-container{
+  .container{
+    margin: 0 0 0 0;
+  }
+  .product-heading{
+    margin: auto;
+        padding-bottom: 1em;
+  }
   img{
         border-radius: 15px;
   }
@@ -1450,9 +1516,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
   .fab, .far {
     font-size: 1.8em;
     padding: 0 0.3em;
+    &:hover{
+      cursor: pointer;
+      background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   a{
     color: white;
+    &:hover{
+      text-decoration: none;
+    }
   }
   .row{
     position: relative;
@@ -1460,18 +1535,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
     display: flex;
     align-items: center;
   }
-  .gradient-line{
-    display:block;
-    border:none;
-    color:white;
-    height:3px;
-    margin: auto;
-    border-radius: 50%;
-    width: 90%;
-    background:black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col), to(@secondary-col));
+}
 
-  }
+.gradient-line{
+  display:block;
+  border:none;
+  color:white;
+  height:3px;
+  margin: auto;
+  border-radius: 50%;
+  width: 90%;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col), to(@secondary-col));
+
 }
 
 

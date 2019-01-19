@@ -12,16 +12,14 @@ export default class AboutUs extends Component {
     return (
       <div className="sl--sitecontainer--background__keyboard">
         <div className="container sl-ourteam-container">
-          <h2 className="product-heading">About Us<span class="text-muted"></span></h2>
           <div className="container">
-            <div className="row">
-              ScotLAN events provide a relatively intimate LAN experience with small numbers, creating a really welcoming, friendly and fun atmosphere. The ScotLAN team do this out of pure passion, as they love putting on these events and seeing people
-              enjoy themselves. If you’ve never been to a LAN before, why not take a chance and see how fun it can be! Our events are the perfect starting point for those new to the hobby due to their small and welcoming nature. Don’t worry, it will be a
-              great social event as well.
-              <p>
-                There is also board games element as well, so you don’t even need to bring a computer if you would prefer to enjoy a weekend or day of tabletop gaming with like-minded gamers.
-              </p>
-            </div>
+            <h2 className="product-heading">About Us<span class="text-muted"></span></h2>
+            <p>ScotLAN is operated by a 100% volunteer staff. We together have more than 10 years of LAN party experience,  As of 2019, our average staff member has attended LANs for almost seven years.</p>
+
+            <p>All staff members dedicate their time, knowledge, and experience and receive absolutely no compensation. It’s not uncommon for staff members to game very little at their own events. They sacrifice so they can ensure you have the best LAN experience ever. It’s for that reason that we love to go to other LANs as a group so we can game!</p>
+
+            <p>Think you’ve got what it takes to be dedicated to LAN party greatness? Want to be part of a great team? Want to have a great not-for-profit on your CV? Shoot us an email at volunteers@scotlan.events</p>
+
             <div className="row">
               <div className="col-lg-3">
                 <img width="150" height="150" src="https://scotlan.events/wp-content/uploads/2018/01/Rob-150x150.png" className="attachment-thumbnail size-thumbnail" alt=""
