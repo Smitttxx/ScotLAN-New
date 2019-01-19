@@ -675,6 +675,20 @@ h5 {
   cursor: pointer;
   font-size: 0.9em;
 }
+.large-floorplan--rows .seat--avalible--maxlimitreached {
+  border: 2px solid #73d14c;
+  background-color: #e2f4db;
+  cursor: not-allowed;
+}
+.large-floorplan--rows .seat--avalible--maxlimitreached:before {
+  content: '\f234';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #73d14c;
+  cursor: pointer;
+  font-size: 0.9em;
+  cursor: not-allowed;
+}
 .large-floorplan--rows .seat--taken {
   border: 2px solid #4c96d7;
   background-color: #e5f0f9;
@@ -1091,6 +1105,12 @@ h5 {
 }
 .sl--partners--container img {
   width: 180px;
+}
+.sl--partners--container .gradient-line {
+  width: 97%;
+}
+.sl--partners--container .col-md-5 {
+  text-align: right;
 }
 .sl--partners--container .container {
   margin: 0 0 0 0;

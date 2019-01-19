@@ -940,6 +940,21 @@ position: relative;
 				font-size: 0.9em;
 			}
 		}
+		&--avalible--maxlimitreached {
+			border: 2px solid @secondary-col;
+			background-color: @background-col__green;
+			cursor: not-allowed;
+
+			&:before {
+				content: '\f234';
+				font-weight: bold;
+				font-family: 'Font Awesome 5 free';
+				color: @secondary-col;
+				cursor: pointer;
+				font-size: 0.9em;
+				cursor: not-allowed;
+			}
+		}
 
 		&--taken {
 			border: 2px solid @primary-col;
@@ -1433,6 +1448,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
   &--container{
     img{
     width: 180px;
+  }
+  .gradient-line{
+    width: 97%;
+  }
+  .col-md-5{
+    text-align: right;
   }
   .container{
     margin: 0 0 0 0;
