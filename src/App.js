@@ -91,7 +91,7 @@ componentWillUnmount() {
 
   addToBasket = basketItem => {
     var splitBasketItem = basketItem.split(";");
-    var basketTotalCalc = this.state.basketTotal + (splitBasketItem[1] * splitBasketItem[2]);
+    //var basketTotalCalc = parseInt(this.state.basketTotal,10) + (parseInt(splitBasketItem[1],10) * parseInt(splitBasketItem[2],10));
 
     const index = this.state.basket.findIndex(bsk => bsk.ProductName === splitBasketItem[0]);
 
@@ -113,7 +113,30 @@ componentWillUnmount() {
       this.setState({ EventTicketCount: parseInt(this.state.EventTicketCount,10) + parseInt(splitBasketItem[1],10) });
     }
 
+    //this.setState({ basketTotal: basketTotalCalc });
+    this.recalcBasket();
+  }
+
+  recalcBasket = event => {
+
+    var basketTotalCalc = 0;
+    for(let i = 0; i < this.state.basket.length; i++)
+    {
+      basketTotalCalc = basketTotalCalc + (parseInt(this.state.basket[i].Quantity,10) * parseInt(this.state.basket[i].Price,10));
+    }
+
     this.setState({ basketTotal: basketTotalCalc });
+  }
+
+  removeFromBasket = basketItemName => {
+    const index = this.state.basket.findIndex(bsk => bsk.ProductName === basketItemName);
+    if(index > -1) {
+      const basketCopy = [...this.state.basket];
+      //var basketTotalCalc = parseInt(this.state.basketTotal,10) - parseInt(basketCopy[index].Price,10);
+      basketCopy.splice(index, 1);
+      this.setState({basket: basketCopy});
+      //this.setState({ basketTotal: basketTotalCalc });
+    }
   }
 
   clearCheckout = event => {
@@ -143,7 +166,9 @@ componentWillUnmount() {
       username: this.state.username,
       IncludesEventTicket: this.state.IncludesEventTicket,
       EventTicketCount: this.state.EventTicketCount,
-      authorization: this.state.Authorization
+      authorization: this.state.Authorization,
+      removeFromBasket: this.removeFromBasket,
+      recalcBasket: this.recalcBasket
     };
 
 

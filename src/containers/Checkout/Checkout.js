@@ -73,6 +73,11 @@ async onToken(token) {
     this.props.clearCheckout();
   }
 
+  removeItem = async productName => {
+    await this.props.removeFromBasket(productName);
+    await this.props.recalcBasket();
+  }
+
   render() {
     if(this.state.isLoading)
     {
@@ -146,6 +151,7 @@ async onToken(token) {
         <td>{item.ProductName}</td>
         <td>{item.Quantity}</td>
         <td>£{item.Price}</td>
+        <button className="btn btn-danger" onClick={()=>{this.removeItem(`${item.ProductName}`)}}>Remove</button>
         </tr>
       ))}
       <tr>
@@ -156,7 +162,7 @@ async onToken(token) {
       </tbody>
       </Table>
       <div className="sl-payment-buttons">
-        <p>*seat selection avalible after checkout</p>
+        <p>*seat selection available after checkout</p>
         <div className="text--align--right">
         <button className="sl-btn sl-btn--secondary" onClick={this.clearCheckout}>Clear checkout</button>
 
