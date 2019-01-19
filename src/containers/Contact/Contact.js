@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {  FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
 import { API, Auth } from "aws-amplify";
+import Iframe from 'react-iframe'
 
 export default class Contact extends Component {
   constructor(props) {
@@ -63,45 +64,59 @@ export default class Contact extends Component {
     return (
       <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
-          <form onSubmit={this.handleSubmit}>
-          <div class="sl-signup-header">Contact us</div>
-            <FormGroup controlId="name" bsSize="large">
-              <ControlLabel>Name</ControlLabel>
-              <FormControl
-                autoFocus
-                type="text"
-                value={this.state.name}
-                onChange={this.handleChange}
+        <div class="row">
+          <div class="col-md-9">
+            <form onSubmit={this.handleSubmit}>
+            <div class="sl-signup-header">Contact us</div>
+              <FormGroup controlId="name" bsSize="large">
+                <ControlLabel>Name</ControlLabel>
+                <FormControl
+                  autoFocus
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+              <FormGroup controlId="email" bsSize="large">
+                <ControlLabel>Email</ControlLabel>
+                <FormControl
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+              <FormGroup controlId="message" bsSize="large">
+                <ControlLabel>Message</ControlLabel>
+                <FormControl
+                  componentClass="textarea"
+                  value={this.state.message}
+                  onChange={this.handleChange}                
+                />
+              </FormGroup>
+              <div class="sl-signup-buttons">
+              <LoaderButton
+                block
+                bsSize="large"
+                disabled={!this.validateForm()}
+                type="submit"
+                isLoading={this.state.isLoading}
+                text="Submit"
+                loadingText="Submitting.."
               />
-            </FormGroup>
-            <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>Email</ControlLabel>
-              <FormControl
-                type="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-            <FormGroup controlId="message" bsSize="large">
-              <ControlLabel>Message</ControlLabel>
-              <FormControl
-                componentClass="textarea"
-                value={this.state.message}
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-            <div class="sl-signup-buttons">
-            <LoaderButton
-              block
-              bsSize="large"
-              disabled={!this.validateForm()}
-              type="submit"
-              isLoading={this.state.isLoading}
-              text="Submit"
-              loadingText="Submitting.."
-            />
+              </div>
+            </form>
             </div>
-          </form>
+            <div class="col-md-3">
+              <Iframe url="https://ptb.discordapp.com/widget?id=132976447638863873&theme=dark"
+              width="100%"
+              height="450px"
+              id="myId"
+              className="Discord"
+              display="initial"
+              position="relative"
+              allowFullScreen/>
+            </div>
+          </div>
         </div>
       </div>
     ); }
