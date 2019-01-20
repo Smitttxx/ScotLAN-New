@@ -29,6 +29,8 @@ font-family: 'Lato', sans-serif;
 // ----------------------------------------------------------------------------
 @primary-col: #4C96D7;
 @secondary-col: #73D14C;
+@primary-col-rgb: 76,150,215;
+@secondary-col-rgb: 115,209,76;
 @primary-col__hover: #1473C7;
 @secondary-col__hover: #90DC71;
 @background-col__blue: #E5F0F9;
@@ -768,6 +770,33 @@ color: @primary-col;
 			top: 10px;
 			width: 100%;
 		}
+		img{
+			max-width: 219px;
+			max-height: 189px;
+			width: auto;
+			height: auto;
+			margin-top: -2.1em;
+			margin-bottom: 1em;
+		}
+		a{
+			color: white;
+		}
+		.sl-footer-social-media{
+		display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+		.fab{
+			font-size: 3em;
+			color: white;
+			&:hover{
+				cursor: pointer;
+				background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			}
+	}
 }
 // ----------------------------------------------------------------------------
 // END OF FOOTER
@@ -909,10 +938,16 @@ img {
 .large-floorplan {
 position: relative;
 
+&--image{
+	text-align: center;
+		img{
+			width: 995px;
+		}
+	}
 &--areas {
 	position: absolute;
-	top: 10%;
-	left: 5%;
+	top: 0%;
+	left: 4%;
 	width: 100%;
 }
 
@@ -1311,7 +1346,7 @@ border: 2px solid @secondary-col;
 .sl--homepage{
 		&--heroimage{
 		background-image: url(/Images/ScotLAN_homepageimage.jpg);
-		height: 1000px;
+		height: 822px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: bottom;
@@ -1552,3 +1587,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 
 
 //////////////////END OF MEET THE TEAM ////////////////////////////////
+
+
+.sl-seatingplan-picker{
+	.container{
+		margin: 0 0 0 0;
+		h3{
+						margin-top: -30px;
+			margin-bottom: 1em;
+			text-align: center;
+			}
+		}
+	}

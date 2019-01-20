@@ -170,7 +170,8 @@ export default class SeatPlan extends Component {
     }
     else {
     return (
-      <div className="container">
+      <div class="sl--sitecontainer--background__keyboard">
+      <div className="container sl-seatingplan-picker"><div className="container">
       <br />
       {this.state.showModal &&
         <div className="static-modal">
@@ -200,6 +201,7 @@ export default class SeatPlan extends Component {
       <h3>{this.state.seatPlan[0].EventName.S} (You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event)</h3>
 
       {!this.state.isLoading && this.renderSeatingPlan96Person()}
+      </div></div>
       </div>
     );
   }

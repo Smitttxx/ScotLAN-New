@@ -547,6 +547,33 @@ h5 {
   top: 10px;
   width: 100%;
 }
+.SL-footer-background img {
+  max-width: 219px;
+  max-height: 189px;
+  width: auto;
+  height: auto;
+  margin-top: -2.1em;
+  margin-bottom: 1em;
+}
+.SL-footer-background a {
+  color: white;
+}
+.SL-footer-background .sl-footer-social-media {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+.SL-footer-background .sl-footer-social-media .fab {
+  font-size: 3em;
+  color: white;
+}
+.SL-footer-background .sl-footer-social-media .fab:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .seatingplan--container {
   position: relative;
   height: 600px;
@@ -648,10 +675,16 @@ h5 {
   /* Tooltip text */
   /* Show the tooltip text when you mouse over the tooltip container */
 }
+.large-floorplan--image {
+  text-align: center;
+}
+.large-floorplan--image img {
+  width: 995px;
+}
 .large-floorplan--areas {
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 0%;
+  left: 4%;
   width: 100%;
 }
 .large-floorplan--block {
@@ -979,7 +1012,7 @@ h5 {
 }
 .sl--homepage--heroimage {
   background-image: url(/Images/ScotLAN_homepageimage.jpg);
-  height: 1000px;
+  height: 822px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -1195,4 +1228,12 @@ h5 {
   width: 90%;
   background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#4c96d7), to(#73d14c));
+}
+.sl-seatingplan-picker .container {
+  margin: 0 0 0 0;
+}
+.sl-seatingplan-picker .container h3 {
+  margin-top: -30px;
+  margin-bottom: 1em;
+  text-align: center;
 }

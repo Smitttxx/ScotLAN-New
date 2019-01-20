@@ -182,25 +182,15 @@ componentWillUnmount() {
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
             <nav className="col-lg-7 navbar navbar-default navbar-static-top">
-              <ul className="nav nav-pills">
+              <ul className="nav nav-pill">
                 <li className="nav-item">
-                  <a className="nav-link" >About Us <i className="fas fa-chevron-down"></i></a>
-                    <ul>
-                      <Link to="/AboutUs"><li>Meet the team</li></Link>
-                      <Link to="/Contact"><li>Contact Us</li></Link>
-                      <Link to="/Partners"><li>Our Partners</li></Link>
-                    </ul>
+                  <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" >Our Events <i className="fas fa-chevron-down"></i></a>
-                    <ul>
-                      <Link to="/PreviousEvents"><li>Previous Events</li></Link>
-                      <Link to="/NextEvents"><li>Next Events</li></Link>
-                      <Link to="/Gallery"><li>Gallery</li></Link>
-                    </ul>
+                  <Link className="nav-link" to="/NextEvents">Next Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/FAQS">FAQ's</Link>
+                  <Link className="nav-link" to="/Gallery">Gallery</Link>
                 </li>
                 {this.state.isAuthenticated
                       ? [<li class="nav-item"><Link className="nav-link" to="/orders">My Account <i class="fas fa-chevron-down"></i></Link><ul><Link className="nav-link" to="/orders">My Orders</Link><a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
@@ -219,19 +209,32 @@ componentWillUnmount() {
       <footer className="SL-footer-background" >
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-3">
-                      <a href=""><li><i className="fab fa-facebook"> </i> Facebook</li></a>
-                      <a href=""><li><i className="fab fa-twitter-square"> </i> Twitter</li></a>
-                      <a href=""><li><i className="fab fa-instagram"></i> Instagram</li></a>
-                      <a href=""><li><i className="fab fa-discord"></i> Discord</li></a>
-                      <a href=""><li><i className="fab fa-linkedin"></i>LinkedIn</li></a>
-                      <a href=""><li><i className="fab fa-snapchat-square"></i>SnapChat</li></a>
-                    </div>
+                  <div class="col-md-3">
+                  <img src="Images/Scotlan_Re-work-1.png" alt="scotlan-logo" />
                   </div>
+                  <div class="col-md-3">
+                  <h4>Information</h4>
+                  <ul>
+                    <Link to="/AboutUs"><li>Meet the team</li></Link>
+                    <Link to="/Contact"><li>Contact Us</li></Link>
+                    <Link to="/Partners"><li>Our Partners</li></Link>
+                    <Link to="/FAQS"><li>FAQ's</li></Link>
+                  </ul>
+                  </div>
+                    <div class="col-md-6">
+                    <h4>Follow us on </h4>
+                    <div className="sl-footer-social-media">
+                      <a href=""><i className="fab fa-facebook"></i></a>
+                      <a href=""><i className="fab fa-twitter-square"> </i></a>
+                      <a href=""><i className="fab fa-discord"></i></a>
+                      <a href=""><i class="fab fa-steam"></i></a>
+                    </div>
                 </div>
-              </footer>
-      </div>
 
+                </div>
+                  </div>
+            </footer>
+      </div>
     );
   }
 }
