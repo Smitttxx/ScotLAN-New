@@ -16,6 +16,10 @@ export default class Contact extends Component {
     };
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
@@ -90,7 +94,7 @@ export default class Contact extends Component {
                 <FormControl
                   componentClass="textarea"
                   value={this.state.message}
-                  onChange={this.handleChange}                
+                  onChange={this.handleChange}
                 />
               </FormGroup>
               <div class="sl-signup-buttons">

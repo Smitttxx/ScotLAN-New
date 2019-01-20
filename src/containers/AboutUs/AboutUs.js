@@ -8,6 +8,11 @@ export default class AboutUs extends Component {
     };
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+
   render() {
     return (
       <div className="sl--sitecontainer--background__keyboard">
