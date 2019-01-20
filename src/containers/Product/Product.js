@@ -5,6 +5,7 @@ import "./Product.css";
 import "../../components/Loading.css";
 import { API } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
+import { Link, withRouter } from "react-router-dom";
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -229,7 +230,8 @@ renderProductDetail(){
   if(this.state.product.Item.Type.S === "Event") {
     return (
       <div className="sl--sitecontainer--background__keyboard">
-  <div className="container">
+  <div className="container sl-products--container">
+    <div className="container">
       <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
     <div className="row product--info">
       <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6 and finishing on a Sunday evening so games can be played 24hrs a day,
@@ -246,7 +248,7 @@ renderProductDetail(){
       </div>
       <div className="col-md-4">
 
-        <div style={{ height: '200px', width: '100%' }}>
+        <div style={{ height: '200px', width: '100%', border: '5px solid #73D14C' }}>
             <GoogleMapReact
               bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
               defaultCenter={this.state.center}
@@ -266,13 +268,10 @@ renderProductDetail(){
     <div className="product--info">
         <div className="accordion">
           <div className="row">
-            <div className="accordion accordion-standard">
-              <a href="#standard" data-toggle="collapse" aria-expanded="false">
-            <div>Buy Standard Ticket</div>
-              <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyStd.N} <i className="fas fa-chevron-down"></i></div>
-            </a>
-            </div>
-            <div id="standard" className="standard" aria-expanded="false">
+            <div className="col-md-6">
+            <div id="ticket standard" className="ticket standard" aria-expanded="false">
+            <div className="ticket--header">Buy Standard BYOC Tickets</div>
+              <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyStd.N}</div>
               This ticket includes:
               <ul>
                 <li>48 Hour Access to the Event</li>
@@ -281,8 +280,12 @@ renderProductDetail(){
                 <li>3ft Desk</li>
               </ul>
 
-            <div className="buy buy--standardtickets">
-              <label>Choose a quantity</label>
+              <label>Choose a quantity of Standard BYOC* Tickets</label>
+              <div className="row">
+              <div className="col-md-6">
+              <label className="green"><strong>Price Per Ticket :</strong> £35</label>
+              </div>
+              <div className="col-md-6">
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeStd} value={this.state.quantityStd}>
@@ -300,24 +303,28 @@ renderProductDetail(){
                   </select>
               </span>
               </div>
-            </div>
+              </div>
+              </div>
               </div>
           </div>
-          <div className="row">
-            <div className="accordion accordion-vip">
-              <a href="#vip" data-toggle="collapse">
-              <div>Buy V.I.P Ticket</div>
-                <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyVip.N} <i className="fas fa-chevron-down"></i></div>
-              </a>
-            </div>
+            <div className="col-md-6">
+             <div class="ribbon"><span>V.I.P </span></div>
             <div id="vip" className="vip">
+            <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
+              <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyVip.N} </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
                 <li>1x GT Omega Racing Gaming Chair</li>
+                <li>Free 5x Random Steam Keys</li>
+                <li>Free ScotLAN Goodie Bag</li>
               </ul>
-            <div className="buy buy--viptickets">
-              <label>Choose a quantity</label>
+              <label>Choose a quantity of VIP BYOC* tickets</label>
+              <div className="row">
+              <div className="col-md-6">
+              <label className="blue"><strong>Price Per Ticket :</strong> £50</label>
+              </div>
+              <div className="col-md-6">
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
@@ -335,20 +342,26 @@ renderProductDetail(){
                   </select>
               </span>
               </div>
-            </div>
           </div>
+            </div>
+              </div>
+            </div>
           </div>
           <div className="col-md-12">
+
             <div className="sl-but--header">
+            Got a question? <Link to="/Contact" className="btn btn-lg btn-secondary sl-btn sl-btn--secondary">Contact Us</Link> or
             <form onSubmit={this.handleSubmit}>
-                 <button type="submit" className="btn btn-lg btn-primary">Go to Payment</button>
+                 <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Go to Payment</button>
             </form>
             </div>
+              <small><i>*BYOC - bring your own computer</i></small>
             </div>
         </div>
       </div>
       </div>
       </div>
+        </div>
     )
 }
 else {

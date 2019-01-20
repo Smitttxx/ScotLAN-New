@@ -17,7 +17,23 @@
 .bangers {
   font-family: 'Bangers', cursive;
 }
+.blue {
+  color: #4c96d7;
+}
+.green {
+  color: #73d14c;
+}
+html {
+  height: 85%;
+}
+#root {
+  height: 100%;
+}
+.SL-height-100 {
+  height: 100%;
+}
 body {
+  height: 100%;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
@@ -672,6 +688,9 @@ h5 {
 }
 .large-floorplan {
   position: relative;
+  height: 647px;
+  border: 2px dashed grey;
+  border-radius: 15px;
   /* Tooltip text */
   /* Show the tooltip text when you mouse over the tooltip container */
 }
@@ -680,6 +699,7 @@ h5 {
 }
 .large-floorplan--image img {
   width: 995px;
+  opacity: 0;
 }
 .large-floorplan--areas {
   position: absolute;
@@ -819,34 +839,9 @@ h5 {
   visibility: visible;
 }
 .product--info {
-  border: 2px solid #333333;
   margin: 1em 0;
-  border-radius: 5px;
-  -webkit-box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
-  box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
-  background: lightgrey;
-  padding: 1.5em;
-  margin-top: -1.1em;
-  margin-bottom: 4em;
-  color: black;
-}
-.product--info:before {
-  content: "";
-  background-color: #4c96d7;
-  position: absolute;
-  height: 5px;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-.product--info:after {
-  content: "";
-  background-color: #73d14c;
-  position: absolute;
-  height: 5px;
-  left: 0;
-  bottom: 10px;
-  width: 100%;
+  padding: 1em;
+  color: white;
 }
 .product--info #falkirkMaplocation {
   border-radius: 5px;
@@ -854,6 +849,21 @@ h5 {
   -webkit-box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
   box-shadow: 3px 1px 8px 2px rgba(51, 51, 51, 0.58);
   height: 220px;
+}
+.accordion .row {
+  display: flex;
+  align-items: center;
+}
+.accordion .sl-but--header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accordion .ticket--header {
+  font-family: 'Give You Glory', cursive;
+  font-size: 1.5em;
+  border-bottom: 1px dashed;
+  margin-bottom: 1em;
 }
 .accordion-vip {
   border: 2px solid #4c96d7;
@@ -876,13 +886,12 @@ h5 {
   border: 2px solid #4c96d7;
   margin-top: 0;
   padding: 1em;
-  border-top: 0;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: #e5f0f9;
+  background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
   background-size: cover;
-  color: black;
-  width: 100%;
+  color: white;
+  width: auto;
 }
 .accordion-standard {
   border: 2px solid #73d14c;
@@ -905,12 +914,17 @@ h5 {
   border: 2px solid #73d14c;
   margin-top: 0;
   padding: 1em;
-  border-top: 0;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: #e2f4db;
-  color: black;
-  width: 100%;
+  background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
+  color: white;
+  width: auto;
+}
+.accordion .standard .sl-select {
+  background: #e2f4db;
+}
+.accordion .standard .sl-select:after {
+  color: #73d14c;
 }
 .accordion .buy {
   display: flex;
@@ -1015,7 +1029,7 @@ h5 {
   height: 822px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
 }
 .sl--homepage--backgroundgradient {
   background: -moz-linear-gradient(180deg, rgba(115, 209, 76, 0.4) 0%, rgba(0, 0, 0, 0.53) 65%, rgba(76, 150, 215, 0.6) 100%);
@@ -1098,8 +1112,7 @@ h5 {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #cccccc;
-  height: fit-content;
-  min-height: 740px;
+  min-height: 100%;
   overflow: -webkit-paged-x;
   padding-top: 5em;
 }
@@ -1236,4 +1249,57 @@ h5 {
   margin-top: -30px;
   margin-bottom: 1em;
   text-align: center;
+}
+.sl-products--container .container {
+  margin: 0 0 0 0;
+}
+.ribbon {
+  position: absolute;
+  right: 25px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#f70505 0%, #8f0808 100%);
+  box-shadow: 0 3px 10px -5px #000000;
+  position: absolute;
+  top: 19px;
+  right: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
 }

@@ -143,17 +143,12 @@ export default class Orders extends Component {
       <div>
       <Table striped bordered condensed hover>
       <thead>
-      <tr>
-      <th>Order ID</th>
-      <th>Cost</th>
-      <th>Order Date</th>
-      <th>Comment</th>
-      </tr>
+
       </thead>
       <tbody>
       {this.state.orders.map(item => (
         <tr>
-        <td><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>{item.OrderID.S}</a></td>
+        <td><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a></td>
         <td>£{item.BasketTotal.S}</td>
         <td>{new Intl.DateTimeFormat('en-GB').format(new Date(item.CreateDate.S))}</td>
         {item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</td>] : <td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to select your seats</Link>.</td>}

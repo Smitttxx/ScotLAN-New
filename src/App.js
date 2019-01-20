@@ -171,10 +171,9 @@ componentWillUnmount() {
       recalcBasket: this.recalcBasket
     };
 
-
     return (
       !this.state.isAuthenticating &&
-      <div>
+      <div className="SL-height-100">
       <div className="SL-header-background">
         <div className="container">
           <div className="row">
@@ -193,7 +192,12 @@ componentWillUnmount() {
                   <Link className="nav-link" to="/Gallery">Gallery</Link>
                 </li>
                 {this.state.isAuthenticated
-                      ? [<li class="nav-item"><Link className="nav-link" to="/orders">My Account <i class="fas fa-chevron-down"></i></Link><ul><Link className="nav-link" to="/orders">My Orders</Link><a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
+                      ? [<li class="nav-item">
+                          <Link className="nav-link" to="/orders">My Account <i class="fas fa-chevron-down"></i></Link>
+                          <ul>
+                          <Link className="nav-link" to="/orders">My Orders</Link>
+                          <Link className="nav-link" to="/checkout">My Basket</Link>
+                          <a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
                       : <Fragment>
                           <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
@@ -210,7 +214,7 @@ componentWillUnmount() {
                 <div className="container">
                   <div className="row">
                   <div class="col-md-3">
-                  <img src="Images/Scotlan_Re-work-1.png" alt="scotlan-logo" />
+                  <img src="/Images/Scotlan_Re-work-1.png" alt="scotlan-logo" />
                   </div>
                   <div class="col-md-3">
                   <h4>Information</h4>
@@ -224,10 +228,10 @@ componentWillUnmount() {
                     <div class="col-md-6">
                     <h4>Follow us on </h4>
                     <div className="sl-footer-social-media">
-                      <a href=""><i className="fab fa-facebook"></i></a>
-                      <a href=""><i className="fab fa-twitter-square"> </i></a>
-                      <a href=""><i className="fab fa-discord"></i></a>
-                      <a href=""><i class="fab fa-steam"></i></a>
+                      <a href="https://www.facebook.com/ScotLAN.Events/"><i className="fab fa-facebook"></i></a>
+                      <a href="https://twitter.com/ScotLANevents?fbclid=IwAR0q5DSDNcm57QCgkQuTEQuL4va5s4q4lGUH6umG8Hi6JYvFvKfaNC0FtdU"><i className="fab fa-twitter-square"> </i></a>
+                      <a href="https://scotlan.events/discord"><i className="fab fa-discord"></i></a>
+                      <a href="https://steamcommunity.com/id/bobster_2007"><i class="fab fa-steam"></i></a>
                     </div>
                 </div>
 

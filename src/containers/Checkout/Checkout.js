@@ -3,6 +3,7 @@ import { Table } from "react-bootstrap";
 import StripeCheckout from 'react-stripe-checkout';
 import "./Checkout.css";
 import config from '../../config';
+import { Link, withRouter } from "react-router-dom";
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -125,7 +126,7 @@ async onToken(token) {
       return (
         <div class="sl--sitecontainer--background__keyboard">
         <div className="container">
-        <h1>Checkout</h1>
+        <h2>Your Basket <i class="fas fa-shopping-basket"></i> </h2>
         {!this.state.isLoading && this.renderCheckout()}
         </div>
         </div>
@@ -180,7 +181,9 @@ async onToken(token) {
     </div>
     )} else {
       return (
-      <div>No items in basket</div>
+      <div> Ohno <i class="far fa-sad-tear"></i> there are no items in your basket <br/>
+      Would you like to go back to the <Link to="/">Homepage</Link> or the <a href="/Product/Event/ScotLAN%20Event%205" >Events Page</a>?
+      </div>
     )
     }
   }

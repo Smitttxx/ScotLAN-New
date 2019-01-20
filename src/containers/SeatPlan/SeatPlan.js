@@ -181,6 +181,7 @@ export default class SeatPlan extends Component {
             </Modal.Header>
             <Modal.Body>
             <FormGroup controlId="gamerName" bsSize="small">
+
             <h4>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</h4><br/>
             <ControlLabel>Please enter gamer name for this seat</ControlLabel>
             <FormControl
