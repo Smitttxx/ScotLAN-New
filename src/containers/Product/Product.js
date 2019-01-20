@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
-import { Label } from "react-bootstrap";
+import { Label, FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
 import "./Product.css";
 import "../../components/Loading.css";
-import { API } from "aws-amplify";
+import { API, Auth } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
 import { Link, withRouter } from "react-router-dom";
+import {  Tooltip } from 'react-tippy';
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -37,8 +38,12 @@ export default class Product extends Component {
         lat: 55.995980,
         lng: -3.786270
       },
-      zoom: 16
+      zoom: 16,
+      showModal: false,
+      seatPlan:[],
+      seatPlanByRow:[],
     };
+    this.closeModal = this.closeModal.bind(this);
   }
 
   async componentDidMount() {
@@ -46,6 +51,10 @@ export default class Product extends Component {
         const product = await this.product();
         this.setState({ product });
         this.setState({ isLoading: false });
+
+        const seatPlanData = await this.seatPlan(this.props.match.params.Name);
+        this.seatPlanSplit(seatPlanData);
+        this.setState({ seatPlan: seatPlanData });
         } catch (e) {
         alert(e);
       }
@@ -55,10 +64,47 @@ export default class Product extends Component {
     return API.get("product", `/product?name=${this.props.match.params.Name}&type=${this.props.match.params.Type}`);
   }
 
+  closeModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+
+
+  seatPlanSplit(seatPlan){
+    var seatPlanRowSplit = [];
+
+    //Split seat plan array
+    if(seatPlan.Length === 32) {
+      //TODO: split array for 32
+    }
+    else {
+       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
+       var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
+       var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
+       var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
+       var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
+       var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+
+       seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4, seatPlanRow5, seatPlanRow6);
+       this.setState({seatPlanByRow: seatPlanRowSplit});
+    }
+  }
+
+  async seatPlan(EventName) {
+    let user = await Auth.currentAuthenticatedUser();
+    let authHeader = {
+      headers: { Authorization: user.signInUserSession.idToken.jwtToken }
+    }
+    return API.get("seatPlan", `/seatplan?EventName=${EventName.split(" - ")[0]}`, authHeader);
+  }
+
   handleChangeStd = event => {
     this.setState({
       quantityStd: event.target.value
     });
+  }
+
+  showSeatPlan = event => {
+    this.setState({ showModal: true});
   }
 
   handleChangeVip = event => {
@@ -207,6 +253,18 @@ export default class Product extends Component {
         </div>
       )
     }
+    else if(this.state.showModal) {
+      return(
+          <div>
+        <div>
+        {this.renderSeatingPlan96Person()}
+        </div>
+        <div>
+        {this.renderProducts(this.state.product)}
+        </div>
+        </div>
+      )
+    }
     else if (this.state.redirectToCheckout === true) {
            return <Redirect to="/checkout" />
     }
@@ -264,6 +322,7 @@ renderProductDetail(){
 
       </div>
     </div>
+    <button className="btn btn-lg btn-primary sl-btn sl-btn--primary" onClick={()=>{this.showSeatPlan()}}>View seat plan</button>
     <h2 className="product-heading">Choose Your Tickets<span className="text-muted"></span></h2>
     <div className="product--info">
         <div className="accordion">
@@ -379,5 +438,138 @@ else {
     </div>
   )
 }
+}
+
+renderSeatingPlan96Person() {
+  return (
+    <div className="static-modal">
+      <Modal.Dialog>
+        <Modal.Header>
+          <Modal.Title>Seating plan - {this.state.product.Item.Name.S}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="large-floorplan">
+           <div className="large-floorplan--image">
+             <img src="/Images/ScotLAN-BIG.JPG" />
+           </div>
+           <div className="row large-floorplan--areas">
+             <div className="col-lg-7">
+               <div className="large-floorplan--rows">
+                 <div className="large-floorplan--block large-floorplan--block--A">
+                   <div className="large-floorplan--row large-floorplan--row-1">
+                    {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
+                   </div>
+                   <div className="large-floorplan--row large-floorplan--row-2">
+                     {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
+                   </div>
+                 </div>
+                 <div className="large-floorplan--block large-floorplan--block--B">
+                   <div className="large-floorplan--row large-floorplan--row-3">
+                     {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
+                   </div>
+                   <div className="large-floorplan--row large-floorplan--row-4">
+                    {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
+                   </div>
+                 </div>
+                 <div className="large-floorplan--block large-floorplan--block--C">
+                   <div className="large-floorplan--row large-floorplan--row-5">
+                     {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
+                   </div>
+                   <div className="large-floorplan--row large-floorplan--row-6">
+                    {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
+                   </div>
+                 </div>
+                 <div className="large-floorplan--row-admin">
+                   <button className="large-floorplan--support"> | Support and Registration | </button>
+                 </div>
+                 <div className="large-floorplan--console-corner">
+                   <button className="large-floorplan--console-corner-design"> | Console Area | </button>
+                 </div>
+               </div>
+             </div>
+             <div className="col-lg-5">
+               <div className="large-floorplan--sleeping-area">
+                 <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
+               </div>
+               <div className="large-floorplan--boardgames-area">
+                 <button className="large-floorplan--boardgames-area-design"> | Board Game Area | </button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </Modal.Body>
+       <Modal.Footer>
+         <Button className="btn btn-lg btn-primary sl-btn sl-btn--primary" onClick={this.closeModal}>Close</Button>
+       </Modal.Footer>
+     </Modal.Dialog>
+</div>
+  )
+}
+
+//{seat === "Available" && this.state.canSelectSeats && <Button class="seat seat--taken" onClick={()=>{this.selectSeat(`${seed + i}`)}}></Button> }
+//<button class="seat seat--taken" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
+//{ seat === "Available" && this.state.canSelectSeats && <button class="seat seat--taken" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button> }
+
+renderSeatRow(seatRow, seed) {
+
+  return seatRow.map(function(seat, i) {
+
+    if(seat.S === "Available" && this.state.canSelectSeats) {
+      return (
+        <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
+          <button className="seat seat--avalible--maxlimitreached"></button>
+        </Tooltip>
+      )
+    }
+    else if(seat.S === "Available" && !this.state.canSelectSeats)
+    {
+      return (
+        <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
+          <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
+        </Tooltip>
+      )
+    }
+    else {
+      return (
+        <Tooltip title={"Seat " + (seed + i + 1) + " - " + JSON.parse(seat.S).Username}>
+          <button className="seat seat--taken"></button>
+        </Tooltip>
+      )
+    }
+
+  }.bind(this))
+}
+
+renderSeatingPlan()  {
+  return (
+    <div>
+      <Table striped bordered condensed hover>
+        <thead>
+          <tr>
+            <th>Seat</th>
+            <th>Occupied by</th>
+            <th>Seat selection</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.renderSeats()}
+        </tbody>
+      </Table>
+    </div>
+  )
+}
+
+renderSeats() {
+  return this.state.seatPlan[0].Seats.L.map(function(seat, i) {
+    return (
+    <tr>
+      <td>Seat {parseInt(i, 10) + 1}</td>
+      <td>{seat.S}</td>
+      <td>
+      {seat.S === "Available" && this.state.canSelectSeats && <Button onClick={()=>{this.selectSeat(`${i}`)}}>Select Seat</Button> }
+      </td>
+    </tr>
+  )
+  }.bind(this))
 }
 }
