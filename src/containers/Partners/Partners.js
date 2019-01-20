@@ -28,6 +28,7 @@ export default class Partners extends Component {
                   <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><h3>GT Omega Racing</h3></a>
                 </div>
                   <p>Established in 2009. GT Omega Racing is one of the leading brands , specialising in products for Simulation Racing, Gaming Chairs and Accessories for use in eSports and gaming.</p>
+                  <p>Discount code: SCOTLAN for 5% off</p> 
                 <div className="partner-logo">
                   <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><img src="images/partner-gtomega.png" alt="Logo NOCTUA" /></a>
                 </div>
