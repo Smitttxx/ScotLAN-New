@@ -90,11 +90,7 @@ export default class Product extends Component {
   }
 
   async seatPlan(EventName) {
-    let user = await Auth.currentAuthenticatedUser();
-    let authHeader = {
-      headers: { Authorization: user.signInUserSession.idToken.jwtToken }
-    }
-    return API.get("seatPlan", `/seatplan?EventName=${EventName.split(" - ")[0]}`, authHeader);
+    return API.get("seatPlan", `/seatplan?EventName=${EventName.split(" - ")[0]}`);
   }
 
   handleChangeStd = event => {
