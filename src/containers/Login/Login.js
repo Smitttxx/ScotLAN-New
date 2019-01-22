@@ -20,6 +20,10 @@ export default class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value

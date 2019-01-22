@@ -27,6 +27,10 @@ export default class ResetPassword extends Component {
     };
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   validateCodeForm() {
     return this.state.email.length > 0;
   }

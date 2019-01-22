@@ -13,7 +13,7 @@ export default class Gallery extends Component {
   }
 
   async componentDidMount() {
-
+    window.scrollTo(0, 0);
   }
 
   showPanel = index => {
