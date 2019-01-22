@@ -131,8 +131,12 @@ export default class Orders extends Component {
 
       }
 
-      <h1>Previous Orders</h1>
+      <h1>Upcoming Events</h1>
       {!this.state.isLoading && this.renderOrders()}
+      <h1>Previous Events</h1>
+      <div>
+      No events to show
+      </div>
       </div>
       </div>
     );
@@ -140,24 +144,25 @@ export default class Orders extends Component {
 }
 
   renderOrders()  {
+    var countDownDate = new Date("Jul 5, 2019 18:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
     return (
       <div>
-      <Table striped bordered condensed hover>
-      <thead>
-
-      </thead>
-      <tbody>
-      {this.state.orders.map(item => (
-        <tr>
-        <td><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a></td>
-        <td>£{item.BasketTotal.S}</td>
-        <td>{new Intl.DateTimeFormat('en-GB').format(new Date(item.CreateDate.S))}</td>
-        {item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</td>] : <td>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to select your seats</Link>.</td>}
-        </tr>
-      ))}
-      </tbody>
-      </Table>
+        {this.state.orders.length > 0 ? [<span>Your going to <h4>ScotLAN #4!</h4></span>] : <h3>You have no orders.</h3>}
+        {this.state.orders.map(item => (
+          <div>
+          <div class="row"><div class="col-xs-6"><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>. Your <a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>order details can be found here.</a> </div>}</div>
+          <br/>
+          </div>
+        ))}
+        {this.state.orders.length > 0 ? [ <span>Would you like to <Link to={`/SeatPlan/${this.state.orders[0].OrderID.S}`}>view the seating plan</Link> or <a href="/Product/Event/ScotLAN%20Event%205" role="button">buy more tickets</a>?</span>] : <div></div>}
+        <div>Only {days} days to go!</div>
        </div>
     )
   }
 }
+
+//          <td>{new Intl.DateTimeFormat('en-GB').format(new Date(item.CreateDate.S))}</td>
