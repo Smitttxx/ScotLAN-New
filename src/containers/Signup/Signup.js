@@ -36,6 +36,11 @@ export default class Signup extends Component {
     );
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+
   validateConfirmationForm() {
     return this.state.confirmationCode.length > 0;
   }

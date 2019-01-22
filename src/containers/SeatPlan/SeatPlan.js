@@ -28,6 +28,7 @@ export default class SeatPlan extends Component {
 
   async componentDidMount() {
       try {
+        window.scrollTo(0, 0);
         const orderData = await this.order(this.props.match.params.OrderID);
         this.setState({ order: orderData });
 

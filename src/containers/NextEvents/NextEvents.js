@@ -31,6 +31,10 @@ export default class NextEvents extends Component {
     };
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div class="sl--sitecontainer--background__keyboard">

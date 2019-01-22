@@ -22,9 +22,10 @@ export default class Orders extends Component {
 
   async componentDidMount() {
       try {
-        const orderdata = await this.orders(this.props.username);
-        this.setState({ orders: orderdata });
-        this.setState({ isLoading: false });
+          window.scrollTo(0, 0);
+          const orderdata = await this.orders(this.props.username);
+          this.setState({ orders: orderdata });
+          this.setState({ isLoading: false });
         } catch (e) {
         alert(e);
       }
