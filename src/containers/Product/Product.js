@@ -318,8 +318,8 @@ renderProductDetail(){
 
       </div>
     </div>
-    <button className="btn btn-lg btn-primary sl-btn sl-btn--primary" onClick={()=>{this.showSeatPlan()}}>View seat plan</button>
     <h2 className="product-heading">Choose Your Tickets<span className="text-muted"></span></h2>
+    You can view the seating plan before hand here: <button className="sl-product-viewseatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
     <div className="product--info">
         <div className="accordion">
           <div className="row">
@@ -337,10 +337,22 @@ renderProductDetail(){
 
               <label>Choose a quantity of Standard BYOC* Tickets</label>
               <div className="row">
-              <div className="col-md-6">
-              <label className="green"><strong>Price Per Ticket :</strong> £35</label>
+              <div className="col-md-7">
+              <div class="ribbon-wrapper">
+              <div class="ribbon-front">
+                EARLYBIRD PRICING
               </div>
-              <div className="col-md-6">
+              <div class="ribbon-edge-topleft"></div>
+              <div class="ribbon-edge-topright"></div>
+              <div class="ribbon-edge-bottomleft"></div>
+              <div class="ribbon-edge-bottomright"></div>
+              <div class="ribbon-back-left"></div>
+              <div class="ribbon-back-right"></div>
+              </div>
+
+              <label className="green"><strong>Price Per Ticket :</strong> <span class="strike">£45</span> <span>£35</span></label>
+              </div>
+              <div className="col-md-5">
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeStd} value={this.state.quantityStd}>
@@ -363,7 +375,7 @@ renderProductDetail(){
               </div>
           </div>
             <div className="col-md-6">
-             <div class="ribbon"><span>V.I.P </span></div>
+             <div class="ribbon ribbon-red "><span>V.I.P </span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
               <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyVip.N} </div>
@@ -376,10 +388,21 @@ renderProductDetail(){
               </ul>
               <label>Choose a quantity of VIP BYOC* tickets</label>
               <div className="row">
-              <div className="col-md-6">
-              <label className="blue"><strong>Price Per Ticket :</strong> £50</label>
+              <div className="col-md-7">
+              <div class="ribbon-wrapper ribbon-wrapper--blue">
+              <div class="ribbon-front">
+                EARLYBIRD PRICING
               </div>
-              <div className="col-md-6">
+              <div class="ribbon-edge-topleft"></div>
+              <div class="ribbon-edge-topright"></div>
+              <div class="ribbon-edge-bottomleft"></div>
+              <div class="ribbon-edge-bottomright"></div>
+              <div class="ribbon-back-left"></div>
+              <div class="ribbon-back-right"></div>
+              </div>
+              <label className="blue"><strong>Price Per Ticket :</strong> <span class="strike">£60</span><span> £50</span></label>
+              </div>
+              <div className="col-md-5">
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
@@ -402,16 +425,20 @@ renderProductDetail(){
               </div>
             </div>
           </div>
-          <div className="col-md-12">
-
+          <div className="row sl-product-gotopayment">
+          <div className="col-md-4">
+            <small><i>*BYOC - bring your own computer</i></small><br/>
+            <small><i>*EARLYBIRD pricing ends 21/03/2018</i></small>
+          </div>
+          <div className="col-md-8">
             <div className="sl-but--header">
-            Got a question? <Link to="/Contact" className="btn btn-lg btn-secondary sl-btn sl-btn--secondary">Contact Us</Link> or
+            Got a question? <Link to="/Contact" className="sl-button-contact"> Contact Us </Link> or
             <form onSubmit={this.handleSubmit}>
                  <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Go to Payment</button>
             </form>
             </div>
-              <small><i>*BYOC - bring your own computer</i></small>
             </div>
+          </div>
         </div>
       </div>
       </div>
