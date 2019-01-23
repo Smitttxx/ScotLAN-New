@@ -25,7 +25,8 @@ class App extends Component {
       basketTotal: 0,
       IncludesEventTicket: false,
       EventTicketCount: 0,
-      Authorization: ""
+      Authorization: "",
+      basketQtyTotal: 0
     };
   }
 
@@ -123,12 +124,15 @@ componentWillUnmount() {
   recalcBasket = event => {
 
     var basketTotalCalc = 0;
+    var basketQtyTotal = 0;
     for(let i = 0; i < this.state.basket.length; i++)
     {
       basketTotalCalc = basketTotalCalc + (parseInt(this.state.basket[i].Quantity,10) * parseInt(this.state.basket[i].Price,10));
+      basketQtyTotal = basketQtyTotal + parseInt(this.state.basket[i].Quantity,10);
     }
 
     this.setState({ basketTotal: basketTotalCalc });
+    this.setState({ basketQtyTotal: basketQtyTotal });
   }
 
   removeFromBasket = basketItemName => {
@@ -207,7 +211,7 @@ componentWillUnmount() {
                         </Fragment>
                     }
                     <li className="nav-item">
-                    {this.state.basket.length > 0 ? [
+                    {this.state.basketQtyTotal > 0 ? [
                       <Tooltip html={(<div class="container tooltip-active">
                                       <div class="row">
                                           <div class="col-sm">
@@ -236,7 +240,7 @@ componentWillUnmount() {
                                       </div>
                                     )}
                                     >
-                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basket.length}</span></i></Link>
+                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basketQtyTotal}</span></i></Link>
                       </Tooltip>
                     ]
                     : <span></span>
