@@ -357,7 +357,7 @@ renderProductDetail(){
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeStd} value={this.state.quantityStd}>
-                    <option value="Any" selected>0</option>
+                    <option value="0" selected>0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -407,7 +407,7 @@ renderProductDetail(){
               <div className="sl-searchform__option">
                 <span className="sl-select">
                   <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
-                  <option value="Any" selected>0</option>
+                  <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

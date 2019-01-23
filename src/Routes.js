@@ -17,6 +17,7 @@ import NextEvents from "./containers/NextEvents/NextEvents";
 import Partners from "./containers/Partners/Partners";
 import PreviousEvents from "./containers/PreviousEvents/PreviousEvents";
 import WhatToBring from "./containers/WhatToBring/WhatToBring";
+import Food from "./containers/Food/Food";
 import FAQS from "./containers/FAQS/FAQS";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
@@ -41,5 +42,6 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/Checkout" exact component={Checkout} props={childProps} />
     <AuthenticatedRoute path="/Orders" exact component={Orders} props={childProps} />
     <AuthenticatedRoute path="/SeatPlan/:OrderID" exact component={SeatPlan} props={childProps} />
+    <AuthenticatedRoute path="/Food" exact component={Food} props={childProps} />
     <Route component={NotFound} />
   </Switch>;
