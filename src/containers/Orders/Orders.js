@@ -89,6 +89,7 @@ export default class Orders extends Component {
     else {
     return (
       <div class="sl--sitecontainer--background__keyboard">
+      <div className="container sl-order-container">
       <div className="container">
       {this.state.showModal &&
         <div className="static-modal">
@@ -131,14 +132,15 @@ export default class Orders extends Component {
 
       }
 
-      <h1>Upcoming Events</h1>
+      <h3>Orders info for Upcoming Events</h3>
       {!this.state.isLoading && this.renderOrders()}
-      <h1>Previous Events</h1>
+      <h3>Order info for Previous Events</h3>
       <div>
       No events to show
       </div>
       </div>
       </div>
+        </div>
     );
   }
 }
@@ -150,15 +152,14 @@ export default class Orders extends Component {
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
     return (
-      <div>
+      <div class="sl-orders-container">
         {this.state.orders.length > 0 ? [<span>Your going to <h4>ScotLAN #4!</h4></span>] : <h3>You have no orders.</h3>}
         {this.state.orders.map(item => (
           <div>
-          <div class="row"><div class="col-xs-6"><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>. Your <a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>order details can be found here.</a> </div>}</div>
-          <br/>
+          <div class="order-row"><div class=""><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>.</div>}</div>
           </div>
         ))}
-        {this.state.orders.length > 0 ? [ <span>Would you like to <Link to={`/SeatPlan/${this.state.orders[0].OrderID.S}`}>view the seating plan</Link> or <a href="/Product/Event/ScotLAN%20Event%205" role="button">buy more tickets</a>?</span>] : <div></div>}
+{/*   {this.state.orders.length > 0 ? [ <span>Would you like to <Link to={`/SeatPlan/${this.state.orders[0].OrderID.S}`}>view the seating plan</Link> or <a href="/Product/Event/ScotLAN%20Event%205" role="button">buy more tickets</a>?</span>] : <div></div>} */}
         <div>Only {days} days to go!</div>
        </div>
     )

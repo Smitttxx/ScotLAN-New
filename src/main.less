@@ -1530,14 +1530,28 @@ position: absolute;
     max-width: 800px;
 }
 &-content{
-	  border: 9px solid #4c96d7;
+	  border: 3px solid #4c96d7;
 		background: rgba(65,65,65,1);
 		border-radius: 15px;
+		padding: 1em;
 }
 &-body{
 			h4{
 			font-size: 1em;
 			color: white;
+			-webkit-text-fill-color: white;
+		}
+		h3{
+			-webkit-text-fill-color: white;
+		    text-decoration: underline;
+		    font-size: 1em;
+		    margin-top: 2em;
+		    text-align: center;
+		    width: 100%;
+			a{
+				text-decoration: underline;
+				font-size: 1.5em;
+			}
 		}
 		a{
 			color: @secondary-col;
@@ -1546,6 +1560,8 @@ position: absolute;
 			}
 }
 }
+
+
 
 ////////////// OUR PARTNERS /////////////////////////////////////////
 
@@ -1969,21 +1985,50 @@ height: 40px;
 }
 
 .static-modal{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,.9);
-z-index: 997;
-.modal-footer{
- button{
-	 position: absolute;
-top: 0;
- }
-}
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.9);
+	z-index: 997;
+	.modal-footer{
+	 button{
+		 position: absolute;
+	top: 0;
+	 }
+	}
 }
 
+.sl-orders-container{
+	    margin-bottom: 3em;
+			line-height: 3em;
+	h3{
+		margin-bottom: 1rem;
+	}
+	span{
+		h4{
+			display: inline-block;
+		}
+	}
+	a{
+		color: white;
+    text-decoration: underline;
+		&:hover{
+			font-weight: bold;
+			cursor: pointer;
+		}
+	}
+	.order-row{
+		display: flex;
+	}
+}
+
+.sl-order-container{
+	.container{
+		margin: 0 0 0 0;
+	}
+}
 
 
 @-webkit-keyframes blurFadeIn {
