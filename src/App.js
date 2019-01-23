@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { Table } from "react-bootstrap";
 //import { Nav, Navbar, NavItem } from "react-bootstrap";
 //import './App.css';
 import './main.css';
 import Routes from "./Routes";
 import { Auth } from "aws-amplify";
 //import Iframe from 'react-iframe'
+import {  Tooltip } from 'react-tippy';
+
 
 
 class App extends Component {
@@ -204,7 +207,41 @@ componentWillUnmount() {
                         </Fragment>
                     }
                     <li className="nav-item">
-                      <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"></i></Link>
+                    {this.state.basket.length > 0 ? [
+                      <Tooltip html={(<div class="container">
+                                      <div class="row">
+                                          <div class="col-sm">
+                                            Product
+                                          </div>
+                                          <div class="col-sm">
+                                            Quantity
+                                          </div>
+                                          <div class="col-sm">
+                                            Price(each)
+                                          </div>
+                                        </div>
+                                        {this.state.basket.map(item => (
+                                          <div class="row">
+                                              <div class="col-sm">
+                                                {item.ProductName}
+                                              </div>
+                                              <div class="col-sm">
+                                                {item.Quantity}
+                                              </div>
+                                              <div class="col-sm">
+                                                £{item.Price}
+                                              </div>
+                                            </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                    >
+                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket">{this.state.basket.length}</i></Link>
+                      </Tooltip>
+                    ]
+                    : <span></span>
+                    }
+
                     </li>
               </ul>
             </nav>
