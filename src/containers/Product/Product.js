@@ -523,7 +523,7 @@ renderSeatingPlan96Person() {
          </div>
        </Modal.Body>
        <Modal.Footer>
-         <Button className="btn btn-lg btn-primary sl-btn sl-btn--primary" onClick={this.closeModal}>Close</Button>
+         <Button className="btn btn-lg btn-primary sl-btn sl-btn--primary" onClick={this.closeModal}><i class="fas fa-times"></i></Button>
        </Modal.Footer>
      </Modal.Dialog>
 </div>

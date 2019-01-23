@@ -43,17 +43,22 @@ export default class PreviousEvents extends Component {
               </div>
               <div id="collapseOne" className="panel-collapse" hidden="hidden">
                   <div className="panel-body">
-                    Attendance: 32/33
-                    Sponsors: GTOmega, ASRock
+                  <ul>
+                    <li>Attendance: 32/33</li>
+                    <li>Sponsors: GTOmega, ASRock</li>
+                  </ul>
 
-                    Tournaments:
-                    PC
-                    3V3 League of Legends
-                    2V2 Counter Strike:GO
-                    3v3 Overwatch
-
-                    CONSOLE CORNER
-                    1v1 INJUSTICE: Gods among us
+                    <h4>Tournaments:</h4>
+                    <ul>
+                    <li>PC:</li>
+                    <li>3V3 League of Legends</li>
+                    <li>2V2 Counter Strike:GO</li>
+                    <li>3v3 Overwatch</li>
+                    </ul>
+                    <h4>CONSOLE CORNER</h4>
+                    <ul>
+                    <li>1v1 INJUSTICE: Gods among us</li>
+                    </ul>
                   </div>
               </div>
           </div>
@@ -69,15 +74,20 @@ export default class PreviousEvents extends Component {
                   </div>
                   <div id="collapseTwo" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
-                      Attendance: 32/33
-                      Sponsors: GTOmega, Crucial, ASRock
-                      Tournaments:
-                      PC
-                      Counter Strike Global Offensive 2v2 - Double Elimination.
-                      Overwatch 3v3 - Double Elimination.
-
-                      CONSOLE CORNER
-                      Nintendo 64 Mario Kart Tournament (TV - Retro Consoles)
+                      <ul>
+                        <li>Attendance: 32/33</li>
+                        <li>Sponsors: GTOmega, Crucial, ASRock</li>
+                      </ul>
+                        <h4>Tournaments:</h4>
+                        <ul>
+                        <li>PC:</li>
+                        <li>Counter Strike Global Offensive 2v2 - Double Elimination.</li>
+                        <li>Overwatch 3v3 - Double Elimination.</li>
+                        </ul>
+                        <h4>CONSOLE CORNER</h4>
+                        <ul>
+                        <li>Nintendo 64 Mario Kart Tournament (TV - Retro Consoles)</li>
+                        </ul>
                       </div>
                   </div>
               </div>
@@ -92,18 +102,22 @@ export default class PreviousEvents extends Component {
                   </div>
                   <div id="collapseThree" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
-                      Attendance: 32/33
-                      Sponsors: Crucial
-                      Tournaments:
-
-                      Trackmania Nations Forever - Fastest lap of the weekend
-                      Overwatch 2v2's
-                      Left 4 Dead 2
-                      League of Legends
-
-                      CONSOLE CORNER
-                      1v1 INJUSTICE: Gods among us
-
+                      <ul>
+                        <li>Attendance: 32/33</li>
+                        <li>Sponsors: Crucial</li>
+                      </ul>
+                        <h4>Tournaments:</h4>
+                        <ul>
+                        <li>PC:</li>
+                        <li>Trackmania Nations Forever - Fastest lap of the weekend</li>
+                        <li>Overwatch 2v2's</li>
+                        <li>Left 4 Dead 2</li>
+                        <li>League of Legends</li>
+                        </ul>
+                        <h4>CONSOLE CORNER</h4>
+                        <ul>
+                        <li>1v1 INJUSTICE: Gods among us</li>
+                        </ul>
                       </div>
                   </div>
               </div>
