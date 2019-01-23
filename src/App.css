@@ -10,3 +10,7 @@
   position: relative;
   left:10px;
 }
+
+.tool {
+  width: 800px !important
+}
