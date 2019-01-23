@@ -208,7 +208,7 @@ componentWillUnmount() {
                     }
                     <li className="nav-item">
                     {this.state.basket.length > 0 ? [
-                      <Tooltip html={(<div class="container">
+                      <Tooltip html={(<div class="container tooltip-active">
                                       <div class="row">
                                           <div class="col-sm">
                                             Product
@@ -236,7 +236,7 @@ componentWillUnmount() {
                                       </div>
                                     )}
                                     >
-                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket">{this.state.basket.length}</i></Link>
+                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basket.length}</span></i></Link>
                       </Tooltip>
                     ]
                     : <span></span>

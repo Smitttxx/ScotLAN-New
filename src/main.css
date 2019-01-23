@@ -524,6 +524,22 @@ h5 {
 .SL-header-background .nav-item ul {
   display: none;
 }
+.SL-header-background .nav-item .basket-count {
+  color: white;
+  padding: 0;
+  font-size: 1em;
+  position: absolute;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: #73d14c;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  margin-right: 81px;
+  line-height: 1.4em;
+  font-family: 'Give You Glory', cursive;
+}
 .SL-header-background .nav-item:hover ul {
   margin-left: 1em;
   width: 120px;
@@ -1608,6 +1624,13 @@ h5 {
   position: absolute;
   top: 0;
 }
+.static-modal .btn-default {
+  background: unset;
+  color: #73d14c;
+  font-size: 2.5em;
+  padding-top: 1rem;
+  cursor: pointer;
+}
 .sl-orders-container {
   margin-bottom: 3em;
   line-height: 3em;
@@ -1648,4 +1671,12 @@ h5 {
     text-shadow: 0px 0px 1px #fff;
     -webkit-transform: scale(1);
   }
+}
+.tooltip-active {
+  display: block !important;
+  color: white;
+  width: 4000px !important;
+}
+tooltip {
+  width: 1000px;
 }

@@ -125,7 +125,7 @@ export default class Orders extends Component {
               {this.state.selectedOrder.EventTicketIncluded.BOOL ? [<h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></h3>] : <div></div>}
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.closeModal}>Close</Button>
+              <Button onClick={this.closeModal}><i class="fas fa-times"></i></Button>
             </Modal.Footer>
            </Modal.Dialog>
         </div>
