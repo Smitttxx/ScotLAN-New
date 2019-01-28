@@ -735,6 +735,9 @@ h5 {
   left: 4%;
   width: 100%;
 }
+.large-floorplan--areas .col-lg-7 {
+  padding: 0 0 0 0;
+}
 .large-floorplan--block {
   padding: 2em 1em;
 }

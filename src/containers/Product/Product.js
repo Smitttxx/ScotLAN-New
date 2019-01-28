@@ -435,7 +435,7 @@ renderProductDetail(){
             <div className="sl-but--header">
             Got a question? <Link to="/Contact" className="sl-button-contact"> Contact Us </Link> or
             <form onSubmit={this.handleSubmit}>
-                 <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Go to Payment</button>
+                 <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Add to Basket</button>
             </form>
             </div>
             </div>
