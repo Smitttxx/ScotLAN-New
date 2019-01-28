@@ -125,14 +125,24 @@ componentWillUnmount() {
 
     var basketTotalCalc = 0;
     var basketQtyTotal = 0;
+    var includesEventTicket = false;
+    var eventTicketCount = 0;
     for(let i = 0; i < this.state.basket.length; i++)
     {
+      if(this.state.basket[i].Type === "Event")
+      {
+        includesEventTicket = true;
+        eventTicketCount = eventTicketCount + parseInt(this.state.basket[i].Quantity,10);
+      }
+
       basketTotalCalc = basketTotalCalc + (parseInt(this.state.basket[i].Quantity,10) * parseInt(this.state.basket[i].Price,10));
       basketQtyTotal = basketQtyTotal + parseInt(this.state.basket[i].Quantity,10);
     }
 
     this.setState({ basketTotal: basketTotalCalc });
     this.setState({ basketQtyTotal: basketQtyTotal });
+    this.setState({ IncludesEventTicket: includesEventTicket });
+    this.setState({ EventTicketCount: eventTicketCount });
   }
 
   removeFromBasket = basketItemName => {
@@ -148,9 +158,10 @@ componentWillUnmount() {
 
   clearCheckout = event => {
     this.setState({basket: []});
-    this.setState({basketTotal: 0})
-    this.setState({IncludesEventTicket: false})
-    this.setState({EventTicketCount: 0})
+    this.setState({basketTotal: 0});
+    this.setState({IncludesEventTicket: false});
+    this.setState({EventTicketCount: 0});
+    this.setState({basketQtyTotal: 0});
   }
 
   handleLogout = async event => {
