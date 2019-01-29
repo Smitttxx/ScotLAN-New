@@ -25,7 +25,9 @@ export default class PreviousEvents extends Component {
 
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
         <div className="container">
           <h2 class="product-heading">Previous Events<span class="text-muted"></span></h2>
           <div>
@@ -121,12 +123,9 @@ export default class PreviousEvents extends Component {
                       </div>
                   </div>
               </div>
-
-
-</div>
-
-
-
+            </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>

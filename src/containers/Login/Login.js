@@ -47,7 +47,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div class="sl-signup-background">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
       <div className="container">
         <form onSubmit={this.handleSubmit}>
         <div class="sl-signup-header">Log In to your account</div>
@@ -88,6 +90,8 @@ export default class Login extends Component {
         </form>
       </div>
       </div>
+    </div>
+    </div>
     );
   }
 }

@@ -26,6 +26,9 @@
 html {
   height: 85%;
 }
+body {
+  background-color: #333333;
+}
 #root {
   height: 100%;
 }
@@ -102,6 +105,7 @@ body {
 h1 {
   font-size: 3em;
   color: black;
+  font-weight: bold;
   background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -110,6 +114,7 @@ h2 {
   font-size: 2.5em;
   width: fit-content;
   color: black;
+  font-weight: bold;
   background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -118,6 +123,7 @@ h3 {
   font-size: 2em;
   width: fit-content;
   color: black;
+  font-weight: bold;
   background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -126,6 +132,7 @@ h4 {
   font-size: 1.5em;
   width: fit-content;
   color: black;
+  font-weight: bold;
   background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -134,6 +141,7 @@ h5 {
   font-size: 1em;
   width: fit-content;
   color: black;
+  font-weight: bold;
   background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1175,6 +1183,87 @@ h5 {
   -moz-animation-delay: 0.1s;
   -ms-animation-delay: 0.1s;
   animation-delay: 0.1s;
+}
+.keyboard-background {
+  background-attachment: fixed;
+  background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-bottom: 4em;
+  min-height: 100%;
+}
+.keyboard-background .container {
+  background-color: rgba(65, 65, 65, 0.7);
+  border-radius: 10px;
+  padding: 2em;
+  color: white;
+}
+.section-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+  padding-top: 8em;
+  padding-bottom: 3em;
+}
+.section-container-keyboard {
+  background-color: rgba(65, 65, 65, 0.7);
+  border-radius: 10px;
+  padding: 2em;
+  color: white;
+}
+.section-container-keyboard .panel-group .panel-heading a {
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 15px;
+  background-color: rgba(63, 63, 63, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.section-container-keyboard .panel-group .panel-heading a:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.panel-group .panel-heading a {
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 15px;
+  background-color: rgba(63, 63, 63, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+.panel-group .panel-heading a:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.panel-group .panel-heading a:before {
+  position: absolute;
+  display: block;
+  content: '\f078';
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: bold;
+  right: 3%;
+}
+.panel-group .panel-body {
+  padding: 0 1em 2em 1em;
+}
+.panel-group .panel-body a {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 .sl--sitecontainer--background__keyboard {
   background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);

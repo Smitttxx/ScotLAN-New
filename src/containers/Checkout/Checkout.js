@@ -83,13 +83,17 @@ async onToken(token) {
     if(this.state.isLoading)
     {
       return (
-        <div class="sl--sitecontainer--background__keyboard">
+        <div className="keyboard-background">
+          <div className="section-container">
+            <div className="section-container-keyboard">
         <div className="container">
           <div className="loading--text">
             <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
             <h4>Please wait ... We are placing your order</h4>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
+        </div>
+        </div>
         </div>
         </div>
       )

@@ -15,8 +15,10 @@ export default class AboutUs extends Component {
 
   render() {
     return (
-      <div className="sl--sitecontainer--background__keyboard">
-        <div className="container sl-ourteam-container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+        <div className="sl-ourteam-container">
           <div className="container">
             <h2 className="product-heading">About Us<span class="text-muted"></span></h2>
             <p>ScotLAN is operated by a 100% volunteer staff. We together have more than 10 years of LAN party experience,  As of 2019, our average staff member has attended LANs for almost seven years.</p>
@@ -103,6 +105,8 @@ export default class AboutUs extends Component {
           </div>
         </div>
       </div>
+      </div>
+    </div>
     );
   }
 }

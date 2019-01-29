@@ -88,8 +88,10 @@ export default class Orders extends Component {
     }
     else {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-      <div className="container sl-order-container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+      <div className="sl-order-container">
       <div className="container">
       {this.state.showModal &&
         <div className="static-modal">
@@ -141,6 +143,8 @@ export default class Orders extends Component {
       </div>
       </div>
         </div>
+        </div>
+          </div>
     );
   }
 }
