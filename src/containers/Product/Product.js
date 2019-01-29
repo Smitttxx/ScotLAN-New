@@ -284,8 +284,10 @@ renderProducts(product){
 renderProductDetail(){
   if(this.state.product.Item.Type.S === "Event") {
     return (
-      <div className="sl--sitecontainer--background__keyboard">
-  <div className="container sl-products--container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+  <div className="sl-products--container">
     <div className="container">
       <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
     <div className="row product--info">
@@ -445,6 +447,8 @@ renderProductDetail(){
       </div>
       </div>
         </div>
+        </div>
+          </div>
     )
 }
 else {

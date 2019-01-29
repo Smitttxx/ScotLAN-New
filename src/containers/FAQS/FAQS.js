@@ -28,20 +28,21 @@ export default class FAQS extends Component {
 
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
-      <div className="container SL-FAQS">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+      <div className="container">
         <h2> FAQ </h2>
 
           <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingOne">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseOne")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseOne")}}>
                       <a className="collapsed">
                        What is a LAN Party ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseOne" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">A LAN Party is an event where you take your computer to our venue, hook them up on a high speed network and play video games with and against each other for a weekend.</div>
@@ -51,11 +52,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingTwo">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseTwo")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseTwo")}}>
                       <a className="collapsed">
                         What games do you play ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseTwo" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">Feel free to play any game you like, hop over to our <a href="https://www.facebook.com/groups/555722601438031/">Facebook</a>
@@ -66,11 +67,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingThree">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseThree")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseThree")}}>
                       <a className="collapsed">
                         What about board games?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseThree" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">We bring a selection of board games but feel free to bring any board games with you, just keep calm when someone beats you at your own game!</div>
@@ -80,11 +81,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFour">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseFour")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseFour")}}>
                       <a className="collapsed">
                       Can I take two monitors ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseFour" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">Yes. For a small fee of £5, we allow certain extra appliances that other LAN’s do not. You can have one extra low current device at your desk, such as a second monitor,
@@ -97,11 +98,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFive">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseFive")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseFive")}}>
                       <a className="collapsed">
                         Can I bring my own server?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseFive" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> Yes. For a fee of £5 to cover electricity and network connection we can provide space for your server at the event. Please contact the staff prior to the event before doing this however.</div>
@@ -112,11 +113,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingSix">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseSix")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseSix")}}>
                       <a className="collapsed" data-toggle="collapse">
                         Who runs ScotLAN ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseSix" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> ScotLAN is run by a group volunteers who give up their time freely to plan, organise and run the event.</div>
@@ -127,11 +128,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingSeven">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseSeven")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseSeven")}}>
                       <a className="collapsed">
                         Are there any age limits?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseSeven" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">There are no age limits to the event however anyone under 16 will require a signed parental consent form prior to attending the event.
@@ -143,11 +144,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingEight">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseEight")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseEight")}}>
                       <a className="collapsed">
                         CWhat facilities are there available ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseEight" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
@@ -174,11 +175,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingNine">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseNine")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseNine")}}>
                       <a className="collapsed">
                         Does Steam work on your LAN ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseNine" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> Yes. Steam works on our LAN just fine. Our Internet connection should mean that you always have access to your games collection.
@@ -191,11 +192,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingTen">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseTen")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseTen")}}>
                       <a className="collapsed">
                         Can you tell me more about your Internet connection?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseTen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> At ScotLAN we have an FTTC internet connection which is exclusively used by us.This means that we are able to have a fairly large download limit but this is monitored by the staff as we can quite easily and quickly go through the bandwidth that we have allocated.
@@ -208,11 +209,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingEleven">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseEleven")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseEleven")}}>
                       <a className="collapsed">
                         What if I need to download a large patch for a game.
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseEleven" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> Please approach a member of staff and let us know as Supported games will be available for install from our local Steam content cache or available from a backup folder.</div>
@@ -223,11 +224,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingTwelve">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseTwelve")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseTwelve")}}>
                       <a className="collapsed">
                         What electrical appliances are not allowed at ScotLAN?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseTwelve" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
@@ -251,11 +252,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingThirteen">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseThirteen")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseThirteen")}}>
                       <a className="collapsed">
                         Can I take my own food and drink ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseThirteen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> You need to take your own food and drink for the entire event. Keep in mind that the only things available to cook with is the microwave and kettle,
@@ -268,11 +269,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFourteen">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseFourteen")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseFourteen")}}>
                       <a className="collapsed">
                         Is alcohol allowed?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseFourteen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> Providing you’re of legal drinking age then you may bring your own alcohol however no alcohol is sold at the event.</div>
@@ -283,11 +284,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFifteen">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseFifteen")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseFifteen")}}>
                       <a className="collapsed">
                         Will my equipment be safe ?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseFifteen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body"> We do our best to look after you and your possessions, but ultimately your belongings are your responsibility. Access to the event is closely monitored by staff and only through the one set of doors.</div>
@@ -296,11 +297,11 @@ export default class FAQS extends Component {
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingSixteen">
-                    <h4 className="panel-title" onClick={()=>{this.showPanel("collapseSixteen")}}>
+                    <div className="panel-title" onClick={()=>{this.showPanel("collapseSixteen")}}>
                       <a className="collapsed">
                         Is my equipment insured?
                       </a>
-                    </h4>
+                    </div>
                   </div>
                   <div id="collapseSixteen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
@@ -314,6 +315,8 @@ export default class FAQS extends Component {
       </div>
       </div>
     </div>
+    </div>
+
     );
   }
 }

@@ -35,81 +35,194 @@ export default class NextEvents extends Component {
     window.scrollTo(0, 0);
   }
 
+  showPanel = index => {
+    var hasAttribute = document.getElementById(index).hasAttribute("hidden");
+
+    if(hasAttribute) {
+      document.getElementById(index).removeAttribute("hidden");
+    } else {
+      document.getElementById(index).setAttribute("hidden", "hidden");
+    }
+  }
+
+
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
+      <div>
+        <div className="keyboard-background">
+          <div className="section-container">
+            <div className="section-container-keyboard">
+              <div className="container">
+              <h2 class="product-heading">ScotLAN #5<span class="text-muted"></span></h2>
+                <div class="row">
+                  <div class="col-md-7">
+                  <div>Sponsored by GTOmega and Corsair </div>
+                    <ul>
+                      <li><strong>Dates:</strong> Fri 15th March 6pm – Sun 17th March 6pm (48 Hours)</li>
+                      <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
+                      <li><strong>Spaces:</strong> 100 seat BYOC Tickets: 100 tickets remaining</li>
+                      <li><strong>Prices From:</strong> £25 </li>
+                      <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
+                      <li><strong>Facebook</strong> Event</li>
+                    </ul>
+                    <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today</a></p>
+                  </div>
+                  <div class="col-md-5">
+                    <div style={{ height: '200px', width: '100%' }}>
+                              <GoogleMapReact
+                                bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
+                                defaultCenter={this.state.center}
+                                defaultZoom={this.state.zoom}
+                              >
+                                <AnyReactComponent
+                                  lat={55.995980}
+                                  lng={-3.786270}
+                                  text={''}
+                                />
+                              </GoogleMapReact>
+                              </div>
+                    </div>
+                  </div>
 
-          <h2 class="product-heading">Next Events<span class="text-muted"></span></h2>
-          <div style={{ height: '200px', width: '100%' }}>
-              <GoogleMapReact
-                bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
-                defaultCenter={this.state.center}
-                defaultZoom={this.state.zoom}
-              >
-                <AnyReactComponent
-                  lat={55.995980}
-                  lng={-3.786270}
-                  text={''}
-                />
-              </GoogleMapReact>
+            <h4> What to expect at ScotLAN#5 </h4>
+            <p> For general LAN questions head over to our FAQ page or get in touch with us if you cant find the answer your looking for!
+            Below will tell you everything you need to know that is specific to our next event</p>
+
+            <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseTournamnets")}}>
+                        <a className="collapsed">
+                         <div>Tournaments</div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseTournamnets" className="panel-collapse" hidden="hidden">
+                        <div className="panel-body">
+                        <p> We also have servers set up for: </p>
+                        <div>
+                        <ul>
+                          <li> TrackMania </li>
+                          <li> Overwatch </li>
+                          <li> Age Of Empires </li>
+                          <li> Team Fortress 2 & PropHunt </li>
+                          <li> Unreal Tournament 2004 </li>
+                          <li> Half-Life 2: Deathmatch </li>
+                          <li> Counter-Strike: Global Offensive </li>
+                          <li> Armagetron Advanced </li>
+                        </ul>
+                        </div>
+                        ... And many many more!
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseFoodDrink")}}>
+                        <a className="collapsed">
+                         <div>Food & Drink</div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseFoodDrink" className="panel-collapse" hidden="hidden">
+                      <div className="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseParking")}}>
+                        <a className="collapsed">
+                         <div>Parking/Travel</div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseParking" className="panel-collapse" hidden="hidden">
+                      <div className="panel-body">
+                        <div>
+                        <ul>
+                          <li> 40~ free spaces on-site </li>
+                          <li> Bus: Falkirk Bus Station 10 minute away </li>
+                          <li> Train: Falkirk High – 0.4 Miles Eating </li>
+                          <li> Daily Morning Rolls (Outside Caterer) </li>
+                          <li> Saturday Dominos Order </li>
+                          <li> Kettle, microwave and small fridge on site </li>
+                          <li> Corner Shops – 5 min walk </li>
+                          <li> -Eat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>
+                          <li> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </li>
+                          <li> Tesco – 8 min drive, 40 min walk Sleeping </li>
+                          <li> Floor space in main hall / upstairs </li>
+                        </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseUnder16")}}>
+                        <a className="collapsed">
+                         <div>Under 16's</div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseUnder16" className="panel-collapse" hidden="hidden">
+                      <div className="panel-body">
+                            <div>
+                        <p>If you are aged 15 or under, you are required to provide a completed and signed parental consent form on arrival to the event. </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseCancellations")}}>
+                        <a className="collapsed">
+                         <div>Cancellations</div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseCancellations" className="panel-collapse" hidden="hidden">
+                      <div className="panel-body">
+                            <div>
+                        <p>If you are unable to attend the event, please notify us as soon as possible. If your notification is received over 28 days prior to the start of the event, your payment will be refunded subject to a £10 administration fee per ticket. Notifications received within 28 days of the event will not be refunded unless the event is full and your place can be sold to the next person on the waiting list, in which case the £10 administration fee will still apply. Refunds will typically take up to 10 working days to process providing all of the information required is supplied in order make the transaction. Note that standard BYOC tickets are not transferable and are for the named holder only unless purchased as a voucher, in which case they can be transferred to the new ticket holder once, from which point they also become non-transferable. Flex tickets do allow for multiple ticket transfers.
+                        </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <div className="panel-title" onClick={()=>{this.showPanel("collapseEquipment")}}>
+                        <a className="collapsed">
+                         <div> What will I bring? </div> <i class="fas fa-chevron-down"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div id="collapseEquipment" className="panel-collapse" hidden="hidden">
+                        <div className="panel-body">
+                        <div>
+                        <ul>
+                          <li> Computer, power cable </li>
+                          <li> Keyboard, mouse, Surge Protected 4 Way </li>
+                          <li> Screen, power cable </li>
+                          <li> Headphones / headset </li>
+                          <li> Airbed / roll mat – no doubles as space is limited! </li>
+                          <li> Security </li>
+                          <li> You are responsible for securing your possessions! </li>
+                          <li> Front door will be locked at 4am Saturday night, unlocked 9am Sunday morning </li>
+                        </ul>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          <div>
-          <ListGroup>
-            <ListGroupItem> Dates: Fri 15th March 6pm – Sun 17th March 6pm (48 Hours) </ListGroupItem>
-            <ListGroupItem> Venue: Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE </ListGroupItem>
-            <ListGroupItem> Spaces: 100 seat BYOC Tickets: 100 </ListGroupItem>
-            <ListGroupItem> Internet: 430mbps down 40mbps up LAN: Gigabit </ListGroupItem>
-            <ListGroupItem> Facebook Event </ListGroupItem>
-          </ListGroup>
           </div>
-          <h4> What even is a LAN Gaming Party? </h4>
-          <p> Games & Events We survey everyone who buys a ticket so you decide what gets played at the event.</p>
-          <p> We also have servers set up for: </p>
-          <div>
-          <ListGroup>
-            <ListGroupItem> TrackMania </ListGroupItem>
-            <ListGroupItem> Overwatch </ListGroupItem>
-            <ListGroupItem> Age Of Empires </ListGroupItem>
-            <ListGroupItem> Team Fortress 2 & PropHunt </ListGroupItem>
-            <ListGroupItem> Unreal Tournament 2004 </ListGroupItem>
-            <ListGroupItem> Half-Life 2: Deathmatch </ListGroupItem>
-            <ListGroupItem> Counter-Strike: Global Offensive </ListGroupItem>
-            <ListGroupItem> Armagetron Advanced </ListGroupItem>
-          </ListGroup>
-          </div>
-          ... And many many more!
-
-          <h4>Parking / Travel</h4>
-          <div>
-          <ListGroup>
-            <ListGroupItem> 40~ free spaces on-site </ListGroupItem>
-            <ListGroupItem> Bus: Falkirk Bus Station 10 minute away </ListGroupItem>
-            <ListGroupItem> Train: Falkirk High – 0.4 Miles Eating </ListGroupItem>
-            <ListGroupItem> Daily Morning Rolls (Outside Caterer) </ListGroupItem>
-            <ListGroupItem> Saturday Dominos Order </ListGroupItem>
-            <ListGroupItem> Kettle, microwave and small fridge on site </ListGroupItem>
-            <ListGroupItem> Corner Shops – 5 min walk </ListGroupItem>
-            <ListGroupItem> -Eat – Various Deliveries from 5pm to 11pm Saturday & Sunday </ListGroupItem>
-            <ListGroupItem> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </ListGroupItem>
-            <ListGroupItem> Tesco – 8 min drive, 40 min walk Sleeping </ListGroupItem>
-            <ListGroupItem> Floor space in main hall / upstairs </ListGroupItem>
-          </ListGroup>
-          </div>
-          <h4> What to bring</h4>
-          <div>
-          <ListGroup>
-            <ListGroupItem> Computer, power cable </ListGroupItem>
-            <ListGroupItem> Keyboard, mouse, Surge Protected 4 Way </ListGroupItem>
-            <ListGroupItem> Screen, power cable </ListGroupItem>
-            <ListGroupItem> Headphones / headset </ListGroupItem>
-            <ListGroupItem> Airbed / roll mat – no doubles as space is limited! </ListGroupItem>
-            <ListGroupItem> Security </ListGroupItem>
-            <ListGroupItem> You are responsible for securing your possessions! </ListGroupItem>
-            <ListGroupItem> Front door will be locked at 4am Saturday night, unlocked 9am Sunday morning </ListGroupItem>
-          </ListGroup>
-          </div>
-        </div>
       </div>
     );
   }

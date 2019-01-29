@@ -58,6 +58,10 @@ html{
 height: 85%;
 }
 
+body{
+	background-color: @background-col;
+}
+
 #root{
 height: 100%;
 }
@@ -157,6 +161,7 @@ justify-content: center;
 h1 {
 font-size: 3em;
 color: black;
+font-weight: bold;
 background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -166,6 +171,7 @@ h2 {
 font-size: 2.5em;
 width: fit-content;
 color: black;
+font-weight: bold;
 background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -175,6 +181,7 @@ h3 {
 font-size: 2em;
 width: fit-content;
 color: black;
+font-weight: bold;
 background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -184,6 +191,7 @@ h4 {
 font-size: 1.5em;
 width: fit-content;
 color: black;
+font-weight: bold;
 background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -193,6 +201,7 @@ h5 {
 font-size: 1em;
 width: fit-content;
 color: black;
+font-weight: bold;
 background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -1409,13 +1418,13 @@ margin-top: 2em;
 ///////////////////// START OF HOMEPAGE /////////////////////////////
 
 .sl--homepage{
-&--heroimage{
-background-image: url(/Images/ScotLAN_homepageimage.jpg);
-height: 822px;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: top;
-}
+	&--heroimage{
+		background-image: url(/Images/ScotLAN_homepageimage.jpg);
+		height: 822px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top;
+	}
 &--backgroundgradient{
 background: -moz-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
 background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(76,150,215,0.6)), color-stop(35%, rgba(0,0,0,0.53)), color-stop(100%, rgba(115,209,76,0.4))); /* safari4+,chrome */
@@ -1507,28 +1516,123 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 		}
 }
 
+.keyboard-background{
+	background-attachment: fixed;
+	background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+	padding-bottom: 4em;
+	min-height: 100%;
+	.container{
+		background-color: rgba(65, 65, 65, 0.7);
+		border-radius: 10px;
+		padding: 2em;
+		color: white;
+	}
+}
 
+.section-container{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1140px;
+	padding-top: 8em;
+	padding-bottom: 3em;
+	&-keyboard{
+		background-color: rgba(65, 65, 65, 0.7);
+		border-radius: 10px;
+		padding: 2em;
+		color: white;
+
+		.panel-group{
+			.panel-heading{
+				a{
+					margin-bottom: 1em;
+					padding: 1em;
+					border: 3px solid white;
+					border-radius: 15px;
+					background-color: rgba(63, 63, 63, 0.9);
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					cursor: pointer;
+					&:hover{
+						cursor: pointer;
+							font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
+
+.panel-group{
+	.panel{
+		&-heading{
+		a{
+			margin-bottom: 1em;
+			padding: 1em;
+			border: 3px solid white;
+			border-radius: 15px;
+			background-color: rgba(63, 63, 63, 0.9);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			color: white;
+			width: 100%;
+			position: relative;
+			 user-select: none;
+			&:hover{
+				cursor: pointer;
+					font-weight: bold;
+			}
+			&:before{
+				position: absolute;
+				display: block;
+				content: '\f078';
+				font-family: "Font Awesome\ 5 Free";
+				font-weight: bold;
+				right: 3%;
+			}
+		}
+		}
+		&-body{
+			padding: 0 1em 2em 1em;
+			a{
+				color: white;
+				font-weight: bold;
+				cursor: pointer;
+			}
+		}
+	}
+}
 ///////////////////// END OF HOMEPAGE /////////////////////////////
 
 
 // START HERO IMAGES ///
 
-.sl--sitecontainer--background__keyboard{
-	background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #cccccc;
-	min-height: 100%;
-  overflow: -webkit-paged-x;
-	padding-top: 5em;
-	.container{
-		background-color: rgba(65, 65, 65, 0.7);
-		border-radius: 10px;
-		padding: 2em;
-		margin-top: 3em;
-		margin-bottom: 3em;
-		color: white;
+.sl--sitecontainer--background{
+	&__keyboard{
+		background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-color: #cccccc;
+		min-height: 100%;
+	  overflow: -webkit-paged-x;
+		padding-top: 5em;
+		.container{
+			background-color: rgba(65, 65, 65, 0.7);
+			border-radius: 10px;
+			padding: 2em;
+			margin-top: 3em;
+			margin-bottom: 3em;
+			color: white;
+		}
 	}
 }
 

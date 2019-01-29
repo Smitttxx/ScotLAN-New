@@ -66,8 +66,10 @@ export default class Contact extends Component {
         )
     } else {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+          <div className="container">
         <div class="row">
           <div class="col-md-9">
             <form onSubmit={this.handleSubmit}>
@@ -119,7 +121,9 @@ export default class Contact extends Component {
               display="initial"
               position="relative"
               allowFullScreen/>
+                  </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

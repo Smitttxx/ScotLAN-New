@@ -14,8 +14,9 @@ export default class Partners extends Component {
 
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container sl--partners--container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
           <div className="container">
           <div className="sl--partners--header">
           <h2 class="product-heading">Partners<span class="text-muted"></span></h2>
@@ -28,7 +29,7 @@ export default class Partners extends Component {
                   <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><h3>GT Omega Racing</h3></a>
                 </div>
                   <p>Established in 2009. GT Omega Racing is one of the leading brands , specialising in products for Simulation Racing, Gaming Chairs and Accessories for use in eSports and gaming.</p>
-                  <p>Discount code: SCOTLAN for 5% off</p> 
+                  <p>Discount code: SCOTLAN for 5% off</p>
                 <div className="partner-logo">
                   <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><img src="images/partner-gtomega.png" alt="Logo NOCTUA" /></a>
                 </div>
@@ -92,6 +93,7 @@ export default class Partners extends Component {
           </div>
           </div>
       </div>
+        </div>
     </div>
     );
   }

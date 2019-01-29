@@ -54,7 +54,9 @@ export default class Gallery extends Component {
 
   render() {
     return (
-        <div class="sl--sitecontainer--background__keyboard">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
           <div className="container">
             <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div className="panel panel-default">
@@ -110,6 +112,8 @@ export default class Gallery extends Component {
               </div>
           </div>
         </div>
+        </div>
+      </div>
     );
   }
 }
