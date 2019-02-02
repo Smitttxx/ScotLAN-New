@@ -19,8 +19,14 @@
     "react-tippy": "^1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set REACT_APP_STAGE=dev && react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "set REACT_APP_STAGE=dev && npm run build",
+    "deploy": "aws s3 sync build/ s3://scotlan --acl public-read",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id ELJ4B0DFSQZJP --paths /*",
+    "predeploy:prod": "set REACT_APP_STAGE=production && npm run build",
+    "deploy:prod": "aws s3 sync build/ s3://scotlanproduction --acl public-read",
+    "postdeploy:prod": "aws cloudfront create-invalidation --distribution-id E1D6E5W8DM785D --paths /*",
     "eject": "react-scripts eject"
   }
 }
