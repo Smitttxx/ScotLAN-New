@@ -24,6 +24,12 @@ font-family: 'Permanent Marker', cursive;
 font-family: 'Bangers', cursive;
 }
 
+.container-boxshadow{
+	-webkit-box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
+	-moz-box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
+	box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
+}
+
 // ----------------------------------------------------------------------------
 // Colours
 // ----------------------------------------------------------------------------
@@ -702,6 +708,7 @@ background:  linear-gradient(to bottom, rgba(65,65,65,0.9), rgba(24,24,24,0.9));
 position: fixed;
 width: 100%;
 z-index: 10;
+.container-boxshadow();
 
 &:before {
 content: "";
@@ -843,6 +850,10 @@ img{
 }
 a{
 	color: white;
+	&:hover{
+		font-weight: bold;
+		text-decoration: none;
+	}
 }
 .sl-footer-social-media{
 display: flex;
@@ -1372,49 +1383,6 @@ color: black;
 ///////////////////// END OF FAQS /////////////////////////////
 
 
-.sl-signup{
-&-background{
-background-image: url("https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-background-color: #cccccc;
-height: 800px;
-overflow: -webkit-paged-x;
-.container{
-	width: 400px;
-	top: 4em;
-	text-align: center;
-	background-color: rgba(65, 65, 65, 0.7);
-	border-radius: 10px;
-	padding: 2em;
-	    margin-top: 3em;
-		label{
-			width: 100%;
-			text-align: left;
-			color: white;
-		}
-		button{
-			width: 100%;
-	    margin: 0;
-		}
-		h3{
-			    margin-top: 1em;
-					color: white;
-				}
-		}
-}
-&-header{
-color: white;
-font-size: 1.6em;
-margin-bottom: 1em;
-}
-
-&-buttons{
-margin-top: 2em;
-}
-}
-
 ///////////////////// START OF HOMEPAGE /////////////////////////////
 
 .sl--homepage{
@@ -1467,7 +1435,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 	position: relative;
   padding: 2em;
 	top: 250px;
-
+	.container-boxshadow();
 
 
 	h4{
@@ -1529,6 +1497,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 		border-radius: 10px;
 		padding: 2em;
 		color: white;
+		.container-boxshadow();
 	}
 }
 
@@ -2188,4 +2157,110 @@ height: 40px;
 }
 tooltip{
 	width: 1000px;
+}
+
+.panel{
+		&-group{
+			width: 100%;
+		}
+		&-heading{
+			width: 100%;
+		}
+		&-title{
+		width: 100%;
+		color: white;
+    -webkit-text-fill-color: white;
+		}
+}
+
+.sl-login-container{
+	width: 450px;
+	margin: auto;
+	.sl-signup{
+		&-buttons{
+		text-align: center;
+		 margin-top: 2em;
+			a{
+				color: white;
+				&:hover{
+					font-weight: bold;
+					text-decoration: none;
+				}
+			}
+		}
+		&-header{
+			font-size: 1.5em;
+    	font-weight: bold;
+  	  margin-bottom: 1em;
+			text-align: center;
+		}
+	}
+	.Signup{
+		padding: 0 0 0 0;
+		h3{
+			margin-top: 1rem;
+			width: 100%;
+			-webkit-text-fill-color: white;
+			font-size: 1.5em;
+			font-weight: 100;
+		}
+		text-align: center;
+	}
+	&--forgot{
+		.ResetPassword{
+			padding: 0 0 0 0;
+		}
+		h3{
+			margin-bottom: 2rem;
+			width: 100%;
+			-webkit-text-fill-color: white;
+			font-size: 1.5em;
+			font-weight: 100;
+		}
+		.sl-btn{
+			margin-top: 2em;
+		}
+	}
+	.sl-btn{
+		&--primary{
+			width: 100%;
+			margin: 0 0 0 0;
+			display: flex;
+			justify-content: center;
+		}
+		&--secondary{
+			width: 100%;
+			margin: 0 0 0 0;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+    background-color: @background-col__blue !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+::selection {
+  background: @primary-col; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: @primary-col; /* Gecko Browsers */
+}
+
+
+.container--contactus{
+	.sl-signup-header{
+		font-size: 2em;
+		font-weight: bold;
+		margin-bottom: 1em;
+	}
+	textarea{
+		height: 100px;
+	}
+	.sl-btn{
+		margin: 0 0 0 0;
+	}
 }

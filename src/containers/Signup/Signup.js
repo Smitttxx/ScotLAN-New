@@ -177,13 +177,18 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard sl-login-container">
+      <div className="container">
+      <p> Welcome to the gang ScotLANNER!</p>
           {this.state.newUser === null
             ? this.renderForm()
             : this.renderConfirmationForm()}
         </div>
       </div>
+      </div>
+    </div>
     );
   }
 }

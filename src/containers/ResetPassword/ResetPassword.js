@@ -169,9 +169,11 @@ export default class ResetPassword extends Component {
 
   render() {
     return (
-      <div class="sl-signup-background">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard sl-login-container sl-login-container--forgot">
       <div className="container">
-        <h2>Password reset</h2>
+        <h3>Password reset</h3>
         <div className="ResetPassword">
           {!this.state.codeSent
             ? this.renderRequestCodeForm()
@@ -179,6 +181,8 @@ export default class ResetPassword extends Component {
               ? this.renderConfirmationForm()
               : this.renderSuccessMessage()}
         </div>
+      </div>
+      </div>
       </div>
       </div>
     );

@@ -69,9 +69,9 @@ export default class Contact extends Component {
       <div className="keyboard-background">
         <div className="section-container">
           <div className="section-container-keyboard">
-          <div className="container">
+          <div className="container container--contactus">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-8">
             <form onSubmit={this.handleSubmit}>
             <div class="sl-signup-header">Contact us</div>
               <FormGroup controlId="name" bsSize="large">
@@ -112,7 +112,7 @@ export default class Contact extends Component {
               </div>
             </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <Iframe url="https://ptb.discordapp.com/widget?id=132976447638863873&theme=dark"
               width="100%"
               height="450px"
