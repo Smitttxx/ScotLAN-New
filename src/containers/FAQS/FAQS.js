@@ -306,8 +306,8 @@ export default class FAQS extends Component {
                   <div id="collapseSixteen" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
                         We hold public liability but insurance is not provided for your equipment, you are advised to make your own insurance arrangements.
-                              Some home contents providers will extend policies to cover you at such events. Public Liability insurance is provided, but this is for people not equipment.<br/>
-                              Our Public Liability insurance can be found <a href="http://scotlan.events/ScotLAN%20Events-Insurance.pdf" target="_blank" rel="noopener">here</a>.
+                        Some home contents providers will extend policies to cover you at such events. Public Liability insurance is provided, but this is for people not equipment.<br/>
+                        Our Public Liability insurance can be found <a href="http://scotlan.events/ScotLAN%20Events-Insurance.pdf" target="_blank" rel="noopener">here</a>.
                       </div>
                   </div>
               </div>

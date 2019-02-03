@@ -49,7 +49,7 @@ export default class Login extends Component {
     return (
       <div className="keyboard-background">
         <div className="section-container">
-          <div className="section-container-keyboard">
+          <div className="section-container-keyboard sl-login-container">
       <div className="container">
         <form onSubmit={this.handleSubmit}>
         <div class="sl-signup-header">Log In to your account</div>
@@ -71,7 +71,7 @@ export default class Login extends Component {
             />
           </FormGroup>
           <div class="sl-signup-buttons">
-          <Link to="/login/reset">Forgot password?</Link>
+
           <LoaderButton
             block
             bsSize="large"
@@ -81,6 +81,7 @@ export default class Login extends Component {
             text="Login"
             loadingText="Logging in…"
           />
+          <Link to="/login/reset">Forgot password?</Link>
           <div className="Signup">
             <h3>Or</h3>
             <br/>

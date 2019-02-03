@@ -63,12 +63,13 @@ export default class Gallery extends Component {
                     <div className="panel-heading" role="tab" id="heading1">
                       <h4 className="panel-title" onClick={()=>{this.showPanel("collapse1")}}>
                         <a className="collapsed">
-                         Gallery 1
+                         ScotLAN #XMAS!
                         </a>
                       </h4>
                     </div>
                     <div id="collapse1" className="panel-collapse">
                         <div className="panel-body">
+                        <p> This event was hosted on X at X for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
                             <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/45826757145/in/album-72157704281720421/" title="ScotLAN1-1-3"><img src="https://farm5.staticflickr.com/4915/45826757145_d99d7c50cb_z.jpg" width="100%" height="600" alt="ScotLAN1-1-3"/></a>
                           </div>
@@ -80,12 +81,13 @@ export default class Gallery extends Component {
                     <div className="panel-heading" role="tab" id="heading2">
                       <h4 className="panel-title" onClick={()=>{this.showPanel("collapse2")}}>
                         <a className="collapsed">
-                          Gallery 2
+                          ScotLAN #2!
                         </a>
                       </h4>
                     </div>
                     <div id="collapse2" className="panel-collapse hdn">
                         <div className="panel-body">
+                        <p> This event was hosted on X at X for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
                             <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/39838308603/in/album-72157677897090898/" title="1P5A6387"><img src="https://farm5.staticflickr.com/4822/39838308603_4dc2e9e2f8_b.jpg" width="100%" height="683" alt="1P5A6387"/></a>
                           </div>
@@ -97,12 +99,13 @@ export default class Gallery extends Component {
                     <div className="panel-heading" role="tab" id="heading3">
                       <h4 className="panel-title" onClick={()=>{this.showPanel("collapse3")}}>
                         <a className="collapsed">
-                          Gallery 3
+                          ScotLAN #3!
                         </a>
                       </h4>
                     </div>
                     <div id="collapse3" className="panel-collapse hdn">
                         <div className="panel-body">
+                          <p> This event was hosted on X at X for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
                             <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/31861969337/in/album-72157675811050697/" title="1P5A6538-edit"><img src="https://farm8.staticflickr.com/7812/31861969337_f1acc866cf_b.jpg" width="100%" height="658" alt="1P5A6538-edit"/></a>
                           </div>

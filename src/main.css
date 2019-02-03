@@ -17,6 +17,11 @@
 .bangers {
   font-family: 'Bangers', cursive;
 }
+.container-boxshadow {
+  -webkit-box-shadow: -4px -4px 23px 4px #242424;
+  -moz-box-shadow: -4px -4px 23px 4px #242424;
+  box-shadow: -4px -4px 23px 4px #242424;
+}
 .blue {
   color: #4c96d7;
 }
@@ -491,6 +496,9 @@ h5 {
   position: fixed;
   width: 100%;
   z-index: 10;
+  -webkit-box-shadow: -4px -4px 23px 4px #242424;
+  -moz-box-shadow: -4px -4px 23px 4px #242424;
+  box-shadow: -4px -4px 23px 4px #242424;
 }
 .SL-header-background:before {
   content: "";
@@ -609,6 +617,10 @@ h5 {
 }
 .SL-footer-background a {
   color: white;
+}
+.SL-footer-background a:hover {
+  font-weight: bold;
+  text-decoration: none;
 }
 .SL-footer-background .sl-footer-social-media {
   display: flex;
@@ -1039,45 +1051,6 @@ h5 {
   background-color: #e2f4db;
   color: black;
 }
-.sl-signup-background {
-  background-image: url("https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #cccccc;
-  height: 800px;
-  overflow: -webkit-paged-x;
-}
-.sl-signup-background .container {
-  width: 400px;
-  top: 4em;
-  text-align: center;
-  background-color: rgba(65, 65, 65, 0.7);
-  border-radius: 10px;
-  padding: 2em;
-  margin-top: 3em;
-}
-.sl-signup-background .container label {
-  width: 100%;
-  text-align: left;
-  color: white;
-}
-.sl-signup-background .container button {
-  width: 100%;
-  margin: 0;
-}
-.sl-signup-background .container h3 {
-  margin-top: 1em;
-  color: white;
-}
-.sl-signup-header {
-  color: white;
-  font-size: 1.6em;
-  margin-bottom: 1em;
-}
-.sl-signup-buttons {
-  margin-top: 2em;
-}
 .sl--homepage--heroimage {
   background-image: url(/Images/ScotLAN_homepageimage.jpg);
   height: 822px;
@@ -1140,6 +1113,9 @@ h5 {
   position: relative;
   padding: 2em;
   top: 250px;
+  -webkit-box-shadow: -4px -4px 23px 4px #242424;
+  -moz-box-shadow: -4px -4px 23px 4px #242424;
+  box-shadow: -4px -4px 23px 4px #242424;
 }
 .sl--homepage--text h4 {
   font-size: 4em;
@@ -1198,6 +1174,9 @@ h5 {
   border-radius: 10px;
   padding: 2em;
   color: white;
+  -webkit-box-shadow: -4px -4px 23px 4px #242424;
+  -moz-box-shadow: -4px -4px 23px 4px #242424;
+  box-shadow: -4px -4px 23px 4px #242424;
 }
 .section-container {
   width: 100%;
@@ -1771,4 +1750,101 @@ h5 {
 }
 tooltip {
   width: 1000px;
+}
+.panel-group {
+  width: 100%;
+}
+.panel-heading {
+  width: 100%;
+}
+.panel-title {
+  width: 100%;
+  color: white;
+  -webkit-text-fill-color: white;
+}
+.sl-login-container {
+  width: 450px;
+  margin: auto;
+}
+.sl-login-container .sl-signup-buttons {
+  text-align: center;
+  margin-top: 2em;
+}
+.sl-login-container .sl-signup-buttons a {
+  color: white;
+}
+.sl-login-container .sl-signup-buttons a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+.sl-login-container .sl-signup-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.sl-login-container .Signup {
+  padding: 0 0 0 0;
+  text-align: center;
+}
+.sl-login-container .Signup h3 {
+  margin-top: 1rem;
+  width: 100%;
+  -webkit-text-fill-color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+.sl-login-container--forgot .ResetPassword {
+  padding: 0 0 0 0;
+}
+.sl-login-container--forgot h3 {
+  margin-bottom: 2rem;
+  width: 100%;
+  -webkit-text-fill-color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+.sl-login-container--forgot .sl-btn {
+  margin-top: 2em;
+}
+.sl-login-container .sl-btn--primary {
+  width: 100%;
+  margin: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+.sl-login-container .sl-btn--secondary {
+  width: 100%;
+  margin: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected,
+textarea:-internal-autofill-previewed,
+textarea:-internal-autofill-selected,
+select:-internal-autofill-previewed,
+select:-internal-autofill-selected {
+  background-color: #e5f0f9 !important;
+  background-image: none !important;
+  color: #000000 !important;
+}
+::selection {
+  background: #4c96d7;
+  /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #4c96d7;
+  /* Gecko Browsers */
+}
+.container--contactus .sl-signup-header {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.container--contactus textarea {
+  height: 100px;
+}
+.container--contactus .sl-btn {
+  margin: 0 0 0 0;
 }
