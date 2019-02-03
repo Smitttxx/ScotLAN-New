@@ -12,7 +12,8 @@ const dev = {
   stripe: {
     API_URL: "https://qlmra00b19.execute-api.eu-west-1.amazonaws.com/Test/processorder",
     API_KEY:"pk_test_A3NvjjIWb6uVbWUAjl8Vsm4y",
-    CURRENCY: "GBP"
+    CURRENCY: "GBP",
+    REDIRECT: "https://newsite.scotlan.events/checkoutpayment"
   }
 };
 
@@ -30,7 +31,8 @@ const prod = {
   stripe: {
     API_URL: "https://qlmra00b19.execute-api.eu-west-1.amazonaws.com/Production/processorder",
     API_KEY:"pk_test_A3NvjjIWb6uVbWUAjl8Vsm4y",
-    CURRENCY: "GBP"
+    CURRENCY: "GBP",
+    REDIRECT: "https://production.scotlan.events/checkoutpayment"
   }
 };
 

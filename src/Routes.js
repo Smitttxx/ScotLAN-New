@@ -22,6 +22,7 @@ import FAQS from "./containers/FAQS/FAQS";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 import ResetPassword from "./containers/ResetPassword/ResetPassword";
+import CheckoutPayment from "./containers/Checkout/CheckoutPayment";
 
 export default ({ childProps }) =>
   <Switch>
@@ -38,6 +39,7 @@ export default ({ childProps }) =>
     <AppliedRoute path="/Partners" exact component={Partners} props={childProps} />
     <AppliedRoute path="/PreviousEvents" exact component={PreviousEvents} props={childProps} />
     <AppliedRoute path="/WhatToBring" exact component={WhatToBring} props={childProps} />
+    <AppliedRoute path="/CheckoutPayment" exact component={CheckoutPayment} props={childProps} />
     <AppliedRoute path="/Product/:Type/:Name" exact component={Product} props={childProps} />
     <AuthenticatedRoute path="/Checkout" exact component={Checkout} props={childProps} />
     <AuthenticatedRoute path="/Orders" exact component={Orders} props={childProps} />
