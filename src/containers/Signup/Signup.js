@@ -8,6 +8,10 @@ import {
 import LoaderButton from "../../components/LoaderButton";
 import "./Signup.css";
 import { Auth } from "aws-amplify";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 
 export default class Signup extends Component {
@@ -69,7 +73,11 @@ export default class Signup extends Component {
         newUser
       });
     } catch (e) {
-      alert(e.message);
+        if(e.message.includes("password")) {
+        this.alertPrompt("Please ensure your password contains at least 1 uppercase, lowercase, number and special character");
+      } else {
+        this.alertPrompt(e.message);
+      }
     }
 
     this.setState({ isLoading: false });
@@ -87,9 +95,17 @@ export default class Signup extends Component {
       this.props.userHasAuthenticated(true);
       this.props.history.push("/");
     } catch (e) {
-      alert(e.message);
+      this.alertPrompt(e.message);
       this.setState({ isLoading: false });
     }
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'warning',
+      title: 'Oops...',
+      text: message
+    })
   }
 
   renderConfirmationForm() {
