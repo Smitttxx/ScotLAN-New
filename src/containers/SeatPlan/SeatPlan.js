@@ -282,7 +282,7 @@ export default class SeatPlan extends Component {
       {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
-            <button className="seat seat--avalible" data-toggle="tooltip" data-placement="top"></button>
+            <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
           </Tooltip>
         )
       }

@@ -10,6 +10,10 @@ import {
 } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton";
 import "./ResetPassword.css";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal);
 
 export default class ResetPassword extends Component {
   constructor(props) {
@@ -58,7 +62,11 @@ export default class ResetPassword extends Component {
       await Auth.forgotPassword(this.state.email);
       this.setState({ codeSent: true });
     } catch (e) {
-      alert(e.message);
+      if(e.message.includes("password")) {
+        this.alertPrompt("Please ensure your password contains at least 1 uppercase, lowercase, number and special character");
+      } else {
+        this.alertPrompt(e.message);
+      }
       this.setState({ isSendingCode: false });
     }
   };
@@ -76,10 +84,18 @@ export default class ResetPassword extends Component {
       );
       this.setState({ confirmed: true });
     } catch (e) {
-      alert(e.message);
+
       this.setState({ isConfirming: false });
     }
   };
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'warning',
+      title: 'Oops...',
+      text: message
+    })
+  }
 
   renderRequestCodeForm() {
     return (
