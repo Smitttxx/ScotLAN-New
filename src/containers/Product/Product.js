@@ -7,6 +7,10 @@ import { API, Auth } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
 import { Link, withRouter } from "react-router-dom";
 import {  Tooltip } from 'react-tippy';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -57,7 +61,7 @@ export default class Product extends Component {
         this.seatPlanSplit(seatPlanData);
         this.setState({ seatPlan: seatPlanData });
         } catch (e) {
-        alert(e);
+        this.alertPrompt(e);
       }
   }
 
@@ -141,11 +145,11 @@ export default class Product extends Component {
         }
         else {
           if(!CheckNumber) {
-            alert("Please enter a valid positive number");
+            this.alertPrompt("Please enter a valid positive number");
             success = false;
           }
           else {
-            alert("You have entered a number that exceeds the quantity of standard tickets available");
+            this.alertPrompt("You have entered a number that exceeds the quantity of standard tickets available");
             success = false;
           }
         }
@@ -175,11 +179,11 @@ export default class Product extends Component {
       }
       else {
         if(!CheckNumber) {
-          alert("Please enter a valid positive number");
+          this.alertPrompt("Please enter a valid positive number");
           success = false;
         }
         else {
-          alert("You have entered a number that exceeds the quantity of VIP tickets available");
+          this.alertPrompt("You have entered a number that exceeds the quantity of VIP tickets available");
           success = false;
         }
       }
@@ -193,9 +197,17 @@ export default class Product extends Component {
       }
     }
     else {
-      alert("Please select either a standard or VIP ticket");
+      this.alertPrompt("Please select either a standard or VIP ticket");
     }
     this.setState({ isLoading: false });
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'warning',
+      title: 'Oops...',
+      text: message
+    })
   }
 
 

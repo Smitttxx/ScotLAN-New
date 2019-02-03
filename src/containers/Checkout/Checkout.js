@@ -12,7 +12,8 @@ export default class Checkout extends Component {
     this.state = {
       isLoading: true,
       message:"",
-      orderID: ""
+      orderID: "",
+      orderFailed: false
     };
   }
 
@@ -38,11 +39,15 @@ async onToken(token) {
   });
   const data = await res.json();
 
+  console.log(data);
+
   if(data.message === "Payment processed")
   {
       var orderID = data.charge.id;
       this.setState({ orderID: orderID });
       this.props.clearCheckout();
+  } else {
+    this.setState({ orderFailed: true });
   }
 
   this.setState({ isLoading: false });
@@ -95,6 +100,16 @@ async onToken(token) {
         </div>
         </div>
         </div>
+        </div>
+      )
+    }
+    else if(this.state.orderFailed)
+    {
+      return (
+        <div className="sl--sitecontainer--background__keyboard">
+          <div className="container">
+            <div>Payment declined, please contact your card provider.</div>
+          </div>
         </div>
       )
     }
