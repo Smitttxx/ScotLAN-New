@@ -30,7 +30,7 @@ const prod = {
   },
   stripe: {
     API_URL: "https://qlmra00b19.execute-api.eu-west-1.amazonaws.com/Production/processorder",
-    API_KEY:"pk_test_A3NvjjIWb6uVbWUAjl8Vsm4y",
+    API_KEY:"pk_live_4gBhYvQOO3dpUW9mryXE35G6",
     CURRENCY: "GBP",
     REDIRECT: "https://production.scotlan.events/checkoutpayment"
   }
