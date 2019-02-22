@@ -28,6 +28,7 @@ class App extends Component {
       Authorization: "",
       basketQtyTotal: 0
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
@@ -172,6 +173,10 @@ componentWillUnmount() {
     this.props.history.push("/login");
   }
 
+  handleClick() {
+    document.getElementById("SLHeader").classList.toggle("mobile-menu-expanded");
+  }
+
   render() {
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
@@ -192,14 +197,14 @@ componentWillUnmount() {
     return (
       !this.state.isAuthenticating &&
       <div className="SL-height-100">
-      <div className="SL-header-background">
+      <div id="SLHeader" className="SL-header-background">
         <div className="container">
           <div className="row">
             <div className="col-lg-5">
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
             <nav className="col-lg-7 navbar navbar-default navbar-static-top">
-            <button class="mobile-menu"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu" onClick={this.handleClick}><i class="fas fa-bars"></i></button>
               <ul className="nav nav-pill">
                 <li className="nav-item">
                   <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
