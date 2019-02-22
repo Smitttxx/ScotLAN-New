@@ -1771,15 +1771,81 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 
 
 .sl-seatingplan-picker{
-.container{
-margin: 0 0 0 0;
-h3{
-				margin-top: -30px;
-	margin-bottom: 1em;
-	text-align: center;
+	.container{
+	margin: 0 0 0 0;
 	}
 }
+
+.large-floorplan--key{
+	border: 1px solid grey;
+	padding: 1em;
+	margin: 1em;
+	border-radius: 10px;
+	position: relative;
+	top: -19px;
+	.seat--avalible{
+		margin-left: 2em;
+	}
 }
+
+.static-modal--seatingplan{
+	.btn-primary{
+		position: relative !important;
+	}
+	.btn-default{
+		position: absolute;
+    top: 0;
+    right: 0;
+	}
+}
+
+.SL-header-background{
+	.mobile-menu{
+		background: none;
+    border: none;
+    width: fit-content;
+    color: white;
+    font-size: 2em;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+  .large-floorplan{
+		   height: 540px;
+				&--boardgames-area-design, &--sleeping-area-design, &--support, &--console-corner-design{
+				display: none;
+			}
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.section-container
+	  .large-floorplan{
+			   height: 540px;
+				 &--areas{
+					 left: 8%;
+				 }
+					&--row-1, &--row-3, &--row-5{
+					}
+					&--row-2, &--row-4, &--row-6{
+					}
+					&--rows{
+						display: flex;
+					}
+					&--block{
+						display: flex;
+					}
+					&--boardgames-area-design, &--sleeping-area-design, &--support, &--console-corner-design{
+					display: none;
+				}
+		}
+
+		.sl--sitecontainer--background__keyboard{
+			.container{
+				padding: 1rem;
+			}
+		}
+	}
 
 
 .sl-products--container{

@@ -1398,10 +1398,65 @@ h5 {
 .sl-seatingplan-picker .container {
   margin: 0 0 0 0;
 }
-.sl-seatingplan-picker .container h3 {
-  margin-top: -30px;
-  margin-bottom: 1em;
-  text-align: center;
+.large-floorplan--key {
+  border: 1px solid grey;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 10px;
+  position: relative;
+  top: -19px;
+}
+.large-floorplan--key .seat--avalible {
+  margin-left: 2em;
+}
+.static-modal--seatingplan .btn-primary {
+  position: relative !important;
+}
+.static-modal--seatingplan .btn-default {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.SL-header-background .mobile-menu {
+  background: none;
+  border: none;
+  width: fit-content;
+  color: white;
+  font-size: 2em;
+}
+@media only screen and (max-width: 768px) {
+  .large-floorplan {
+    height: 540px;
+  }
+  .large-floorplan--boardgames-area-design,
+  .large-floorplan--sleeping-area-design,
+  .large-floorplan--support,
+  .large-floorplan--console-corner-design {
+    display: none;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .section-container .large-floorplan {
+    height: 540px;
+  }
+  .section-container .large-floorplan--areas {
+    left: 8%;
+  }
+  .section-container .large-floorplan--rows {
+    display: flex;
+  }
+  .section-container .large-floorplan--block {
+    display: flex;
+  }
+  .section-container .large-floorplan--boardgames-area-design,
+  .section-container .large-floorplan--sleeping-area-design,
+  .section-container .large-floorplan--support,
+  .section-container .large-floorplan--console-corner-design {
+    display: none;
+  }
+  .sl--sitecontainer--background__keyboard .container {
+    padding: 1rem;
+  }
 }
 .sl-products--container .container {
   margin: 0 0 0 0;
