@@ -200,10 +200,10 @@ componentWillUnmount() {
       <div id="SLHeader" className="SL-header-background">
         <div className="container">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-sm-5">
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
-            <nav className="col-lg-7 navbar navbar-default navbar-static-top">
+            <nav className="col-sm-7 navbar navbar-default navbar-static-top">
             <button class="mobile-menu" onClick={this.handleClick}><i class="fas fa-bars"></i></button>
               <ul className="nav nav-pill">
                 <li className="nav-item">
@@ -217,8 +217,8 @@ componentWillUnmount() {
                 </li>
                 {this.state.isAuthenticated
                       ? [<li class="nav-item">
-                          <li className="nav-link" >My Account <i class="fas fa-chevron-down"></i></li>
-                          <ul>
+                          <li className="nav-link nav-item-myaccount" >My Account <i class="fas fa-chevron-down"></i></li>
+                          <ul class="nav-item-myaccount--items">
                           <Link className="nav-link" to="/orders">Orders</Link>
                           <a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
                       : <Fragment>

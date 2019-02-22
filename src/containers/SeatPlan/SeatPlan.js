@@ -186,7 +186,7 @@ export default class SeatPlan extends Component {
             <p>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</p>
             <ControlLabel>Please enter gamer name for this seat</ControlLabel>
             <div class="row">
-              <div className="col-lg-8">
+              <div className="col-sm-8">
                 <FormControl
                   value={this.state.gamerName}
                   type="gamerName"
@@ -194,7 +194,7 @@ export default class SeatPlan extends Component {
                 />
 
                </div>
-               <div className="col-lg-4">
+               <div className="col-sm-4">
                  <Button bsStyle="primary" onClick={this.submitSeat}>Save seat selection</Button>
                </div>
              </div>
