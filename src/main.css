@@ -1424,7 +1424,43 @@ h5 {
   color: white;
   font-size: 2em;
 }
+.mobile-menu {
+  display: none;
+}
 @media only screen and (max-width: 768px) {
+  .mobile-menu {
+    display: flex;
+  }
+  .mobile-menu-expanded .nav-pill {
+    position: absolute;
+    background: grey;
+    height: fit-content;
+    z-index: 1;
+    top: 3em;
+    display: block;
+    right: 0;
+    list-style-type: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(65, 65, 65, 0.9)), to(rgba(24, 24, 24, 0.9)));
+    background: -webkit-linear-gradient(top, rgba(65, 65, 65, 0.9), rgba(24, 24, 24, 0.9));
+    background: -o-linear-gradient(top, rgba(65, 65, 65, 0.9), rgba(24, 24, 24, 0.9));
+    background: linear-gradient(to bottom, rgba(65, 65, 65, 0.9), rgba(24, 24, 24, 0.9));
+    padding: 0 0 0 0;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .nav-pill {
+    display: none;
+  }
+  .navbar-static-top {
+    align-items: flex-end;
+  }
+  .nav-item-myaccount {
+    display: none;
+  }
+  .SL-header-background .nav-item ul {
+    display: block;
+    padding: 0 0 0 0;
+  }
   .large-floorplan {
     height: 540px;
   }
