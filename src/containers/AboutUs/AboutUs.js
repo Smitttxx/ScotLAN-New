@@ -87,13 +87,12 @@ export default class AboutUs extends Component {
               <div className="row">
 
               <div className="col-lg-3">
-                <img width="150" height="150" src="https://scotlan.events/wp-content/uploads/2018/02/Eggplant_Emoji_grande-150x150.png" className="attachment-thumbnail size-thumbnail" alt="" srcset="https://scotlan.events/wp-content/uploads/2018/02/Eggplant_Emoji_grande-150x150.png 150w, https://scotlan.events/wp-content/uploads/2018/02/Eggplant_Emoji_grande-300x300.png 300w, https://scotlan.events/wp-content/uploads/2018/02/Eggplant_Emoji_grande-180x180.png 180w, https://scotlan.events/wp-content/uploads/2018/02/Eggplant_Emoji_grande.png 600w" sizes="(max-width: 150px) 100vw, 150px" />
+                <img width="150" height="150" src="/Images/Andy.jpg" className="attachment-thumbnail size-thumbnail" alt="" srcset="/Images/Andy.jpg 150w, /Images/Andy.jpg 300w, /Images/Andy.jpg 180w, /Images/Andy.jpg 600w" sizes="(max-width: 150px) 100vw, 150px" />
 
                 </div>
                 <div className="col-lg-9">
                 <figcaption className="widget-image-caption wp-caption-text">Andy</figcaption>
-                <p>Andy (Andy_M29) is not a junior software developer, he has a keen passion for all things code and all things eggplant. He’s a bit of a console peasant but we are slowly converting him to the PC masterace! We really couldn’t thank him enough,
-                he’s been key in starting ScotLAN.</p>
+                <p>Andy (Andy_M29) is a senior DevOps engineer with a background in software development and he's designed our fully serverless website architecture. At our events(if he even shows up) you'll probably find him deep in some code.</p>
                 <div className="social-icons">
                   <a href="https://scotlan.events/discord"><i class="fab fa-discord"></i> </a>
                   <a href="https://steamcommunity.com/profiles/76561197967987924"><i class="fab fa-steam"></i> </a>
