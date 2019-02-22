@@ -124,7 +124,7 @@ export default class Orders extends Component {
               </tbody>
               </Table>
               <h4>Total Order Cost: £{this.state.selectedOrder.BasketTotal.S}</h4>
-              {this.state.selectedOrder.EventTicketIncluded.BOOL ? [<h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></h3>] : <div></div>}
+              {this.state.selectedOrder.EventTicketIncluded.BOOL && this.state.selectedOrder.EventTicketUsedCount.S === this.state.selectedOrder.EventTicketCount.S ? [<h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to view your seats</Link></h3>] : <h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></h3>}
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.closeModal}><i class="fas fa-times"></i></Button>

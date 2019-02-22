@@ -4,6 +4,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import "./Checkout.css";
 import config from '../../config';
 import { Link, withRouter } from "react-router-dom";
+import Iframe from 'react-iframe'
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -131,14 +132,21 @@ async onToken(token) {
                 <br/>
                   <div class="row">
                     <div class="col-md-7">
-                    <p> Remember to head over to your account to <a>pick your seat!</a></p>
+                    <p> Remember to head over to your account to <Link to={`/SeatPlan/${this.state.orderID}`}>pick your seat!</Link></p>
 
-                    <p>Come Join us on Discord for the pre-lan Hype and to get to know the people coming to the event!</p>
+                    <p>Come Join us on <a href="https://discord.scotlan.events/" target="_blank">Discord</a> for the pre-lan Hype and to get to know the people coming to the event!</p>
 
                     <p> Only {days} Days to go! </p>
                     </div>
                     <div class="col-md-5">
-                    //DISCORD IFRAME
+                      <Iframe url="https://ptb.discordapp.com/widget?id=132976447638863873&theme=dark"
+                      width="100%"
+                      height="450px"
+                      id="myId"
+                      className="Discord"
+                      display="initial"
+                      position="relative"
+                      allowFullScreen/>
                     </div>
                   </div>
                 </div>
