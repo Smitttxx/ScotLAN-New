@@ -31,7 +31,7 @@ export default class Partners extends Component {
                   <p>Established in 2009. GT Omega Racing is one of the leading brands , specialising in products for Simulation Racing, Gaming Chairs and Accessories for use in eSports and gaming.</p>
                   <p>Discount code: SCOTLAN for 5% off</p>
                 <div className="partner-logo">
-                  <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><img src="images/partner-gtomega.png" alt="Logo NOCTUA" /></a>
+                  <a target="_blank" href="https://www.gtomegaracing.com/" title="GTOmega website"><img src="Images/partner-gtomega.png" alt="Logo NOCTUA" /></a>
                 </div>
               </div>
               <div class="col-md-5">
@@ -48,7 +48,7 @@ export default class Partners extends Component {
                 ("Humble") while providing awesome content to customers at great prices ("Bundle"). We started by offering only game bundles, but have branched out to include an online storefront,
                 a monthly subscription service, a publishing initiative, and lots more.</p>
                 <div className="partner-logo">
-                <a target="_blank" href="https://www.humblebundle.com/monthly?partner=scotlan" title="Humble website"><img src="images/partner-humblebundle.png" alt="Logo NOCTUA" /></a>
+                <a target="_blank" href="https://www.humblebundle.com/monthly?partner=scotlan" title="Humble website"><img src="Images/partner-humblebundle.png" alt="Logo NOCTUA" /></a>
                 </div>
                 <div>
                 </div>
@@ -66,7 +66,7 @@ export default class Partners extends Component {
                 <p>Their goal is to support competitive gaming from the grassroots to the professional level. We aim to provide opportunities for esports talent in Scotland
                 to be scouted by professional teams through hosting and sponsoring tournaments nationwide with the focus always on Scotland.</p>
                 <div className="partner-logo">
-                  <a target="_blank" href="https://esportsscotland.co.uk/" title="Humble website"><img src="images/partner-ess.png" alt="Logo NOCTUA" /></a>
+                  <a target="_blank" href="https://esportsscotland.co.uk/" title="Humble website"><img src="Images/partner-ess.png" alt="Logo NOCTUA" /></a>
                 </div>
               </div>
               <div class="col-md-5">
@@ -84,7 +84,7 @@ export default class Partners extends Component {
                 Consideration, Cost-effectiveness”, the company explores the limit of motherboards manufacturing while paying attention on the eco issue at the same time,
                 developing products with the consideration of eco-friendly concept.</p>
                 <div className="partner-logo">
-                  <a target="_blank" href="https://www.asrock.com/index.asp" title="ASrock website"><img src="images/partner-asrock.png" alt="Logo ASROCK" /></a>
+                  <a target="_blank" href="https://www.asrock.com/index.asp" title="ASrock website"><img src="Images/partner-asrock.png" alt="Logo ASROCK" /></a>
                 </div>
               </div>
               <div class="col-md-5">

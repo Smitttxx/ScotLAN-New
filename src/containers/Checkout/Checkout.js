@@ -12,7 +12,7 @@ export default class Checkout extends Component {
     this.state = {
       isLoading: true,
       message:"",
-      orderID: "",
+      orderID: "1",
       orderFailed: false
     };
   }
@@ -85,6 +85,13 @@ async onToken(token) {
   }
 
   render() {
+
+    var countDownDate = new Date("Jul 5, 2019 18:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+
     if(this.state.isLoading)
     {
       return (
@@ -115,31 +122,29 @@ async onToken(token) {
     }
     else if(this.state.orderID !== ""){
       return (
-        <div className="sl--sitecontainer--background__keyboard">
-          <div className="container">
-          <div className="sl--confimation--header"><h4>You're going to ScotLAN!</h4></div>
-          <h4> Remember to head over to your account to pick your seat!</h4>
-          <div className="timer">
-            <div className="timer-days">
-              <div className="timer-time"><span id="days"></span></div>
-              <div className="timer-text">Days</div>
-            </div>
-            <div className="timer-hours">
-              <div className="timer-time"><span id="hours"></span></div>
-              <div className="timer-text">Hours</div>
-            </div>
-            <div className="timer-mins">
-              <div className="timer-time"><span id="mins"></span></div>
-              <div className="timer-text">Mins</div>
-            </div>
-            <div className="timer-seconds">
-              <div className="timer-time"><span id="seconds"></span></div>
-              <div className="timer-text">Secs</div>
+
+        <div className="keyboard-background">
+          <div className="section-container">
+            <div className="section-container-keyboard">
+              <div className="container">
+                <div className="sl--confimation--header"><h3>You're going to ScotLAN #5!</h3></div>
+                <br/>
+                  <div class="row">
+                    <div class="col-md-7">
+                    <p> Remember to head over to your account to <a>pick your seat!</a></p>
+
+                    <p>Come Join us on Discord for the pre-lan Hype and to get to know the people coming to the event!</p>
+
+                    <p> Only {days} Days to go! </p>
+                    </div>
+                    <div class="col-md-5">
+                    //DISCORD IFRAME
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <h4>Come Join us on Discord for the pre-lan Hype and to get to know the people coming to the event!</h4>
-        <h3>Your order ID is: {this.state.orderID}</h3></div>
-        </div>
     )
     } else {
       return (
@@ -190,11 +195,15 @@ async onToken(token) {
            name="ScotLAN"
            token={this.onToken}
            amount={this.props.basketTotal * 100}
-           ComponentClass="sl-btn sl-btn--primary"
+           ComponentClass="span"
            currency={config.stripe.CURRENCY}
            stripeKey={config.stripe.API_KEY}
            allowRememberMe={false}
-         />
+         >
+         <button className="sl-btn sl-btn--primary">
+          Payment
+         </button>
+         </StripeCheckout>
         </div>
       </div>
     </div>
