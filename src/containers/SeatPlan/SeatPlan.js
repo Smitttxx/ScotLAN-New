@@ -173,35 +173,56 @@ export default class SeatPlan extends Component {
     return (
       <div class="sl--sitecontainer--background__keyboard">
       <div className="container sl-seatingplan-picker"><div className="container">
-      <br />
       {this.state.showModal &&
-        <div className="static-modal">
+        <div className="static-modal static-modal--seatingplan ">
           <Modal.Dialog>
             <Modal.Header>
               <Modal.Title>Confirm seat selection</Modal.Title>
+                    <Button onClick={this.closeModal}><i class="fas fa-times"></i></Button>
             </Modal.Header>
             <Modal.Body>
             <FormGroup controlId="gamerName" bsSize="small">
 
-            <h4>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</h4><br/>
+            <p>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</p>
             <ControlLabel>Please enter gamer name for this seat</ControlLabel>
-            <FormControl
-              value={this.state.gamerName}
-              type="gamerName"
-              onChange={this.handleChange}
-            />
-             </FormGroup>
+            <div class="row">
+              <div className="col-lg-8">
+                <FormControl
+                  value={this.state.gamerName}
+                  type="gamerName"
+                  onChange={this.handleChange}
+                />
+
+               </div>
+               <div className="col-lg-4">
+                 <Button bsStyle="primary" onClick={this.submitSeat}>Save seat selection</Button>
+               </div>
+             </div>
+
+              </FormGroup>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.closeModal}>Cancel</Button>
-              <Button bsStyle="primary" onClick={this.submitSeat}>Save seat selection</Button>
             </Modal.Footer>
           </Modal.Dialog>
         </div>
       }
 
-      <h3>{this.state.seatPlan[0].EventName.S} (You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event)</h3>
 
+      <div class="row">
+      <div className="col-lg-7">
+      <h3>{this.state.seatPlan[0].EventName.S}</h3>
+      <p class="sl-seatingplan-picker--remainingseats">You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event</p>
+      </div>
+      <div className="col-lg-5">
+        <div class="large-floorplan--rows">
+          <div class="large-floorplan--key">
+        <p> Seating Plan Key </p>
+          <button class="seat seat--taken"></button> - Seat Taken
+          <button class="seat seat--avalible"></button> - Seat Avalible
+        </div>
+        </div>
+          </div>
+      </div>
       {!this.state.isLoading && this.renderSeatingPlan96Person()}
       </div></div>
       </div>

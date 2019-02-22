@@ -199,6 +199,7 @@ componentWillUnmount() {
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
             <nav className="col-lg-7 navbar navbar-default navbar-static-top">
+            <button class="mobile-menu"><i class="fas fa-bars"></i></button>
               <ul className="nav nav-pill">
                 <li className="nav-item">
                   <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
@@ -285,7 +286,7 @@ componentWillUnmount() {
                       <a href="https://www.facebook.com/ScotLAN.Events/"><i className="fab fa-facebook"></i></a>
                       <a href="https://twitter.com/ScotLANevents?fbclid=IwAR0q5DSDNcm57QCgkQuTEQuL4va5s4q4lGUH6umG8Hi6JYvFvKfaNC0FtdU"><i className="fab fa-twitter-square"> </i></a>
                       <a href="https://scotlan.events/discord"><i className="fab fa-discord"></i></a>
-                      <a href="https://steamcommunity.com/id/bobster_2007"><i class="fab fa-steam"></i></a>
+                      <a href="https://steamcommunity.com/groups/ScotLANEvents"><i class="fab fa-steam"></i></a>
                     </div>
                 </div>
 
