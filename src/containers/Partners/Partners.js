@@ -17,7 +17,7 @@ export default class Partners extends Component {
       <div className="keyboard-background">
         <div className="section-container">
           <div className="section-container-keyboard">
-          <div className="container">
+          <div className="container sl--partners--container">
           <div className="sl--partners--header">
           <h2 class="product-heading">Partners<span class="text-muted"></span></h2>
           </div>

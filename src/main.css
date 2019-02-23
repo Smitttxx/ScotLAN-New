@@ -533,9 +533,11 @@ h5 {
 }
 .SL-header-background .nav-item a {
   color: white;
+  font-weight: normal;
 }
 .SL-header-background .nav-item a:hover {
   font-weight: bold;
+  color: white;
 }
 .SL-header-background .nav-item ul {
   display: none;
@@ -617,10 +619,12 @@ h5 {
 }
 .SL-footer-background a {
   color: white;
+  font-weight: normal;
 }
 .SL-footer-background a:hover {
   font-weight: bold;
   text-decoration: none;
+  color: white;
 }
 .SL-footer-background .sl-footer-social-media {
   display: flex;
@@ -1172,7 +1176,7 @@ h5 {
 .keyboard-background .container {
   background-color: rgba(65, 65, 65, 0.7);
   border-radius: 10px;
-  padding: 2em;
+  padding: 1em;
   color: white;
   -webkit-box-shadow: -4px -4px 23px 4px #242424;
   -moz-box-shadow: -4px -4px 23px 4px #242424;
@@ -1191,8 +1195,11 @@ h5 {
 .section-container-keyboard {
   background-color: rgba(65, 65, 65, 0.7);
   border-radius: 10px;
-  padding: 2em;
+  padding: 1em;
   color: white;
+}
+.section-container-keyboard .container {
+  padding: 2em;
 }
 .section-container-keyboard .panel-group .panel-heading a {
   margin-bottom: 1em;
@@ -1270,8 +1277,8 @@ h5 {
   position: absolute;
   top: 40%;
   left: 50%;
-  width: 800px;
-  max-width: 800px;
+  width: 1000px;
+  min-width: 1000px;
 }
 .modal-content {
   border: 3px solid #4c96d7;
@@ -1340,7 +1347,6 @@ h5 {
 .sl-ourteam-container .product-heading {
   margin: auto;
   padding-bottom: 1em;
-  margin-bottom: 1em;
 }
 .sl-ourteam-container img {
   border-radius: 15px;
@@ -1359,11 +1365,13 @@ h5 {
 .sl-ourteam-container .social-icons {
   text-align: right;
   margin-right: 2em;
+  font-weight: normal;
 }
 .sl-ourteam-container .fab,
 .sl-ourteam-container .far {
   font-size: 1.8em;
   padding: 0 0.3em;
+  font-weight: normal;
 }
 .sl-ourteam-container .fab:hover,
 .sl-ourteam-container .far:hover {
@@ -1394,6 +1402,9 @@ h5 {
   width: 90%;
   background: black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#4c96d7), to(#73d14c));
+}
+.sl-seatingplan-picker {
+  padding: 1em;
 }
 .sl-seatingplan-picker .container {
   margin: 0 0 0 0;
@@ -1501,104 +1512,6 @@ h5 {
   .large-floorplan--support,
   .large-floorplan--console-corner-design {
     display: none;
-  }
-}
-@media only screen and (max-width: 425px) {
-  .SL-footer-background .col-md-3 {
-    width: 48%;
-    order: 2;
-    padding: 0 0 0 0;
-  }
-  .SL-footer-background .col-md-3 img {
-    max-width: 186px;
-    margin-left: -15px;
-    margin-top: -30px;
-  }
-  .SL-footer-background .col-md-6 {
-    order: 1;
-    margin-bottom: 2em;
-  }
-  .SL-footer-background h4 {
-    margin: auto;
-  }
-  .SL-header-background .col-sm-5 {
-    width: 50%;
-  }
-  .SL-header-background .col-sm-5 img {
-    width: 150px;
-    height: auto;
-  }
-  .SL-header-background .col-sm-7 {
-    width: 50%;
-  }
-  .sl--homepage--text {
-    top: 120px;
-  }
-  .large-floorplan {
-    height: 540px;
-  }
-  .large-floorplan--areas {
-    left: 8%;
-    width: fit-content;
-    margin: auto;
-  }
-  .large-floorplan--rows {
-    display: flex;
-  }
-  .large-floorplan--block {
-    display: flex;
-  }
-  .large-floorplan--boardgames-area-design,
-  .large-floorplan--sleeping-area-design,
-  .large-floorplan--support,
-  .large-floorplan--console-corner-design {
-    display: none;
-  }
-  .sl--sitecontainer--background__keyboard .container {
-    padding: 1rem;
-  }
-  .section-container-keyboard {
-    padding: 1em;
-  }
-  .ribbon-wrapper {
-    top: 80px !important;
-  }
-  .ribbon-red {
-    right: 10px;
-  }
-  .sl-products--container .col-md-6 {
-    padding: 0 0 0 0;
-    margin-bottom: 1em;
-  }
-  .sl-but--header {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
-  }
-  .product-heading {
-    font-size: 2em;
-  }
-  .product-heading-tickets {
-    margin-top: 1em;
-    font-size: 2em;
-  }
-}
-@media only screen and (max-width: 345px) {
-  .ribbon-wrapper {
-    top: 105px !important;
-  }
-  .large-floorplan--areas {
-    position: absolute;
-    left: 0;
-  }
-  .large-floorplan--block {
-    padding: 2em 0.7em;
-  }
-  .large-floorplan--key {
-    margin: 1em 0;
-  }
-  .large-floorplan--key .seat--avalible {
-    margin-left: 0.8em;
   }
 }
 .sl-products--container .container {
@@ -1904,6 +1817,14 @@ h5 {
   margin-bottom: 3em;
   line-height: 3em;
 }
+.sl-orders-container .sl-orders-order {
+  line-height: 2em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+.sl-orders-container .gradient-line {
+  width: 100%;
+}
 .sl-orders-container h3 {
   margin-bottom: 1rem;
 }
@@ -2046,4 +1967,162 @@ select:-internal-autofill-selected {
 }
 .container--contactus .sl-btn {
   margin: 0 0 0 0;
+}
+a {
+  color: white;
+  font-weight: bold;
+}
+a:hover {
+  color: #73d14c;
+}
+table td,
+.table td,
+table td,
+.table td,
+table th,
+.table th {
+  border: none;
+}
+table-bordered,
+.table-bordered {
+  border: none;
+}
+table .btn,
+.table .btn {
+  display: flex;
+  position: relative;
+  top: 5px;
+}
+table thread,
+.table thread {
+  border-bottom: 2px solid white;
+}
+@media only screen and (max-width: 425px) {
+  .container--contactus .col-md-8 {
+    margin-bottom: 2em;
+  }
+  .sl--partners--container iframe {
+    width: 100%;
+  }
+  .sl--partners--container .col-md-5,
+  .sl--partners--container .col-md-7 {
+    padding: 0;
+  }
+  .modal-dialog {
+    min-width: 95% !important;
+    max-width: 95% !important;
+    width: 95% !important;
+    margin: 0 !important;
+  }
+  .modal-dialog .btn-primary {
+    width: 100%;
+    margin-top: 1em;
+  }
+  .modal-dialog .btn-lg {
+    width: fit-content;
+    margin-top: 0em;
+    right: -1em;
+  }
+  .modal-dialog h4 {
+    width: 90%;
+  }
+  .SL-footer-background .col-md-3 {
+    width: 48%;
+    order: 2;
+    padding: 0 0 0 0;
+  }
+  .SL-footer-background .col-md-3 img {
+    max-width: 186px;
+    margin-left: -15px;
+    margin-top: -30px;
+  }
+  .SL-footer-background .col-md-6 {
+    order: 1;
+    margin-bottom: 2em;
+  }
+  .SL-footer-background h4 {
+    margin: auto;
+  }
+  .SL-header-background .col-sm-5 {
+    width: 50%;
+  }
+  .SL-header-background .col-sm-5 img {
+    width: 150px;
+    height: auto;
+  }
+  .SL-header-background .col-sm-7 {
+    width: 50%;
+  }
+  .sl--homepage--text {
+    top: 120px;
+  }
+  .large-floorplan {
+    height: 540px;
+  }
+  .large-floorplan--areas {
+    left: 8%;
+    width: fit-content;
+    margin: auto;
+  }
+  .large-floorplan--rows {
+    display: flex;
+  }
+  .large-floorplan--block {
+    display: flex;
+  }
+  .large-floorplan--boardgames-area-design,
+  .large-floorplan--sleeping-area-design,
+  .large-floorplan--support,
+  .large-floorplan--console-corner-design {
+    display: none;
+  }
+  .sl--sitecontainer--background__keyboard .container {
+    padding: 1rem;
+  }
+  .section-container-keyboard {
+    padding: 1em;
+  }
+  .section-container-keyboard .container {
+    padding: 1em;
+  }
+  .ribbon-wrapper {
+    top: 80px !important;
+  }
+  .ribbon-red {
+    right: 10px;
+  }
+  .sl-products--container .col-md-6 {
+    padding: 0 0 0 0;
+    margin-bottom: 1em;
+  }
+  .sl-but--header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+  }
+  .product-heading {
+    font-size: 2em;
+  }
+  .product-heading-tickets {
+    margin-top: 1em;
+    font-size: 2em;
+  }
+}
+@media only screen and (max-width: 345px) {
+  .ribbon-wrapper {
+    top: 105px !important;
+  }
+  .large-floorplan--areas {
+    position: absolute;
+    left: 0;
+  }
+  .large-floorplan--block {
+    padding: 2em 0.7em;
+  }
+  .large-floorplan--key {
+    margin: 1em 0;
+  }
+  .large-floorplan--key .seat--avalible {
+    margin-left: 0.8em;
+  }
 }
