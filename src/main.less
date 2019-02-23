@@ -827,6 +827,13 @@ background: -webkit-linear-gradient(bottom, #414141 0%,#545454 0%,#181818 100%);
 /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, #414141 0%,#545454 0%,#181818 100%);
 color: @primary-col;
+
+small{
+	color: white;
+text-align: center;
+width: 1000%;
+}
+
 &:before {
 	content: "";
 	background-color: @primary-col;
@@ -1827,6 +1834,13 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 
 @media only screen and (max-width: 768px) {
+
+	.modal-dialog{
+		width: 700px;
+		max-width: 700px;
+		min-width: 700px;
+	}
+
 	.mobile-menu{
 		display: flex;
 		&-logos{
@@ -2424,9 +2438,31 @@ table, .table{
 	}
 }
 
+.container--basketpage{
+.table{
+	.justifyContent{
+		display: flex;
+justify-content: space-between;
+	}
+}
+}
 
 @media only screen and (max-width: 425px) {
 
+.container--basketpage{
+	.table-bordered{
+		font-size: 0.7em;
+		.justifyContent{
+			display: block;
+		}
+	}
+	H2{
+		    FONT-SIZE: 2EM;
+	}
+	.sl-btn{
+		width: 100%;
+	}
+}
 .container--contactus{
 	.col-md-8{
 		margin-bottom: 2em;
@@ -2463,6 +2499,10 @@ table, .table{
 	}
 
 .SL-footer-background{
+	small{
+		order: 4;
+		padding: 1em;
+	}
 	.col-md-3{
 		width: 48%;
 		order: 2;

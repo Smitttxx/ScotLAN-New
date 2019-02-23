@@ -99,13 +99,13 @@ async onToken(token) {
         <div className="keyboard-background">
           <div className="section-container">
             <div className="section-container-keyboard">
-        <div className="container">
-          <div className="loading--text">
-            <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
-            <h4>Please wait ... We are placing your order</h4>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-          </div>
-        </div>
+              <div className="container">
+                <div className="loading--text">
+                  <img src="..\..\Images\Pacman-1s-200px.gif" alt="loading" />
+                    <h4>Please wait ... We are placing your order</h4>
+                      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                  </div>
+                  </div>
         </div>
         </div>
         </div>
@@ -127,7 +127,7 @@ async onToken(token) {
         <div className="keyboard-background">
           <div className="section-container">
             <div className="section-container-keyboard">
-              <div className="container">
+              <div className="container container--basketpage">
 
                 <br/>
                   <div class="row">
@@ -162,9 +162,9 @@ async onToken(token) {
         <div className="keyboard-background">
           <div className="section-container">
             <div className="section-container-keyboard">
-            <div className="container">
+            <div className="container container--basketpage">
 
-        <h2>Your Basket <i class="fas fa-shopping-basket"></i> </h2>
+        <h2>Your Basket</h2>
         {!this.state.isLoading && this.renderCheckout()}
         </div>
         </div>
@@ -191,8 +191,7 @@ async onToken(token) {
         <tr>
         <td>{item.ProductName}</td>
         <td>{item.Quantity}</td>
-        <td>£{item.Price}</td>
-        <button className="btn btn-danger" onClick={()=>{this.removeItem(`${item.ProductName}`)}}><i class="far fa-trash-alt"></i></button>
+        <td class="justifyContent">£{item.Price} <button className="btn btn-danger" onClick={()=>{this.removeItem(`${item.ProductName}`)}}><i class="far fa-trash-alt"></i></button></td>
         </tr>
       ))}
       <tr>

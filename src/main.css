@@ -595,6 +595,11 @@ h5 {
   background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
   color: #4c96d7;
 }
+.SL-footer-background small {
+  color: white;
+  text-align: center;
+  width: 1000%;
+}
 .SL-footer-background:before {
   content: "";
   background-color: #4c96d7;
@@ -1446,6 +1451,11 @@ h5 {
   display: none;
 }
 @media only screen and (max-width: 768px) {
+  .modal-dialog {
+    width: 700px;
+    max-width: 700px;
+    min-width: 700px;
+  }
   .mobile-menu {
     display: flex;
   }
@@ -2002,7 +2012,23 @@ table .btn,
   position: relative;
   top: 6px;
 }
+.container--basketpage .table .justifyContent {
+  display: flex;
+  justify-content: space-between;
+}
 @media only screen and (max-width: 425px) {
+  .container--basketpage .table-bordered {
+    font-size: 0.7em;
+  }
+  .container--basketpage .table-bordered .justifyContent {
+    display: block;
+  }
+  .container--basketpage H2 {
+    FONT-SIZE: 2EM;
+  }
+  .container--basketpage .sl-btn {
+    width: 100%;
+  }
   .container--contactus .col-md-8 {
     margin-bottom: 2em;
   }
@@ -2030,6 +2056,10 @@ table .btn,
   }
   .modal-dialog h4 {
     width: 90%;
+  }
+  .SL-footer-background small {
+    order: 4;
+    padding: 1em;
   }
   .SL-footer-background .col-md-3 {
     width: 48%;
