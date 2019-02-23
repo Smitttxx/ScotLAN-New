@@ -94,7 +94,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseTournamnets")}}>
                         <a className="collapsed">
-                         <div>Tournaments</div> <i class="fas fa-chevron-down"></i>
+                         <div>Tournaments</div>
                         </a>
                       </div>
                     </div>
@@ -121,7 +121,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseFoodDrink")}}>
                         <a className="collapsed">
-                         <div>Food & Drink</div> <i class="fas fa-chevron-down"></i>
+                         <div>Food & Drink</div>
                         </a>
                       </div>
                     </div>
@@ -136,7 +136,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseParking")}}>
                         <a className="collapsed">
-                         <div>Parking/Travel</div> <i class="fas fa-chevron-down"></i>
+                         <div>Parking/Travel</div>
                         </a>
                       </div>
                     </div>
@@ -164,7 +164,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseUnder16")}}>
                         <a className="collapsed">
-                         <div>Under 16's</div> <i class="fas fa-chevron-down"></i>
+                         <div>Under 16's</div>
                         </a>
                       </div>
                     </div>
@@ -180,7 +180,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseCancellations")}}>
                         <a className="collapsed">
-                         <div>Cancellations</div> <i class="fas fa-chevron-down"></i>
+                         <div>Cancellations</div>
                         </a>
                       </div>
                     </div>
@@ -197,7 +197,7 @@ export default class NextEvents extends Component {
                     <div className="panel-heading" role="tab" id="headingOne">
                       <div className="panel-title" onClick={()=>{this.showPanel("collapseEquipment")}}>
                         <a className="collapsed">
-                         <div> What will I bring? </div> <i class="fas fa-chevron-down"></i>
+                         <div> What will I bring? </div>
                         </a>
                       </div>
                     </div>

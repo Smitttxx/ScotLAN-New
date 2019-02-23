@@ -128,17 +128,20 @@ async onToken(token) {
           <div className="section-container">
             <div className="section-container-keyboard">
               <div className="container">
-                <div className="sl--confimation--header"><h3>You're going to ScotLAN #5!</h3></div>
+
                 <br/>
                   <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-8">
+                    <div className="sl--confimation--header"><h3>Payment Sucessfull! </h3></div><br/>
+                      <div className="sl--confimation--header"><h4>You're going to ScotLAN #5!</h4></div><br/>
+                      <p> You will receive an email with your order details and if you have any queries about your order please do not hesitate to email payments@scotlan.events</p>
                     <p> Remember to head over to your account to <Link to={`/SeatPlan/${this.state.orderID}`}>pick your seat!</Link></p>
 
                     <p>Come Join us on <a href="https://discord.scotlan.events/" target="_blank">Discord</a> for the pre-lan Hype and to get to know the people coming to the event!</p>
 
-                    <p> Only {days} Days to go! </p>
+                    <strong><p> Only {days} Days to go! </p></strong>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                       <Iframe url="https://ptb.discordapp.com/widget?id=132976447638863873&theme=dark"
                       width="100%"
                       height="450px"
@@ -156,10 +159,15 @@ async onToken(token) {
     )
     } else {
       return (
-        <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
+        <div className="keyboard-background">
+          <div className="section-container">
+            <div className="section-container-keyboard">
+            <div className="container">
+
         <h2>Your Basket <i class="fas fa-shopping-basket"></i> </h2>
         {!this.state.isLoading && this.renderCheckout()}
+        </div>
+        </div>
         </div>
         </div>
       );
@@ -184,7 +192,7 @@ async onToken(token) {
         <td>{item.ProductName}</td>
         <td>{item.Quantity}</td>
         <td>£{item.Price}</td>
-        <button className="btn btn-danger" onClick={()=>{this.removeItem(`${item.ProductName}`)}}>Remove</button>
+        <button className="btn btn-danger" onClick={()=>{this.removeItem(`${item.ProductName}`)}}><i class="far fa-trash-alt"></i></button>
         </tr>
       ))}
       <tr>
