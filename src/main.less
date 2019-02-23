@@ -1809,13 +1809,19 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	}
 }
 
-.mobile-menu, .mobile-menu-close{
+.mobile-menu, .mobile-menu-close, .mobile-menu-logos{
 		display: none;
 }
 
 @media only screen and (max-width: 768px) {
 	.mobile-menu{
 		display: flex;
+		&-logos{
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+  	  width: 7rem;
+		}
 		&-expanded{
 			.mobile-menu-close{
 				display: flex;
@@ -1830,7 +1836,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 				top: 0;
 				display: block;
 				right: 0;
-				width: 100%;
+				width: 200px;
 				list-style-type: none;
 				background: -webkit-gradient(linear, left top, left bottom, from(rgba(65, 65, 65, 0.95)), to(rgba(24, 24, 24, 1)));
 				background: -webkit-linear-gradient(top, rgba(65, 65, 65, 0.95), rgba(24, 24, 24, 1));
@@ -1853,6 +1859,9 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	align-items: flex-end;
 }
 
+.nav-item-mobilehide{
+	display: none;
+}
 .nav-item-myaccount{
 	display: none;
 }
@@ -1885,6 +1894,10 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 
 @media only screen and (max-width: 425px) {
+
+	.sl--homepage--text{
+		top: 120px;
+	}
 	.section-container
 	  .large-floorplan{
 			   height: 540px;
@@ -1910,6 +1923,30 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 			.container{
 				padding: 1rem;
 			}
+		}
+		.section-container-keyboard{
+			padding: 1em;
+		}
+		.ribbon-wrapper{
+			top: 80px !important;
+		}
+		.sl-products--container{
+			.col-md-6{
+				padding: 0 0 0 0;
+				margin-bottom: 1em;
+			}
+		}
+		.sl-but--header{
+			display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+		}
+		.product-heading{
+			font-size: 2em;
+			&-tickets{
+			margin-top: 1em;
+			font-size: 2em;
+		}
 		}
 	}
 
@@ -2306,7 +2343,8 @@ tooltip{
 }
 
 .sl-login-container{
-	width: 450px;
+	width: 100%;
+	max-width: 400px;
 	margin: auto;
 	.sl-signup{
 		&-buttons{

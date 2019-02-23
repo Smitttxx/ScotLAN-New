@@ -333,7 +333,7 @@ renderProductDetail(){
 
       </div>
     </div>
-    <h2 className="product-heading">Choose Your Tickets<span className="text-muted"></span></h2>
+    <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
     You can view the seating plan before hand here: <button className="sl-product-viewseatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
     <div className="product--info">
         <div className="accordion">
