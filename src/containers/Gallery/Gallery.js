@@ -69,9 +69,9 @@ export default class Gallery extends Component {
                     </div>
                     <div id="collapse1" className="panel-collapse">
                         <div className="panel-body">
-                        <p> This event was hosted on 30th November 2018 at 2nd November 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
+                        <p> This event was hosted on 30th October 2018 until 2nd November 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
-                            <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/32239129327/in/album-72157703583427312/lightbox/" title="ScotLAN1-1-3"><img src="https://farm8.staticflickr.com/7890/32239129327_12cbd06905_b.jpg" width="100%" height="600" alt="ScotLAN1-1-3"/></a>
+                          <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/46457647384/in/album-72157689914909123/lightbox/" title="1P5A6538-edit"><img src="https://farm8.staticflickr.com/7891/46457647384_548c870aca_b.jpg" width="100%" height="658" alt="1P5A6538-edit"/></a>
                           </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ export default class Gallery extends Component {
                     </div>
                     <div id="collapse2" className="panel-collapse hdn">
                         <div className="panel-body">
-                        <p> This event was hosted on 5th October 2018 at 7th October 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
+                        <p> This event was hosted on 5th October 2018 until 7th October 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
                             <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/47180943371/in/album-72157706887224065/lightbox/" title="1P5A6387"><img src="https://farm8.staticflickr.com/7846/47180943371_22dcb0b701_b.jpg" width="100%" height="683" alt="1P5A6387"/></a>
                           </div>
@@ -105,9 +105,9 @@ export default class Gallery extends Component {
                     </div>
                     <div id="collapse3" className="panel-collapse hdn">
                         <div className="panel-body">
-                          <p> This event was hosted on 11th May 2018 at 13th May 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
+                          <p> This event was hosted on 11th May 2018 until 13th May 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
-                            <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/46457647384/in/album-72157689914909123/lightbox/" title="1P5A6538-edit"><img src="https://farm8.staticflickr.com/7891/46457647384_548c870aca_b.jpg" width="100%" height="658" alt="1P5A6538-edit"/></a>
+                          <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/32239129327/in/album-72157703583427312/lightbox/" title="ScotLAN1-1-3"><img src="https://farm8.staticflickr.com/7890/32239129327_12cbd06905_b.jpg" width="100%" height="600" alt="ScotLAN1-1-3"/></a>
                           </div>
                         </div>
                     </div>

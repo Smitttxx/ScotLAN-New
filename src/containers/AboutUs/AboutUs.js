@@ -29,8 +29,8 @@ export default class AboutUs extends Component {
 
             <div className="row">
               <div className="col-lg-3">
-                <img width="150" height="150" src="https://scotlan.events/wp-content/uploads/2018/01/Rob-150x150.png" className="attachment-thumbnail size-thumbnail" alt=""
-          srcset="https://scotlan.events/wp-content/uploads/2018/01/Rob-150x150.png 150w, https://scotlan.events/wp-content/uploads/2018/01/Rob-180x180.png 180w, https://scotlan.events/wp-content/uploads/2018/01/Rob-300x300.png 300w" sizes="(max-width: 150px) 100vw, 150px" />
+                <img width="150" height="150" src="/Images/Rob.png" className="attachment-thumbnail size-thumbnail" alt=""
+          srcset="/Images/Rob.png 150w, /Images/Rob.png 180w, /Images/Rob.png 300w" sizes="(max-width: 150px) 100vw, 150px" />
 
                 </div>
                 <div className="col-lg-9">
@@ -48,8 +48,8 @@ export default class AboutUs extends Component {
             <div className="gradient-line"></div>
             <div className="row">
               <div className="col-lg-3">
-                <img width="150" height="150" src="https://scotlan.events/wp-content/uploads/2018/01/David-150x150.jpg" className="attachment-thumbnail size-thumbnail" alt=""
-            srcset="https://scotlan.events/wp-content/uploads/2018/01/David-150x150.jpg 150w, https://scotlan.events/wp-content/uploads/2018/01/David-180x180.jpg 180w, https://scotlan.events/wp-content/uploads/2018/01/David-300x300.jpg 300w" sizes="(max-width: 150px) 100vw, 150px" />
+                <img width="150" height="150" src="/Images/David.jpg" className="attachment-thumbnail size-thumbnail" alt=""
+            srcset="/Images/David.jpg 150w, /Images/David.jpg 180w, /Images/David.jpg 300w" sizes="(max-width: 150px) 100vw, 150px" />
 
                 </div>
                 <div className="col-lg-9">
@@ -67,8 +67,8 @@ export default class AboutUs extends Component {
             <div className="gradient-line"></div>
             <div className="row">
               <div className="col-lg-3">
-                <img width="150" height="150" src="https://scotlan.events/wp-content/uploads/2018/01/13769576_10209952274947389_8801454101162529606_n-150x150.jpg" className="attachment-thumbnail size-thumbnail" alt=""
-            srcset="https://scotlan.events/wp-content/uploads/2018/01/13769576_10209952274947389_8801454101162529606_n-150x150.jpg 150w, https://scotlan.events/wp-content/uploads/2018/01/13769576_10209952274947389_8801454101162529606_n-300x300.jpg 300w, https://scotlan.events/wp-content/uploads/2018/01/13769576_10209952274947389_8801454101162529606_n-180x180.jpg 180w, https://scotlan.events/wp-content/uploads/2018/01/13769576_10209952274947389_8801454101162529606_n.jpg 540w" sizes="(max-width: 150px) 100vw, 150px" />
+                <img width="150" height="150" src="/Images/Laura.jpg" className="attachment-thumbnail size-thumbnail" alt=""
+            srcset="/Images/Laura.jpg 150w, /Images/Laura.jpg 300w, /Images/Laura.jpg 180w, /Images/Laura.jpg 540w" sizes="(max-width: 150px) 100vw, 150px" />
 
                 </div>
                 <div className="col-lg-9">

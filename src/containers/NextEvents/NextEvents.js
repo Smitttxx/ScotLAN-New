@@ -58,7 +58,7 @@ export default class NextEvents extends Component {
                   <div class="col-md-7">
                   <div>Sponsored by GTOmega and Corsair </div>
                     <ul>
-                      <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 17th March 7pm (48 Hours)</li>
+                      <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
                       <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
                       <li><strong>Spaces:</strong> 100 seat BYOC Tickets</li>
                       <li><strong>Prices From:</strong> £35 </li>
