@@ -217,8 +217,8 @@ export default class SeatPlan extends Component {
         <div class="large-floorplan--rows">
           <div class="large-floorplan--key">
         <p> Seating Plan Key </p>
-          <button class="seat seat--taken"></button> - Seat Taken
-          <button class="seat seat--avalible"></button> - Seat Avalible
+          <button class="seat seat--taken"></button> - Taken
+          <button class="seat seat--avalible"></button> - Available
         </div>
         </div>
           </div>
