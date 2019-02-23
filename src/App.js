@@ -28,7 +28,7 @@ class App extends Component {
       Authorization: "",
       basketQtyTotal: 0
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleMenuClick = this.handleMenuClick.bind(this);
   }
 
   async componentDidMount() {
@@ -57,6 +57,10 @@ class App extends Component {
   this.setState({ isAuthenticating: false });
 }
 
+componentWillMount() {
+  document.addEventListener('mousedown', this.handleClick, false);
+}
+
 componentWillUnmount() {
     window.removeEventListener(
       "beforeunload",
@@ -64,6 +68,8 @@ componentWillUnmount() {
     );
 
     this.saveStateToLocalStorage();
+
+    document.removeEventListener('mousedown', this.handleClick, false);
 }
 
   userHasAuthenticated = authenticatedDetail => {
@@ -173,7 +179,29 @@ componentWillUnmount() {
     this.props.history.push("/login");
   }
 
-  handleClick() {
+  //Dont look here, bad things happen
+  handleClick = async (e) => {
+    if(this.state.displayMenu){
+      this.setState({displayMenu: false});
+      document.getElementById("SLHeader").classList.toggle("mobile-menu-expanded");
+
+      if(e.target.className === "fas fa-sign-out-alt")
+      {
+        await Auth.signOut();
+
+        this.userHasAuthenticated({authenticated:false,username:"",email:""});
+
+        this.props.history.push("/login");
+      }
+
+      if(e.target.href != undefined) {
+        window.location = e.target.href;
+      }
+    }
+  }
+
+  handleMenuClick() {
+    this.setState({displayMenu: true});
     document.getElementById("SLHeader").classList.toggle("mobile-menu-expanded");
   }
 
@@ -205,7 +233,7 @@ componentWillUnmount() {
             </div>
             <nav className="col-sm-7 navbar navbar-default navbar-static-top">
             <div class="mobile-menu-logos">
-              <button class="mobile-menu" onClick={this.handleClick}><i class="fas fa-bars"></i></button>
+              <button class="mobile-menu" onClick={this.handleMenuClick}><i class="fas fa-bars"></i></button>
               <div class="nav-item">
               {this.state.basketQtyTotal > 0 ? [
                   <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basketQtyTotal}</span></i></Link>
