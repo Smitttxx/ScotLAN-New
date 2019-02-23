@@ -303,16 +303,15 @@ renderProductDetail(){
     <div className="container">
       <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
     <div className="row product--info">
-      <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6 and finishing on a Sunday evening so games can be played 24hrs a day,
-        if you have enough energy drinks.</p>
+      <p className="lead">Events take place over a 3 day weekend starting on a Friday at 7PM and finishing on a Sunday 7PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
             <li>Gamers : 96 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li>Event : 18:00, 01-03 March 2019</li>
+            <li>Event : Fri 5th July 7pm – Sun 17th March 7pm (48 Hours)</li>
             <li>Parking Avalible : Yes </li>
-            <li>Ticket Price: from £40</li>
-            <li>Address: Juniper Green Scout Hall, 45 Lanark Road W, Currie, EH14 5JX</li>
+            <li>Ticket Price: from £35</li>
+            <li>Address: Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
           </ul>
       </div>
       <div className="col-md-4">
@@ -365,7 +364,7 @@ renderProductDetail(){
               <div class="ribbon-back-right"></div>
               </div>
 
-              <label className="green"><strong>Price Per Ticket :</strong> <span class="strike">£45</span> <span>£35</span></label>
+              <label className="green"><strong>Price Per Ticket :</strong> <span class="strike">£40</span> <span>£35</span></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -397,7 +396,7 @@ renderProductDetail(){
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
-                <li>1x GT Omega Racing Gaming Chair</li>
+                <li>1x 48 Hour Rental GT Omega Chair</li>
                 <li>Free 5x Random Steam Keys</li>
                 <li>Free ScotLAN Goodie Bag</li>
               </ul>
@@ -415,7 +414,7 @@ renderProductDetail(){
               <div class="ribbon-back-left"></div>
               <div class="ribbon-back-right"></div>
               </div>
-              <label className="blue"><strong>Price Per Ticket :</strong> <span class="strike">£60</span><span> £50</span></label>
+              <label className="blue"><strong>Price Per Ticket :</strong> <span class="strike">£55</span><span> £50</span></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -443,7 +442,7 @@ renderProductDetail(){
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
-            <small><i>*EARLYBIRD pricing ends 21/03/2018</i></small>
+            <small><i>*EARLYBIRD pricing ends 24/03/2018</i></small>
           </div>
           <div className="col-md-8">
             <div className="sl-but--header">

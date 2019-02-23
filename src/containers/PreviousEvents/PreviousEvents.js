@@ -39,20 +39,19 @@ export default class PreviousEvents extends Component {
               <div className="panel-heading" role="tab" id="headingOne">
                 <h4 className="panel-title" onClick={()=>{this.showPanel("collapseOne")}}>
                   <a className="collapsed">
-                     ScotLAN #XMAS! Event info + Tourny winners
+                     ScotLAN #XMAS! Event info
                   </a>
                 </h4>
               </div>
               <div id="collapseOne" className="panel-collapse" hidden="hidden">
                   <div className="panel-body">
                   <ul>
-                    <li>Attendance: 32/33</li>
+                    <li>Attendance: 32/32</li>
                     <li>Sponsors: GTOmega, ASRock</li>
                   </ul>
 
                     <h4>Tournaments:</h4>
                     <ul>
-                    <li>PC:</li>
                     <li>3V3 League of Legends</li>
                     <li>2V2 Counter Strike:GO</li>
                     <li>3v3 Overwatch</li>
@@ -70,19 +69,18 @@ export default class PreviousEvents extends Component {
                   <div className="panel-heading" role="tab" id="headingTwo">
                     <h4 className="panel-title" onClick={()=>{this.showPanel("collapseTwo")}}>
                       <a className="collapsed">
-                         ScotLAN #2! Event info + Tourny winners
+                         ScotLAN #2! Event info
                       </a>
                     </h4>
                   </div>
                   <div id="collapseTwo" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
                       <ul>
-                        <li>Attendance: 32/33</li>
+                        <li>Attendance: 32/32</li>
                         <li>Sponsors: GTOmega, Crucial, ASRock</li>
                       </ul>
                         <h4>Tournaments:</h4>
                         <ul>
-                        <li>PC:</li>
                         <li>Counter Strike Global Offensive 2v2 - Double Elimination.</li>
                         <li>Overwatch 3v3 - Double Elimination.</li>
                         </ul>
@@ -98,19 +96,18 @@ export default class PreviousEvents extends Component {
                   <div className="panel-heading" role="tab" id="headingThree">
                     <h4 className="panel-title" onClick={()=>{this.showPanel("collapseThree")}}>
                       <a className="collapsed">
-                       ScotLAN #1! Event info + Tourny winners
+                       ScotLAN #1! Event info
                       </a>
                     </h4>
                   </div>
                   <div id="collapseThree" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
                       <ul>
-                        <li>Attendance: 32/33</li>
+                        <li>Attendance: 32/32</li>
                         <li>Sponsors: Crucial</li>
                       </ul>
                         <h4>Tournaments:</h4>
                         <ul>
-                        <li>PC:</li>
                         <li>Trackmania Nations Forever - Fastest lap of the weekend</li>
                         <li>Overwatch 2v2's</li>
                         <li>Left 4 Dead 2</li>
