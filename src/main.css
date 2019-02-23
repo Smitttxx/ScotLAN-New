@@ -1534,22 +1534,24 @@ h5 {
   .sl--homepage--text {
     top: 120px;
   }
-  .section-container .large-floorplan {
+  .large-floorplan {
     height: 540px;
   }
-  .section-container .large-floorplan--areas {
+  .large-floorplan--areas {
     left: 8%;
+    width: fit-content;
+    margin: auto;
   }
-  .section-container .large-floorplan--rows {
+  .large-floorplan--rows {
     display: flex;
   }
-  .section-container .large-floorplan--block {
+  .large-floorplan--block {
     display: flex;
   }
-  .section-container .large-floorplan--boardgames-area-design,
-  .section-container .large-floorplan--sleeping-area-design,
-  .section-container .large-floorplan--support,
-  .section-container .large-floorplan--console-corner-design {
+  .large-floorplan--boardgames-area-design,
+  .large-floorplan--sleeping-area-design,
+  .large-floorplan--support,
+  .large-floorplan--console-corner-design {
     display: none;
   }
   .sl--sitecontainer--background__keyboard .container {
@@ -1584,6 +1586,19 @@ h5 {
 @media only screen and (max-width: 345px) {
   .ribbon-wrapper {
     top: 105px !important;
+  }
+  .large-floorplan--areas {
+    position: absolute;
+    left: 0;
+  }
+  .large-floorplan--block {
+    padding: 2em 0.7em;
+  }
+  .large-floorplan--key {
+    margin: 1em 0;
+  }
+  .large-floorplan--key .seat--avalible {
+    margin-left: 0.8em;
   }
 }
 .sl-products--container .container {

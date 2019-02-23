@@ -1917,31 +1917,28 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 
 .SL-header-background{
-	.col-sm-5{
-		width: 50%;
-		img{
-			width: 150px;
-  	  height: auto;
-		}
-	}
-	.col-sm-7{
-		width: 50%;
-	}
-}
+				.col-sm-5{
+					width: 50%;
+					img{
+						width: 150px;
+			  	  height: auto;
+					}
+				}
+				.col-sm-7{
+					width: 50%;
+				}
+			}
 
 	.sl--homepage--text{
 		top: 120px;
 	}
-	.section-container
 	  .large-floorplan{
 			   height: 540px;
 				 &--areas{
 					 left: 8%;
+					 width: fit-content;
+  				 margin: auto;
 				 }
-					&--row-1, &--row-3, &--row-5{
-					}
-					&--row-2, &--row-4, &--row-6{
-					}
 					&--rows{
 						display: flex;
 					}
@@ -1952,6 +1949,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 					display: none;
 				}
 		}
+
 
 		.sl--sitecontainer--background__keyboard{
 			.container{
@@ -1990,6 +1988,21 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 @media only screen and (max-width: 345px) {
 	.ribbon-wrapper{
 		top: 105px !important;
+	}
+	.large-floorplan{
+		&--areas{
+		position: absolute;
+    left: 0;
+	}
+	&--block{
+		padding: 2em 0.7em;
+	}
+	&--key{
+	margin: 1em 0;
+	.seat--avalible{
+		margin-left: 0.8em;
+	}
+	}
 	}
 }
 .sl-products--container{
