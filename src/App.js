@@ -217,11 +217,15 @@ componentWillUnmount() {
                   <Link className="nav-link" to="/Gallery">Gallery</Link>
                 </li>
                 {this.state.isAuthenticated
-                      ? [<li class="nav-item">
-                          <li className="nav-link nav-item-myaccount" >My Account <i class="fas fa-chevron-down"></i></li>
-                          <ul class="nav-item-myaccount--items">
-                          <Link className="nav-link" to="/orders">Orders</Link>
-                          <a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
+                      ? [ <Fragment>
+                            <li class="nav-item">
+                              <Link className="nav-link" to="/orders">Orders</Link>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" className="nav-link" onClick={this.handleLogout}><i class="fas fa-sign-out-alt"></i></a>
+                            </li>
+                        </Fragment>
+                        ]
                       : <Fragment>
                           <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
