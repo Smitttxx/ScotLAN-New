@@ -308,7 +308,7 @@ renderProductDetail(){
         <li> What you need to know </li>
           <ul>
             <li>Gamers : 96 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li>Event : Fri 5th July 7pm – Sun 17th March 7pm (48 Hours)</li>
+            <li>Event : Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
             <li>Parking Avalible : Yes </li>
             <li>Ticket Price: from £35</li>
             <li>Address: Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
