@@ -204,8 +204,9 @@ componentWillUnmount() {
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
             <nav className="col-sm-7 navbar navbar-default navbar-static-top">
-            <button class="mobile-menu" onClick={this.handleClick}><i class="fas fa-bars"></i></button>
+              <button class="mobile-menu" onClick={this.handleClick}><i class="fas fa-bars"></i></button>
               <ul className="nav nav-pill">
+              <button class="mobile-menu-close" onClick={this.handleClick}><i class="fas fa-times"></i></button>
                 <li className="nav-item">
                   <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
                 </li>
