@@ -194,8 +194,10 @@ componentWillUnmount() {
         this.props.history.push("/login");
       }
 
-      if(e.target.href != undefined) {
-        window.location = e.target.href;
+      if(e.target.pathname != undefined) {
+        //console.log(e);
+        this.props.history.push(e.target.pathname);
+        //window.location = e.target.href;
       }
     }
   }
