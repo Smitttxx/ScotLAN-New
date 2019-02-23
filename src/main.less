@@ -1809,13 +1809,19 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	}
 }
 
-.mobile-menu, .mobile-menu-close{
+.mobile-menu, .mobile-menu-close, .mobile-menu-logos{
 		display: none;
 }
 
 @media only screen and (max-width: 768px) {
 	.mobile-menu{
 		display: flex;
+		&-logos{
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+  	  width: 7rem;
+		}
 		&-expanded{
 			.mobile-menu-close{
 				display: flex;
@@ -1853,6 +1859,9 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	align-items: flex-end;
 }
 
+.nav-item-mobilehide{
+	display: none;
+}
 .nav-item-myaccount{
 	display: none;
 }
@@ -1885,6 +1894,10 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 
 @media only screen and (max-width: 425px) {
+
+	.sl--homepage--text{
+		top: 120px;
+	}
 	.section-container
 	  .large-floorplan{
 			   height: 540px;
@@ -1910,6 +1923,30 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 			.container{
 				padding: 1rem;
 			}
+		}
+		.section-container-keyboard{
+			padding: 1em;
+		}
+		.ribbon-wrapper{
+			top: 80px !important;
+		}
+		.sl-products--container{
+			.col-md-6{
+				padding: 0 0 0 0;
+				margin-bottom: 1em;
+			}
+		}
+		.sl-but--header{
+			display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+		}
+		.product-heading{
+			font-size: 2em;
+			&-tickets{
+			margin-top: 1em;
+			font-size: 2em;
+		}
 		}
 	}
 

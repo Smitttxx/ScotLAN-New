@@ -13,7 +13,7 @@ export default class Checkout extends Component {
     this.state = {
       isLoading: true,
       message:"",
-      orderID: "1",
+      orderID: "",
       orderFailed: false
     };
   }
