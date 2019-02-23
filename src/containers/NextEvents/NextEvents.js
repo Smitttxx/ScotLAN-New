@@ -58,10 +58,10 @@ export default class NextEvents extends Component {
                   <div class="col-md-7">
                   <div>Sponsored by GTOmega and Corsair </div>
                     <ul>
-                      <li><strong>Dates:</strong> Fri 15th March 6pm – Sun 17th March 6pm (48 Hours)</li>
+                      <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 17th March 7pm (48 Hours)</li>
                       <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
-                      <li><strong>Spaces:</strong> 100 seat BYOC Tickets: 100 tickets remaining</li>
-                      <li><strong>Prices From:</strong> £25 </li>
+                      <li><strong>Spaces:</strong> 100 seat BYOC Tickets</li>
+                      <li><strong>Prices From:</strong> £23 </li>
                       <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
                       <li><strong>Facebook</strong> Event</li>
                     </ul>
@@ -100,6 +100,13 @@ export default class NextEvents extends Component {
                     </div>
                     <div id="collapseTournamnets" className="panel-collapse" hidden="hidden">
                         <div className="panel-body">
+                        <p> Confirmed Tournaments: </p>
+                        <ul>
+                          <li> Counter Strike Global Offensive 5v5 </li>
+                          <li> Overwatch 4v4 </li>
+                          <li> League of Legends 5v5 </li>
+                          <li> Rocket League 3v3 </li>
+                        </ul>
                         <p> We also have servers set up for: </p>
                         <div>
                         <ul>
@@ -127,8 +134,15 @@ export default class NextEvents extends Component {
                     </div>
                     <div id="collapseFoodDrink" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+                      <ul>
+                        <li> Daily Morning Rolls (Outside Caterer) </li>
+                        <li> Saturday Dominos Order </li>
+                        <li> Kettle, microwave and small fridge on site </li>
+                        <li> Corner Shops – 5 min walk </li>
+                        <li> JustEat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>
+                        <li> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </li>
+                        <li> Tesco – 8 min drive, 40 min walk Sleeping </li>
+                      </ul>
                         </div>
                     </div>
                 </div>
@@ -145,16 +159,8 @@ export default class NextEvents extends Component {
                         <div>
                         <ul>
                           <li> 40~ free spaces on-site </li>
-                          <li> Bus: Falkirk Bus Station 10 minute away </li>
-                          <li> Train: Falkirk High – 0.4 Miles Eating </li>
-                          <li> Daily Morning Rolls (Outside Caterer) </li>
-                          <li> Saturday Dominos Order </li>
-                          <li> Kettle, microwave and small fridge on site </li>
-                          <li> Corner Shops – 5 min walk </li>
-                          <li> -Eat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>
-                          <li> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </li>
-                          <li> Tesco – 8 min drive, 40 min walk Sleeping </li>
-                          <li> Floor space in main hall / upstairs </li>
+                          <li> Bus: Falkirk Bus Station 10 minutes away </li>
+                          <li> Train: Falkirk High – 0.4 Miles </li>
                         </ul>
                         </div>
                         </div>
@@ -171,7 +177,7 @@ export default class NextEvents extends Component {
                     <div id="collapseUnder16" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
                             <div>
-                        <p>If you are aged 15 or under, you are required to provide a completed and signed parental consent form on arrival to the event. </p>
+                        <p>If you are aged 15 or under, you are required to provide a completed and signed parental consent form on arrival to the event. To obtain a form use the <a href="/contact">contact us here.</a> </p>
                         </div>
                         </div>
                     </div>

@@ -197,7 +197,7 @@ export default class Signup extends Component {
         <div className="section-container">
           <div className="section-container-keyboard sl-login-container">
       <div className="container">
-      <p> Welcome to the gang ScotLANNER!</p>
+      <p> Welcome to ScotLAN</p>
           {this.state.newUser === null
             ? this.renderForm()
             : this.renderConfirmationForm()}

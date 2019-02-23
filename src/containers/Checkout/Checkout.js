@@ -137,7 +137,7 @@ async onToken(token) {
                       <p> You will receive an email with your order details and if you have any queries about your order please do not hesitate to email payments@scotlan.events</p>
                     <p> Remember to head over to your account to <Link to={`/SeatPlan/${this.state.orderID}`}>pick your seat!</Link></p>
 
-                    <p>Come Join us on <a href="https://discord.scotlan.events/" target="_blank">Discord</a> for the pre-lan Hype and to get to know the people coming to the event!</p>
+                    <p>Come Join us on <a href="https://discord.gg/BTVZBed" target="_blank">Discord</a> for the pre-lan Hype and to get to know the people coming to the event!</p>
 
                     <strong><p> Only {days} Days to go! </p></strong>
                     </div>

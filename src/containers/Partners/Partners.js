@@ -21,8 +21,7 @@ export default class Partners extends Component {
           <div className="sl--partners--header">
           <h2 class="product-heading">Partners<span class="text-muted"></span></h2>
           </div>
-          <p> The below partners are vital to the sucess of our events amd we cant thank them enough for their support!The below partners are vital to the sucess of our events amd we cant thank them enough for their support!
-          The below partners are vital to the sucess of our events amd we cant thank them enough for their support! </p>
+          <p> The below partners are vital to the success of our events and we cant thank them enough for their support! Our Platinum sponsor GT Omega have been with us from day 1 promoting and seeing the value in the Scottish gaming scene. </p>
           <div class="row">
               <div class="col-md-7">
                 <div className="partner-header">

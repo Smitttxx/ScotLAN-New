@@ -59,8 +59,8 @@ export default class FAQS extends Component {
                     </div>
                   </div>
                   <div id="collapseTwo" className="panel-collapse" hidden="hidden">
-                      <div className="panel-body">Feel free to play any game you like, hop over to our <a href="https://www.facebook.com/groups/555722601438031/">Facebook</a>
-          page or jump on <a href="https://discordapp.com/invite/RMvrJr?utm_source=Discord%20Widget&amp;utm_medium=Connect">Discord</a> if you would like to suggest any tournaments or group games!</div>
+                      <div className="panel-body">Feel free to play any game you like, hop over to our <a href="https://www.facebook.com/groups/555722601438031/" target="_blank"> Facebook </a>
+          page or jump on <a href="https://discord.gg/BTVZBed" target="_blank">Discord</a> if you would like to suggest any tournaments or group games!</div>
                   </div>
               </div>
 
@@ -146,7 +146,7 @@ export default class FAQS extends Component {
                   <div className="panel-heading" role="tab" id="headingEight">
                     <div className="panel-title" onClick={()=>{this.showPanel("collapseEight")}}>
                       <a className="collapsed">
-                        CWhat facilities are there available ?
+                        What facilities are available ?
                       </a>
                     </div>
                   </div>
@@ -194,14 +194,12 @@ export default class FAQS extends Component {
                   <div className="panel-heading" role="tab" id="headingTen">
                     <div className="panel-title" onClick={()=>{this.showPanel("collapseTen")}}>
                       <a className="collapsed">
-                        Can you tell me more about your Internet connection?
+                        Can you tell me more about your internet connection?
                       </a>
                     </div>
                   </div>
                   <div id="collapseTen" className="panel-collapse" hidden="hidden">
-                      <div className="panel-body"> At ScotLAN we have an FTTC internet connection which is exclusively used by us.This means that we are able to have a fairly large download limit but this is monitored by the staff as we can quite easily and quickly go through the bandwidth that we have allocated.
-            Priority for download usage is given to games that require an online log in and also to any updates to games that may take place over the course of the event.
-            While attending a ScotLAN event the staff have the right to refuse internet connection to anyone who is caught misusing or abusing our connection.this may also result in the guilty party being asked to leave the event.</div>
+                      <div className="panel-body"> At ScotLAN we have multiple bonded FTTC internet connections which is exclusively used by us. This means that we are able to have a fairly large download limit but this is monitored by the staff as we can quite easily and quickly go through the bandwidth that we have allocated. Priority for download usage is given to games that require an online log in and also to any updates to games that may take place over the course of the event. While attending a ScotLAN event the staff have the right to refuse internet connection to anyone who is caught misusing or abusing our connection; this may also result in the guilty party being asked to leave the event.</div>
                   </div>
               </div>
 
@@ -264,23 +262,6 @@ export default class FAQS extends Component {
               ScotLAN do provide a ordering facility for one of the nights and a link is posted online closer to the event</div>
                   </div>
               </div>
-
-
-
-              <div className="panel panel-default">
-                  <div className="panel-heading" role="tab" id="headingFourteen">
-                    <div className="panel-title" onClick={()=>{this.showPanel("collapseFourteen")}}>
-                      <a className="collapsed">
-                        Is alcohol allowed?
-                      </a>
-                    </div>
-                  </div>
-                  <div id="collapseFourteen" className="panel-collapse" hidden="hidden">
-                      <div className="panel-body"> Providing you’re of legal drinking age then you may bring your own alcohol however no alcohol is sold at the event.</div>
-                  </div>
-              </div>
-
-
 
               <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFifteen">
