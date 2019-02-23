@@ -710,6 +710,10 @@ width: 100%;
 z-index: 10;
 .container-boxshadow();
 
+.nav-pill{
+	display: flex;
+	    justify-content: flex-end;
+}
 &:before {
 content: "";
 background-color: @primary-col;
@@ -1860,6 +1864,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 		}
 	}
 	.nav-pill{
+		display: block !important;
 		width: 0px;
 		position: absolute;
 		right: -100px;
@@ -2408,14 +2413,14 @@ table, .table{
 	}
 	&-bordered{
 		border: none;
+		thead{
+			border-bottom: 2px solid white !important;
+		}
 	}
 	.btn{
 		display: flex;
     position: relative;
-    top: 5px;
-	}
-	thread{
-		border-bottom: 2px solid white;
+    top: 6px;
 	}
 }
 

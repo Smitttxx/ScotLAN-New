@@ -500,6 +500,10 @@ h5 {
   -moz-box-shadow: -4px -4px 23px 4px #242424;
   box-shadow: -4px -4px 23px 4px #242424;
 }
+.SL-header-background .nav-pill {
+  display: flex;
+  justify-content: flex-end;
+}
 .SL-header-background:before {
   content: "";
   background-color: #4c96d7;
@@ -1477,6 +1481,7 @@ h5 {
     transition: 0.5s;
   }
   .nav-pill {
+    display: block !important;
     width: 0px;
     position: absolute;
     right: -100px;
@@ -1987,15 +1992,15 @@ table-bordered,
 .table-bordered {
   border: none;
 }
+table-bordered thead,
+.table-bordered thead {
+  border-bottom: 2px solid white !important;
+}
 table .btn,
 .table .btn {
   display: flex;
   position: relative;
-  top: 5px;
-}
-table thread,
-.table thread {
-  border-bottom: 2px solid white;
+  top: 6px;
 }
 @media only screen and (max-width: 425px) {
   .container--contactus .col-md-8 {
