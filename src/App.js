@@ -308,7 +308,7 @@ componentWillUnmount() {
                       <a href="https://steamcommunity.com/groups/ScotLANEvents"><i class="fab fa-steam"></i></a>
                     </div>
                 </div>
-
+                <small><p><i class="far fa-copyright"></i> ScotLAN Events Limited (SC620678) | Copyright 2019 </p> </small>
                 </div>
                   </div>
             </footer>
