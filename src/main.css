@@ -1504,6 +1504,33 @@ h5 {
   }
 }
 @media only screen and (max-width: 425px) {
+  .SL-footer-background .col-md-3 {
+    width: 48%;
+    order: 2;
+    padding: 0 0 0 0;
+  }
+  .SL-footer-background .col-md-3 img {
+    max-width: 186px;
+    margin-left: -15px;
+    margin-top: -30px;
+  }
+  .SL-footer-background .col-md-6 {
+    order: 1;
+    margin-bottom: 2em;
+  }
+  .SL-footer-background h4 {
+    margin: auto;
+  }
+  .SL-header-background .col-sm-5 {
+    width: 50%;
+  }
+  .SL-header-background .col-sm-5 img {
+    width: 150px;
+    height: auto;
+  }
+  .SL-header-background .col-sm-7 {
+    width: 50%;
+  }
   .sl--homepage--text {
     top: 120px;
   }
@@ -1534,6 +1561,9 @@ h5 {
   .ribbon-wrapper {
     top: 80px !important;
   }
+  .ribbon-red {
+    right: 10px;
+  }
   .sl-products--container .col-md-6 {
     padding: 0 0 0 0;
     margin-bottom: 1em;
@@ -1549,6 +1579,11 @@ h5 {
   .product-heading-tickets {
     margin-top: 1em;
     font-size: 2em;
+  }
+}
+@media only screen and (max-width: 345px) {
+  .ribbon-wrapper {
+    top: 105px !important;
   }
 }
 .sl-products--container .container {
