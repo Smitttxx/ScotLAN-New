@@ -56,9 +56,9 @@ export default class PreviousEvents extends Component {
                     <li>2V2 Counter Strike:GO</li>
                     <li>3v3 Overwatch</li>
                     </ul>
-                    <h4>CONSOLE CORNER</h4>
+                    <h4>Console Corner</h4>
                     <ul>
-                    <li>1v1 INJUSTICE: Gods among us</li>
+                      <li>1v1 INJUSTICE: Gods among us</li>
                     </ul>
                   </div>
               </div>
@@ -81,12 +81,12 @@ export default class PreviousEvents extends Component {
                       </ul>
                         <h4>Tournaments:</h4>
                         <ul>
-                        <li>Counter Strike Global Offensive 2v2 - Double Elimination.</li>
-                        <li>Overwatch 3v3 - Double Elimination.</li>
+                          <li>Counter Strike Global Offensive 2v2 - Double Elimination.</li>
+                          <li>Overwatch 3v3 - Double Elimination.</li>
                         </ul>
-                        <h4>CONSOLE CORNER</h4>
+                        <h4>Console Corner</h4>
                         <ul>
-                        <li>Nintendo 64 Mario Kart Tournament (TV - Retro Consoles)</li>
+                          <li>Nintendo 64 Mario Kart Tournament (TV - Retro Consoles)</li>
                         </ul>
                       </div>
                   </div>
@@ -108,14 +108,14 @@ export default class PreviousEvents extends Component {
                       </ul>
                         <h4>Tournaments:</h4>
                         <ul>
-                        <li>Trackmania Nations Forever - Fastest lap of the weekend</li>
+                          <li>Trackmania Nations Forever - Fastest lap of the weekend</li>
                         <li>Overwatch 2v2's</li>
                         <li>Left 4 Dead 2</li>
-                        <li>League of Legends</li>
+                          <li>League of Legends</li>
                         </ul>
-                        <h4>CONSOLE CORNER</h4>
+                        <h4>Console Corner</h4>
                         <ul>
-                        <li>1v1 INJUSTICE: Gods among us</li>
+                          <li>1v1 INJUSTICE: Gods among us</li>
                         </ul>
                       </div>
                   </div>

@@ -63,7 +63,7 @@ export default class NextEvents extends Component {
                       <li><strong>Spaces:</strong> 100 seat BYOC Tickets</li>
                       <li><strong>Prices From:</strong> £35 </li>
                       <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
-                      <li><strong>Facebook</strong> Event</li>
+                      <li><a href="https://www.facebook.com/events/386414302190930/"><strong>Facebook Event</strong></a></li>
                     </ul>
                     <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today</a></p>
                   </div>
@@ -141,7 +141,7 @@ export default class NextEvents extends Component {
                         <li> Corner Shops – 5 min walk </li>
                         <li> JustEat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>
                         <li> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </li>
-                        <li> Tesco – 8 min drive, 40 min walk Sleeping </li>
+                        <li> Tesco – 8 min drive, 40 min walk </li>
                       </ul>
                         </div>
                     </div>

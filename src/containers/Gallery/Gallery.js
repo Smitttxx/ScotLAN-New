@@ -69,7 +69,7 @@ export default class Gallery extends Component {
                     </div>
                     <div id="collapse1" className="panel-collapse">
                         <div className="panel-body">
-                        <p> This event was hosted on 30th October 2018 until 2nd November 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
+                        <p> This event was hosted on 30th November 2018 until 2nd December 2018 for more info on this visit our <a href="https://newsite.scotlan.events/PreviousEvents">previous events</a> page. </p>
                           <div class="flickrwrap">
                           <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/46457647384/in/album-72157689914909123/lightbox/" title="1P5A6538-edit"><img src="https://farm8.staticflickr.com/7891/46457647384_548c870aca_b.jpg" width="100%" height="658" alt="1P5A6538-edit"/></a>
                           </div>

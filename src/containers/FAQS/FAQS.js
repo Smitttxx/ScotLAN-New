@@ -155,6 +155,9 @@ export default class FAQS extends Component {
                         We have a wide range of facilities available for your convenience. We have all the following available.
                                   <ul>
                                     <li>
+                                      8 Male and 8 Female Showers.
+                                    </li>
+                                    <li>
                                       Kitchen with access to a kettle and microwave, open 24/7 for your convenience.
                                     </li>
                                     <li>

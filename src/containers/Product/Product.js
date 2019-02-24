@@ -340,7 +340,7 @@ renderProductDetail(){
             <div className="col-md-6">
             <div id="ticket standard" className="ticket standard" aria-expanded="false">
             <div className="ticket--header">Buy Standard BYOC Tickets</div>
-              <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyStd.N}</div>
+              <div>Quantity Available : {this.state.product.Item.AvailableQtyStd.N}</div>
               This ticket includes:
               <ul>
                 <li>48 Hour Access to the Event</li>
@@ -392,7 +392,7 @@ renderProductDetail(){
              <div class="ribbon ribbon-red "><span>V.I.P </span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Avalibile : {this.state.product.Item.AvailableQtyVip.N} </div>
+              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
