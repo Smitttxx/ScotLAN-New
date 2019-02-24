@@ -54,6 +54,22 @@ export default class Partners extends Component {
           </div>
           <div className="gradient-line"></div>
           <div class="row">
+              <div class="col-md-7">
+                <div className="partner-header">
+                  <a target="_blank" href="https://esportsscotland.co.uk/" title="ESS website"><h3>Esports Scotland</h3></a>
+                </div>
+                <p>Their goal is to support competitive gaming from the grassroots to the professional level. ESS aim to provide opportunities for esports talent in Scotland
+                to be scouted by professional teams through hosting and sponsoring tournaments nationwide with the focus always on Scotland.</p>
+                <div className="partner-logo">
+                  <a target="_blank" href="https://esportsscotland.co.uk/" title="Humble website"><img src="Images/partner-ess.png" alt="Logo ESS" /></a>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <iframe width="340" height="260" src="https://www.youtube.com/embed/WynjFXWJvDw"></iframe>
+              </div>
+          </div>
+          <div className="gradient-line"></div>
+          <div class="row">
             <div class="col-md-7">
               <div className="partner-header">
                 <a target="_blank" href="https://www.humblebundle.com/monthly?partner=scotlan" title="Humble website"><h3>Humble Bundle</h3></a>
@@ -71,27 +87,11 @@ export default class Partners extends Component {
                 <iframe width="340" height="260" src="https://www.youtube.com/embed/rkOfIpq5YRM"></iframe>
               </div>
           </div>
-          <div className="gradient-line"></div>
-          <div class="row">
-              <div class="col-md-7">
-                <div className="partner-header">
-                  <a target="_blank" href="https://esportsscotland.co.uk/" title="ESS website"><h3>Esports Scotland</h3></a>
-                </div>
-                <p>Their goal is to support competitive gaming from the grassroots to the professional level. We aim to provide opportunities for esports talent in Scotland
-                to be scouted by professional teams through hosting and sponsoring tournaments nationwide with the focus always on Scotland.</p>
-                <div className="partner-logo">
-                  <a target="_blank" href="https://esportsscotland.co.uk/" title="Humble website"><img src="Images/partner-ess.png" alt="Logo ESS" /></a>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <iframe width="340" height="260" src="https://www.youtube.com/embed/Xt54_L3NeW4"></iframe>
-              </div>
-          </div>
             <div className="gradient-line"></div>
           <div class="row">
               <div class="col-md-7">
               <div className="partner-header">
-                <a target="_blank" href="https://www.asrock.com/index.asp" title="ASrockwebsite"><h3>ASrock</h3></a>
+                <a target="_blank" href="https://www.asrock.com/index.asp" title="ASrockwebsite"><h3>ASRock</h3></a>
               </div>
                 <p>
                 ASRock Inc. is established in 2002, specialized in the field of motherboards. ASRock strives to build up its own brand. With the 3C design concept, “Creativity,

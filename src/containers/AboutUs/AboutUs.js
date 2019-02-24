@@ -37,7 +37,7 @@ export default class AboutUs extends Component {
                 <figcaption className="widget-image-caption wp-caption-text">Rob</figcaption>
                 <p>Rob is an experienced Cloud Architect with a passion for gaming. After being involved with multiple LAN’s in the UK he came up with the idea of ScotLAN, He looks after our website as well as our network infrastructure.</p>
                 <div className="social-icons">
-                  <a href="https://scotlan.events/discord"><i class="fab fa-discord"></i> </a>
+                  <a href="https://discord.gg/BTVZBed"><i class="fab fa-discord"></i> </a>
                   <a href="https://steamcommunity.com/id/bobster_2007"><i class="fab fa-steam"></i> </a>
                   <a href="https://www.facebook.com/robalanwhyte"><i class="fab fa-facebook"></i> </a>
                   <a href="https://www.linkedin.com/in/rob-whyte/"><i class="fab fa-linkedin"></i></a>
@@ -56,7 +56,7 @@ export default class AboutUs extends Component {
                 <figcaption className="widget-image-caption wp-caption-text">Carvid</figcaption>
                 <p>Carvid (David) cannot be bothered writing a profile about himself but hobbies include trolling Rob, gaming and trolling Rob, I encourage everyone to participate in all of these activities.</p>
                 <div className="social-icons">
-                  <a href="https://scotlan.events/discord"><i class="fab fa-discord"></i> </a>
+                  <a href="https://discord.gg/BTVZBed"><i class="fab fa-discord"></i> </a>
                   <a href="https://steamcommunity.com/id/Carvid"><i class="fab fa-steam"></i> </a>
                   <a href="https://www.facebook.com/david.mack.737448"><i class="fab fa-facebook"></i> </a>
                   <a href="https://www.linkedin.com/in/david-mack-b7aa4a7"><i class="fab fa-linkedin"></i></a>
@@ -76,7 +76,7 @@ export default class AboutUs extends Component {
                 <p>Smitttx (Laura) front-end web developer. With a passion for Gaming and Socialising – She wanted to be involved in ScotLAN. She is responsible for the Social Media and Merchandise/Branding, she is also our qualified first aider
                 should you require healing.</p>
                 <div className="social-icons">
-                  <a href="https://scotlan.events/discord"><i class="fab fa-discord"></i> </a>
+                  <a href="https://discord.gg/BTVZBed"><i class="fab fa-discord"></i> </a>
                   <a href="https://steamcommunity.com/profiles/76561198020042687"><i class="fab fa-steam"></i> </a>
                   <a href="https://www.facebook.com/profile.php?id=1350289445"><i class="fab fa-facebook"></i> </a>
                   <a href="https://www.linkedin.com/in/laura-anne-smith/"><i class="fab fa-linkedin"></i></a>
@@ -94,7 +94,7 @@ export default class AboutUs extends Component {
                 <figcaption className="widget-image-caption wp-caption-text">Andy</figcaption>
                 <p>Andy (Andy_M29) is a senior DevOps engineer with a background in software development and he's designed our fully serverless website architecture. At our events(if he even shows up) you'll probably find him deep in some code.</p>
                 <div className="social-icons">
-                  <a href="https://scotlan.events/discord"><i class="fab fa-discord"></i> </a>
+                  <a href="https://discord.gg/BTVZBed"><i class="fab fa-discord"></i> </a>
                   <a href="https://steamcommunity.com/profiles/76561197967987924"><i class="fab fa-steam"></i> </a>
                   <a href="https://www.facebook.com/andy.melvin.108"><i class="fab fa-facebook"></i> </a>
                   <a href="https://www.linkedin.com/in/andrew-melvin-a1101b46/"><i class="fab fa-linkedin"></i></a>
