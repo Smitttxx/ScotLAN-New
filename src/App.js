@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { Table } from "react-bootstrap";
 //import { Nav, Navbar, NavItem } from "react-bootstrap";
 //import './App.css';
 import './main.css';
 import Routes from "./Routes";
 import { Auth } from "aws-amplify";
 //import Iframe from 'react-iframe'
+import {  Tooltip } from 'react-tippy';
+
 
 
 class App extends Component {
@@ -22,8 +25,10 @@ class App extends Component {
       basketTotal: 0,
       IncludesEventTicket: false,
       EventTicketCount: 0,
-      Authorization: ""
+      Authorization: "",
+      basketQtyTotal: 0
     };
+    this.handleMenuClick = this.handleMenuClick.bind(this);
   }
 
   async componentDidMount() {
@@ -52,6 +57,10 @@ class App extends Component {
   this.setState({ isAuthenticating: false });
 }
 
+componentWillMount() {
+  document.addEventListener('mousedown', this.handleClick, false);
+}
+
 componentWillUnmount() {
     window.removeEventListener(
       "beforeunload",
@@ -59,6 +68,8 @@ componentWillUnmount() {
     );
 
     this.saveStateToLocalStorage();
+
+    document.removeEventListener('mousedown', this.handleClick, false);
 }
 
   userHasAuthenticated = authenticatedDetail => {
@@ -91,7 +102,7 @@ componentWillUnmount() {
 
   addToBasket = basketItem => {
     var splitBasketItem = basketItem.split(";");
-    var basketTotalCalc = this.state.basketTotal + (splitBasketItem[1] * splitBasketItem[2]);
+    //var basketTotalCalc = parseInt(this.state.basketTotal,10) + (parseInt(splitBasketItem[1],10) * parseInt(splitBasketItem[2],10));
 
     const index = this.state.basket.findIndex(bsk => bsk.ProductName === splitBasketItem[0]);
 
@@ -113,14 +124,51 @@ componentWillUnmount() {
       this.setState({ EventTicketCount: parseInt(this.state.EventTicketCount,10) + parseInt(splitBasketItem[1],10) });
     }
 
+    //this.setState({ basketTotal: basketTotalCalc });
+    this.recalcBasket();
+  }
+
+  recalcBasket = event => {
+
+    var basketTotalCalc = 0;
+    var basketQtyTotal = 0;
+    var includesEventTicket = false;
+    var eventTicketCount = 0;
+    for(let i = 0; i < this.state.basket.length; i++)
+    {
+      if(this.state.basket[i].Type === "Event")
+      {
+        includesEventTicket = true;
+        eventTicketCount = eventTicketCount + parseInt(this.state.basket[i].Quantity,10);
+      }
+
+      basketTotalCalc = basketTotalCalc + (parseInt(this.state.basket[i].Quantity,10) * parseInt(this.state.basket[i].Price,10));
+      basketQtyTotal = basketQtyTotal + parseInt(this.state.basket[i].Quantity,10);
+    }
+
     this.setState({ basketTotal: basketTotalCalc });
+    this.setState({ basketQtyTotal: basketQtyTotal });
+    this.setState({ IncludesEventTicket: includesEventTicket });
+    this.setState({ EventTicketCount: eventTicketCount });
+  }
+
+  removeFromBasket = basketItemName => {
+    const index = this.state.basket.findIndex(bsk => bsk.ProductName === basketItemName);
+    if(index > -1) {
+      const basketCopy = [...this.state.basket];
+      //var basketTotalCalc = parseInt(this.state.basketTotal,10) - parseInt(basketCopy[index].Price,10);
+      basketCopy.splice(index, 1);
+      this.setState({basket: basketCopy});
+      //this.setState({ basketTotal: basketTotalCalc });
+    }
   }
 
   clearCheckout = event => {
     this.setState({basket: []});
-    this.setState({basketTotal: 0})
-    this.setState({IncludesEventTicket: false})
-    this.setState({EventTicketCount: 0})
+    this.setState({basketTotal: 0});
+    this.setState({IncludesEventTicket: false});
+    this.setState({EventTicketCount: 0});
+    this.setState({basketQtyTotal: 0});
   }
 
   handleLogout = async event => {
@@ -129,6 +177,34 @@ componentWillUnmount() {
     this.userHasAuthenticated({authenticated:false,username:"",email:""});
 
     this.props.history.push("/login");
+  }
+
+  //Dont look here, bad things happen
+  handleClick = async (e) => {
+    if(this.state.displayMenu){
+      this.setState({displayMenu: false});
+      document.getElementById("SLHeader").classList.toggle("mobile-menu-expanded");
+
+      if(e.target.className === "fas fa-sign-out-alt")
+      {
+        await Auth.signOut();
+
+        this.userHasAuthenticated({authenticated:false,username:"",email:""});
+
+        this.props.history.push("/login");
+      }
+
+      if(e.target.pathname != undefined) {
+        //console.log(e);
+        this.props.history.push(e.target.pathname);
+        //window.location = e.target.href;
+      }
+    }
+  }
+
+  handleMenuClick() {
+    this.setState({displayMenu: true});
+    document.getElementById("SLHeader").classList.toggle("mobile-menu-expanded");
   }
 
   render() {
@@ -143,46 +219,65 @@ componentWillUnmount() {
       username: this.state.username,
       IncludesEventTicket: this.state.IncludesEventTicket,
       EventTicketCount: this.state.EventTicketCount,
-      authorization: this.state.Authorization
+      authorization: this.state.Authorization,
+      removeFromBasket: this.removeFromBasket,
+      recalcBasket: this.recalcBasket
     };
-
 
     return (
       !this.state.isAuthenticating &&
-      <div>
-      <div className="SL-header-background">
+      <div className="SL-height-100">
+      <div id="SLHeader" className="SL-header-background">
         <div className="container">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-sm-5">
               <Link className="navbar-brand" to="/"><img className="img-logo"  src="/Images/Scotlan_logo-nongrid-text--NoLogo.png" alt="Generic placeholder image" /></Link>
             </div>
-            <nav className="col-lg-7 navbar navbar-default navbar-static-top">
-              <ul className="nav nav-pills">
-                <li className="nav-item active">
-                  <Link className="nav-link" to="/About">About Us <span className="sr-only">(current)</span></Link>
+            <nav className="col-sm-7 navbar navbar-default navbar-static-top">
+            <div class="mobile-menu-logos">
+              <button class="mobile-menu" onClick={this.handleMenuClick}><i class="fas fa-bars"></i></button>
+              <div class="nav-item">
+              {this.state.basketQtyTotal > 0 ? [
+                  <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basketQtyTotal}</span></i></Link>
+              ]
+              : <span></span>
+            }</div>
+            </div>
+              <ul className="nav nav-pill">
+              <button class="mobile-menu-close" onClick={this.handleClick}><i class="fas fa-times"></i></button>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" >Our Events <i className="fas fa-chevron-down"></i></a>
-                    <ul>
-                      <Link to="/PreviousEvents"><li>Previous Events</li></Link>
-                      <Link to="/NextEvents"><li>Next Events</li></Link>
-                      <Link to="/Gallery"><li>Gallery</li></Link>
-                    </ul>
+                  <Link className="nav-link" to="/NextEvents">Next Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Merchandise">Merchandice</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/FAQS">FAQ's</Link>
+                  <Link className="nav-link" to="/Gallery">Gallery</Link>
                 </li>
                 {this.state.isAuthenticated
-                      ? [<li class="nav-item"><Link className="nav-link" to="/orders">My Account <i class="fas fa-chevron-down"></i></Link><ul><Link className="nav-link" to="/orders">My Orders</Link><a href="#" className="nav-link" onClick={this.handleLogout}>Logout</a></ul></li>]
+                      ? [ <Fragment>
+                            <li class="nav-item">
+                              <Link className="nav-link" to="/orders">Orders</Link>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" className="nav-link" onClick={this.handleLogout}><i class="fas fa-sign-out-alt"></i></a>
+                            </li>
+                        </Fragment>
+                        ]
                       : <Fragment>
                           <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
                           </li>
                         </Fragment>
                     }
+                    <li className="nav-item nav-item-mobilehide ">
+                    {this.state.basketQtyTotal > 0 ? [
+                        <Link className="nav-link" to="/checkout"><i class="fas fa-shopping-basket"><span class="basket-count">{this.state.basketQtyTotal}</span></i></Link>
+                    ]
+                    : <span></span>
+                    }
+                    </li>
               </ul>
             </nav>
           </div>
@@ -192,43 +287,32 @@ componentWillUnmount() {
       <footer className="SL-footer-background" >
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-4">
-                      <h4>ORGANIZERS</h4>
-                      <strong>Head Organiser</strong>
-                      <p>Rob Whyte - rob@scotlan.events</p>
-                      <strong>Partners</strong>
-                      <div>David Mack - david@scotlan.events</div>
-                      <div>Laura Smith - laura@scotlan.events</div>
-
-                      <strong><p>You can also send us a message at our social media channels, on Facebook or Discord!</p></strong>
-                    </div>
-                    <div className="col-lg-3">
-                      <h4>SOCIAL MEDIA</h4>
-                      <a href=""><li><i className="fab fa-facebook"> </i> Facebook</li></a>
-                      <a href=""><li><i className="fab fa-twitter-square"> </i> Twitter</li></a>
-                      <a href=""><li><i className="fab fa-instagram"></i> Instagram</li></a>
-                      <a href=""><li><i className="fab fa-discord"></i> Discord</li></a>
-                      <a href=""><li><i className="fab fa-linkedin"></i>LinkedIn</li></a>
-                      <a href=""><li><i className="fab fa-snapchat-square"></i>SnapChat</li></a>
-                    </div>
-                    <div className="col-lg-3">
-                      <h4>USEFUL LINKS</h4>
-                      <ul>
-                        <a href="/ourteam.html"><li>Meet the Team</li></a>
-                        <a href="/contactus/html"><li>Contact Us</li></a>
-                        <a href="/ourpartners"><li>Our Partners</li></a>
-                        <a href="/payment.html"><li>Event</li></a>
-                        <a href="/gallery.html"><li>Gallery</li></a>
-                        <a href="/Guide"><li>Guide</li></a>
-                      </ul>
-                    </div>
-                    <div className="col-lg-2">
-                    </div>
+                  <div class="col-md-3">
+                  <img src="/Images/Scotlan_Re-work-1.png" alt="scotlan-logo" />
                   </div>
+                  <div class="col-md-3">
+                  <h4>Information</h4>
+                  <ul>
+                    <Link to="/AboutUs"><li>Meet the team</li></Link>
+                    <Link to="/Contact"><li>Contact Us</li></Link>
+                    <Link to="/Partners"><li>Our Partners</li></Link>
+                    <Link to="/FAQS"><li>FAQ's</li></Link>
+                  </ul>
+                  </div>
+                    <div class="col-md-6">
+                    <h4>Follow us on </h4>
+                    <div className="sl-footer-social-media">
+                      <a href="https://www.facebook.com/ScotLAN.Events/"><i className="fab fa-facebook"></i></a>
+                      <a href="https://twitter.com/ScotLANevents?fbclid=IwAR0q5DSDNcm57QCgkQuTEQuL4va5s4q4lGUH6umG8Hi6JYvFvKfaNC0FtdU"><i className="fab fa-twitter-square"> </i></a>
+                      <a href="https://discord.gg/BTVZBed" target="_blank"><i className="fab fa-discord"></i></a>
+                      <a href="https://steamcommunity.com/groups/ScotLANEvents"><i class="fab fa-steam"></i></a>
+                    </div>
                 </div>
-              </footer>
+                <small><p>ScotLAN Events Limited (SC620678)</p></small>
+                </div>
+                  </div>
+            </footer>
       </div>
-
     );
   }
 }

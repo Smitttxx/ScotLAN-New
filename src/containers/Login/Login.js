@@ -20,6 +20,10 @@ export default class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
@@ -43,7 +47,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div class="sl-signup-background">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard sl-login-container">
       <div className="container">
         <form onSubmit={this.handleSubmit}>
         <div class="sl-signup-header">Log In to your account</div>
@@ -65,6 +71,7 @@ export default class Login extends Component {
             />
           </FormGroup>
           <div class="sl-signup-buttons">
+
           <LoaderButton
             block
             bsSize="large"
@@ -74,6 +81,7 @@ export default class Login extends Component {
             text="Login"
             loadingText="Logging in…"
           />
+          <Link to="/login/reset">Forgot password?</Link>
           <div className="Signup">
             <h3>Or</h3>
             <br/>
@@ -83,6 +91,8 @@ export default class Login extends Component {
         </form>
       </div>
       </div>
+    </div>
+    </div>
     );
   }
 }

@@ -8,6 +8,10 @@ import {
 import LoaderButton from "../../components/LoaderButton";
 import "./Signup.css";
 import { Auth } from "aws-amplify";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 
 export default class Signup extends Component {
@@ -35,6 +39,11 @@ export default class Signup extends Component {
       this.state.password === this.state.confirmPassword
     );
   }
+
+  async componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
 
   validateConfirmationForm() {
     return this.state.confirmationCode.length > 0;
@@ -64,7 +73,11 @@ export default class Signup extends Component {
         newUser
       });
     } catch (e) {
-      alert(e.message);
+        if(e.message.includes("password")) {
+        this.alertPrompt("Please ensure your password contains at least 1 uppercase, lowercase, number and special character");
+      } else {
+        this.alertPrompt(e.message);
+      }
     }
 
     this.setState({ isLoading: false });
@@ -82,9 +95,17 @@ export default class Signup extends Component {
       this.props.userHasAuthenticated(true);
       this.props.history.push("/");
     } catch (e) {
-      alert(e.message);
+      this.alertPrompt(e.message);
       this.setState({ isLoading: false });
     }
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'warning',
+      title: 'Oops...',
+      text: message
+    })
   }
 
   renderConfirmationForm() {
@@ -172,13 +193,18 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-        <div className="container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard sl-login-container">
+      <div className="container">
+      <p> Welcome to ScotLAN</p>
           {this.state.newUser === null
             ? this.renderForm()
             : this.renderConfirmationForm()}
         </div>
       </div>
+      </div>
+    </div>
     );
   }
 }

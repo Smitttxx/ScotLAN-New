@@ -15,6 +15,7 @@ export default class Products extends Component {
 
   async componentDidMount() {
       try {
+        window.scrollTo(0, 0);
         const products = await this.products();
         this.setState({ products });
         this.setState({ isLoading: false });
