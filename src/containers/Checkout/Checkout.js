@@ -5,6 +5,7 @@ import "./Checkout.css";
 import config from '../../config';
 import { Link, withRouter } from "react-router-dom";
 import Iframe from 'react-iframe'
+import { API, Auth } from "aws-amplify";
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -22,6 +23,8 @@ async onToken(token) {
 
   this.setState({ isLoading: true });
 
+  let user = await Auth.currentAuthenticatedUser();
+
   const res = await fetch(config.stripe.API_URL, {
     method: 'POST',
     body: JSON.stringify({
@@ -32,8 +35,8 @@ async onToken(token) {
       },
       basket: this.props.basket,
       basketTotal: this.props.basketTotal,
-      email: this.props.email,
-      username: this.props.username,
+      email: user.attributes.email,
+      username: user.username,
       includesEventTicket: this.props.IncludesEventTicket,
       eventTicketCount: this.props.EventTicketCount
     }),
