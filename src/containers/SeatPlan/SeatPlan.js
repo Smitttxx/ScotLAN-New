@@ -66,12 +66,19 @@ export default class SeatPlan extends Component {
       //TODO: split array for 32
     }
     else {
-       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
-       var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
-       var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
-       var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
-       var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
-       var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+       //var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
+       //var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
+       //var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
+       //var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
+       //var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
+       //var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+
+       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,18);
+       var seatPlanRow2 = seatPlan[0].Seats.L.slice(18,36);
+       var seatPlanRow3 = seatPlan[0].Seats.L.slice(36,54);
+       var seatPlanRow4 = seatPlan[0].Seats.L.slice(54,72);
+       var seatPlanRow5 = seatPlan[0].Seats.L.slice(72,90);
+       var seatPlanRow6 = seatPlan[0].Seats.L.slice(90,108);
 
        seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4, seatPlanRow5, seatPlanRow6);
        this.setState({seatPlanByRow: seatPlanRowSplit});
@@ -244,23 +251,23 @@ export default class SeatPlan extends Component {
                 {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-2">
-                 {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[1], 18)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--B">
                <div className="large-floorplan--row large-floorplan--row-3">
-                 {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[2], 36)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-4">
-                {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
+                {this.renderSeatRow(this.state.seatPlanByRow[3], 54)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--C">
                <div className="large-floorplan--row large-floorplan--row-5">
-                 {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[4], 72)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-6">
-                {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
+                {this.renderSeatRow(this.state.seatPlanByRow[5], 90)}
                </div>
              </div>
              <div className="large-floorplan--row-admin">
