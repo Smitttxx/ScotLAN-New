@@ -747,6 +747,16 @@ h5 {
   width: 100%;
   text-align: center;
 }
+.HaroldFace {
+  width: 100%;
+  border: 3px solid #73d14c;
+  border-radius: 25px;
+}
+.container--404--leftcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .large-floorplan {
   position: relative;
   height: 647px;
@@ -768,7 +778,8 @@ h5 {
   left: 4%;
   width: 100%;
 }
-.large-floorplan--areas .col-lg-7 {
+.large-floorplan--areas .col-lg-8,
+.large-floorplan--areas .col-lg-4 {
   padding: 0 0 0 0;
 }
 .large-floorplan--block {
@@ -818,6 +829,17 @@ h5 {
   color: #4c96d7;
   font-size: 0.9em;
 }
+.large-floorplan--rows .seat--staff {
+  border: 2px solid #e5f0f9;
+  background-color: #e5f0f9;
+}
+.large-floorplan--rows .seat--staff:before {
+  content: '\f406';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #4c96d7;
+  font-size: 0.9em;
+}
 .large-floorplan--rows .seat--edit {
   border: 2px solid #7a7a7a;
   background-color: white;
@@ -843,43 +865,52 @@ h5 {
   width: 90%;
   left: -7%;
   height: 377px;
-  border: 2px dashed purple;
+  border: 3px dashed purple;
   border-radius: 5px;
   background-color: #E6E6FA;
   color: purple;
   top: 33px;
+  font-weight: 700;
 }
 .large-floorplan--boardgames-area-design {
   position: absolute;
   bottom: -135px;
   height: 150px;
   left: -7%;
-  border: 2px dashed #ffa500;
+  border: 3px dashed #FA8072;
   border-radius: 5px;
-  background: #ffe4b2;
-  color: #ffa500;
+  background: #fef2f0;
+  color: #FA8072;
   width: 90%;
+  font-weight: 700;
 }
 .large-floorplan--console-corner-design {
-  height: 60px;
+  height: 90px;
   position: absolute;
   right: 13%;
   bottom: -135px;
-  border: 2px dashed #ffa500;
+  border: 3px dashed #ffa500;
   border-radius: 5px;
   background: #ffe4b2;
   color: #ffa500;
+  font-weight: 700;
+  width: 180px;
 }
 .large-floorplan--support {
   width: 260px;
   height: 80px;
   bottom: -134px;
   position: absolute;
-  border: 2px dashed #ffff32;
+  border: 3px dashed #4c96d7;
   border-radius: 5px;
   left: 49px;
-  background-color: #ffffe5;
-  color: grey;
+  background-color: #e5f0f9;
+  color: #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 .large-floorplan .tooltip {
   position: relative;
@@ -1520,7 +1551,7 @@ h5 {
     padding: 0 0 0 0;
   }
   .large-floorplan {
-    height: 540px;
+    height: 610px;
   }
   .large-floorplan--boardgames-area-design,
   .large-floorplan--sleeping-area-design,
@@ -2092,12 +2123,15 @@ table .btn,
     top: 120px;
   }
   .large-floorplan {
-    height: 540px;
+    height: 600px;
   }
   .large-floorplan--areas {
-    left: 8%;
+    left: 0%;
     width: fit-content;
     margin: auto;
+  }
+  .large-floorplan--areas .col-lg-8 {
+    padding: 0 0 0 0;
   }
   .large-floorplan--rows {
     display: flex;

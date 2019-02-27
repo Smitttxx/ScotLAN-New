@@ -499,7 +499,7 @@ renderSeatingPlan96Person() {
              <img src="/Images/ScotLAN-BIG.JPG" />
            </div>
            <div className="row large-floorplan--areas">
-             <div className="col-lg-7">
+             <div className="col-lg-8">
                <div className="large-floorplan--rows">
                  <div className="large-floorplan--block large-floorplan--block--A">
                    <div className="large-floorplan--row large-floorplan--row-1">
@@ -526,14 +526,36 @@ renderSeatingPlan96Person() {
                    </div>
                  </div>
                  <div className="large-floorplan--row-admin">
-                   <button className="large-floorplan--support"> | Support and Registration | </button>
+                    <div className="large-floorplan--support">
+                     <div class="">
+                       <Tooltip title='AndyM'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carvid'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Rob'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Smitttxx'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                      </div>
+                        <span>| Support and Registration |</span>
+                    </div>
                  </div>
                  <div className="large-floorplan--console-corner">
                    <button className="large-floorplan--console-corner-design"> | Console Area | </button>
                  </div>
                </div>
              </div>
-             <div className="col-lg-5">
+             <div className="col-lg-4">
                <div className="large-floorplan--sleeping-area">
                  <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
                </div>
