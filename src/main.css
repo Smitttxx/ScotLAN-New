@@ -1003,6 +1003,9 @@ h5 {
   color: white;
   width: auto;
 }
+.accordion .vip select:hover {
+  cursor: not-allowed;
+}
 .accordion-standard {
   border: 2px solid #73d14c;
   padding: 1em;
@@ -1644,7 +1647,7 @@ h5 {
   height: 75px;
 }
 .ribbon-red span {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   color: #FFF;
   text-align: center;
@@ -1826,6 +1829,9 @@ h5 {
 }
 .ribbon-wrapper--blue .ribbon-front {
   background-color: #4c96d7;
+  font-weight: bold;
+  color: white;
+  width: 120px;
 }
 .ribbon-wrapper--blue .ribbon-edge-topleft,
 .ribbon-wrapper--blue .ribbon-edge-bottomleft {

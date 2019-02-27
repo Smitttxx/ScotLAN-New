@@ -1307,7 +1307,13 @@ background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
 background-size: cover;
 color: white;
 width: auto;
+select{
+	&:hover{
+		cursor: not-allowed;
+	}
 }
+}
+
 
 &-standard {
 border: 2px solid @secondary-col;
@@ -2033,7 +2039,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	top: -5px;
 	width: 75px; height: 75px;
 	span {
-		font-size: 16px;
+		font-size: 12px;
 		font-weight: bold;
 		color: #FFF;
 		text-align: center;
@@ -2232,6 +2238,9 @@ height: 40px;
 .ribbon-wrapper--blue{
   .ribbon-front {
 		background-color: @primary-col;
+		font-weight: bold;
+		color: white;
+		width: 120px;
 }
 
   .ribbon-edge-topleft,

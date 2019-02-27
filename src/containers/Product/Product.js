@@ -204,7 +204,7 @@ export default class Product extends Component {
       }
     }
     else {
-      this.alertPrompt("Please select either a standard or VIP ticket");
+      this.alertPrompt("Please use the dropdown to select a quantity of tickets");
     }
     this.setState({ isLoading: false });
   }
@@ -396,10 +396,10 @@ renderProductDetail(){
               </div>
           </div>
             <div className="col-md-6">
-             <div class="ribbon ribbon-red "><span>V.I.P </span></div>
+             <div class="ribbon ribbon-red "><span>SOLDOUT</span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} </div>
+              <div>Quantity Available : 0 </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
@@ -412,7 +412,7 @@ renderProductDetail(){
               <div className="col-md-7">
               <div class="ribbon-wrapper ribbon-wrapper--blue">
               <div class="ribbon-front">
-                EARLYBIRD PRICING
+                SOLD OUT
               </div>
               <div class="ribbon-edge-topleft"></div>
               <div class="ribbon-edge-topright"></div>
@@ -425,8 +425,8 @@ renderProductDetail(){
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
-                <span className="sl-select">
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
+                <span className="sl-select" >
+                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip} disabled>
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
