@@ -687,6 +687,10 @@ background: @para-col;
 cursor: not-allowed;
 }
 }
+
+.google-map{
+	margin-bottom: 3em;
+}
 // ----------------------------------------------------------------------------
 // END OF BUTTONS
 // ----------------------------------------------------------------------------
@@ -1019,20 +1023,90 @@ position: absolute;
 // ----------------------------------------------------------------------------
 // END OF SEATING PLAN
 // ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// START OF SMALL OF SEATING PLAN
+// ----------------------------------------------------------------------------
+
+.small-floorplan {
+	position: relative;
+	height: FIT-CONTENT;
+	border: 2px dashed grey;
+	border-radius: 15px;
+	padding: 1em;
+	width: 500px;
+	margin: auto;
+	    margin-top: 3em;
+	.seat {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+		&--avalible {
+			border: 2px solid @secondary-col;
+			background-color: @background-col__green;
+			&:before {
+				content: '\f234';
+				font-weight: bold;
+				font-family: 'Font Awesome 5 free';
+				color: @secondary-col;
+				cursor: pointer;
+				font-size: 0.9em;
+			}
+		}
+
+		&--taken {
+			border: 2px solid @primary-col;
+			background-color: @background-col__blue;
+			cursor: not-allowed;
+			&:before {
+				content: '\f406';
+				font-weight: bold;
+				font-family: 'Font Awesome 5 free';
+				color: @primary-col;
+				font-size: 0.9em;
+			}
+		}
+
+		&--staff {
+			border: 2px solid @background-col__blue;
+			background-color: @background-col__blue;
+			&:before {
+				content: '\f406';
+				font-weight: bold;
+				font-family: 'Font Awesome 5 free';
+				color: @primary-col;
+				font-size: 0.9em;
+			}
+		}
+	}
+		&--block {
+			&:first-child{
+			margin-bottom: 2em;
+		}
+	}
+	&--sleeping-area {
+		height: 100%;
+		border: 3px dashed purple;
+		border-radius: 5px;
+		background-color: #E6E6FA;
+		display: flex;
+		justify-content: center;
+		&-design{
+			background-color: #E6E6FA;
+			color: purple;
+			font-weight: 700;
+			border: none;
+		}
+	}
+}
+
+
 // ----------------------------------------------------------------------------
 // START OF LARGE OF SEATING PLAN
 // ----------------------------------------------------------------------------
 
-.HaroldFace{
-	width: 100%;
-	border: 3px solid @secondary-col;
-	border-radius: 25px;
-}
-.container--404--leftcol{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
 .large-floorplan {
 position: relative;
 height: 647px;
@@ -1264,7 +1338,7 @@ align-items: center;
 		    text-decoration: underline;
 		}
 		.sl-btn--primary{
-			padding: 10px;
+			padding: 16px;
 				font-size: 1em;
 			&:hover{
 				background: @primary-col__hover;
@@ -2316,6 +2390,17 @@ padding-bottom: 1em;
 	.container{
 		margin: 0 0 0 0;
 	}
+}
+
+.HaroldFace{
+	width: 100%;
+	border: 3px solid @secondary-col;
+	border-radius: 25px;
+}
+.container--404--leftcol{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 

@@ -68,7 +68,7 @@ export default class NextEvents extends Component {
                     <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today</a></p>
                   </div>
                   <div class="col-md-5">
-                    <div style={{ height: '200px', width: '100%' }}>
+                    <div class="google-map" style={{ height: '200px', width: '100%', border: '5px solid #73D14C'}}>
                               <GoogleMapReact
                                 bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
                                 defaultCenter={this.state.center}
@@ -136,7 +136,7 @@ export default class NextEvents extends Component {
                       <div className="panel-body">
                       <ul>
                         <li> Daily Morning Rolls (Outside Caterer) </li>
-                        <li> Saturday Dominos Order </li>
+                        <li> Saturday Pizza Order </li>
                         <li> Kettle, microwave and small fridge on site </li>
                         <li> Corner Shops – 5 min walk </li>
                         <li> JustEat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>

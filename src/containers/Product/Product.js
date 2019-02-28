@@ -340,7 +340,6 @@ renderProductDetail(){
       </div>
     </div>
     <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
-    You can view the seating plan before hand here: <button className="sl-product-viewseatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
     <div className="product--info">
         <div className="accordion">
           <div className="row">
@@ -446,6 +445,7 @@ renderProductDetail(){
               </div>
             </div>
           </div>
+          You can view the seating plan before hand here: <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
@@ -634,7 +634,7 @@ renderSeats() {
       <td>Seat {parseInt(i, 10) + 1}</td>
       <td>{seat.S}</td>
       <td>
-      {seat.S === "Available" && this.state.canSelectSeats && <Button onClick={()=>{this.selectSeat(`${i}`)}}>Select Seat</Button> }
+        {seat.S === "Available" && this.state.canSelectSeats && <Button onClick={()=>{this.selectSeat(`${i}`)}}>Select Seat</Button> }
       </td>
     </tr>
   )
