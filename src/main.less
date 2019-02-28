@@ -1023,6 +1023,16 @@ position: absolute;
 // START OF LARGE OF SEATING PLAN
 // ----------------------------------------------------------------------------
 
+.HaroldFace{
+	width: 100%;
+	border: 3px solid @secondary-col;
+	border-radius: 25px;
+}
+.container--404--leftcol{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 .large-floorplan {
 position: relative;
 height: 647px;
@@ -1041,7 +1051,7 @@ position: absolute;
 top: 0%;
 left: 4%;
 width: 100%;
-.col-lg-7{
+.col-lg-8, .col-lg-4{
 	padding: 0 0 0 0;
 }
 }
@@ -1060,7 +1070,6 @@ cursor: pointer;
 &--avalible {
 	border: 2px solid @secondary-col;
 	background-color: @background-col__green;
-
 	&:before {
 		content: '\f234';
 		font-weight: bold;
@@ -1070,6 +1079,7 @@ cursor: pointer;
 		font-size: 0.9em;
 	}
 }
+
 &--avalible--maxlimitreached {
 	border: 2px solid @secondary-col;
 	background-color: @background-col__green;
@@ -1099,6 +1109,18 @@ cursor: pointer;
 	}
 }
 
+&--staff {
+	border: 2px solid @background-col__blue;
+	background-color: @background-col__blue;
+	&:before {
+		content: '\f406';
+		font-weight: bold;
+		font-family: 'Font Awesome 5 free';
+		color: @primary-col;
+		font-size: 0.9em;
+	}
+}
+
 &--edit {
 	border: 2px solid @para-col;
 	background-color: white;
@@ -1119,57 +1141,66 @@ cursor: pointer;
 margin-bottom: 10px;
 
 &-admin {
-left: 40%;
-padding-left: 38%;
-padding-top: 40px;
-}
+	left: 40%;
+	padding-left: 38%;
+	padding-top: 40px;
+	}
 }
 
 &--sleeping-area-design {
-position: absolute;
-width: 90%;
-left: -7%;
-height: 377px;
-border: 2px dashed purple;
-border-radius: 5px;
-background-color: #E6E6FA;
-color: purple;
-top: 33px;
+	position: absolute;
+	width: 90%;
+	left: -7%;
+	height: 377px;
+	border: 3px dashed purple;
+	border-radius: 5px;
+	background-color: #E6E6FA;
+	color: purple;
+	top: 33px;
+	font-weight: 700;
 }
 
 &--boardgames-area-design {
-position: absolute;
-bottom: -135px;
-height: 150px;
-left: -7%;
-border: 2px dashed #ffa500;
-border-radius: 5px;
-background: #ffe4b2;
-color: #ffa500;
-width: 90%;
+	position: absolute;
+	bottom: -135px;
+	height: 150px;
+	left: -7%;
+	border: 3px dashed #FA8072;
+	border-radius: 5px;
+	background: #fef2f0;
+	color: #FA8072;
+	width: 90%;
+	font-weight: 700;
 }
 
 &--console-corner-design {
-height: 60px;
-position: absolute;
-right: 13%;
-bottom: -135px;
-border: 2px dashed #ffa500;
-border-radius: 5px;
-background: #ffe4b2;
-color: #ffa500;
+	height: 90px;
+	position: absolute;
+	right: 13%;
+	bottom: -135px;
+	border: 3px dashed #ffa500;
+	border-radius: 5px;
+	background: #ffe4b2;
+	color: #ffa500;
+	font-weight: 700;
+	width: 180px;
 }
 
 &--support {
-width: 260px;
-height: 80px;
-bottom: -134px;
-position: absolute;
-border: 2px dashed #ffff32;
-border-radius: 5px;
-left: 49px;
-background-color: #ffffe5;
-color: grey;
+	width: 260px;
+	height: 80px;
+	bottom: -134px;
+	position: absolute;
+	border: 3px dashed @primary-col;
+	border-radius: 5px;
+	left: 49px;
+	background-color: @background-col__blue;
+	color: @primary-col;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
 }
 
 .tooltip {
@@ -1276,7 +1307,13 @@ background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
 background-size: cover;
 color: white;
 width: auto;
+select{
+	&:hover{
+		cursor: not-allowed;
+	}
 }
+}
+
 
 &-standard {
 border: 2px solid @secondary-col;
@@ -1914,7 +1951,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	}
 }
   .large-floorplan{
-		   height: 540px;
+		   height: 610px;
 				&--boardgames-area-design, &--sleeping-area-design, &--support, &--console-corner-design{
 				display: none;
 			}
@@ -2002,7 +2039,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	top: -5px;
 	width: 75px; height: 75px;
 	span {
-		font-size: 16px;
+		font-size: 12px;
 		font-weight: bold;
 		color: #FFF;
 		text-align: center;
@@ -2201,6 +2238,9 @@ height: 40px;
 .ribbon-wrapper--blue{
   .ribbon-front {
 		background-color: @primary-col;
+		font-weight: bold;
+		color: white;
+		width: 120px;
 }
 
   .ribbon-edge-topleft,
@@ -2539,11 +2579,14 @@ justify-content: space-between;
 		top: 120px;
 	}
 	  .large-floorplan{
-			   height: 540px;
+			   height: 600px;
 				 &--areas{
-					 left: 8%;
+					 left: 0%;
 					 width: fit-content;
   				 margin: auto;
+					 .col-lg-8{
+						 padding: 0 0 0 0;
+					 }
 				 }
 					&--rows{
 						display: flex;

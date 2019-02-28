@@ -204,7 +204,7 @@ export default class Product extends Component {
       }
     }
     else {
-      this.alertPrompt("Please select either a standard or VIP ticket");
+      this.alertPrompt("Please use the dropdown to select a quantity of tickets");
     }
     this.setState({ isLoading: false });
   }
@@ -396,10 +396,10 @@ renderProductDetail(){
               </div>
           </div>
             <div className="col-md-6">
-             <div class="ribbon ribbon-red "><span>V.I.P </span></div>
+             <div class="ribbon ribbon-red "><span>SOLDOUT</span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} </div>
+              <div>Quantity Available : 0 </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
@@ -412,7 +412,7 @@ renderProductDetail(){
               <div className="col-md-7">
               <div class="ribbon-wrapper ribbon-wrapper--blue">
               <div class="ribbon-front">
-                EARLYBIRD PRICING
+                SOLD OUT
               </div>
               <div class="ribbon-edge-topleft"></div>
               <div class="ribbon-edge-topright"></div>
@@ -425,8 +425,8 @@ renderProductDetail(){
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
-                <span className="sl-select">
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
+                <span className="sl-select" >
+                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip} disabled>
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -499,7 +499,7 @@ renderSeatingPlan96Person() {
              <img src="/Images/ScotLAN-BIG.JPG" />
            </div>
            <div className="row large-floorplan--areas">
-             <div className="col-lg-7">
+             <div className="col-lg-8">
                <div className="large-floorplan--rows">
                  <div className="large-floorplan--block large-floorplan--block--A">
                    <div className="large-floorplan--row large-floorplan--row-1">
@@ -526,14 +526,36 @@ renderSeatingPlan96Person() {
                    </div>
                  </div>
                  <div className="large-floorplan--row-admin">
-                   <button className="large-floorplan--support"> | Support and Registration | </button>
+                    <div className="large-floorplan--support">
+                     <div class="">
+                       <Tooltip title='AndyM'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carvid'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Rob'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Smitttxx'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                      </div>
+                        <span>| Support and Registration |</span>
+                    </div>
                  </div>
                  <div className="large-floorplan--console-corner">
                    <button className="large-floorplan--console-corner-design"> | Console Area | </button>
                  </div>
                </div>
              </div>
-             <div className="col-lg-5">
+             <div className="col-lg-4">
                <div className="large-floorplan--sleeping-area">
                  <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
                </div>
