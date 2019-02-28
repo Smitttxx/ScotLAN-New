@@ -314,7 +314,7 @@ renderProductDetail(){
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li>Gamers : 96 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li>Gamers : 114 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
             <li>Event : Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
             <li>Parking Avalible : Yes </li>
             <li>Ticket Price: from £35</li>
@@ -506,23 +506,23 @@ renderSeatingPlan96Person() {
                     {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-2">
-                     {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[1], 18)}
                    </div>
                  </div>
                  <div className="large-floorplan--block large-floorplan--block--B">
                    <div className="large-floorplan--row large-floorplan--row-3">
-                     {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[2], 36)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-4">
-                    {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
+                    {this.renderSeatRow(this.state.seatPlanByRow[3], 54)}
                    </div>
                  </div>
                  <div className="large-floorplan--block large-floorplan--block--C">
                    <div className="large-floorplan--row large-floorplan--row-5">
-                     {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[4], 72)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-6">
-                    {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
+                    {this.renderSeatRow(this.state.seatPlanByRow[5], 90)}
                    </div>
                  </div>
                  <div className="large-floorplan--row-admin">
