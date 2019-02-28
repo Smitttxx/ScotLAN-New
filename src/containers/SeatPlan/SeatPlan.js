@@ -289,10 +289,10 @@ export default class SeatPlan extends Component {
                   <Tooltip title='Smitttxx'>
                       <button class="seat seat--staff"></button>
                   </Tooltip>
-                  <Tooltip title='Grandy'>
+                  <Tooltip title='Skillin'>
                       <button class="seat seat--staff"></button>
                   </Tooltip>
-                  <Tooltip title='Carb0n'>
+                  <Tooltip title='Grandy'>
                       <button class="seat seat--staff"></button>
                   </Tooltip>
                  </div>
