@@ -18,7 +18,7 @@ import Partners from "./containers/Partners/Partners";
 import PreviousEvents from "./containers/PreviousEvents/PreviousEvents";
 import WhatToBring from "./containers/WhatToBring/WhatToBring";
 import Food from "./containers/Food/Food";
-import Scotlan4 from "./containers/scotlan#4/Scotlan#4";
+import Scotlan4 from "./containers/Scotlan#4/Scotlan#4";
 import FAQS from "./containers/FAQS/FAQS";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
