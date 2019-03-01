@@ -314,11 +314,11 @@ renderProductDetail(){
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li>Gamers : 114 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li>Event : Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
-            <li>Parking Avalible : Yes </li>
-            <li>Ticket Price: from £35</li>
-            <li>Address: Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
+            <li><strong>Gamers:</strong> 114 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li><strong>Event:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
+            <li><strong>Parking Avalible:</strong> Yes </li>
+            <li><strong>Ticket Price:</strong> from £35</li>
+            <li><strong>Address:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
           </ul>
       </div>
       <div className="col-md-4">
@@ -336,7 +336,7 @@ renderProductDetail(){
               />
             </GoogleMapReact>
           </div>
-
+      <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--seatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan <i class="fas fa-chair"></i></button>
       </div>
     </div>
     <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
@@ -445,7 +445,7 @@ renderProductDetail(){
               </div>
             </div>
           </div>
-          You can view the seating plan before hand here: <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
+
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>

@@ -994,6 +994,17 @@ h5 {
 .large-floorplan .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+.sl-btn--seatingplan {
+  margin: auto;
+  display: flex;
+  margin-top: -10px;
+  z-index: 1;
+  padding-top: 17px;
+  font-size: 1.1em;
+}
+.sl-btn--seatingplan .fas {
+  padding-left: 1em;
+}
 .product--info {
   margin: 2em 0 0 0 ;
   color: white;
@@ -2271,4 +2282,11 @@ table .btn,
   .large-floorplan--key .seat--avalible {
     margin-left: 0.8em;
   }
+}
+.swal2-shown {
+  height: 100% !important;
+  overflow-y: inherit !important;
+}
+.swal2-shown #root {
+  height: 84%;
 }

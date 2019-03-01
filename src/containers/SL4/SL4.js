@@ -187,7 +187,7 @@ export default class SL4 extends Component {
                    </div>
                  </div>
                </div>
-
+               <a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Contact" role="button">Enquire about ScotLAN #4</a>
             </div>
             <div className="col-md-4">
               <div class="google-map" style={{ height: '200px', width: '100%', border: '5px solid #73D14C'}}>
@@ -205,12 +205,16 @@ export default class SL4 extends Component {
                 </div>
                 <h4>Tournaments</h4>
                 <p> Sign up for these Tournaments will be opened at the event</p>
+                <h6>PC</h6>
                 <ul>
                   <li>CS:GO 3v3</li>
                   <li>League of Legends 3v3 </li>
                   <li>Overwatch 1v1 </li>
                 </ul>
-     <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Contact" role="button">Enquire about ScotLAN #4</a></p>
+                <h6>Console Corner</h6>
+                <ul>
+                  <li>Tekken 7</li>
+                </ul>
   </div>
             </div>
             </div>

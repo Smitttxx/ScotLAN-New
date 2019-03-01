@@ -903,7 +903,6 @@ position: relative;
 height: 600px;
 margin: auto;
 width: 600px;
-
 img {
 position: absolute;
 border-radius: 25%;
@@ -1305,6 +1304,18 @@ visibility: visible;
 // END OF LARGE OF SEATING PLAN
 // ----------------------------------------------------------------------------
 // PRODUCTS PAGE ///
+
+.sl-btn--seatingplan{
+	margin: auto;
+    display: flex;
+    margin-top: -10px;
+    z-index: 1;
+    padding-top: 17px;
+    font-size: 1.1em;
+		.fas{
+			    padding-left: 1em;
+		}
+}
 
 .product {
 &--info {
@@ -2740,5 +2751,16 @@ justify-content: space-between;
 		margin-left: 0.8em;
 	}
 	}
+	}
+}
+
+
+//--------FIXES
+
+.swal2-shown{
+	height: 100% !important;
+	overflow-y: inherit !important;
+	#root{
+		height: 84%;
 	}
 }
