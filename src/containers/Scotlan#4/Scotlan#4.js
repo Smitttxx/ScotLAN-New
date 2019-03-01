@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Scotlan#4.css";
+import "./Scotlan4.css";
 import { Redirect } from 'react-router-dom';
 import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
