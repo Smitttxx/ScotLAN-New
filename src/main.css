@@ -482,6 +482,9 @@ h5 {
   background: #7a7a7a;
   cursor: not-allowed;
 }
+.google-map {
+  margin-bottom: 3em;
+}
 .SL-header-background {
   position: relative;
   background: #414141;
@@ -747,15 +750,73 @@ h5 {
   width: 100%;
   text-align: center;
 }
-.HaroldFace {
-  width: 100%;
-  border: 3px solid #73d14c;
-  border-radius: 25px;
+.small-floorplan {
+  position: relative;
+  height: FIT-CONTENT;
+  border: 2px dashed grey;
+  border-radius: 15px;
+  padding: 1em;
+  width: 500px;
+  margin: auto;
+  margin-top: 3em;
 }
-.container--404--leftcol {
+.small-floorplan .seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.small-floorplan .seat--avalible {
+  border: 2px solid #73d14c;
+  background-color: #e2f4db;
+}
+.small-floorplan .seat--avalible:before {
+  content: '\f234';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #73d14c;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.small-floorplan .seat--taken {
+  border: 2px solid #4c96d7;
+  background-color: #e5f0f9;
+  cursor: not-allowed;
+}
+.small-floorplan .seat--taken:before {
+  content: '\f406';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #4c96d7;
+  font-size: 0.9em;
+}
+.small-floorplan .seat--staff {
+  border: 2px solid #e5f0f9;
+  background-color: #e5f0f9;
+}
+.small-floorplan .seat--staff:before {
+  content: '\f406';
+  font-weight: bold;
+  font-family: 'Font Awesome 5 free';
+  color: #4c96d7;
+  font-size: 0.9em;
+}
+.small-floorplan--block:first-child {
+  margin-bottom: 2em;
+}
+.small-floorplan--sleeping-area {
+  height: 100%;
+  border: 3px dashed purple;
+  border-radius: 5px;
+  background-color: #E6E6FA;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+}
+.small-floorplan--sleeping-area-design {
+  background-color: #E6E6FA;
+  color: purple;
+  font-weight: 700;
+  border: none;
 }
 .large-floorplan {
   position: relative;
@@ -962,7 +1023,7 @@ h5 {
   text-decoration: underline;
 }
 .accordion .sl-product-gotopayment .sl-btn--primary {
-  padding: 10px;
+  padding: 16px;
   font-size: 1em;
 }
 .accordion .sl-product-gotopayment .sl-btn--primary:hover {
@@ -1896,6 +1957,16 @@ h5 {
 }
 .sl-order-container .container {
   margin: 0 0 0 0;
+}
+.HaroldFace {
+  width: 100%;
+  border: 3px solid #73d14c;
+  border-radius: 25px;
+}
+.container--404--leftcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @-webkit-keyframes blurFadeIn {
   0% {

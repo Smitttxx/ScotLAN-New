@@ -250,7 +250,7 @@ componentWillUnmount() {
                   <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/ScotLAN#4">SL#4</Link>
+                  <Link className="nav-link" to="/ScotLAN4">SL#4</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/NextEvents">SL#5</Link>
