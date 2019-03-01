@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
+import {  FormGroup, FormControl, ControlLabel, Table, Button, Modal, Form } from "react-bootstrap";
 import "./SeatPlan.css";
 import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
@@ -20,7 +20,8 @@ export default class SeatPlan extends Component {
       selectedSeat: 0,
       gamerName: "",
       eventName: "",
-      authToken: ""
+      authToken: "",
+      sleeping: false
     };
     this.closeModal = this.closeModal.bind(this);
     this.submitSeat = this.submitSeat.bind(this);
@@ -108,6 +109,14 @@ export default class SeatPlan extends Component {
     });
   }
 
+  handleChangeChk = event => {
+    if(this.state.sleeping) {
+      this.setState({sleeping: false});
+    } else {
+      this.setState({sleeping: true});
+    }
+  }
+
   selectSeat = seat => {
     this.setState({ selectedSeat: seat});
     this.setState({ showModal: true});
@@ -126,7 +135,8 @@ export default class SeatPlan extends Component {
             "Username": this.state.gamerName,
             "OrderID": this.props.match.params.OrderID,
             "NewUsedCount": newSeatCount,
-            "UserID": this.props.username
+            "UserID": this.props.username,
+            "SleepingOnSite": this.state.sleeping
           }
       }
 
@@ -191,7 +201,6 @@ export default class SeatPlan extends Component {
             </Modal.Header>
             <Modal.Body>
             <FormGroup controlId="gamerName" bsSize="small">
-
             <p>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</p>
             <ControlLabel>Please enter gamer name for this seat</ControlLabel>
             <div class="row">
@@ -207,8 +216,11 @@ export default class SeatPlan extends Component {
                  <Button bsStyle="primary" onClick={this.submitSeat}>Save seat selection</Button>
                </div>
              </div>
-
-              </FormGroup>
+            </FormGroup>
+            <FormGroup controlId="sleeping">
+              <ControlLabel>Will you be sleeping onsite?</ControlLabel>
+              <input type="checkbox" defaultChecked={this.state.sleeping} onChange={this.handleChangeChk} />
+            </FormGroup>
             </Modal.Body>
             <Modal.Footer>
             </Modal.Footer>
