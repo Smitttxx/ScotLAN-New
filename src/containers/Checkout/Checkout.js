@@ -6,6 +6,10 @@ import config from '../../config';
 import { Link, withRouter } from "react-router-dom";
 import Iframe from 'react-iframe'
 import { API, Auth } from "aws-amplify";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -61,9 +65,18 @@ async onToken(token) {
       try {
         this.setState({ isLoading: false });
         window.scrollTo(0, 0);
+        this.alertPrompt("If you're under 16 years old you will need to bring a parental consent form, you can find a copy <a href='http://form.pdf' class='sl-btn sl-btn--secondary' target='_blank'>here</a>");
         } catch (e) {
         alert(e);
       }
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'question',
+      title: 'Under 16?',
+      html: message
+    })
   }
 
   handleChange = event => {
