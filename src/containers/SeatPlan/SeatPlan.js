@@ -218,8 +218,12 @@ export default class SeatPlan extends Component {
              </div>
             </FormGroup>
             <FormGroup controlId="sleeping">
-              <ControlLabel>Will you be sleeping onsite?</ControlLabel>
-              <input type="checkbox" defaultChecked={this.state.sleeping} onChange={this.handleChangeChk} />
+              <div class="sl-checkboxes">
+                <div class="sl-option-input">
+                  <input class="sl-checkbox" type="checkbox" defaultChecked={this.state.sleeping} onChange={this.handleChangeChk} id="sleeping"/>
+                  <ControlLabel >Will you be sleeping onsite?</ControlLabel>
+                </div>
+              </div>
             </FormGroup>
             </Modal.Body>
             <Modal.Footer>

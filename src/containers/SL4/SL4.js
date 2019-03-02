@@ -187,7 +187,7 @@ export default class SL4 extends Component {
                    </div>
                  </div>
                </div>
-               <a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Contact" role="button">Enquire about ScotLAN #4</a>
+               <div class="product--info--enquire"><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Contact" role="button">Enquire about ScotLAN #4</a></div>
             </div>
             <div className="col-md-4">
               <div class="google-map" style={{ height: '200px', width: '100%', border: '5px solid #73D14C'}}>

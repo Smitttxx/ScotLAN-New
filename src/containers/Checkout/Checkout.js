@@ -65,7 +65,7 @@ async onToken(token) {
       try {
         this.setState({ isLoading: false });
         window.scrollTo(0, 0);
-        this.alertPrompt("If you're under 16 years old you will need to bring a parental consent form, you can find a copy <a href='http://form.pdf' class='sl-btn sl-btn--secondary' target='_blank'>here</a>");
+        this.alertPrompt("If you're under 16 years old you will need to bring a parental consent form to the event. <a href='https://s3-eu-west-1.amazonaws.com/scotlanassets/ScotLANParentalConsent.pdf' target='_blank'>You can find a copy of the form here</a>");
         } catch (e) {
         alert(e);
       }
