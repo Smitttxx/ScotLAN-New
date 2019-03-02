@@ -307,7 +307,7 @@ componentWillUnmount() {
                     <div className="sl-footer-social-media">
                       <a href="https://www.facebook.com/ScotLAN.Events/"><i className="fab fa-facebook"></i></a>
                       <a href="https://twitter.com/ScotLANevents?fbclid=IwAR0q5DSDNcm57QCgkQuTEQuL4va5s4q4lGUH6umG8Hi6JYvFvKfaNC0FtdU"><i className="fab fa-twitter-square"> </i></a>
-                      <a href="https://discord.gg/BTVZBed" target="_blank"><i className="fab fa-discord"></i></a>
+                      <a href="https://discord.gg/pMxdGfk" target="_blank"><i className="fab fa-discord"></i></a>
                       <a href="https://steamcommunity.com/groups/ScotLANEvents"><i class="fab fa-steam"></i></a>
                     </div>
                 </div>

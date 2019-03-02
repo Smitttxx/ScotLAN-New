@@ -216,24 +216,6 @@ background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 // ENF OF GENERAL STYLES
 // ----------------------------------------------------------------------------
 
-.sl-checkbox {
-&+label {
-&:before {
-background: @white;
-border: 1px solid @para-col;
-outline: 0;
-}
-}
-
-&:checked {
-&+label {
-&:before {
-	background: @primary-col;
-	border-color: @secondary-col;
-}
-}
-}
-}
 
 .sl-radio {
 &+label {
@@ -251,50 +233,50 @@ outline: 0;
 }
 }
 
-.sl-input {
-input {
-border-radius: 5px;
-padding: 0.5em;
-border: 1px solid @primary-col;
-height: 40px;
-width: 100%;
-background: @background-col__blue;
-}
-}
+	.sl-input {
+		input {
+		border-radius: 5px;
+		padding: 0.5em;
+		border: 1px solid @primary-col;
+		height: 40px;
+		width: 100%;
+		background: @background-col__blue;
+		}
+	}
 
-.sl-box-inputs {
-.sl-option-input {
-display: block;
+	.sl-box-inputs {
+		.sl-option-input {
+		display: block;
 
-input {
-display: none;
-}
-}
+		input {
+		display: none;
+		}
+	}
 
 .sl-checkboxes {
-.sl-checkbox:checked+label:before {
-content: '\f00c';
-font-weight: bold;
-font-family: 'Font Awesome 5 free';
-background: @white;
-color: @secondary-col;
-line-height: 1.2em;
-padding: 0;
-}
+	.sl-checkbox:checked+label:before {
+		content: '\f00c';
+		font-weight: bold;
+		font-family: 'Font Awesome 5 free';
+		background: @white;
+		color: @secondary-col;
+		line-height: 1.2em;
+		padding: 0;
+		}
 
-label {
-display: flex;
-align-items: center;
+		label {
+		display: flex;
+		align-items: center;
 
-&:before {
-	content: "";
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	border: 1px solid @background-col;
-	margin-right: 0.5em;
-}
-}
+		&:before {
+			content: "";
+			display: inline-block;
+			height: 20px;
+			width: 20px;
+			border: 1px solid @background-col;
+			margin-right: 0.5em;
+		}
+	}
 }
 
 .sl-radio {
@@ -903,7 +885,6 @@ position: relative;
 height: 600px;
 margin: auto;
 width: 600px;
-
 img {
 position: absolute;
 border-radius: 25%;
@@ -1306,19 +1287,36 @@ visibility: visible;
 // ----------------------------------------------------------------------------
 // PRODUCTS PAGE ///
 
+.sl-btn--seatingplan{
+	margin: auto;
+    display: flex;
+    margin-top: -10px;
+    z-index: 1;
+    padding-top: 17px;
+    font-size: 1.1em;
+		.fas{
+			    padding-left: 1em;
+		}
+}
+
 .product {
-&--info {
-margin: 2em 0 0 0 ;
-color: white;
-#falkirkMaplocation {
-	border-radius: 5px;
-	border: 2px solid @primary-col;
-	-webkit-box-shadow: 3px 1px 8px 2px rgba(51,51,51,0.58);
-	box-shadow: 3px 1px 8px 2px rgba(51,51,51,0.58);
-	height: 220px;
+	&--info {
+		margin: 2em 0 0 0 ;
+		color: white;
+			#falkirkMaplocation {
+				border-radius: 5px;
+				border: 2px solid @primary-col;
+				-webkit-box-shadow: 3px 1px 8px 2px rgba(51,51,51,0.58);
+				box-shadow: 3px 1px 8px 2px rgba(51,51,51,0.58);
+				height: 220px;
+			}
+		&--enquire{
+			text-align: center;
+		}
+	}
 }
-}
-}
+
+
 
 .accordion {
 .row{
@@ -2740,5 +2738,76 @@ justify-content: space-between;
 		margin-left: 0.8em;
 	}
 	}
+	}
+}
+
+
+//--------FIXES
+
+.swal2-shown{
+	height: 100% !important;
+	overflow-y: inherit !important;
+	#root{
+		height: 84%;
+	}
+}
+
+.swal2-popup{
+	a{
+		color: black;
+		font-weight: bold;
+		text-decoration: underline;
+		display: block;
+		margin-top: 1em;
+	}
+}
+
+.sl-checkbox {
+&+label {
+&:before {
+background: @white;
+border: 1px solid @para-col;
+outline: 0;
+}
+}
+
+&:checked {
+&+label {
+&:before {
+	background: @primary-col;
+	border-color: @secondary-col;
+}
+}
+}
+}
+
+
+.sl-checkboxes {
+	.sl-checkbox:checked+label:before {
+		content: '\f00c';
+		font-weight: bold;
+		font-family: 'Font Awesome 5 free';
+		background: @white;
+		color: @secondary-col;
+		line-height: 1.2em;
+		padding: 0;
+		font-size: 1.5em;
+		}
+
+		label {
+		display: flex;
+		align-items: center;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			height: 30px;
+    width: 30px;
+			border: 1px solid @background-col;
+			margin-right: 0.5em;
+		}
+	}
+	input{
+		display: none;
 	}
 }
