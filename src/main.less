@@ -1027,12 +1027,13 @@ position: absolute;
 		&--avalible {
 			border: 2px solid @secondary-col;
 			background-color: @background-col__green;
+			cursor: not-allowed;
 			&:before {
 				content: '\f234';
 				font-weight: bold;
 				font-family: 'Font Awesome 5 free';
 				color: @secondary-col;
-				cursor: pointer;
+				cursor: not-allowed;
 				font-size: 0.9em;
 			}
 		}
@@ -2572,6 +2573,10 @@ justify-content: space-between;
 
 @media only screen and (max-width: 425px) {
 
+	.small-floorplan{
+		display: none;
+	}
+
 .container--basketpage{
 	.table-bordered{
 		font-size: 0.7em;
@@ -2747,6 +2752,7 @@ justify-content: space-between;
 .swal2-shown{
 	height: 100% !important;
 	overflow-y: inherit !important;
+	padding-right: 0px !important;
 	#root{
 		height: 84%;
 	}
