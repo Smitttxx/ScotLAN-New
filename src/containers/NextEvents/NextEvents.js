@@ -60,7 +60,7 @@ export default class NextEvents extends Component {
                     <ul>
                       <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
                       <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
-                      <li><strong>Spaces:</strong> 100 seat BYOC Tickets</li>
+                      <li><strong>Spaces:</strong> 114 seat BYOC Tickets</li>
                       <li><strong>Prices From:</strong> £35 </li>
                       <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
                       <li><a href="https://www.facebook.com/events/386414302190930/"><strong>Facebook Event</strong></a></li>
@@ -68,7 +68,7 @@ export default class NextEvents extends Component {
                     <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today</a></p>
                   </div>
                   <div class="col-md-5">
-                    <div style={{ height: '200px', width: '100%' }}>
+                    <div class="google-map" style={{ height: '200px', width: '100%', border: '5px solid #73D14C'}}>
                               <GoogleMapReact
                                 bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
                                 defaultCenter={this.state.center}
@@ -136,7 +136,7 @@ export default class NextEvents extends Component {
                       <div className="panel-body">
                       <ul>
                         <li> Daily Morning Rolls (Outside Caterer) </li>
-                        <li> Saturday Dominos Order </li>
+                        <li> Saturday Pizza Order </li>
                         <li> Kettle, microwave and small fridge on site </li>
                         <li> Corner Shops – 5 min walk </li>
                         <li> JustEat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>

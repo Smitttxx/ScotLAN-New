@@ -82,12 +82,19 @@ export default class Product extends Component {
       //TODO: split array for 32
     }
     else {
-       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
-       var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
-       var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
-       var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
-       var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
-       var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+       //var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
+       //var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
+       //var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
+       //var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
+       //var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
+       //var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+
+       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,18);
+       var seatPlanRow2 = seatPlan[0].Seats.L.slice(18,36);
+       var seatPlanRow3 = seatPlan[0].Seats.L.slice(36,54);
+       var seatPlanRow4 = seatPlan[0].Seats.L.slice(54,72);
+       var seatPlanRow5 = seatPlan[0].Seats.L.slice(72,90);
+       var seatPlanRow6 = seatPlan[0].Seats.L.slice(90,108);
 
        seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4, seatPlanRow5, seatPlanRow6);
        this.setState({seatPlanByRow: seatPlanRowSplit});
@@ -197,7 +204,7 @@ export default class Product extends Component {
       }
     }
     else {
-      this.alertPrompt("Please select either a standard or VIP ticket");
+      this.alertPrompt("Please use the dropdown to select a quantity of tickets");
     }
     this.setState({ isLoading: false });
   }
@@ -307,11 +314,11 @@ renderProductDetail(){
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li>Gamers : 96 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li>Event : Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
-            <li>Parking Avalible : Yes </li>
-            <li>Ticket Price: from £35</li>
-            <li>Address: Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
+            <li><strong>Gamers:</strong> 114 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li><strong>Event:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
+            <li><strong>Parking Avalible:</strong> Yes </li>
+            <li><strong>Ticket Price:</strong> from £35</li>
+            <li><strong>Address:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
           </ul>
       </div>
       <div className="col-md-4">
@@ -329,11 +336,10 @@ renderProductDetail(){
               />
             </GoogleMapReact>
           </div>
-
+      <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--seatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan <i class="fas fa-chair"></i></button>
       </div>
     </div>
     <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
-    You can view the seating plan before hand here: <button className="sl-product-viewseatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan</button>
     <div className="product--info">
         <div className="accordion">
           <div className="row">
@@ -389,10 +395,10 @@ renderProductDetail(){
               </div>
           </div>
             <div className="col-md-6">
-             <div class="ribbon ribbon-red "><span>V.I.P </span></div>
+             <div class="ribbon ribbon-red "><span>SOLDOUT</span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} </div>
+              <div>Quantity Available : 0 </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
@@ -405,7 +411,7 @@ renderProductDetail(){
               <div className="col-md-7">
               <div class="ribbon-wrapper ribbon-wrapper--blue">
               <div class="ribbon-front">
-                EARLYBIRD PRICING
+                SOLD OUT
               </div>
               <div class="ribbon-edge-topleft"></div>
               <div class="ribbon-edge-topright"></div>
@@ -418,8 +424,8 @@ renderProductDetail(){
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
-                <span className="sl-select">
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
+                <span className="sl-select" >
+                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip} disabled>
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -439,6 +445,7 @@ renderProductDetail(){
               </div>
             </div>
           </div>
+
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
@@ -492,41 +499,63 @@ renderSeatingPlan96Person() {
              <img src="/Images/ScotLAN-BIG.JPG" />
            </div>
            <div className="row large-floorplan--areas">
-             <div className="col-lg-7">
+             <div className="col-lg-8">
                <div className="large-floorplan--rows">
                  <div className="large-floorplan--block large-floorplan--block--A">
                    <div className="large-floorplan--row large-floorplan--row-1">
                     {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-2">
-                     {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[1], 18)}
                    </div>
                  </div>
                  <div className="large-floorplan--block large-floorplan--block--B">
                    <div className="large-floorplan--row large-floorplan--row-3">
-                     {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[2], 36)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-4">
-                    {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
+                    {this.renderSeatRow(this.state.seatPlanByRow[3], 54)}
                    </div>
                  </div>
                  <div className="large-floorplan--block large-floorplan--block--C">
                    <div className="large-floorplan--row large-floorplan--row-5">
-                     {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
+                     {this.renderSeatRow(this.state.seatPlanByRow[4], 72)}
                    </div>
                    <div className="large-floorplan--row large-floorplan--row-6">
-                    {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
+                    {this.renderSeatRow(this.state.seatPlanByRow[5], 90)}
                    </div>
                  </div>
                  <div className="large-floorplan--row-admin">
-                   <button className="large-floorplan--support"> | Support and Registration | </button>
+                    <div className="large-floorplan--support">
+                     <div class="">
+                       <Tooltip title='AndyM'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carvid'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Rob'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Smitttxx'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                      </div>
+                        <span>| Support and Registration |</span>
+                    </div>
                  </div>
                  <div className="large-floorplan--console-corner">
                    <button className="large-floorplan--console-corner-design"> | Console Area | </button>
                  </div>
                </div>
              </div>
-             <div className="col-lg-5">
+             <div className="col-lg-4">
                <div className="large-floorplan--sleeping-area">
                  <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
                </div>
@@ -605,7 +634,7 @@ renderSeats() {
       <td>Seat {parseInt(i, 10) + 1}</td>
       <td>{seat.S}</td>
       <td>
-      {seat.S === "Available" && this.state.canSelectSeats && <Button onClick={()=>{this.selectSeat(`${i}`)}}>Select Seat</Button> }
+        {seat.S === "Available" && this.state.canSelectSeats && <Button onClick={()=>{this.selectSeat(`${i}`)}}>Select Seat</Button> }
       </td>
     </tr>
   )

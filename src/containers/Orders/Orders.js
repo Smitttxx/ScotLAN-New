@@ -36,7 +36,7 @@ export default class Orders extends Component {
     let authHeader = {
       headers: { Authorization: user.signInUserSession.idToken.jwtToken }
     }
-    return await API.get("orders", `/orders?UserID=${UserID}`, authHeader);
+    return await API.get("orders", `/orders?UserID=${user.username}`, authHeader);
   }
 
   handleChange = event => {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
+import {  FormGroup, FormControl, ControlLabel, Table, Button, Modal, Form } from "react-bootstrap";
 import "./SeatPlan.css";
 import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
@@ -20,7 +20,8 @@ export default class SeatPlan extends Component {
       selectedSeat: 0,
       gamerName: "",
       eventName: "",
-      authToken: ""
+      authToken: "",
+      sleeping: false
     };
     this.closeModal = this.closeModal.bind(this);
     this.submitSeat = this.submitSeat.bind(this);
@@ -66,12 +67,19 @@ export default class SeatPlan extends Component {
       //TODO: split array for 32
     }
     else {
-       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
-       var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
-       var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
-       var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
-       var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
-       var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+       //var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
+       //var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
+       //var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
+       //var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
+       //var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
+       //var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+
+       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,18);
+       var seatPlanRow2 = seatPlan[0].Seats.L.slice(18,36);
+       var seatPlanRow3 = seatPlan[0].Seats.L.slice(36,54);
+       var seatPlanRow4 = seatPlan[0].Seats.L.slice(54,72);
+       var seatPlanRow5 = seatPlan[0].Seats.L.slice(72,90);
+       var seatPlanRow6 = seatPlan[0].Seats.L.slice(90,108);
 
        seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4, seatPlanRow5, seatPlanRow6);
        this.setState({seatPlanByRow: seatPlanRowSplit});
@@ -101,6 +109,14 @@ export default class SeatPlan extends Component {
     });
   }
 
+  handleChangeChk = event => {
+    if(this.state.sleeping) {
+      this.setState({sleeping: false});
+    } else {
+      this.setState({sleeping: true});
+    }
+  }
+
   selectSeat = seat => {
     this.setState({ selectedSeat: seat});
     this.setState({ showModal: true});
@@ -119,7 +135,8 @@ export default class SeatPlan extends Component {
             "Username": this.state.gamerName,
             "OrderID": this.props.match.params.OrderID,
             "NewUsedCount": newSeatCount,
-            "UserID": this.props.username
+            "UserID": this.props.username,
+            "SleepingOnSite": this.state.sleeping
           }
       }
 
@@ -171,8 +188,10 @@ export default class SeatPlan extends Component {
     }
     else {
     return (
-      <div class="sl--sitecontainer--background__keyboard">
-      <div className="container sl-seatingplan-picker"><div className="container">
+      <div className="keyboard-background">
+        <div className="section-container">
+          <div className="section-container-keyboard">
+      <div className=" sl-seatingplan-picker"><div className="container">
       {this.state.showModal &&
         <div className="static-modal static-modal--seatingplan ">
           <Modal.Dialog>
@@ -182,7 +201,6 @@ export default class SeatPlan extends Component {
             </Modal.Header>
             <Modal.Body>
             <FormGroup controlId="gamerName" bsSize="small">
-
             <p>You have selected seat {parseInt(this.state.selectedSeat, 10) + 1}</p>
             <ControlLabel>Please enter gamer name for this seat</ControlLabel>
             <div class="row">
@@ -198,8 +216,15 @@ export default class SeatPlan extends Component {
                  <Button bsStyle="primary" onClick={this.submitSeat}>Save seat selection</Button>
                </div>
              </div>
-
-              </FormGroup>
+            </FormGroup>
+            <FormGroup controlId="sleeping">
+              <div class="sl-checkboxes">
+                <div class="sl-option-input">
+                  <input class="sl-checkbox" type="checkbox" defaultChecked={this.state.sleeping} onChange={this.handleChangeChk} id="sleeping"/>
+                  <ControlLabel >Will you be sleeping onsite?</ControlLabel>
+                </div>
+              </div>
+            </FormGroup>
             </Modal.Body>
             <Modal.Footer>
             </Modal.Footer>
@@ -209,11 +234,11 @@ export default class SeatPlan extends Component {
 
 
       <div class="row">
-      <div className="col-lg-7">
+      <div className="col-lg-8">
       <h3>{this.state.seatPlan[0].EventName.S}</h3>
       <p class="sl-seatingplan-picker--remainingseats">You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event</p>
       </div>
-      <div className="col-lg-5">
+      <div className="col-lg-4">
         <div class="large-floorplan--rows">
           <div class="large-floorplan--key">
         <p> Seating Plan Key </p>
@@ -226,6 +251,8 @@ export default class SeatPlan extends Component {
       {!this.state.isLoading && this.renderSeatingPlan96Person()}
       </div></div>
       </div>
+      </div>
+      </div>
     );
   }
 }
@@ -237,41 +264,65 @@ export default class SeatPlan extends Component {
          <img src="/Images/ScotLAN-BIG.JPG" />
        </div>
        <div className="row large-floorplan--areas">
-         <div className="col-lg-7">
+         <div className="col-lg-8">
            <div className="large-floorplan--rows">
              <div className="large-floorplan--block large-floorplan--block--A">
                <div className="large-floorplan--row large-floorplan--row-1">
                 {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-2">
-                 {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[1], 18)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--B">
                <div className="large-floorplan--row large-floorplan--row-3">
-                 {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[2], 36)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-4">
-                {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
+                {this.renderSeatRow(this.state.seatPlanByRow[3], 54)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--C">
                <div className="large-floorplan--row large-floorplan--row-5">
-                 {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[4], 72)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-6">
-                {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
+                {this.renderSeatRow(this.state.seatPlanByRow[5], 90)}
                </div>
              </div>
              <div className="large-floorplan--row-admin">
-               <button className="large-floorplan--support"> | Support and Registration | </button>
+               <div className="large-floorplan--support">
+                <div class="">
+                  <Tooltip title='AndyM'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                  <Tooltip title='Carvid'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                  <Tooltip title='Rob'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                  <Tooltip title='Smitttxx'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                  <Tooltip title='Skillin'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                  <Tooltip title='Grandy'>
+                      <button class="seat seat--staff"></button>
+                  </Tooltip>
+                 </div>
+                 <div>
+                  <span>| Support and Registration |</span>
+                 </div>
+               </div>
              </div>
              <div className="large-floorplan--console-corner">
                <button className="large-floorplan--console-corner-design"> | Console Area | </button>
              </div>
            </div>
          </div>
-         <div className="col-lg-5">
+         <div className="col-lg-4">
            <div className="large-floorplan--sleeping-area">
              <button className="large-floorplan--sleeping-area-design"> | Sleeping Area | </button>
            </div>

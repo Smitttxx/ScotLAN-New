@@ -5,6 +5,11 @@ import "./Checkout.css";
 import config from '../../config';
 import { Link, withRouter } from "react-router-dom";
 import Iframe from 'react-iframe'
+import { API, Auth } from "aws-amplify";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -22,6 +27,8 @@ async onToken(token) {
 
   this.setState({ isLoading: true });
 
+  let user = await Auth.currentAuthenticatedUser();
+
   const res = await fetch(config.stripe.API_URL, {
     method: 'POST',
     body: JSON.stringify({
@@ -32,8 +39,8 @@ async onToken(token) {
       },
       basket: this.props.basket,
       basketTotal: this.props.basketTotal,
-      email: this.props.email,
-      username: this.props.username,
+      email: user.attributes.email,
+      username: user.username,
       includesEventTicket: this.props.IncludesEventTicket,
       eventTicketCount: this.props.EventTicketCount
     }),
@@ -58,9 +65,18 @@ async onToken(token) {
       try {
         this.setState({ isLoading: false });
         window.scrollTo(0, 0);
+        this.alertPrompt("If you're under 16 years old you will need to bring a parental consent form to the event. <a href='https://s3-eu-west-1.amazonaws.com/scotlanassets/ScotLANParentalConsent.pdf' target='_blank'>You can find a copy of the form here</a>");
         } catch (e) {
         alert(e);
       }
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'question',
+      title: 'Under 16?',
+      html: message
+    })
   }
 
   handleChange = event => {

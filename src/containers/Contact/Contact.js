@@ -73,7 +73,7 @@ export default class Contact extends Component {
         <div class="row">
           <div class="col-md-8">
             <form onSubmit={this.handleSubmit}>
-            <div class="sl-signup-header"><h3>Contact us</h3></div>
+            <div class="sl-signup-header"><h4>Contact us</h4></div>
               <FormGroup controlId="name" bsSize="large">
                 <ControlLabel>Name</ControlLabel>
                 <FormControl
