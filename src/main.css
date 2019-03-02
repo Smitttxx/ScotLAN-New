@@ -760,13 +760,14 @@ h5 {
 .small-floorplan .seat--avalible {
   border: 2px solid #73d14c;
   background-color: #e2f4db;
+  cursor: not-allowed;
 }
 .small-floorplan .seat--avalible:before {
   content: '\f234';
   font-weight: bold;
   font-family: 'Font Awesome 5 free';
   color: #73d14c;
-  cursor: pointer;
+  cursor: not-allowed;
   font-size: 0.9em;
 }
 .small-floorplan .seat--taken {
@@ -2130,6 +2131,9 @@ table .btn,
   justify-content: space-between;
 }
 @media only screen and (max-width: 425px) {
+  .small-floorplan {
+    display: none;
+  }
   .container--basketpage .table-bordered {
     font-size: 0.7em;
   }
@@ -2280,6 +2284,7 @@ table .btn,
 .swal2-shown {
   height: 100% !important;
   overflow-y: inherit !important;
+  padding-right: 0px !important;
 }
 .swal2-shown #root {
   height: 84%;
