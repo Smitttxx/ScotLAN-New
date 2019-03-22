@@ -33,42 +33,6 @@ export default class Food extends Component {
                     <Tab>Roll Order <i class="fas fa-bacon"></i></Tab>
                   </TabList>
                   <TabPanel>
-                  <form class="row">
-                    <div className="form-check col-lg-4">
-                      <label>
-                        <input
-                          type="radio"
-                          name="react-tips"
-                          value="option1"
-                          checked={true}
-                          className="form-check-input"
-                        />
-                        Saturday Morning
-                      </label>
-                    </div>
-                    <div className="form-check col-lg-4">
-                      <label>
-                        <input
-                          type="radio"
-                          name="react-tips"
-                          value="option2"
-                          className="form-check-input"
-                        />
-                        Sunday Morning
-                      </label>
-                    </div>
-                    <div className="form-check col-lg-4">
-                      <label>
-                        <input
-                          type="radio"
-                          name="react-tips"
-                          value="option3"
-                          className="form-check-input"
-                        />
-                        Same Order Both Mornings
-                      </label>
-                    </div>
-                  </form>
                   <h2> Pizzas </h2>
                     <div class="row">
                       <div class="col-lg-10">
@@ -212,6 +176,44 @@ export default class Food extends Component {
                   </TabPanel>
                   <TabPanel>
                   <h2> Roll </h2>
+                  <h5> Select the Morning/Mornings you want to roll to be delivered </h5>
+                  <form class="row">
+                    <div className="form-check col-lg-4">
+                      <label>
+                        <input
+                          type="radio"
+                          name="react-tips"
+                          value="option1"
+                          checked={true}
+                          className="form-check-input"
+                        />
+                        Saturday Morning
+                      </label>
+                    </div>
+                    <div className="form-check col-lg-4">
+                      <label>
+                        <input
+                          type="radio"
+                          name="react-tips"
+                          value="option2"
+                          className="form-check-input"
+                        />
+                        Sunday Morning
+                      </label>
+                    </div>
+                    <div className="form-check col-lg-4">
+                      <label>
+                        <input
+                          type="radio"
+                          name="react-tips"
+                          value="option3"
+                          className="form-check-input"
+                        />
+                        Same Order Both Mornings
+                      </label>
+                    </div>
+                  </form>
+                  <h5> Select Roll Type: </h5>
                   <form class="row">
                     <div className="form-check col-lg-4">
                       <label>
