@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./SL4.css";
 import { Redirect } from 'react-router-dom';
-import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
 import { Link, withRouter } from "react-router-dom";
