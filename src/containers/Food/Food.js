@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Food.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import {  FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "react-tabs/style/react-tabs.css";
 
 
@@ -334,8 +335,31 @@ export default class Food extends Component {
                   <br/>
                   Total Price : £40
                 </ul>
-                <a class="btn btn-lg btn-secondary sl-btn sl-btn--secondary"  role="button">Purchase Food</a>
+                Seat Number:
+                <div className="sl-searchform__option">
+                  <span className="sl-select" >
+                    <select size="1" className="sl-component sl-select">
+                    <option value="" selected>from 1-114</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    </select>
+                </span>
                 </div>
+
+                <FormGroup controlId="email" bsSize="large">
+                  <ControlLabel>Gamer Name:</ControlLabel>
+                  <FormControl
+                    autoFocus
+                    type="email"
+                    required
+                  />
+                </FormGroup>
+                <a class="btn btn-lg btn-secondary sl-btn sl-btn--secondary"  role="button">Purchase Food</a>
+              </div>
             </div>
           </div>
         </div>
