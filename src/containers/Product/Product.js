@@ -317,7 +317,7 @@ renderProductDetail(){
             <li><strong>Gamers:</strong> 114 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
             <li><strong>Event:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
             <li><strong>Parking Avalible:</strong> Yes </li>
-            <li><strong>Ticket Price:</strong> from £35</li>
+            <li><strong>Ticket Price:</strong> from £40</li>
             <li><strong>Address:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
           </ul>
       </div>
@@ -358,7 +358,7 @@ renderProductDetail(){
               <label>Choose a quantity of Standard BYOC* Tickets</label>
               <div className="row">
               <div className="col-md-7">
-              <div class="ribbon-wrapper">
+              <div class="ribbon-wrapper hidden">
               <div class="ribbon-front">
                 EARLYBIRD PRICING
               </div>
@@ -370,7 +370,7 @@ renderProductDetail(){
               <div class="ribbon-back-right"></div>
               </div>
 
-              <label className="green"><strong>Price Per Ticket :</strong> <span class="strike">£40</span> <span>£35</span></label>
+              <label className="green ticket--price">Price Per Ticket: <strong><small>£</small>35</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -398,7 +398,7 @@ renderProductDetail(){
              <div class="ribbon ribbon-red "><span>SOLDOUT</span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : 0 </div>
+              <div>Quantity Available : SOLD OUT </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
@@ -409,18 +409,18 @@ renderProductDetail(){
               <label>Choose a quantity of VIP BYOC* tickets</label>
               <div className="row">
               <div className="col-md-7">
-              <div class="ribbon-wrapper ribbon-wrapper--blue">
-              <div class="ribbon-front">
-                SOLD OUT
+              <div class="ribbon-wrapper ribbon-wrapper--blue hidden">
+                <div class="ribbon-front">
+                  SOLD OUT
+                </div>
+                <div class="ribbon-edge-topleft"></div>
+                <div class="ribbon-edge-topright"></div>
+                <div class="ribbon-edge-bottomleft"></div>
+                <div class="ribbon-edge-bottomright"></div>
+                <div class="ribbon-back-left"></div>
+                <div class="ribbon-back-right"></div>
               </div>
-              <div class="ribbon-edge-topleft"></div>
-              <div class="ribbon-edge-topright"></div>
-              <div class="ribbon-edge-bottomleft"></div>
-              <div class="ribbon-edge-bottomright"></div>
-              <div class="ribbon-back-left"></div>
-              <div class="ribbon-back-right"></div>
-              </div>
-              <label className="blue"><strong>Price Per Ticket :</strong> <span class="strike">£55</span><span> £50</span></label>
+              <label className="blue ticket--price">Price Per Ticket: <strong><small>£</small>55</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -449,7 +449,7 @@ renderProductDetail(){
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
-            <small><i>*EARLYBIRD pricing ends 24/03/2018</i></small>
+            <small><i>*EARLYBIRD pricing ended 24/03/2018</i></small>
           </div>
           <div className="col-md-8">
             <div className="sl-but--header">
@@ -540,10 +540,10 @@ renderSeatingPlan96Person() {
                        <Tooltip title='Smitttxx'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Grandy'>
+                       <Tooltip title='Skillin'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Carb0n'>
+                       <Tooltip title='Grandy'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                       </div>

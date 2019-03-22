@@ -1036,6 +1036,9 @@ h5 {
   background: #1473c7;
   cursor: pointer;
 }
+.accordion .ticket--price {
+  font-size: 1.2rem;
+}
 .accordion .ticket--header {
   font-family: 'Give You Glory', cursive;
   font-size: 1.5em;
@@ -2328,5 +2331,8 @@ table .btn,
   margin-right: 0.5em;
 }
 .sl-checkboxes input {
+  display: none;
+}
+.hidden {
   display: none;
 }
