@@ -370,7 +370,7 @@ renderProductDetail(){
               <div class="ribbon-back-right"></div>
               </div>
 
-              <label className="green ticket--price">Price Per Ticket: <strong><small>£</small>35</strong></label>
+              <label className="green ticket--price">Price Per Ticket: <strong><small>£</small>40</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
