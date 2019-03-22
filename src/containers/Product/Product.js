@@ -449,9 +449,7 @@ renderProductDetail(){
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
-
             <small><i>*EARLYBIRD pricing ended 22/03/2018</i></small>
-
           </div>
           <div className="col-md-8">
             <div className="sl-but--header">
