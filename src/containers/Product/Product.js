@@ -355,7 +355,7 @@ renderProductDetail(){
                 <li>3ft Desk</li>
               </ul>
 
-              <label>Choose a quantity of Standard BYOC* Tickets</label>
+              <label>Choose a quantity of Standard BYOC* tickets</label>
               <div className="row">
               <div className="col-md-7">
               <div class="ribbon-wrapper hidden">
