@@ -122,6 +122,50 @@ export default class SeatPlan extends Component {
     this.setState({ showModal: true});
   }
 
+  changeSeat = seat => {
+    this.setState({ isLoading: true });
+    this.setState({ selectedSeat: seat});
+
+    var newSeatCount = parseInt(this.state.order[0].EventTicketUsedCount.S, 10) - 1;
+
+    let request = {
+        body: {
+          "EventName": this.state.eventName.split(" - ")[0],
+          "SeatName": seat,
+          "OrderID": this.props.match.params.OrderID,
+          "NewUsedCount": newSeatCount,
+          "UserID": this.props.username,
+        }
+    }
+
+    let authHeader = {
+      headers: { Authorization: this.state.authToken }
+    }
+
+    API.post("editseat", `/editseat`, request, authHeader).then(response => {
+      if(newSeatCount >= parseInt(this.state.order[0].EventTicketCount.S, 10)){
+        this.setState({ canSelectSeats: false });
+      } else {
+        this.setState({ canSelectSeats: true });
+      }
+      this.setState({ gamerName: ""});
+      this.setState({ selectedSeat: 0});
+      this.setState({ showModal: false});
+      this.setState({ isLoading: false });
+
+      API.get("seatPlan", `/seatplan?EventName=${this.state.eventName.split(" - ")[0]}`, authHeader).then(response => {
+        this.setState({ seatPlan: response });
+        this.seatPlanSplit(response);
+      });
+
+      API.get("order", `/order?OrderID=${this.props.match.params.OrderID}&UserID=${this.props.username}`, authHeader).then(response => {
+        this.setState({ order: response });
+      });
+    });
+
+    this.setState({ isLoading: false });
+  }
+
   submitSeat() {
     if(this.state.gamerName !== "" && this.state.selectedSeat !== 0) {
       this.setState({ isLoading: true });
@@ -340,7 +384,6 @@ export default class SeatPlan extends Component {
   //{ seat === "Available" && this.state.canSelectSeats && <button class="seat seat--taken" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button> }
 
   renderSeatRow(seatRow, seed) {
-
     return seatRow.map(function(seat, i) {
 
       if(seat.S === "Available" && this.state.canSelectSeats) {
@@ -355,6 +398,13 @@ export default class SeatPlan extends Component {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
             <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
+          </Tooltip>
+        )
+      }
+      else if(seat.S != "Available" && JSON.parse(seat.S).OrderID === this.props.match.params.OrderID) {
+        return (
+          <Tooltip title={"Seat " + (seed + i + 1) + " - " + JSON.parse(seat.S).Username}>
+            <button className="seat seat--edit" onClick={()=>{this.changeSeat(`${seed + i}`)}}></button>
           </Tooltip>
         )
       }
