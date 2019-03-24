@@ -111,7 +111,11 @@ export default class Product extends Component {
     });
   }
 
-  showSeatPlan = event => {
+  showSeatPlan = async event => {
+    const seatPlanData = await this.seatPlan(this.props.match.params.Name);
+    this.seatPlanSplit(seatPlanData);
+    this.setState({ seatPlan: seatPlanData });
+    
     this.setState({ showModal: true});
   }
 
