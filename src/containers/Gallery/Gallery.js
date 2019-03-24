@@ -99,7 +99,7 @@ export default class Gallery extends Component {
                     <div className="panel-heading" role="tab" id="heading3">
                       <h4 className="panel-title" onClick={()=>{this.showPanel("collapse3")}}>
                         <a className="collapsed">
-                          ScotLAN #3!
+                          ScotLAN #1!
                         </a>
                       </h4>
                     </div>
