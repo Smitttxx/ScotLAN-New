@@ -5,6 +5,10 @@ import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
 import 'react-tippy/dist/tippy.css'
 import {  Tooltip } from 'react-tippy';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default class SeatPlan extends Component {
   constructor(props) {
@@ -163,7 +167,17 @@ export default class SeatPlan extends Component {
       });
     });
 
+    this.alertPrompt("Please select a new seat.");
+
     this.setState({ isLoading: false });
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'information',
+      title: 'Seat unselected',
+      text: message
+    })
   }
 
   submitSeat() {
