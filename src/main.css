@@ -151,6 +151,18 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+h1 i,
+h2 i,
+h4 i,
+h4 i,
+h5 i {
+  width: fit-content;
+  color: black;
+  font-weight: bold;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .sl-radio:checked + label:before {
   background: #4c96d7;
 }
@@ -747,7 +759,6 @@ h5 {
   border: 2px dashed grey;
   border-radius: 15px;
   padding: 1em;
-  width: 500px;
   margin: auto;
   margin-top: 3em;
 }
