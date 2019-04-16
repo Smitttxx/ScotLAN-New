@@ -36,6 +36,7 @@ class App extends Component {
     if (await Auth.currentSession()) {
        this.userHasAuthenticated(true);
        let user = await Auth.currentAuthenticatedUser();
+       //console.log(user.signInUserSession.accessToken.payload['cognito:groups'][0]);
        this.setState({ email: user.attributes.name });
        this.setState({ username: user.username });
        this.setState({ Authorization: user.signInUserSession.idToken.jwtToken })
