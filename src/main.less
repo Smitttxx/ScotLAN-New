@@ -2837,3 +2837,34 @@ outline: 0;
 .hidden{
 	display: none;
 }
+
+// ----------------------------------------------------------------------------
+// START OF LARGE OF FOOD PAGE
+// ----------------------------------------------------------------------------
+
+.react-tabs__tab{
+	width: 50%;
+	font-size: 1em;
+	background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%) !important;
+	cursor: pointer;
+			border-width: 3px !important;
+				border-color: @secondary-col !important;
+					border-radius: 5px 5px 0 0;
+					border: 3px 3px 3px 0;
+	&--selected{
+		border-color: @secondary-col !important;
+		color: @secondary-col !important;
+		background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%) !important;
+		border-radius: 5px 5px 0 0;
+		font-weight: bold;
+		font-size: 1.2em;
+		border-width: 3px !important;
+	}
+}
+
+
+.react-tabs__tab-panel--selected{
+	padding: 1em;
+    border: 3px solid @secondary-col;
+    margin-top: -1em;
+}

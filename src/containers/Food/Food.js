@@ -273,8 +273,8 @@ export default class Food extends Component {
               <p> Order food here for it to be delivered straight to your desk! </p>
                 <Tabs>
                   <TabList>
-                    <Tab>Pizza Order <i class="fas fa-pizza-slice"></i></Tab>
-                    <Tab>Roll Order <i class="fas fa-bacon"></i></Tab>
+                    <Tab class="tab-pizza">Pizza Order <i class="fas fa-pizza-slice"></i></Tab>
+                    <Tab class="tab-rolls">Roll Order <i class="fas fa-bacon"></i></Tab>
                   </TabList>
                   <TabPanel>
                   <h2> Pizzas </h2>
