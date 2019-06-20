@@ -274,23 +274,7 @@ export default class Food extends Component {
                     <Tab class="tab-pizza">Evening Pizza Order <i class="fas fa-pizza-slice"></i></Tab>
                     <Tab class="tab-rolls">Morning Roll Order <i class="fas fa-bacon"></i></Tab>
                   </TabList>
-                  <TabPanel>
-                  <div class="food-panel-intro">
-                    <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
-                    <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from <a href="https://www.papajohns.co.uk/">Papa Johns</a></p>
-                    <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
-                    <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
-                  </div>
-                    <div class="container food-products-panel">
-                      <div class="food-product-header"> Pizzas </div>
-                        {this.renderPizzaProducts()}
-                        <br/>
-                      <div class="food-product-header"> Sides </div>
-                        {this.renderSideProducts()}
-                      <div class="food-product-header"> Desserts </div>
-                        {this.renderDessertProducts()}
-                      </div>
-                    </TabPanel>
+                    {this.renderPizza()}
                     <TabPanel>
                     <div class="food-panel-intro">
                       <p><i class="fas fa-chair"></i> Order Breakfast rolls here for it to be delivered straight to your desk!</p>
@@ -300,34 +284,9 @@ export default class Food extends Component {
                     </div>
                     <div class="container food-products-panel">
                     <div class="food-product-header-rolls"><i class="fas fa-sun"></i> What Morning ?</div>
-                    <form class="row food-product-rolls-items">
-                      <div className="form-check">
-                        <label class="radio-buttons-custom">
-                          <input
-                            type="radio"
-                            name="react-tips"
-                            value="Saturday"
-                            className="form-check-input"
-                            onChange={this.handleMorningChange}
-                          />
-                           <span class="checkmark"></span>
-                          <span class="food-label-text">Saturday Morning</span>
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <label class="radio-buttons-custom">
-                          <input
-                            type="radio"
-                            name="react-tips"
-                            value="Sunday"
-                            className="form-check-input"
-                            onChange={this.handleMorningChange}
-                          />
-                           <span class="checkmark"></span>
-                        <span class="food-label-text">Sunday Morning</span>
-                        </label>
-                      </div>
-                    </form>
+
+                      {this.renderRollRadioButtons()}
+
                     <div class="food-product-header-rolls"><i class="fas fa-utensils"></i> How many fillings ? </div>
                     <form class="row food-product-rolls-items">
                       {this.renderRollType()}
@@ -387,6 +346,97 @@ export default class Food extends Component {
         </div>
       </div>
     );
+    }
+  }
+
+  renderRollRadioButtons() {
+    var date = new Date();
+    //var lastOrder=new Date('2019-06-20 23:45'); //Testing
+    var lastOrder=new Date('2019-07-06 04:00');
+
+    if(date < lastOrder) {
+      return (
+        <form class="row food-product-rolls-items">
+        <div className="form-check">
+          <label class="radio-buttons-custom">
+            <input
+              type="radio"
+              name="react-tips"
+              value="Saturday"
+              className="form-check-input"
+              onChange={this.handleMorningChange}
+            />
+             <span class="checkmark"></span>
+            <span class="food-label-text">Saturday Morning</span>
+          </label>
+        </div>
+        <div className="form-check">
+          <label class="radio-buttons-custom">
+            <input
+              type="radio"
+              name="react-tips"
+              value="Sunday"
+              className="form-check-input"
+              onChange={this.handleMorningChange}
+            />
+             <span class="checkmark"></span>
+          <span class="food-label-text">Sunday Morning</span>
+          </label>
+        </div>
+        </form>
+      )
+    } else {
+      return (
+        <form class="row food-product-rolls-items">
+        <div className="form-check">
+          <label class="radio-buttons-custom">
+            <input
+              type="radio"
+              name="react-tips"
+              value="Sunday"
+              className="form-check-input"
+              onChange={this.handleMorningChange}
+            />
+             <span class="checkmark"></span>
+          <span class="food-label-text">Sunday Morning</span>
+          </label>
+        </div>
+        </form>
+      )
+    }
+  }
+
+  renderPizza(){
+    var date = new Date();
+    //var lastOrder=new Date('2019-06-20 23:34'); //Testing
+    var lastOrder=new Date('2019-07-06 17:00');
+
+    if(date < lastOrder) {
+      return (
+        <TabPanel>
+        <div class="food-panel-intro">
+          <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
+          <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from <a href="https://www.papajohns.co.uk/">Papa Johns</a></p>
+          <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
+          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
+        </div>
+          <div class="container food-products-panel">
+            <div class="food-product-header"> Pizzas </div>
+              {this.renderPizzaProducts()}
+              <br/>
+            <div class="food-product-header"> Sides </div>
+              {this.renderSideProducts()}
+            <div class="food-product-header"> Desserts </div>
+              {this.renderDessertProducts()}
+            </div>
+          </TabPanel>
+      )
+    } else {
+      return (
+        <TabPanel>
+            <div>Too late</div>
+        </TabPanel>
+      )
     }
   }
 
