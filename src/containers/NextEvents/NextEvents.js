@@ -60,7 +60,7 @@ export default class NextEvents extends Component {
                     <ul>
                       <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
                       <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
-                      <li><strong>Spaces:</strong> 114 seat BYOC Tickets</li>
+                      <li><strong>Spaces:</strong> 102 seat BYOC Tickets</li>
                       <li><strong>Prices From:</strong> £35 </li>
                       <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
                       <li><a href="https://www.facebook.com/events/386414302190930/"><strong>Facebook Event</strong></a></li>

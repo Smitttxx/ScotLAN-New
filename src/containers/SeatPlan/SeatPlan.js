@@ -5,6 +5,10 @@ import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
 import 'react-tippy/dist/tippy.css'
 import {  Tooltip } from 'react-tippy';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default class SeatPlan extends Component {
   constructor(props) {
@@ -67,19 +71,19 @@ export default class SeatPlan extends Component {
       //TODO: split array for 32
     }
     else {
-       //var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
-       //var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
-       //var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
-       //var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
-       //var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
-       //var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
+       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
+       var seatPlanRow2 = seatPlan[0].Seats.L.slice(16,32);
+       var seatPlanRow3 = seatPlan[0].Seats.L.slice(32,48);
+       var seatPlanRow4 = seatPlan[0].Seats.L.slice(48,64);
+       var seatPlanRow5 = seatPlan[0].Seats.L.slice(64,80);
+       var seatPlanRow6 = seatPlan[0].Seats.L.slice(80,96);
 
-       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,18);
-       var seatPlanRow2 = seatPlan[0].Seats.L.slice(18,36);
-       var seatPlanRow3 = seatPlan[0].Seats.L.slice(36,54);
-       var seatPlanRow4 = seatPlan[0].Seats.L.slice(54,72);
-       var seatPlanRow5 = seatPlan[0].Seats.L.slice(72,90);
-       var seatPlanRow6 = seatPlan[0].Seats.L.slice(90,108);
+       //var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,18);
+      // var seatPlanRow2 = seatPlan[0].Seats.L.slice(18,36);
+       //var seatPlanRow3 = seatPlan[0].Seats.L.slice(36,54);
+      // var seatPlanRow4 = seatPlan[0].Seats.L.slice(54,72);
+       //var seatPlanRow5 = seatPlan[0].Seats.L.slice(72,90);
+       //var seatPlanRow6 = seatPlan[0].Seats.L.slice(90,108);
 
        seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4, seatPlanRow5, seatPlanRow6);
        this.setState({seatPlanByRow: seatPlanRowSplit});
@@ -120,6 +124,60 @@ export default class SeatPlan extends Component {
   selectSeat = seat => {
     this.setState({ selectedSeat: seat});
     this.setState({ showModal: true});
+  }
+
+  changeSeat = seat => {
+    this.setState({ isLoading: true });
+    this.setState({ selectedSeat: seat});
+
+    var newSeatCount = parseInt(this.state.order[0].EventTicketUsedCount.S, 10) - 1;
+
+    let request = {
+        body: {
+          "EventName": this.state.eventName.split(" - ")[0],
+          "SeatName": seat,
+          "OrderID": this.props.match.params.OrderID,
+          "NewUsedCount": newSeatCount,
+          "UserID": this.props.username,
+        }
+    }
+
+    let authHeader = {
+      headers: { Authorization: this.state.authToken }
+    }
+
+    API.post("editseat", `/editseat`, request, authHeader).then(response => {
+      if(newSeatCount >= parseInt(this.state.order[0].EventTicketCount.S, 10)){
+        this.setState({ canSelectSeats: false });
+      } else {
+        this.setState({ canSelectSeats: true });
+      }
+      this.setState({ gamerName: ""});
+      this.setState({ selectedSeat: 0});
+      this.setState({ showModal: false});
+      this.setState({ isLoading: false });
+
+      API.get("seatPlan", `/seatplan?EventName=${this.state.eventName.split(" - ")[0]}`, authHeader).then(response => {
+        this.setState({ seatPlan: response });
+        this.seatPlanSplit(response);
+      });
+
+      API.get("order", `/order?OrderID=${this.props.match.params.OrderID}&UserID=${this.props.username}`, authHeader).then(response => {
+        this.setState({ order: response });
+      });
+    });
+
+    this.alertPrompt("Please select a new seat.");
+
+    this.setState({ isLoading: false });
+  }
+
+  alertPrompt(message) {
+    return Swal.fire({
+      type: 'information',
+      title: 'Seat unselected',
+      text: message
+    })
   }
 
   submitSeat() {
@@ -271,23 +329,23 @@ export default class SeatPlan extends Component {
                 {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-2">
-                 {this.renderSeatRow(this.state.seatPlanByRow[1], 18)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[1], 16)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--B">
                <div className="large-floorplan--row large-floorplan--row-3">
-                 {this.renderSeatRow(this.state.seatPlanByRow[2], 36)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[2], 32)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-4">
-                {this.renderSeatRow(this.state.seatPlanByRow[3], 54)}
+                {this.renderSeatRow(this.state.seatPlanByRow[3], 48)}
                </div>
              </div>
              <div className="large-floorplan--block large-floorplan--block--C">
                <div className="large-floorplan--row large-floorplan--row-5">
-                 {this.renderSeatRow(this.state.seatPlanByRow[4], 72)}
+                 {this.renderSeatRow(this.state.seatPlanByRow[4], 64)}
                </div>
                <div className="large-floorplan--row large-floorplan--row-6">
-                {this.renderSeatRow(this.state.seatPlanByRow[5], 90)}
+                {this.renderSeatRow(this.state.seatPlanByRow[5], 80)}
                </div>
              </div>
              <div className="large-floorplan--row-admin">
@@ -340,7 +398,6 @@ export default class SeatPlan extends Component {
   //{ seat === "Available" && this.state.canSelectSeats && <button class="seat seat--taken" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button> }
 
   renderSeatRow(seatRow, seed) {
-
     return seatRow.map(function(seat, i) {
 
       if(seat.S === "Available" && this.state.canSelectSeats) {
@@ -355,6 +412,13 @@ export default class SeatPlan extends Component {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
             <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
+          </Tooltip>
+        )
+      }
+      else if(seat.S != "Available" && JSON.parse(seat.S).OrderID === this.props.match.params.OrderID) {
+        return (
+          <Tooltip title={"Seat " + (seed + i + 1) + " - " + JSON.parse(seat.S).Username}>
+            <button className="seat seat--edit" onClick={()=>{this.changeSeat(`${seed + i}`)}}></button>
           </Tooltip>
         )
       }

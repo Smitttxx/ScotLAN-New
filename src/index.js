@@ -60,6 +60,16 @@ Amplify.configure({
         name: "contact",
         endpoint: config.apiGateway.URL,
         region: config.apiGateway.REGION
+      },
+      {
+        name: "foodproducts",
+        endpoint: config.apiGateway.URL,
+        region: config.apiGateway.REGION
+      },
+      {
+        name: "editseat",
+        endpoint: config.apiGateway.URL,
+        region: config.apiGateway.REGION
       }
     ]
   }

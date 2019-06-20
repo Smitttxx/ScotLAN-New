@@ -151,6 +151,18 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+h1 i,
+h2 i,
+h4 i,
+h4 i,
+h5 i {
+  width: fit-content;
+  color: black;
+  font-weight: bold;
+  background: linear-gradient(to right, #4c96d7 0%, #73d14c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .sl-radio:checked + label:before {
   background: #4c96d7;
 }
@@ -747,7 +759,6 @@ h5 {
   border: 2px dashed grey;
   border-radius: 15px;
   padding: 1em;
-  width: 500px;
   margin: auto;
   margin-top: 3em;
 }
@@ -2335,4 +2346,234 @@ table .btn,
 }
 .hidden {
   display: none;
+}
+.react-tabs__tab {
+  border: 0 !important ;
+  background: unset !important;
+  color: #4c96d7 !important;
+  outline: none !important;
+}
+.react-tabs__tab:nth-child(odd) {
+  border-right: 3px solid white !important;
+}
+.react-tabs__tab-list {
+  display: flex;
+  border: none !important;
+  align-items: center;
+  justify-content: center;
+  outline: none !important;
+  font-size: 1.4em !important;
+  margin-bottom: 1.5em !important;
+}
+.react-tabs__tab--selected {
+  background: unset !important;
+  border-radius: 0 0 0 0 !important;
+  font-weight: bold !important;
+  color: #73d14c !important;
+  outline: none !important;
+  font-size: 1.2em;
+}
+.react-tabs__tab--selected:after {
+  content: '';
+  width: 40%;
+  position: absolute;
+  left: 30%;
+  bottom: 1px;
+  border-width: 0 0 3px;
+  border-style: solid;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.food-basket-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+.food-basket-sticky ul {
+  font-size: 1.2em;
+  border-top: 3px solid gray;
+  margin-top: 1em;
+  padding-top: 1em;
+  list-style: circle;
+  text-align: right;
+  font-weight: bold;
+}
+.food-basket-sticky ul li {
+  text-align: left;
+  font-weight: normal;
+}
+.food-basket-sticky .sl-btn--clearbasket {
+  background: none;
+  text-align: center;
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-size: 1.2em;
+}
+.food-basket-sticky .sl-btn--clearbasket:focus {
+  box-shadow: none;
+}
+.food-basket-sticky .sl-btn--clearbasket:hover {
+  color: #73d14c;
+}
+.food-basket-sticky .sl-btn--basketpayment {
+  width: 100%;
+  margin: 1em 0;
+}
+.food-basket-sticky .sl-form-gamername {
+  border-radius: 5px;
+  padding: 0.5em;
+  border: 1px solid #4c96d7;
+  height: 40px;
+  width: 100%;
+  background: #e5f0f9;
+}
+.food-basket-sticky .control-label {
+  margin-top: 1em;
+}
+.food-products-panel {
+  margin: 0.5em;
+  padding: 1.5em;
+  padding-top: 0.8em;
+  margin-top: 3em !important;
+}
+.food-products-panel .sl-btn-addrolltobasket {
+  width: 100%;
+  margin: 0;
+  margin-top: 2em;
+}
+.food-menu-header {
+  font-family: 'Give You Glory', cursive;
+}
+.food-panel-intro {
+  text-align: center;
+}
+.food-panel-intro p {
+  margin-bottom: 0.5em;
+}
+.food-product-header {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  transform: rotate(-10deg);
+  position: relative;
+  margin-top: 0.5em;
+  color: #73d14c;
+  width: fit-content;
+  font-family: 'Give You Glory', cursive;
+}
+.food-product-header-rolls {
+  font-family: 'Give You Glory', cursive;
+  transform: rotate(-1deg);
+  color: #73d14c;
+  font-size: 2em;
+}
+.food-product-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+.food-product-description {
+  padding-left: 1em;
+  font-size: 0.7em;
+}
+.food-product-rolls-items {
+  padding: 2em;
+}
+.food-item-row {
+  margin: 0 0 0.5em 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-width: 0 0 1px 0;
+  border-radius: 100px;
+  padding: 0.5em;
+  box-shadow: -11px 1px 11px -1px #4c96d7;
+}
+.food-item-row .details {
+  display: flex;
+}
+.food-item-row .addButton {
+  background: unset;
+  border: none;
+  color: #73d14c;
+  font-size: 1em;
+  cursor: pointer;
+}
+.food-item-row .addButton:hover {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.food-item-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+  padding-right: 0.5em;
+}
+.food-product-rolls-items {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.food-rolls-options {
+  display: flex;
+  justify-content: space-evenly;
+}
+.food-rolls-options-toppings {
+  min-width: 200px;
+}
+.radio-buttons-custom {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio-buttons-custom input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.food-label-text:hover {
+  font-weight: bold;
+}
+.radio-buttons-custom input:checked ~ .food-label-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio-buttons-custom input:checked ~ .checkmark:after {
+  display: block;
+}
+.radio-buttons-custom .checkmark:after {
+  top: -2px;
+  left: 2px;
+  width: 8px;
+  height: 18px;
+  border-radius: 50%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  color: #73d14c;
+  font-size: 1.3em;
 }
