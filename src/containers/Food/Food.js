@@ -268,69 +268,84 @@ export default class Food extends Component {
         <div className="section-container row">
           <div className="section-container-keyboard col-lg-8">
             <div className="sl-products--container">
-              <div className="container">
-              <h2 class="product-heading">Food Order for SL5 <i class="fas fa-bacon"></i><i class="fas fa-pizza-slice"></i></h2>
-              <p> Order food here for it to be delivered straight to your desk! </p>
+              <div className="">
                 <Tabs>
                   <TabList>
-                    <Tab>Pizza Order <i class="fas fa-pizza-slice"></i></Tab>
-                    <Tab>Roll Order <i class="fas fa-bacon"></i></Tab>
+                    <Tab class="tab-pizza">Evening Pizza Order <i class="fas fa-pizza-slice"></i></Tab>
+                    <Tab class="tab-rolls">Morning Roll Order <i class="fas fa-bacon"></i></Tab>
                   </TabList>
                   <TabPanel>
-                  <h2> Pizzas </h2>
-                    {this.renderPizzaProducts()}
-                    <br/>
-                  <h2> Sides </h2>
-                    {this.renderSideProducts()}
-                  <h2> Desserts </h2>
-                    {this.renderDessertProducts()}
-                  </TabPanel>
-                  <TabPanel>
-                  <h2> Roll </h2>
-                  <h5> Select the Morning/Mornings you want to roll to be delivered </h5>
-                  <form class="row">
-                    <div className="form-check col-lg-4">
-                      <label>
-                        <input
-                          type="radio"
-                          name="react-tips"
-                          value="Saturday"
-                          className="form-check-input"
-                          onChange={this.handleMorningChange}
-                        />
-                        Saturday Morning
-                      </label>
+                  <div class="food-panel-intro">
+                    <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
+                    <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from <a href="https://www.papajohns.co.uk/">Papa Johns</a></p>
+                    <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
+                    <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
+                  </div>
+                    <div class="container food-products-panel">
+                      <div class="food-product-header"> Pizzas </div>
+                        {this.renderPizzaProducts()}
+                        <br/>
+                      <div class="food-product-header"> Sides </div>
+                        {this.renderSideProducts()}
+                      <div class="food-product-header"> Desserts </div>
+                        {this.renderDessertProducts()}
+                      </div>
+                    </TabPanel>
+                    <TabPanel>
+                    <div class="food-panel-intro">
+                      <p><i class="fas fa-chair"></i> Order Breakfast rolls here for it to be delivered straight to your desk!</p>
+                      <p><i class="fas fa-utensils"></i> Our Rolls are delivered from <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g186528-d5422814-r193245852-Jo_s2go-Grangemouth_Falkirk_District_Scotland.html">Mamas Rolls</a></p>
+                      <p><b><i class="fas fa-stopwatch"></i> Roll Order closes @ <u>04:00</u> on the morning of delivery </b></p>
+                      <p><b><i class="fas fa-truck"></i> Rolls will be delivered between 09:00 and 10:00 on your chosen morning</b></p>
                     </div>
-                    <div className="form-check col-lg-4">
-                      <label>
-                        <input
-                          type="radio"
-                          name="react-tips"
-                          value="Sunday"
-                          className="form-check-input"
-                          onChange={this.handleMorningChange}
-                        />
-                        Sunday Morning
-                      </label>
-                    </div>
-                  </form>
-                  <h5> Select Roll Type: </h5>
-                  <form class="row">
-                    {this.renderRollType()}
-                  </form>
+                    <div class="container food-products-panel">
+                    <div class="food-product-header-rolls"><i class="fas fa-sun"></i> What Morning ?</div>
+                    <form class="row food-product-rolls-items">
+                      <div className="form-check">
+                        <label class="radio-buttons-custom">
+                          <input
+                            type="radio"
+                            name="react-tips"
+                            value="Saturday"
+                            className="form-check-input"
+                            onChange={this.handleMorningChange}
+                          />
+                           <span class="checkmark"></span>
+                          <span class="food-label-text">Saturday Morning</span>
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <label class="radio-buttons-custom">
+                          <input
+                            type="radio"
+                            name="react-tips"
+                            value="Sunday"
+                            className="form-check-input"
+                            onChange={this.handleMorningChange}
+                          />
+                           <span class="checkmark"></span>
+                        <span class="food-label-text">Sunday Morning</span>
+                        </label>
+                      </div>
+                    </form>
+                    <div class="food-product-header-rolls"><i class="fas fa-utensils"></i> How many fillings ? </div>
+                    <form class="row food-product-rolls-items">
+                      {this.renderRollType()}
+                    </form>
 
-                    {this.renderToppingOptions()}
+                      {this.renderToppingOptions()}
 
-                    <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" onClick={()=>this.addRollToBasket()}>
-                     Add Roll to Basket
-                    </button>
-                  </TabPanel>
+                      <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn-addrolltobasket" onClick={()=>this.addRollToBasket()}>
+                       Add Roll to Basket
+                      </button>
+                      </div>
+                    </TabPanel>
                 </Tabs>
               </div>
             </div>
           </div>
           <div className="section-container-keyboard col-lg-4">
-            <div className="sl-products--container">
+            <div className="sl-products--container food-basket-sticky">
               <div className="container">
               <h3>BASKET</h3>
                 <ul>
@@ -338,30 +353,34 @@ export default class Food extends Component {
                   <br/>
                   Total Price : £{this.state.foodBasketTotalValue}
                 </ul>
-                Seat Number:
-                <div className="sl-searchform__option">
-                  <span className="sl-select" >
-                    <select size="1" className="sl-component sl-select" onChange={this.handleSeatChange} value={this.state.seatNumber}>
-                    <option value="" selected>Please select</option>
-                    {this.createTable()}
-                    </select>
-                </span>
+                <div class="sl-form-flex">
+                <label className="control-label"><i class="fas fa-chair"></i> Seat Number:</label>
+                  <div className="sl-searchform__option">
+                    <span className="sl-select" >
+                      <select size="1" className="sl-component sl-select" onChange={this.handleSeatChange} value={this.state.seatNumber}>
+                      <option value="" selected>Please select</option>
+                      {this.createTable()}
+                      </select>
+                  </span>
+                  </div>
                 </div>
 
+
                 <FormGroup controlId="gamerName" bsSize="large">
-                  <ControlLabel>Gamer Name:</ControlLabel>
+                  <ControlLabel><i class="fas fa-user-circle"></i> Gamer Name:</ControlLabel>
                   <FormControl
                     autoFocus
                     type="gamerName"
                     required
                     onChange={this.handleChange}
                     value={this.state.gamerName}
+                    className="sl-form-gamername"
                   />
                 </FormGroup>
-                {this.renderPaymentButton()}
-                <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" onClick={()=>this.clearFoodBasket()}>
-                 Clear basket
+                <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--clearbasket" onClick={()=>this.clearFoodBasket()}>
+                 <i class="fas fa-times"></i> Clear basket
                 </button>
+                {this.renderPaymentButton()}
               </div>
             </div>
           </div>
@@ -375,19 +394,19 @@ export default class Food extends Component {
     return this.state.foodproducts.map(function(product, i) {
       if(product.Type.S === "Pizza") {
       return (
-        <div class="row">
+        <div class="row food-item-row">
           <div class="col-lg-10">
             <div class="product">
               <div class="information">
-                  <h4 class="name ">{product.Name.S}</h4>
-                  <div class="description ">{product.Description.S}</div>
+                  <div class="name food-product-title">{product.Name.S}</div>
+                  <div class="description food-product-description">{product.Description.S}</div>
               </div>
             </div>
           </div>
           <div class="col-lg-2">
             <div class="details">
-                <div class="price ">£{product.Price.N}
-                  <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Pizza`)}}>+</button>
+                <div class="price ">
+                  <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Pizza`)}}><span class="food-item-price">£ {product.Price.N}</span><i class="fas fa-plus"></i></button>
                 </div>
               </div>
             </div>
@@ -401,19 +420,19 @@ export default class Food extends Component {
     return this.state.foodproducts.map(function(product, i) {
       if(product.Type.S === "Side") {
       return (
-        <div class="row">
+        <div class="row food-item-row">
           <div class="col-lg-10">
             <div class="product">
               <div class="information">
-                  <h4 class="name ">{product.Name.S}</h4>
-                  <div class="description ">{product.Description.S}</div>
+                  <div class="name food-product-title">{product.Name.S}</div>
+                  <div class="description food-product-description">{product.Description.S}</div>
               </div>
             </div>
           </div>
           <div class="col-lg-2">
             <div class="details">
-                <div class="price ">£{product.Price.N}
-                  <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Side`)}}>+</button>
+                <div class="price ">
+                <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Side`)}}><span class="food-item-price">£ {product.Price.N}</span><i class="fas fa-plus"></i></button>
                 </div>
               </div>
             </div>
@@ -427,19 +446,19 @@ export default class Food extends Component {
     return this.state.foodproducts.map(function(product, i) {
       if(product.Type.S === "Dessert") {
       return (
-        <div class="row">
+        <div class="row food-item-row">
           <div class="col-lg-10">
             <div class="product">
               <div class="information">
-                  <h4 class="name ">{product.Name.S}</h4>
-                  <div class="description ">{product.Description.S}</div>
+                  <div class="name food-product-title">{product.Name.S}</div>
+                  <div class="description food-product-description ">{product.Description.S}</div>
               </div>
             </div>
           </div>
           <div class="col-lg-2">
             <div class="details">
-                <div class="price ">£{product.Price.N}
-                  <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Dessert`)}}>+</button>
+                <div class="price ">
+                  <button aria-label="Add" class="addButton " type="submit" onClick={()=>{this.addProductToBasket(`${product.Name.S};${product.Price.N};Desset`)}}><span class="food-item-price">£ {product.Price.N}</span><i class="fas fa-plus"></i></button>
                 </div>
               </div>
             </div>
@@ -502,7 +521,7 @@ export default class Food extends Component {
       if(product.Type.S === "Roll") {
       return (
         <div className="form-check col-lg-4">
-          <label>
+          <label class="radio-buttons-custom">
             <input
               type="radio"
               name="react-tips"
@@ -510,7 +529,8 @@ export default class Food extends Component {
               className="form-check-input"
               onChange={this.handleTypeChange}
             />
-            {product.Name.S} - £{product.Price.N}
+            <span class="checkmark"></span>
+           <span class="food-label-text">{product.Name.S} - £{product.Price.N}</span>
           </label>
         </div>
       )
@@ -521,7 +541,7 @@ export default class Food extends Component {
   renderPaymentButton() {
     if(this.state.gamerName === "" || this.state.seatNumber === "" || this.state.foodBasket.length < 1) {
       return(
-        <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" onClick={()=>this.validateOrder()}>
+        <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--basketpayment" onClick={()=>this.validateOrder()}>
          Purchase Food
         </button>
       )
@@ -536,7 +556,7 @@ export default class Food extends Component {
            stripeKey={config.stripe.API_KEY}
            allowRememberMe={false}
          >
-         <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary">
+         <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--basketpayment">
           Purchase Food
          </button>
          </StripeCheckout>
@@ -547,77 +567,90 @@ export default class Food extends Component {
   renderToppingOptions() {
     if(this.state.rollType === "Single") {
       return(
-        <div>
-        Topping 1:
+        <div class="food-rolls-options">
+          <div class="food-rolls-options-toppings">
+        Filling 1:
 
         <div className="sl-searchform__option">
           <span className="sl-select" >
             <select size="1" className="sl-component sl-select" onChange={this.handleTopping1Change} value={this.state.rollTopping1}>
-            <option value="" selected>Choose Topping 1</option>
+            <option value="" selected>Choose filling 1</option>
             {this.createRollToppingTable()}
             </select>
         </span>
+        </div>
         </div>
         </div>
         )
     } else if(this.state.rollType === "Double") {
       return(
-        <div>
-        Topping 1:
+        <div class="food-rolls-options">
+          <div class="food-rolls-options-toppings">
+            Filling 1:
 
-        <div className="sl-searchform__option">
-          <span className="sl-select" >
-            <select size="1" className="sl-component sl-select" onChange={this.handleTopping1Change} value={this.state.rollTopping1}>
-            <option value="" selected>Choose Topping 1</option>
-            {this.createRollToppingTable()}
-            </select>
-        </span>
+            <div className="sl-searchform__option">
+              <span className="sl-select" >
+                <select size="1" className="sl-component sl-select" onChange={this.handleTopping1Change} value={this.state.rollTopping1}>
+                <option value="" selected>Choose filling 1</option>
+                {this.createRollToppingTable()}
+                </select>
+            </span>
+          </div>
         </div>
-        Topping 2:
+        <div class="food-rolls-options-toppings">
+          Filling 2:
 
-        <div className="sl-searchform__option">
-          <span className="sl-select" >
-            <select size="1" className="sl-component sl-select" onChange={this.handleTopping2Change} value={this.state.rollTopping2}>
-            <option value="" selected>Choose Topping 2</option>
-            {this.createRollToppingTable()}
-            </select>
-        </span>
+          <div className="sl-searchform__option">
+            <span className="sl-select" >
+              <select size="1" className="sl-component sl-select" onChange={this.handleTopping2Change} value={this.state.rollTopping2}>
+              <option value="" selected>Choose filling 2</option>
+              {this.createRollToppingTable()}
+              </select>
+          </span>
+        </div>
         </div>
         </div>
         )
     } else if(this.state.rollType === "Triple") {
       return(
-        <div>
-        Topping 1:
+        <div class="food-rolls-options">
+          <div class="food-rolls-options-toppings">
+            Filling 1:
 
-        <div className="sl-searchform__option">
-          <span className="sl-select" >
-            <select size="1" className="sl-component sl-select" onChange={this.handleTopping1Change} value={this.state.rollTopping1}>
-            <option value="" selected>Choose Topping 1</option>
-            {this.createRollToppingTable()}
-            </select>
-        </span>
-        </div>
-        Topping 2:
+            <div className="sl-searchform__option">
+              <span className="sl-select" >
+                <select size="1" className="sl-component sl-select" onChange={this.handleTopping1Change} value={this.state.rollTopping1}>
+                <option value="" selected>Choose filling 1</option>
+                {this.createRollToppingTable()}
+                </select>
+            </span>
+            </div>
+            </div>
+            <div class="food-rolls-options-toppings">
+            Filling 2:
 
-        <div className="sl-searchform__option">
-          <span className="sl-select" >
-            <select size="1" className="sl-component sl-select" onChange={this.handleTopping2Change} value={this.state.rollTopping2}>
-            <option value="" selected>Choose Topping 2</option>
-            {this.createRollToppingTable()}
-            </select>
-        </span>
-        </div>
-        Topping 3:
 
-        <div className="sl-searchform__option">
-          <span className="sl-select" >
-            <select size="1" className="sl-component sl-select" onChange={this.handleTopping3Change} value={this.state.rollTopping3}>
-            <option value="" selected>Choose Topping 3</option>
-            {this.createRollToppingTable()}
-            </select>
-        </span>
-        </div>
+          <div className="sl-searchform__option">
+            <span className="sl-select" >
+              <select size="1" className="sl-component sl-select" onChange={this.handleTopping2Change} value={this.state.rollTopping2}>
+              <option value="" selected>Choose filling 2</option>
+              {this.createRollToppingTable()}
+              </select>
+          </span>
+          </div>
+                </div>
+          <div class="food-rolls-options-toppings">
+          Filling 3:
+
+            <div className="sl-searchform__option">
+              <span className="sl-select" >
+                <select size="1" className="sl-component sl-select" onChange={this.handleTopping3Change} value={this.state.rollTopping3}>
+                <option value="" selected>Choose filling 3</option>
+                {this.createRollToppingTable()}
+                </select>
+            </span>
+            </div>
+          </div>
         </div>
         )
       }
