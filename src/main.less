@@ -30,6 +30,36 @@ font-family: 'Bangers', cursive;
 	box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
 }
 
+.transition(@property) {
+	-webkit-transition: @property;
+	-moz-transition: @property;
+	-ms-transition: @property;
+    -o-transition: @property;
+    transition: @property;
+}
+
+.transform(@value){
+	-webkit-transform: @value;
+	-moz-transform: @value;
+	-ms-transform: @value;
+    -o-transform: @value;
+    transform: @value;
+}
+.transition-02s() {
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+}
+.transition-03s() {
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
 // ----------------------------------------------------------------------------
 // Colours
 // ----------------------------------------------------------------------------
@@ -3107,4 +3137,131 @@ justify-content: space-around;
 	content: "\f00c";
 	color: @secondary-col;
 	font-size: 1.3em;
+}
+
+.sl-previousevents{
+	&-grid{
+		display: flex;
+		&--row{
+			width: 100%;
+			flex-wrap: nowrap;
+		}
+	}
+	&-card{
+		&--container{
+			.container-boxshadow();
+			max-height: 250px;
+			height: 250px;
+			max-width: 100%;
+			overflow: hidden;
+			margin: 1em;
+			border-radius: 5%;
+  		border: 1px solid black;
+		}
+			background-color: #cccccc;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			position: relative;
+			&:hover{
+				transform: scale(1.1);
+				 transition: all .3s ease-in-out;
+			}
+		&--scotlan{
+			&1{
+				background-image: url("/Images/previous-event-SL1.jpg");
+			}
+			&2{
+				background-image: url("/Images/previous-event-SL2.jpg");
+			}
+			&3{
+				background-image: url("/Images/previous-event-SL3.jpg");
+			}
+			&4{
+				background-image: url("/Images/previous-event-SL4.jpg");
+			}
+		}
+		&--content{
+			position: absolute;
+			top: 0;
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			padding: 2em;
+			transition: all .6s ease-in-out;
+			.sl-previousevents-card{
+				&--header{
+					top: 40%;
+					font-size: 2em;
+					text-align: center;
+					position: relative;
+					transition: all .6s ease-in-out;
+				}
+				&--info{
+					font-size: 1em;
+					margin-top: 2em;
+					margin-bottom: 2em;
+					text-align: center;
+					left: -110%;
+					position: relative;
+											transition: all .6s ease-in-out;
+				}
+				&--arrow{
+					font-size: 2em;
+					text-align: center;
+					right: -110%;
+					position: relative;
+					transition: all .6s ease-in-out;
+					border: 2px solid #fff;
+					border-radius: 100px;
+					width: 3rem;
+    			height: 3rem;
+    			margin: auto;
+				}
+			}
+		}
+	}
+}
+
+// HOVER EFFECTS FOR GRID
+
+
+.sl-previousevents{
+	&-card{
+			&:hover{
+				transform: scale(1.1);
+				transition: all .6s ease-in-out;
+			}
+		&--content{
+				&:hover{
+					background-color: rgba(65, 65, 65, 0.6);
+				.sl-previousevents-card{
+					&--header{
+						top: 5px;
+					}
+					&--info{
+						left: 0;
+					}
+					&--arrow{
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.sl--backgroundgradient{
+	height: 100%;
+	width: 100%;
+	background: -moz-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(76,150,215,0.6)), color-stop(35%, rgba(0,0,0,0.53)), color-stop(100%, rgba(115,209,76,0.4))); /* safari4+,chrome */
+	background: -webkit-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* ie10+ */
+	background: linear-gradient(270deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', endColorstr='#73D14C',GradientType=1 ); /* ie6-9 */
+	position: relative;
 }
