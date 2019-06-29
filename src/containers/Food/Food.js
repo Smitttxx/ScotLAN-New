@@ -195,7 +195,7 @@ export default class Food extends Component {
 
   createTable = () => {
     let table = []
-    for (var i = 0; i < 114; i++) {
+    for (var i = 0; i < 96; i++) {
       table.push(<option value={i + 1}>{i + 1}</option>)
     }
     return table
@@ -351,8 +351,10 @@ export default class Food extends Component {
 
   renderRollRadioButtons() {
     var date = new Date();
-    //var lastOrder=new Date('2019-06-20 23:45'); //Testing
-    var lastOrder=new Date('2019-07-06 04:00');
+    //var lastOrder=new Date('2019-07-06 04:00');
+    //var lastOrder2=new Date('2019-07-07 04:00');
+    var lastOrder=new Date('2019-06-29 22:47');
+    var lastOrder2=new Date('2019-06-29 22:48');
 
     if(date < lastOrder) {
       return (
@@ -385,7 +387,7 @@ export default class Food extends Component {
         </div>
         </form>
       )
-    } else {
+    } else if (date < lastOrder2) {
       return (
         <form class="row food-product-rolls-items">
         <div className="form-check">
@@ -402,6 +404,10 @@ export default class Food extends Component {
           </label>
         </div>
         </form>
+      )
+    } else {
+      return(
+        <div>Too late</div>
       )
     }
   }
