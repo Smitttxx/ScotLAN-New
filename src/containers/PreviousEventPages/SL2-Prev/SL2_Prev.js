@@ -75,7 +75,6 @@ export default class SL2_Prev extends Component {
                   <div>Sponsored by GT Omega, Crucial and ASRock </div>
                   <div className="row product--info">
                   <div className="col-md-8">
-                    <h4> What you need to know </h4>
                       <ul>
                         <li><strong>Gamers:</strong> 30 </li>
                         <li><strong>Event:</strong> Fri 15th March 7pm – Sun 17th March 7pm (48 Hours)</li>
@@ -83,16 +82,20 @@ export default class SL2_Prev extends Component {
                       </ul>
 
                       <span> <h4>Tournament Winners !! <i class="fas fa-trophy"></i> </h4></span>
-                      <h6>PC <i class="fas fa-keyboard"></i></h6>
-                      <ul>
-                        <li>CS:GO 2v2 - WINNERS</li>
-                        <li>Overwatch 3v3 - WINNERS  </li>
-                      </ul>
-                      <span> <h6>Console Corner <i class="fas fa-gamepad"></i></h6></span>
-                      <ul>
-                        <li>Nintendo 64 Mario Kart Tournament - WINNER</li>
-                      </ul>
-                     </div>
+                      <div class="SL-Previoiusevents-pcheading"><i class="fas fa-keyboard"></i> PC </div>
+                      <dl>
+                        <dt>CS:GO 2v2</dt>
+                          <dd>Winners - </dd>
+                        <dt>Overwatch 3v3</dt>
+                          <dd>Winners - </dd>
+                      </dl>
+                      <span><div class="SL-Previoiusevents-consoleheading"><i class="fas fa-gamepad"></i> Console Corner </div></span>
+                      <dl>
+                        <dt>Nintendo 64 Mario Kart Tournament</dt>
+                          <dd>Winner - </dd>
+                      </dl>
+
+                    </div>
                   <div className="col-md-4">
                   <div className="small-floorplan">
                    <div className="row small-floorplan--areas">

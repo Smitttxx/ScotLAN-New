@@ -75,7 +75,6 @@ export default class SL1_Prev extends Component {
                   <div>Sponsored by Crucial</div>
                   <div className="row product--info">
                   <div className="col-md-8">
-                    <h4> What you need to know </h4>
                       <ul>
                         <li><strong>Gamers:</strong> 30 </li>
                         <li><strong>Event:</strong> Fri 15th March 7pm – Sun 17th March 7pm (48 Hours)</li>
@@ -83,17 +82,23 @@ export default class SL1_Prev extends Component {
                       </ul>
 
                       <span> <h4>Tournament Winners !! <i class="fas fa-trophy"></i> </h4></span>
-                      <h6>PC <i class="fas fa-keyboard"></i></h6>
-                      <ul>
-                        <li>Trackmania Nations Forever - Fastest lap of the weekend</li>
-                        <li>Overwatch 2v2 - Winners  </li>
-                        <li>Left4Dead2 2v2 - Winners  </li>
-                        <li>League of Legends 3v3 - Winners   </li>
-                      </ul>
-                      <span> <h6>Console Corner <i class="fas fa-gamepad"></i></h6></span>
-                      <ul>
-                        <li>1v1 INJUSTICE: Gods among us - Winner</li>
-                      </ul>
+
+                      <div class="SL-Previoiusevents-pcheading"><i class="fas fa-keyboard"></i> PC </div>
+                      <dl>
+                        <dt>Trackmania Nations Forever - Fastest lap of the weekend</dt>
+                          <dd>Winner - </dd>
+                        <dt>League of Legends 3v3</dt>
+                          <dd>Winners - </dd>
+                        <dt>Left4Dead2</dt>
+                          <dd>Winners - </dd>
+                        <dt>Overwatch 2v2</dt>
+                          <dd>Winners - </dd>
+                      </dl>
+                      <span><div class="SL-Previoiusevents-consoleheading"><i class="fas fa-gamepad"></i> Console Corner </div></span>
+                      <dl>
+                        <dt>INJUSTICE: Gods among us</dt>
+                          <dd>Winner - DotShotGun</dd>
+                      </dl>
                      </div>
                   <div className="col-md-4">
                   <div className="small-floorplan">
@@ -117,93 +122,93 @@ export default class SL1_Prev extends Component {
                            <Tooltip title='A.5 Floydo'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.6 Chaos'>
+                           <Tooltip title='A.6 Andy McCrae'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.7 xH33PZz'>
+                           <Tooltip title='A.7 Fragle132'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.8 GMurray'>
+                           <Tooltip title='A.8 Left-One'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>
                            <div className="small-floorplan--row large-floorplan--row-2">
-                           <Tooltip title='B.1 DJ_Evil'>
+                           <Tooltip title='B.1 Captain Awesome'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.2 Unholy'>
+                           <Tooltip title='B.2 LockedOutBro'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.3 YTyrellium'>
+                           <Tooltip title='B.3 Skillin'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.4 Emperor'>
+                           <Tooltip title='B.4 Ezicc'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.5 Rampage'>
+                           <Tooltip title='B.5 Arfy'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.6 Chris'>
+                           <Tooltip title='B.6 Heepz'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.7 Bane'>
+                           <Tooltip title='B.7 AndyH'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.8 Duffy'>
+                           <Tooltip title='B.8 GMurray'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>
                          </div>
                          <div className="small-floorplan--block large-floorplan--block--B">
                            <div className="small-floorplan--row large-floorplan--row-3 ">
-                           <Tooltip title='C.1 GnarKill'>
+                           <Tooltip title='C.1 Bane'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.2 Naim'>
+                           <Tooltip title='C.2 Rampage'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.3 HenrickCarsson'>
+                           <Tooltip title='C.3 JugsAnnaM'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.4 Mackenzie'>
+                           <Tooltip title='C.4 LionHeartDiz'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.5 CrackerGram'>
+                           <Tooltip title='C.5 Maxxieway26'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.6 SazzleFraz'>
+                           <Tooltip title='C.6 Keikun'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.7 Lemming'>
+                           <Tooltip title='C.7 G'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.8 Phreak'>
+                           <Tooltip title='C.8 Niam'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>
                            <div className="small-floorplan--row large-floorplan--row-4">
-                           <Tooltip title='D.1 ScottishJay'>
+                           <Tooltip title='D.1 RobVanHam'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.2 DarkNinjaZelda'>
+                           <Tooltip title='D.2 KayCee'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.3 ClownPrince'>
+                           <Tooltip title='D.3 Lawliet'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.4 Gotty'>
+                           <Tooltip title='D.4 Joker'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.5 DotShotGun'>
+                           <Tooltip title='D.5 Gotty'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.6 Scott'>
+                           <Tooltip title='D.6 KirkyBoi'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.7 KayCee'>
+                           <Tooltip title='D.7 DarkNinjaZelda'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.8 Carb0n'>
+                           <Tooltip title='D.8 ScottishJay'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>

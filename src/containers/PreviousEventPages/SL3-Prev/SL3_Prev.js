@@ -75,7 +75,6 @@ export default class SL3_Prev extends Component {
                   <div>Sponsored by GT Omega and ASRock </div>
                   <div className="row product--info">
                   <div className="col-md-8">
-                    <h4> What you need to know </h4>
                       <ul>
                         <li><strong>Gamers:</strong> 32 </li>
                         <li><strong>Event:</strong> Fri 15th March 7pm – Sun 17th March 7pm (48 Hours)</li>
@@ -83,16 +82,20 @@ export default class SL3_Prev extends Component {
                       </ul>
 
                       <span> <h4>Tournament Winners !! <i class="fas fa-trophy"></i> </h4></span>
-                      <h6>PC <i class="fas fa-keyboard"></i></h6>
-                      <ul>
-                        <li>Overwatch 3v3 - Winners  </li>
-                        <li>CS:GO 2v2 - Winners  </li>
-                        <li>League of Legends 3v3 - Winners </li>
-                      </ul>
-                      <span> <h6>Console Corner <i class="fas fa-gamepad"></i></h6></span>
-                      <ul>
-                        <li>1v1 INJUSTICE: Gods among us - WINNER</li>
-                      </ul>
+                      <div class="SL-Previoiusevents-pcheading"><i class="fas fa-keyboard"></i> PC </div>
+                      <dl>
+                        <dt>League of Legends 3v3</dt>
+                          <dd>Winners - </dd>
+                        <dt>Overwatch 3v3</dt>
+                          <dd>Winners - </dd>
+                        <dt>GS:GO 2V2</dt>
+                          <dd>Winners - </dd>
+                      </dl>
+                      <span><div class="SL-Previoiusevents-consoleheading"><i class="fas fa-gamepad"></i> Console Corner </div></span>
+                      <dl>
+                        <dt>INJUSTICE: Gods among us</dt>
+                          <dd>Winner - </dd>
+                      </dl>
                      </div>
                   <div className="col-md-4">
                   <div className="small-floorplan">
@@ -101,25 +104,25 @@ export default class SL3_Prev extends Component {
                        <div className="small-floorplan--rows">
                          <div className="small-floorplan--block small-floorplan--block--A">
                            <div className="small-floorplan--row small-floorplan--row-1">
-                           <Tooltip title='A.1 Rob'>
+                           <Tooltip title='A.1 Andy_M'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.2 Smitttxx'>
+                           <Tooltip title='A.2 Carvid'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.3 Carvid'>
+                           <Tooltip title='A.3 Rob'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.4 AndyM_29'>
+                           <Tooltip title='A.4 Smitttxx'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.5 Ezicc'>
+                           <Tooltip title='A.5 LockedOutBro'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.6 Space'>
-                               <button class="seat seat--avalible"></button>
+                           <Tooltip title='A.6 Skillin'>
+                               <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.7 Left-One'>
+                           <Tooltip title='A.7 AndyH'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            <Tooltip title='A.8 GMurray'>
@@ -127,76 +130,76 @@ export default class SL3_Prev extends Component {
                            </Tooltip>
                            </div>
                            <div className="small-floorplan--row large-floorplan--row-2">
-                           <Tooltip title='B.1 Sunnuld'>
+                           <Tooltip title='B.1 BeccaHR'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.2 BeccaHR'>
+                           <Tooltip title='B.2 Sunnuld'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.3 Skillin'>
+                           <Tooltip title='B.3 crAB'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.4 Emperor'>
+                           <Tooltip title='B.4 kGo'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.5 DotShotgun'>
+                           <Tooltip title='B.5 Hawkisonfire'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.6 Grandy'>
+                           <Tooltip title='B.6 Anegni'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.7 AndyH'>
+                           <Tooltip title='B.7 Arfy'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='B.8 Squifferz'>
+                           <Tooltip title='B.8 Sgian Dubh'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>
                          </div>
                          <div className="small-floorplan--block large-floorplan--block--B">
                            <div className="small-floorplan--row large-floorplan--row-3 ">
-                           <Tooltip title='C.1 Kyudo'>
+                           <Tooltip title='C.1 Squiff'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.2 Phil'>
+                           <Tooltip title='C.2 Kizashee'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.3 Phreak'>
-                               <button class="seat seat--taken"></button>
+                           <Tooltip title='C.3 AFK'>
+                               <button class="seat seat--avalible"></button>
                            </Tooltip>
-                           <Tooltip title='C.4 Rust'>
+                           <Tooltip title='C.4 Jarnbjorn'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            <Tooltip title='C.5 Magestical'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.6 Flashy Slashy'>
+                           <Tooltip title='C.6 LionHeartDiz'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.7 Salt BadGuy'>
+                           <Tooltip title='C.7 Rust'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='C.8 Morphene'>
+                           <Tooltip title='C.8 Phreak'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            </div>
                            <div className="small-floorplan--row large-floorplan--row-4">
-                           <Tooltip title='D.1 Levente'>
+                           <Tooltip title='D.1 Bane'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.2 Joker'>
+                           <Tooltip title='D.2 Rampage'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.3 Gotty'>
+                           <Tooltip title='D.3 G'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.4 Space'>
-                               <button class="seat seat--avalible"></button>
-                           </Tooltip>
-                           <Tooltip title='D.5 Salt King'>
+                           <Tooltip title='D.4 Niam'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='D.6 Dec'>
+                           <Tooltip title='D.5 Grandy'>
+                               <button class="seat seat--taken"></button>
+                           </Tooltip>
+                           <Tooltip title='D.6 TheWooWooper'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
                            <Tooltip title='D.7 KayCee'>

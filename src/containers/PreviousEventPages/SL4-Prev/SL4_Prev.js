@@ -75,7 +75,6 @@ export default class SL4_Prev extends Component {
                   <div>Sponsored by GTOmega and ASRock </div>
                   <div className="row product--info">
                   <div className="col-md-8">
-                    <h4> What you need to know </h4>
                       <ul>
                         <li><strong>Gamers:</strong> 30 </li>
                         <li><strong>Event:</strong> Fri 15th March 7pm – Sun 17th March 7pm (48 Hours)</li>
@@ -84,7 +83,7 @@ export default class SL4_Prev extends Component {
 
                       <span> <h4>Tournament Winners !! <i class="fas fa-trophy"></i> </h4></span>
                       <br/>
-                      <div><i class="fas fa-keyboard"></i> PC </div>
+                      <div class="SL-Previoiusevents-pcheading"><i class="fas fa-keyboard"></i> PC </div>
                       <dl>
                         <dt>CS:GO 3v3</dt>
                           <dd>Winners - Mount (Carb0n, Dobby, GMurray)</dd>
@@ -93,7 +92,7 @@ export default class SL4_Prev extends Component {
                         <dt>Overwatch 1v1</dt>
                           <dd>Winners - Carb0n</dd>
                       </dl>
-                      <span><div><i class="fas fa-gamepad"></i> Console Corner </div></span>
+                      <span><div class="SL-Previoiusevents-consoleheading"><i class="fas fa-gamepad"></i> Console Corner </div></span>
                       <dl>
                         <dt>Tekken 7</dt>
                           <dd>Winner - Magestical</dd>
@@ -122,7 +121,7 @@ export default class SL4_Prev extends Component {
                            <Tooltip title='A.5 Ezicc'>
                                <button class="seat seat--taken"></button>
                            </Tooltip>
-                           <Tooltip title='A.6 Space'>
+                           <Tooltip title='A.6 AFK'>
                                <button class="seat seat--avalible"></button>
                            </Tooltip>
                            <Tooltip title='A.7 Left-One'>
@@ -219,9 +218,6 @@ export default class SL4_Prev extends Component {
                       </div>
                       <div class="product--info--enquire"><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Gallery" role="button">Gallery</a></div>
                   </div>
-                  </div>
-                  <div class="flickrwrap">
-                  <a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/169239453@N02/46457647384/in/album-72157689914909123/lightbox/" title="1P5A6538-edit"><img src="https://farm8.staticflickr.com/7891/46457647384_548c870aca_b.jpg" width="100%" height="400" alt="1P5A6538-edit"/></a>
                   </div>
               </div>
           </div>
