@@ -71,16 +71,30 @@ export default class PreviousEvents extends Component {
           <div className="section-container-keyboard">
             <div className="container">
               <h2 class="product-heading">Previous Events<span class="text-muted"></span></h2>
-              <p> Click on any of the events below to find out more details about this event and the view the gallary :)! </p>
+              <p> Click on any of the events below to find out more details about this event and the view the gallery :)! </p>
               <div class="sl-previousevents-grid">
-                <div class="sl-previousevents-grid--row">
-                <a className="" href="/PreviousEvents/ScotLAN4" role="button">
+              <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN5" role="button">
+                <div class="sl-previousevents-card--container">
+                <div class="sl-previousevents-card sl-previousevents-card--scotlan5">
+                  <div class="sl--backgroundgradient">  </div>
+                  <div class="sl-previousevents-card--content">
+                    <div class="sl-previousevents-card--header">ScotLAN #5 Big Event!</div>
+                    <div class="sl-previousevents-card--info">This event took place on 5th - 7th July 2019</div>
+                    <div class="sl-previousevents-card--arrow">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                </a>
+
+                <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN4" role="button">
                   <div class="sl-previousevents-card--container">
                   <div class="sl-previousevents-card sl-previousevents-card--scotlan4">
                     <div class="sl--backgroundgradient">  </div>
                     <div class="sl-previousevents-card--content">
                       <div class="sl-previousevents-card--header">ScotLAN #4 LevelUP!</div>
-                      <div class="sl-previousevents-card--info">This event took place on X-X.</div>
+                      <div class="sl-previousevents-card--info">This event took place on 15th - 17th Mar 2019</div>
                       <div class="sl-previousevents-card--arrow">
                         <i class="fas fa-long-arrow-alt-right"></i>
                       </div>
@@ -88,13 +102,13 @@ export default class PreviousEvents extends Component {
                     </div>
                     </div>
                   </a>
-                  <a className="" href="/PreviousEvents/ScotLAN3" role="button">
+                  <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN3" role="button">
                     <div class="sl-previousevents-card--container">
                     <div class="sl-previousevents-card sl-previousevents-card--scotlan3">
                       <div class="sl--backgroundgradient">  </div>
                       <div class="sl-previousevents-card--content">
                         <div class="sl-previousevents-card--header">ScotLAN #3 XMAS!</div>
-                        <div class="sl-previousevents-card--info">This event took place on X-X.</div>
+                        <div class="sl-previousevents-card--info">This event took place on 30th Dec - 2nd Nov 2018</div>
                         <div class="sl-previousevents-card--arrow">
                           <i class="fas fa-long-arrow-alt-right"></i>
                         </div>
@@ -102,28 +116,28 @@ export default class PreviousEvents extends Component {
                       </div>
                       </div>
                     </a>
-                </div>
-                <div class="sl-previousevents-grid--row">
-                <a className="" href="/PreviousEvents/ScotLAN2" role="button">
+
+                <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN2" role="button">
                   <div class="sl-previousevents-card--container">
                   <div class="sl-previousevents-card sl-previousevents-card--scotlan2">
                     <div class="sl--backgroundgradient">  </div>
                     <div class="sl-previousevents-card--content">
                       <div class="sl-previousevents-card--header">ScotLAN #2</div>
-                      <div class="sl-previousevents-card--info">This event took place on X-X.</div>
+                      <div class="sl-previousevents-card--info">This event took place on 5th – Sun 7th Oct 2018</div>
                       <div class="sl-previousevents-card--arrow">
                         <i class="fas fa-long-arrow-alt-right"></i>
                       </div>
                     </div>
                     </div>
                     </div>
-                  </a>  <a className="" href="/PreviousEvents/ScotLAN1" role="button">
+                  </a>
+                  <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN1" role="button">
                       <div class="sl-previousevents-card--container">
                       <div class="sl-previousevents-card sl-previousevents-card--scotlan1">
                         <div class="sl--backgroundgradient">  </div>
                         <div class="sl-previousevents-card--content">
                           <div class="sl-previousevents-card--header">ScotLAN #1</div>
-                          <div class="sl-previousevents-card--info">This event took place on X-X.</div>
+                          <div class="sl-previousevents-card--info">This event took place on 11th – 13th May</div>
                           <div class="sl-previousevents-card--arrow">
                             <i class="fas fa-long-arrow-alt-right"></i>
                           </div>
@@ -131,7 +145,6 @@ export default class PreviousEvents extends Component {
                         </div>
                         </div>
                       </a>
-                </div>
               </div>
             </div>
           </div>
