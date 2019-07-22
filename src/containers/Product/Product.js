@@ -39,8 +39,8 @@ export default class Product extends Component {
       quantityVip:"0",
       redirectToCheckout: false,
       center: {
-        lat: 55.995980,
-        lng: -3.786270
+        lat: 55.899629,
+        lng: -3.296165
       },
       zoom: 16,
       showModal: false,
@@ -78,8 +78,14 @@ export default class Product extends Component {
     var seatPlanRowSplit = [];
 
     //Split seat plan array
-    if(seatPlan.Length === 32) {
-      //TODO: split array for 32
+    if(seatPlan[0].Seats.L.length === 32) {
+      var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,8);
+      var seatPlanRow2 = seatPlan[0].Seats.L.slice(8,16);
+      var seatPlanRow3 = seatPlan[0].Seats.L.slice(16,24);
+      var seatPlanRow4 = seatPlan[0].Seats.L.slice(24,32);
+
+      seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4);
+      this.setState({seatPlanByRow: seatPlanRowSplit});
     }
     else {
       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
@@ -277,7 +283,7 @@ export default class Product extends Component {
       return(
           <div>
         <div>
-        {this.renderSeatingPlan96Person()}
+        {this.renderSeatingPlan32Person()}
         </div>
         <div>
         {this.renderProducts(this.state.product)}
@@ -318,11 +324,11 @@ renderProductDetail(){
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li><strong>Gamers:</strong> 102 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li><strong>Event:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
+            <li><strong>Gamers:</strong> 32 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li><strong>Event:</strong> Fri 29th Nov 7pm – Sun 1st Dec 7pm (48 Hours)</li>
             <li><strong>Parking Avalible:</strong> Yes </li>
-            <li><strong>Ticket Price:</strong> from £40</li>
-            <li><strong>Address:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
+            <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
+            <li><strong>Address:</strong> 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</li>
           </ul>
       </div>
       <div className="col-md-4">
@@ -334,8 +340,8 @@ renderProductDetail(){
               defaultZoom={this.state.zoom}
             >
               <AnyReactComponent
-                lat={55.995980}
-                lng={-3.786270}
+                lat={55.899629}
+                lng={-3.296165}
                 text={''}
               />
             </GoogleMapReact>
@@ -374,7 +380,7 @@ renderProductDetail(){
               <div class="ribbon-back-right"></div>
               </div>
 
-              <label className="green ticket--price">Price Per Ticket: <strong><small>£</small>40</strong></label>
+              <label className="green ticket--price">Price Per Ticket: <strong><small>£</small>{this.state.product.Item.PriceStd.N}</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -399,10 +405,10 @@ renderProductDetail(){
               </div>
           </div>
             <div className="col-md-6">
-             <div class="ribbon ribbon-red "><span>SOLDOUT</span></div>
+             <div class="ribbon ribbon-red "><span>EARLYBIRD</span></div>
             <div id="vip" className="vip">
             <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : SOLD OUT </div>
+              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} </div>
               This ticket includes:
               <ul>
                 <li>1x Standard Ticket</li>
@@ -424,12 +430,12 @@ renderProductDetail(){
                 <div class="ribbon-back-left"></div>
                 <div class="ribbon-back-right"></div>
               </div>
-              <label className="blue ticket--price">Price Per Ticket: <strong><small>£</small>55</strong></label>
+              <label className="blue ticket--price">Price Per Ticket: <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
                 <span className="sl-select" >
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip} disabled>
+                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -488,6 +494,38 @@ else {
     </div>
   )
 }
+}
+
+renderSeatingPlan32Person() {
+  return (
+    <div className="large-floorplan">
+     <div className="large-floorplan--image">
+       <img src="/Images/ScotLAN-BIG.JPG" />
+     </div>
+     <div className="row large-floorplan--areas">
+       <div className="col-lg-8">
+         <div className="large-floorplan--rows">
+           <div className="large-floorplan--block large-floorplan--block--A">
+             <div className="large-floorplan--row large-floorplan--row-1">
+              {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
+             </div>
+             <div className="large-floorplan--row large-floorplan--row-2">
+               {this.renderSeatRow(this.state.seatPlanByRow[1], 8)}
+             </div>
+           </div>
+           <div className="large-floorplan--block large-floorplan--block--B">
+             <div className="large-floorplan--row large-floorplan--row-3">
+               {this.renderSeatRow(this.state.seatPlanByRow[2], 16)}
+             </div>
+             <div className="large-floorplan--row large-floorplan--row-4">
+              {this.renderSeatRow(this.state.seatPlanByRow[3], 24)}
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  )
 }
 
 renderSeatingPlan96Person() {
