@@ -53,40 +53,12 @@ export default class NextEvents extends Component {
           <div className="section-container">
             <div className="section-container-keyboard">
               <div className="container">
-              <h2 class="product-heading">ScotLAN #5<span class="text-muted"></span></h2>
-                <div class="row">
-                  <div class="col-md-7">
-                  <div>Sponsored by GTOmega and Corsair </div>
-                    <ul>
-                      <li><strong>Dates:</strong> Fri 5th July 7pm – Sun 7th July 7pm (48 Hours)</li>
-                      <li><strong>Venue:</strong> Woodlands Games Hall, Cochrane St, Falkirk FK1 1QE</li>
-                      <li><strong>Spaces:</strong> 102 seat BYOC Tickets</li>
-                      <li><strong>Prices From:</strong> £35 </li>
-                      <li><strong>Internet:</strong> 430mbps down 40mbps up LAN: Gigabit</li>
-                      <li><a href="https://www.facebook.com/events/386414302190930/"><strong>Facebook Event</strong></a></li>
-                    </ul>
-                    <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today</a></p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="google-map" style={{ height: '200px', width: '100%', border: '5px solid #73D14C'}}>
-                              <GoogleMapReact
-                                bootstrapURLKeys={{ key:"AIzaSyBtEhwgBGXTswLFsTCbAFoycaUqby6Irlo" }}
-                                defaultCenter={this.state.center}
-                                defaultZoom={this.state.zoom}
-                              >
-                                <AnyReactComponent
-                                  lat={55.995980}
-                                  lng={-3.786270}
-                                  text={''}
-                                />
-                              </GoogleMapReact>
-                              </div>
-                    </div>
-                  </div>
+              <h2 class="product-heading">What to expect at ScotLAN?<span class="text-muted"></span></h2>
 
-            <h4> What to expect at ScotLAN#5 </h4>
-            <p> For general LAN questions head over to our FAQ page or get in touch with us if you cant find the answer your looking for!
-            Below will tell you everything you need to know that is specific to our next event</p>
+                <p> A LAN Party is an event where you take your computer to our venue, hook it up on a high speed network and play video games with and against each other for 48 hours.</p>
+                <p> ScotLAN was founded in November 2017 buy a group of 4 friends. To meet the team head over to our <a href="/AboutUs">Meet the team Page</a></p>
+                <p> For general LAN questions head over to our <a href="/FAQS">FAQ's Page</a> or <a href="/Contact">get in touch</a> with us if you cant find the answer your looking for!</p>
+
 
             <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -100,14 +72,9 @@ export default class NextEvents extends Component {
                     </div>
                     <div id="collapseTournamnets" className="panel-collapse" hidden="hidden">
                         <div className="panel-body">
-                        <p> Confirmed Tournaments: </p>
-                        <ul>
-                          <li> Counter Strike Global Offensive 5v5 </li>
-                          <li> Overwatch 4v4 </li>
-                          <li> League of Legends 5v5 </li>
-                          <li> Rocket League 3v3 </li>
-                        </ul>
-                        <p> We also have servers set up for: </p>
+                        <p> Every event has event specific tournaments - to find out what these are head over to the event page </p>
+
+                        <p> Every event also has servers set up for: </p>
                         <div>
                         <ul>
                           <li> TrackMania </li>
@@ -140,8 +107,6 @@ export default class NextEvents extends Component {
                         <li> Kettle, microwave and small fridge on site </li>
                         <li> Corner Shops – 5 min walk </li>
                         <li> JustEat – Various Deliveries from 5pm to 11pm Saturday & Sunday </li>
-                        <li> Dominos Pizza Falkirk – Deliveries from 11am to 11pm Saturday & Sunday </li>
-                        <li> Tesco – 8 min drive, 40 min walk </li>
                       </ul>
                         </div>
                     </div>
@@ -157,10 +122,15 @@ export default class NextEvents extends Component {
                     <div id="collapseParking" className="panel-collapse" hidden="hidden">
                       <div className="panel-body">
                         <div>
+                        <p> 104 Man Event</p>
                         <ul>
                           <li> 40~ free spaces on-site </li>
                           <li> Bus: Falkirk Bus Station 10 minutes away </li>
                           <li> Train: Falkirk High – 0.4 Miles </li>
+                        </ul>
+                        <p> 32 Man Event</p>
+                        <ul>
+                          <li> 15~ free spaces on-site </li>
                         </ul>
                         </div>
                         </div>
@@ -225,6 +195,7 @@ export default class NextEvents extends Component {
                       </div>
                     </div>
                   </div>
+                                <a class="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-button-accordion" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today <i class="fas fa-chevron-right"></i></a> 
                 </div>
               </div>
             </div>

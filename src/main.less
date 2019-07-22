@@ -1557,11 +1557,11 @@ color: black;
 
 .sl--homepage{
 	&--heroimage{
-		background-image: url(/Images/ScotLAN_homepageimage.jpg);
+		background-image: url(/Images/previous-event-SL5.jpg);
 		height: 822px;
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: top;
+		background-position: center;
 	}
 &--backgroundgradient{
 background: -moz-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
@@ -3142,9 +3142,13 @@ justify-content: space-around;
 .sl-previousevents{
 	&-grid{
 		display: flex;
-		&--row{
-			width: 100%;
-			flex-wrap: nowrap;
+		flex-wrap: wrap;
+		justify-content: center;
+		&--tile{
+			width: 50%;
+			&:hover{
+				color: white !important;
+			}
 		}
 	}
 	&-card{
@@ -3179,6 +3183,9 @@ justify-content: space-around;
 			}
 			&4{
 				background-image: url("/Images/previous-event-SL4.jpg");
+			}
+			&5{
+				background-image: url("/Images/previous-event-SL5.jpg");
 			}
 		}
 		&--content{
@@ -3251,6 +3258,59 @@ justify-content: space-around;
 	}
 }
 
+.sl-previousevents{
+	.gradient-line{
+		width: 100%;
+	}
+	.event-detail-list{
+		margin: 0 2em 2em 2em;
+	}
+	&-eventinfo{
+		.attendance-list{
+			margin: 3em;
+		}
+	}
+	&-attendance{
+		    width: 100%;
+				&__list{
+					display: flex;
+  			  justify-content: space-between;
+					.scribble();
+					font-size: 1.2em;
+				}
+				&__seats{
+				.small-floorplan{
+					margin-top: 0;
+				}
+			}
+		}
+		.header{
+			.scribble();
+			font-size: 1.8em;
+			color: @secondary-col;
+		 margin-bottom: 0.5em;
+			}
+		.tournament-list{
+			width: 100%;
+			margin: 2em;
+			display: flex;
+			&-pc{
+				width: 50%;
+			}
+		}
+		.big-event{
+			.small-floorplan--rows{
+				display: flex;
+			}
+			.small-floorplan--block{
+			display: flex;
+			padding-right: 1em;
+		&--C{
+			padding-right: 0em;
+			}
+		}
+	}
+}
 
 
 .sl--backgroundgradient{
@@ -3264,4 +3324,21 @@ justify-content: space-around;
 	background: linear-gradient(270deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 0%, rgba(76,150,215,0.6) 100%); /* w3c */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', endColorstr='#73D14C',GradientType=1 ); /* ie6-9 */
 	position: relative;
+}
+
+.sl-button-accordion{
+	margin-bottom: 1em;
+	padding: 1em;
+	border: 3px solid white;
+	border-radius: 15px;
+	background-color: rgba(63, 63, 63, 0.9);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-align: center;
+	align-items: center;
+	cursor: pointer;
+	margin: 0;
+	font-weight: bold; 
 }

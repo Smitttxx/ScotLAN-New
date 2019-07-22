@@ -1180,11 +1180,11 @@ h5 i {
   color: black;
 }
 .sl--homepage--heroimage {
-  background-image: url(/Images/ScotLAN_homepageimage.jpg);
+  background-image: url(/Images/previous-event-SL5.jpg);
   height: 822px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
 }
 .sl--homepage--backgroundgradient {
   background: -moz-linear-gradient(180deg, rgba(115, 209, 76, 0.4) 0%, rgba(0, 0, 0, 0.53) 65%, rgba(76, 150, 215, 0.6) 100%);
@@ -2579,10 +2579,14 @@ table .btn,
 }
 .sl-previousevents-grid {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.sl-previousevents-grid--row {
-  width: 100%;
-  flex-wrap: nowrap;
+.sl-previousevents-grid--tile {
+  width: 50%;
+}
+.sl-previousevents-grid--tile:hover {
+  color: white !important;
 }
 .sl-previousevents-card {
   background-color: #cccccc;
@@ -2618,6 +2622,9 @@ table .btn,
 }
 .sl-previousevents-card--scotlan4 {
   background-image: url("/Images/previous-event-SL4.jpg");
+}
+.sl-previousevents-card--scotlan5 {
+  background-image: url("/Images/previous-event-SL5.jpg");
 }
 .sl-previousevents-card--content {
   position: absolute;
@@ -2672,6 +2679,51 @@ table .btn,
 .sl-previousevents-card--content:hover .sl-previousevents-card--arrow {
   right: 0;
 }
+.sl-previousevents .gradient-line {
+  width: 100%;
+}
+.sl-previousevents .event-detail-list {
+  margin: 0 2em 2em 2em;
+}
+.sl-previousevents-eventinfo .attendance-list {
+  margin: 3em;
+}
+.sl-previousevents-attendance {
+  width: 100%;
+}
+.sl-previousevents-attendance__list {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Give You Glory', cursive;
+  font-size: 1.2em;
+}
+.sl-previousevents-attendance__seats .small-floorplan {
+  margin-top: 0;
+}
+.sl-previousevents .header {
+  font-family: 'Give You Glory', cursive;
+  font-size: 1.8em;
+  color: #73d14c;
+  margin-bottom: 0.5em;
+}
+.sl-previousevents .tournament-list {
+  width: 100%;
+  margin: 2em;
+  display: flex;
+}
+.sl-previousevents .tournament-list-pc {
+  width: 50%;
+}
+.sl-previousevents .big-event .small-floorplan--rows {
+  display: flex;
+}
+.sl-previousevents .big-event .small-floorplan--block {
+  display: flex;
+  padding-right: 1em;
+}
+.sl-previousevents .big-event .small-floorplan--block--C {
+  padding-right: 0em;
+}
 .sl--backgroundgradient {
   height: 100%;
   width: 100%;
@@ -2690,4 +2742,20 @@ table .btn,
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C96D7', endColorstr='#73D14C', GradientType=1);
   /* ie6-9 */
   position: relative;
+}
+.sl-button-accordion {
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 15px;
+  background-color: rgba(63, 63, 63, 0.9);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  font-weight: bold;
 }
