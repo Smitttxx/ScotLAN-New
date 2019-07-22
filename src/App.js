@@ -247,7 +247,7 @@ componentWillUnmount() {
               <ul className="nav nav-pill">
               <button class="mobile-menu-close" onClick={this.handleClick}><i class="fas fa-times"></i></button>
               <li className="nav-item">
-                <Link className="nav-link" to="/Product/Event/ScotLAN%20Event%205">ScotLAN #6</Link>
+                <Link className="nav-link" to="/Product/Event/ScotLAN%20Event%206">ScotLAN #6</Link>
               </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/PreviousEvents">Previous Events</Link>

@@ -67,8 +67,14 @@ export default class SeatPlan extends Component {
     var seatPlanRowSplit = [];
 
     //Split seat plan array
-    if(seatPlan.Length === 32) {
-      //TODO: split array for 32
+    if(seatPlan[0].Seats.L.length === 32) {
+      var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,8);
+      var seatPlanRow2 = seatPlan[0].Seats.L.slice(8,16);
+      var seatPlanRow3 = seatPlan[0].Seats.L.slice(16,24);
+      var seatPlanRow4 = seatPlan[0].Seats.L.slice(24,32);
+
+      seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4);
+      this.setState({seatPlanByRow: seatPlanRowSplit});
     }
     else {
        var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
@@ -306,13 +312,45 @@ export default class SeatPlan extends Component {
         </div>
           </div>
       </div>
-      {!this.state.isLoading && this.renderSeatingPlan96Person()}
+      {!this.state.isLoading && this.renderSeatingPlan32Person()}
       </div></div>
       </div>
       </div>
       </div>
     );
   }
+}
+
+renderSeatingPlan32Person() {
+  return (
+    <div className="large-floorplan">
+     <div className="large-floorplan--image">
+       <img src="/Images/ScotLAN-BIG.JPG" />
+     </div>
+     <div className="row large-floorplan--areas">
+       <div className="col-lg-8">
+         <div className="large-floorplan--rows">
+           <div className="large-floorplan--block large-floorplan--block--A">
+             <div className="large-floorplan--row large-floorplan--row-1">
+              {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
+             </div>
+             <div className="large-floorplan--row large-floorplan--row-2">
+               {this.renderSeatRow(this.state.seatPlanByRow[1], 8)}
+             </div>
+           </div>
+           <div className="large-floorplan--block large-floorplan--block--B">
+             <div className="large-floorplan--row large-floorplan--row-3">
+               {this.renderSeatRow(this.state.seatPlanByRow[2], 16)}
+             </div>
+             <div className="large-floorplan--row large-floorplan--row-4">
+              {this.renderSeatRow(this.state.seatPlanByRow[3], 24)}
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  )
 }
 
   renderSeatingPlan96Person() {
