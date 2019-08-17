@@ -380,7 +380,7 @@ renderProductDetail(){
               <div class="ribbon-back-right"></div>
               </div>
 
-              <label className="green ticket--price">Price Per Ticket: <span class="strike"><small>£</small>35</span> <strong><small>£</small>{this.state.product.Item.PriceStd.N}</strong></label>
+              <label className="green ticket--price">Price Per Ticket: <span class="strike"><small>£</small>30</span> <strong><small>£</small>{this.state.product.Item.PriceStd.N}</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -430,7 +430,7 @@ renderProductDetail(){
                 <div class="ribbon-back-left"></div>
                 <div class="ribbon-back-right"></div>
               </div>
-              <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>50</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
+              <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>40</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -459,7 +459,7 @@ renderProductDetail(){
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
-            <small><i>*EARLYBIRD pricing ended 30/09/2019</i></small>
+            <small><i>*EARLYBIRD pricing ended 14/09/2019</i></small>
           </div>
           <div className="col-md-8">
             <div className="sl-but--header">
