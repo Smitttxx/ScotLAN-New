@@ -1425,11 +1425,6 @@ background: linear-gradient(to bottom, #414141 0%, #545454 0%, #181818 100%);
 background-size: cover;
 color: white;
 width: auto;
-select{
-	&:hover{
-		cursor: not-allowed;
-	}
-}
 }
 
 
@@ -1958,7 +1953,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 	border-radius: 10px;
 	position: relative;
 	top: -19px;
-	.seat--avalible{
+	.seat--avalible, .seat--edit{
 		margin-left: 2em;
 	}
 }
@@ -2358,7 +2353,6 @@ height: 40px;
 		background-color: @primary-col;
 		font-weight: bold;
 		color: white;
-		width: 120px;
 }
 
   .ribbon-edge-topleft,
@@ -3340,5 +3334,5 @@ justify-content: space-around;
 	align-items: center;
 	cursor: pointer;
 	margin: 0;
-	font-weight: bold; 
+	font-weight: bold;
 }

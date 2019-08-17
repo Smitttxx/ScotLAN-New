@@ -92,20 +92,19 @@ export default class SL5_Prev extends Component {
                           <div class="sl-previousevents-pcheading header"><i class="fas fa-keyboard"></i> PC Tournaments </div>
                           <dl>
                             <dt>Rocket League 3v3</dt>
-                            <dd>Winners - </dd>
                             <dt>CS:GO 5v5</dt>
-                            <dd>Winners - </dd>
+
                             <dt>League of Legends 5v5</dt>
-                            <dd>Winners - </dd>
+
                             <dt>Overwatch 6v6</dt>
-                            <dd>Winners - </dd>
+
                           </dl>
                           </div>
                           <div class="tournament-list-console">
                           <div class="sl-previousevents-consoleheading header"><i class="fas fa-car"></i> Racing Sim provided by GTOmega</div>
                           <dl>
                             <dt>ProjectCars2</dt>
-                            <dd>Winner - Unholy</dd>
+                
                           </dl>
                           </div>
                           </div>
