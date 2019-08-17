@@ -40,6 +40,12 @@ class App extends Component {
        this.setState({ email: user.attributes.name });
        this.setState({ username: user.username });
        this.setState({ Authorization: user.signInUserSession.idToken.jwtToken })
+    } else {
+      this.userHasAuthenticated(false);
+          //console.log(user.signInUserSession.accessToken.payload['cognito:groups'][0]);
+      this.setState({ email: "" });
+      this.setState({ username: "" });
+      this.setState({ Authorization: "" })
     }
   }
   catch(e) {
