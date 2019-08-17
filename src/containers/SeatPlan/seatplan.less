@@ -1,0 +1,54 @@
+@primary-col: #4C96D7;
+@secondary-col: #73D14C;
+@primary-col-rgb: 76,150,215;
+@secondary-col-rgb: 115,209,76;
+@primary-col__hover: #1473C7;
+@secondary-col__hover: #90DC71;
+@background-col__blue: #E5F0F9;
+@background-col__green: #E2F4DB;
+@background-col: #333333;
+@para-col: #7A7A7A;
+@white: #fff;
+@black: #000;
+@padding: 0.8rem;
+
+.blue{
+color: @primary-col;
+}
+
+.green{
+color: @secondary-col;
+}
+
+  .small-floorplan{
+    width: fit-content;
+    .small-floorplan--areas{
+      padding: 1em;
+      .seat{
+        &--avalible{
+        cursor: pointer;
+        &:before{
+            cursor: pointer;
+          }
+          &--maxlimitreached {
+          	cursor: not-allowed;
+            &:before{
+                cursor: not-allowed;
+              }
+        }
+      }
+      &--edit {
+      	border: 2px solid @para-col;
+
+      	&:before {
+      		content: '\f503';
+      		font-weight: bold;
+      		font-family: 'Font Awesome 5 free';
+      		cursor: pointer;
+      		color: @para-col;
+          font-size: 0.9em;
+      	}
+      }
+      }
+    }
+  }

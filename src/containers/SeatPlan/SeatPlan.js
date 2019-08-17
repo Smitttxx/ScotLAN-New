@@ -298,16 +298,18 @@ export default class SeatPlan extends Component {
 
 
       <div class="row">
-      <div className="col-lg-8">
+      <div className="col-lg-6">
       <h3>{this.state.seatPlan[0].EventName.S}</h3>
-      <p class="sl-seatingplan-picker--remainingseats">You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event</p>
+      <p class="sl-seatingplan-picker--remainingseats">You have selected <strong>{this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S}</strong> seats for this event</p>
+      <p> To change your seat click on the grey icon to remove this selection and the pick another seat. </p>
       </div>
-      <div className="col-lg-4">
+      <div className="col-lg-6">
         <div class="large-floorplan--rows">
           <div class="large-floorplan--key">
         <p> Seating Plan Key </p>
           <button class="seat seat--taken"></button> - Taken
           <button class="seat seat--avalible"></button> - Available
+          <button class="seat seat--edit"></button> - Your seat
         </div>
         </div>
           </div>
@@ -323,29 +325,24 @@ export default class SeatPlan extends Component {
 
 renderSeatingPlan32Person() {
   return (
-    <div className="large-floorplan">
-     <div className="large-floorplan--image">
-       <img src="/Images/ScotLAN-BIG.JPG" />
-     </div>
-     <div className="row large-floorplan--areas">
-       <div className="col-lg-8">
-         <div className="large-floorplan--rows">
-           <div className="large-floorplan--block large-floorplan--block--A">
-             <div className="large-floorplan--row large-floorplan--row-1">
+    <div className="small-floorplan">
+     <div className="row small-floorplan--areas">
+         <div className="small-floorplan--rows">
+           <div className="small-floorplan--block small-floorplan--block--A">
+             <div className="small-floorplan--row small-floorplan--row-1">
               {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
              </div>
-             <div className="large-floorplan--row large-floorplan--row-2">
+             <div className="small-floorplan--row small-floorplan--row-2">
                {this.renderSeatRow(this.state.seatPlanByRow[1], 8)}
              </div>
            </div>
-           <div className="large-floorplan--block large-floorplan--block--B">
-             <div className="large-floorplan--row large-floorplan--row-3">
+           <div className="small-floorplan--block small-floorplan--block--B">
+             <div className="small-floorplan--row small-floorplan--row-3">
                {this.renderSeatRow(this.state.seatPlanByRow[2], 16)}
              </div>
-             <div className="large-floorplan--row large-floorplan--row-4">
+             <div className="small-floorplan--row small-floorplan--row-4">
               {this.renderSeatRow(this.state.seatPlanByRow[3], 24)}
              </div>
-           </div>
          </div>
        </div>
      </div>
@@ -441,7 +438,7 @@ renderSeatingPlan32Person() {
       if(seat.S === "Available" && this.state.canSelectSeats) {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
-            <button className="seat seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
+            <button className="seat seat--avalible seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
           </Tooltip>
         )
       }
@@ -449,7 +446,7 @@ renderSeatingPlan32Person() {
       {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
-            <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
+            <button className="seat seat--avalible seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
           </Tooltip>
         )
       }

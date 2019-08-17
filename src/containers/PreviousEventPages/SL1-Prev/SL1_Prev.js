@@ -6,7 +6,8 @@ import {  Tooltip } from 'react-tippy';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Label, FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
-
+import ImageGallery from 'react-image-gallery';
+import "../../../../node_modules/react-image-gallery/styles/css/image-gallery.css";
 
   const AnyReactComponent = ({ text }) => (
     <div style={{
@@ -66,11 +67,25 @@ export default class SL1_Prev extends Component {
     }
 
   render() {
+    const images1 = [
+      {
+        original: 'https://scotlansiteimages.s3.eu-west-2.amazonaws.com/sltest/ScotLAN%231/DeskPlacemat.jpg',
+        thumbnail: 'https://scotlansiteimages.s3.eu-west-2.amazonaws.com/sltest/ScotLAN%231/DeskPlacemat.jpg',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
     return (
       <div className="keyboard-background">
         <div className="section-container">
           <div className="section-container-keyboard">
-        <div className="container sl-previousevents">
+            <div className="container sl-previousevents">
 
             <div class="event-detail-list">
               <h2 class="product-heading">ScotLAN #1<span class="text-muted"></span></h2>
@@ -270,8 +285,21 @@ export default class SL1_Prev extends Component {
         <div class="product--info--enquire"><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Gallery" role="button">Gallery</a></div>
 
     </div>
-                </div></div>
+                </div>
+
+
+
+                </div>
                   </div>
+
+                  <div class="gradient-line"></div>
+                  <div className="sl-previousevents-gallery">
+                  <div class="sl-previousevents-attendance header"><i class="fas fa-camera"></i> ScotLAN #1 Photos! </div>
+                                  <ImageGallery items={images1}
+                                  slideOnThumbnailOver='true'
+                                  showBullets='true'
+                                  showIndex='true' />
+                                  </div>
               </div>
           </div>
           </div>
