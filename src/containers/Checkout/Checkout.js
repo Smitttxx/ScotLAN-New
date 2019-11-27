@@ -103,7 +103,7 @@ async onToken(token) {
 
   render() {
 
-    var countDownDate = new Date("Jul 5, 2019 18:00:00").getTime();
+    var countDownDate = new Date("Nov 29, 2019 18:00:00").getTime();
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -149,7 +149,7 @@ async onToken(token) {
                   <div class="row">
                     <div class="col-md-8">
                     <div className="sl--confimation--header"><h3>Payment Sucessfull! </h3></div><br/>
-                      <div className="sl--confimation--header"><h4>You're going to ScotLAN #5!</h4></div><br/>
+                      <div className="sl--confimation--header"><h4>You're going to ScotLAN #6!</h4></div><br/>
                       <p> You will receive an email with your order details and if you have any queries about your order please do not hesitate to email payments@scotlan.events</p>
                     <p> Remember to head over to your account to <Link to={`/SeatPlan/${this.state.orderID}`}>pick your seat!</Link></p>
 

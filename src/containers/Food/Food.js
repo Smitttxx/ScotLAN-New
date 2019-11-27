@@ -140,7 +140,7 @@ export default class Food extends Component {
     } else {
       this.state.foodBasket.push({"ProductName":splitBasketItem[0], "Price": splitBasketItem[1], "Type": splitBasketItem[2]});
     }
-    var newTotal = parseInt(this.state.foodBasketTotalValue, 10) + parseInt(splitBasketItem[1], 10);
+    var newTotal = parseFloat(this.state.foodBasketTotalValue, 10) + parseFloat(splitBasketItem[1], 10);
     this.setState({foodBasketTotalValue: newTotal});
   }
 
@@ -195,7 +195,7 @@ export default class Food extends Component {
 
   createTable = () => {
     let table = []
-    for (var i = 0; i < 114; i++) {
+    for (var i = 0; i < 96; i++) {
       table.push(<option value={i + 1}>{i + 1}</option>)
     }
     return table
@@ -351,8 +351,10 @@ export default class Food extends Component {
 
   renderRollRadioButtons() {
     var date = new Date();
-    //var lastOrder=new Date('2019-06-20 23:45'); //Testing
     var lastOrder=new Date('2019-07-06 04:00');
+    var lastOrder2=new Date('2019-07-07 04:00');
+  //  var lastOrder=new Date('2019-06-29 22:47');
+  //  var lastOrder2=new Date('2019-06-29 22:48');
 
     if(date < lastOrder) {
       return (
@@ -385,7 +387,7 @@ export default class Food extends Component {
         </div>
         </form>
       )
-    } else {
+    } else if (date < lastOrder2) {
       return (
         <form class="row food-product-rolls-items">
         <div className="form-check">
@@ -403,6 +405,10 @@ export default class Food extends Component {
         </div>
         </form>
       )
+    } else {
+      return(
+        <div>Too late</div>
+      )
     }
   }
 
@@ -416,7 +422,7 @@ export default class Food extends Component {
         <TabPanel>
         <div class="food-panel-intro">
           <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
-          <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from <a href="https://www.papajohns.co.uk/">Papa Johns</a></p>
+          <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from Domino's</p>
           <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
           <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
         </div>

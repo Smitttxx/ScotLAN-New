@@ -67,8 +67,14 @@ export default class SeatPlan extends Component {
     var seatPlanRowSplit = [];
 
     //Split seat plan array
-    if(seatPlan.Length === 32) {
-      //TODO: split array for 32
+    if(seatPlan[0].Seats.L.length === 32) {
+      var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,8);
+      var seatPlanRow2 = seatPlan[0].Seats.L.slice(8,16);
+      var seatPlanRow3 = seatPlan[0].Seats.L.slice(16,24);
+      var seatPlanRow4 = seatPlan[0].Seats.L.slice(24,32);
+
+      seatPlanRowSplit.push(seatPlanRow1, seatPlanRow2, seatPlanRow3, seatPlanRow4);
+      this.setState({seatPlanByRow: seatPlanRowSplit});
     }
     else {
        var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,16);
@@ -292,27 +298,56 @@ export default class SeatPlan extends Component {
 
 
       <div class="row">
-      <div className="col-lg-8">
+      <div className="col-lg-6">
       <h3>{this.state.seatPlan[0].EventName.S}</h3>
-      <p class="sl-seatingplan-picker--remainingseats">You have selected {this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S} seats for this event</p>
+      <p class="sl-seatingplan-picker--remainingseats">You have selected <strong>{this.state.order[0].EventTicketUsedCount.S} of {this.state.order[0].EventTicketCount.S}</strong> seats for this event</p>
+      <p> To change your seat click on the grey icon to remove this selection and the pick another seat. </p>
       </div>
-      <div className="col-lg-4">
+      <div className="col-lg-6">
         <div class="large-floorplan--rows">
           <div class="large-floorplan--key">
         <p> Seating Plan Key </p>
           <button class="seat seat--taken"></button> - Taken
           <button class="seat seat--avalible"></button> - Available
+          <button class="seat seat--edit"></button> - Your seat
         </div>
         </div>
           </div>
       </div>
-      {!this.state.isLoading && this.renderSeatingPlan96Person()}
+      {!this.state.isLoading && this.renderSeatingPlan32Person()}
       </div></div>
       </div>
       </div>
       </div>
     );
   }
+}
+
+renderSeatingPlan32Person() {
+  return (
+    <div className="small-floorplan">
+     <div className="row small-floorplan--areas">
+         <div className="small-floorplan--rows">
+           <div className="small-floorplan--block small-floorplan--block--A">
+             <div className="small-floorplan--row small-floorplan--row-1">
+              {this.renderSeatRow(this.state.seatPlanByRow[0], 0)}
+             </div>
+             <div className="small-floorplan--row small-floorplan--row-2">
+               {this.renderSeatRow(this.state.seatPlanByRow[1], 8)}
+             </div>
+           </div>
+           <div className="small-floorplan--block small-floorplan--block--B">
+             <div className="small-floorplan--row small-floorplan--row-3">
+               {this.renderSeatRow(this.state.seatPlanByRow[2], 16)}
+             </div>
+             <div className="small-floorplan--row small-floorplan--row-4">
+              {this.renderSeatRow(this.state.seatPlanByRow[3], 24)}
+             </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  )
 }
 
   renderSeatingPlan96Person() {
@@ -403,7 +438,7 @@ export default class SeatPlan extends Component {
       if(seat.S === "Available" && this.state.canSelectSeats) {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
-            <button className="seat seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
+            <button className="seat seat--avalible seat--avalible" onClick={()=>{this.selectSeat(`${seed + i}`)}}></button>
           </Tooltip>
         )
       }
@@ -411,7 +446,7 @@ export default class SeatPlan extends Component {
       {
         return (
           <Tooltip title={"Seat " + (seed + i + 1) + " - " + seat.S}>
-            <button className="seat seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
+            <button className="seat seat--avalible seat--avalible--maxlimitreached" data-toggle="tooltip" data-placement="top"></button>
           </Tooltip>
         )
       }
