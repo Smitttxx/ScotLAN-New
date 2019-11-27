@@ -351,8 +351,8 @@ export default class Food extends Component {
 
   renderRollRadioButtons() {
     var date = new Date();
-    var lastOrder=new Date('2019-07-06 04:00');
-    var lastOrder2=new Date('2019-07-07 04:00');
+    var lastOrder=new Date('2019-11-30 04:00');
+    var lastOrder2=new Date('2019-12-01 04:00');
   //  var lastOrder=new Date('2019-06-29 22:47');
   //  var lastOrder2=new Date('2019-06-29 22:48');
 
@@ -415,7 +415,7 @@ export default class Food extends Component {
   renderPizza(){
     var date = new Date();
     //var lastOrder=new Date('2019-06-20 23:34'); //Testing
-    var lastOrder=new Date('2019-07-06 17:00');
+    var lastOrder=new Date('2019-11-30 16:00');
 
     if(date < lastOrder) {
       return (
@@ -423,8 +423,8 @@ export default class Food extends Component {
         <div class="food-panel-intro">
           <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
           <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from Domino's</p>
-          <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
-          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
+          <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>16:00</u> on Saturday Evening </b></p>
+          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 18:00 and 20:00</b></p>
         </div>
           <div class="container food-products-panel">
             <div class="food-product-header"> Pizzas </div>
