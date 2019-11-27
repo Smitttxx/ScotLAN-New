@@ -36,6 +36,9 @@ class App extends Component {
     if (await Auth.currentSession()) {
        this.userHasAuthenticated(true);
        let user = await Auth.currentAuthenticatedUser();
+
+       this.hydrateStateWithLocalStorage();  //moved here to maybe fix old cached login issue
+
        //console.log(user.signInUserSession.accessToken.payload['cognito:groups'][0]);
        this.setState({ email: user.attributes.name });
        this.setState({ username: user.username });
@@ -54,7 +57,7 @@ class App extends Component {
     }
   }
 
-  this.hydrateStateWithLocalStorage();
+  //was here
 
   window.addEventListener(
     "beforeunload",
