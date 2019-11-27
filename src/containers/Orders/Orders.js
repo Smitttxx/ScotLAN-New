@@ -160,6 +160,7 @@ export default class Orders extends Component {
         {this.state.orders.length > 0 ? [<span></span>] : <h3><br/>You have no orders.</h3>}
         {this.state.orders.map(item => (
           <div>
+          {item.OrderID.S}
           <div class="sl-orders-order"><div class=""><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>.</div>}</div>
           <div class="gradient-line"></div></div>
         ))}

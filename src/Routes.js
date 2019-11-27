@@ -30,6 +30,7 @@ import SL2_Prev from "./containers/PreviousEventPages/SL2-Prev/SL2_Prev";
 import SL3_Prev from "./containers/PreviousEventPages/SL3-Prev/SL3_Prev";
 import SL4_Prev from "./containers/PreviousEventPages/SL4-Prev/SL4_Prev";
 import SL5_Prev from "./containers/PreviousEventPages/SL5-Prev/SL5_Prev";
+import SL6_Prev from "./containers/PreviousEventPages/SL6-Prev/SL6_Prev";
 export default ({ childProps }) =>
   <Switch>
     <AppliedRoute path="/" exact component={Home} props={childProps} />
@@ -54,6 +55,7 @@ export default ({ childProps }) =>
     <AppliedRoute path="/PreviousEvents/ScotLAN3" exact component={SL3_Prev} props={childProps} />
     <AppliedRoute path="/PreviousEvents/ScotLAN4" exact component={SL4_Prev} props={childProps} />
     <AppliedRoute path="/PreviousEvents/ScotLAN5" exact component={SL5_Prev} props={childProps} />
+    <AppliedRoute path="/PreviousEvents/ScotLAN6" exact component={SL6_Prev} props={childProps} />
     <AuthenticatedRoute path="/Checkout" exact component={Checkout} props={childProps} />
     <AuthenticatedRoute path="/Orders" exact component={Orders} props={childProps} />
     <AuthenticatedRoute path="/SeatPlan/:OrderID" exact component={SeatPlan} props={childProps} />

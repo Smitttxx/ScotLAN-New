@@ -24,7 +24,7 @@ import { Label, FormGroup, FormControl, ControlLabel, Table, Button, Modal } fro
     </div>
   );
 
-export default class SL3_Prev extends Component {
+export default class SL6_Prev extends Component {
   constructor(props) {
     super(props);
 
@@ -73,13 +73,13 @@ export default class SL3_Prev extends Component {
         <div className="container sl-previousevents">
 
             <div class="event-detail-list">
-              <h2 class="product-heading">ScotLAN #3<span class="text-muted"></span></h2>
-              <div>Sponsored by GT Omega and ASRock</div>
+              <h2 class="product-heading">ScotLAN #6 XMAS!<span class="text-muted"></span></h2>
+              <div>Sponsored by GT Omega</div>
 
               <div className="row product--info">
                       <dl>
-                        <dt>Gamers: 31/32</dt>
-                        <dt>Event: Fri 30th November 7pm – Sun 2th December 7pm (48 Hours)</dt>
+                        <dt>Gamers: 32/32</dt>
+                        <dt>Event: Fri 29th November 6pm – Sun 1th December 6pm (48 Hours)</dt>
                         <dt>Address: 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</dt>
                       </dl>
                 </div>
@@ -89,15 +89,16 @@ export default class SL3_Prev extends Component {
                           <div class="tournament-list-pc">
                           <div class="sl-previousevents-pcheading header"><i class="fas fa-keyboard"></i> PC Tournaments </div>
                           <dl>
-                            <dt>League of Legends 3v3</dt>
-                            <dt>Overwatch 3v3</dt>
-                            <dt>GS:GO 2V2</dt>
+                            <dt>League of Legends: Teamfight Tactics</dt>
+                            <dt>Overwatch 2v2</dt>
+                            <dt>Warsow Instagib</dt>
+                            <dt>PUBG</dt>
                           </dl>
                           </div>
                           <div class="tournament-list-console">
-                          <div class="sl-previousevents-consoleheading header"><i class="fas fa-gamepad"></i> Console Corner Tournament</div>
+                          <div class="sl-previousevents-consoleheading header"><i class="fas fa-beer"></i> Pub Quiz Winners! </div>
                           <dl>
-                            <dt>INJUSTICE: Gods among us</dt>
+                            <dt>TBC</dt>
                           </dl>
                           </div>
                           </div>
@@ -109,41 +110,41 @@ export default class SL3_Prev extends Component {
               <div class="sl-previousevents-attendance header"><i class="fas fa-headset"></i> Gamers </div>
               <div className="col-md-7 sl-previousevents-attendance__list">
                 <div className="attendance-col attendance-col-1">
-                    <div>Andy_M </div>
                     <div>Carvid </div>
                     <div>Rob </div>
                     <div>Smitttxx </div>
-                    <div>LockedOutBro </div>
                     <div>Skillin </div>
-                    <div>AndyH </div>
-                    <div>GMurray </div>
-                    <div>BeccaHR </div>
-                    <div>Sunnuld </div>
-                    <div>crAB </div>
+                    <div>Grandy </div>
+                    <div>NYX</div>
+                    <div>BlackHawkChris</div>
+                    <div>Kizashee</div>
+                    <div>GMurray</div>
+                    <div>Chaos</div>
+                    <div>KindPhish</div>
                     </div>
                   <div className="attendance-col attendance-col-2">
 
-                    <div>kGo </div>
-                    <div>hawkisonfire </div>
-                    <div>Angeni </div>
-                    <div>Arfy </div>
-                    <div>Sgian Dubh </div>
-                    <div>Squiff </div>
-                    <div>Kizashee </div>
-                    <div>Jarnbjorn </div>
-                    <div>Magestical </div>
-                    <div>LionHeartDiz </div>
-                    <div>Rust </div>
+                    <div>xXH33PZz </div>
+                    <div>CamDawg </div>
+                    <div>J4M3S </div>
+                    <div>AndyH</div>
+                    <div>Squiff</div>
+                    <div>[SGD] LumpyHamster </div>
+                    <div>[SGD] Slipshod</div>
+                    <div>[SGD] Kanika</div>
+                    <div>[SGD] Jawcore</div>
+                    <div>[SGD] Abhi</div>
+                    <div>[SGD] camM</div>
                   </div>
 
                   <div className="attendance-col attendance-col-4">
-                    <div>Phreak </div>
-                    <div>Bane </div>
-                    <div>Rampage </div>
-                    <div>G </div>
-                    <div>Niam </div>
-                    <div>Grandy </div>
-                    <div>TheWoopWooper </div>
+                    <div>MuckinFinted </div>
+                    <div>Kyudo </div>
+                    <div>SaltBadGuy </div>
+                    <div>Morphene</div>
+                    <div>P Fitz</div>
+                    <div>Magestical</div>
+                    <div>Raika</div>
                     <div>KayCee </div>
                     <div>Carb0n </div>
                   </div>
@@ -155,102 +156,102 @@ export default class SL3_Prev extends Component {
                      <div className="small-floorplan--rows">
                        <div className="small-floorplan--block small-floorplan--block--A">
                          <div className="small-floorplan--row small-floorplan--row-1">
-                         <Tooltip title='A.1 Andy_M'>
+                         <Tooltip title='A.1 Carvid'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.2 Carvid'>
+                         <Tooltip title='A.2 Rob'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.3 Rob'>
+                         <Tooltip title='A.3 Smitttxx'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.4 Smitttxx'>
+                         <Tooltip title='A.4 Skillin'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.5 LockedOutBro'>
+                         <Tooltip title='A.5 Grandy'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.6 Skillin'>
+                         <Tooltip title='A.6 NYX'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.7 AndyH'>
+                         <Tooltip title='A.7 BlackHawkChris'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='A.8 GMurray'>
+                         <Tooltip title='A.8 Kizashee'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
                          </div>
                          <div className="small-floorplan--row large-floorplan--row-2">
-                         <Tooltip title='B.1 BeccaHR'>
+                         <Tooltip title='B.1 Murray'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.2 Sunnuld'>
+                         <Tooltip title='B.2 Chaos'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.3 crAB'>
+                         <Tooltip title='B.3 KindPhish'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.4 kGo'>
+                         <Tooltip title='B.4 xXH33PZz'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.5 Hawkisonfire'>
+                         <Tooltip title='B.5 CamDawg'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.6 Anegni'>
+                         <Tooltip title='B.6 J4M3S'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.7 Arfy'>
+                         <Tooltip title='B.7 AndyH'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='B.8 Sgian Dubh'>
+                         <Tooltip title='B.8 Squiff'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
                          </div>
                        </div>
                        <div className="small-floorplan--block large-floorplan--block--B">
                          <div className="small-floorplan--row large-floorplan--row-3 ">
-                         <Tooltip title='C.1 Squiff'>
+                         <Tooltip title='C.1 [SGD] LumpyHamster'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.2 Kizashee'>
+                         <Tooltip title='C.2 [SGD] Slipshod'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.3 AFK'>
-                             <button class="seat seat--avalible"></button>
-                         </Tooltip>
-                         <Tooltip title='C.4 Jarnbjorn'>
+                         <Tooltip title='C.3 [SGD] Kanika'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.5 Magestical'>
+                         <Tooltip title='C.4 [SGD] Jawcore'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.6 LionHeartDiz'>
+                         <Tooltip title='C.5 [SGD] Abhi'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.7 Rust'>
+                         <Tooltip title='C.6 [SGD] camM'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='C.8 Phreak'>
+                         <Tooltip title='C.7 MuckinFinted'>
+                             <button class="seat seat--taken"></button>
+                         </Tooltip>
+                         <Tooltip title='C.8 Kyudo'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
                          </div>
                          <div className="small-floorplan--row large-floorplan--row-4">
-                         <Tooltip title='D.1 Bane'>
+                         <Tooltip title='D.1 SaltBadGuy'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='D.2 Rampage'>
+                         <Tooltip title='D.2 Morphene'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='D.3 G'>
+                         <Tooltip title='D.3 P Fitz'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='D.4 Niam'>
+                         <Tooltip title='D.4 Magestical'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='D.5 Grandy'>
+                         <Tooltip title='D.5 Jarnbjorn'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
-                         <Tooltip title='D.6 TheWooWooper'>
+                         <Tooltip title='D.6 Raika'>
                              <button class="seat seat--taken"></button>
                          </Tooltip>
                          <Tooltip title='D.7 KayCee'>

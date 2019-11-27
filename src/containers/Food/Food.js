@@ -195,7 +195,7 @@ export default class Food extends Component {
 
   createTable = () => {
     let table = []
-    for (var i = 0; i < 96; i++) {
+    for (var i = 0; i < 32; i++) {
       table.push(<option value={i + 1}>{i + 1}</option>)
     }
     return table

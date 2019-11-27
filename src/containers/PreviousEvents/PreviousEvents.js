@@ -70,9 +70,23 @@ export default class PreviousEvents extends Component {
         <div className="section-container">
           <div className="section-container-keyboard">
             <div className="container">
-              <h2 class="product-heading">Previous Events<span class="text-muted"></span></h2>
-              <p> Click on any of the events below to find out more details about this event and the view the gallery :)! </p>
+              <h1 class="product-heading">Previous Events<span class="text-muted"></span></h1>
+              <p> Click on any of the events below to find out more details about this event and the view the gallery! </p>
               <div class="sl-previousevents-grid">
+              <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN6" role="button">
+                  <div class="sl-previousevents-card--container">
+                  <div class="sl-previousevents-card sl-previousevents-card--scotlan6">
+                    <div class="sl--backgroundgradient">  </div>
+                    <div class="sl-previousevents-card--content">
+                      <div class="sl-previousevents-card--header">ScotLAN #6 xmas!</div>
+                      <div class="sl-previousevents-card--info">This event took place on 29th Nov – 1st Dec</div>
+                      <div class="sl-previousevents-card--arrow">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                  </a>
               <a className="sl-previousevents-grid--tile" href="/PreviousEvents/ScotLAN5" role="button">
                 <div class="sl-previousevents-card--container">
                 <div class="sl-previousevents-card sl-previousevents-card--scotlan5">
