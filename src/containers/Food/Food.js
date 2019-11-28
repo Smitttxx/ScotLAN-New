@@ -279,8 +279,8 @@ export default class Food extends Component {
                     <div class="food-panel-intro">
                       <p><i class="fas fa-chair"></i> Order Breakfast rolls here for it to be delivered straight to your desk!</p>
                       <p><i class="fas fa-utensils"></i> Our Rolls are delivered from <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g186528-d5422814-r193245852-Jo_s2go-Grangemouth_Falkirk_District_Scotland.html">Mamas Rolls</a></p>
-                      <p><b><i class="fas fa-stopwatch"></i> Roll Order closes @ <u>04:00</u> on the morning of delivery </b></p>
-                      <p><b><i class="fas fa-truck"></i> Rolls will be delivered between 09:00 and 10:00 on your chosen morning</b></p>
+                      <p><b><i class="fas fa-stopwatch"></i> Roll Order closes @ <u>05:00</u> on the morning of delivery </b></p>
+                      <p><b><i class="fas fa-truck"></i> Rolls will be delivered between 10:00 and 10:30 on your chosen morning</b></p>
                     </div>
                     <div class="container food-products-panel">
                     <div class="food-product-header-rolls"><i class="fas fa-sun"></i> What Morning ?</div>
@@ -424,7 +424,7 @@ export default class Food extends Component {
           <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
           <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from Domino's</p>
           <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>16:00</u> on Saturday Evening </b></p>
-          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 18:00 and 20:00</b></p>
+          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 18:00 and 18:30</b></p>
         </div>
           <div class="container food-products-panel">
             <div class="food-product-header"> Pizzas </div>
