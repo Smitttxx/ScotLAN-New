@@ -1,90 +1,5 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"); // ----------------------------------------------------------------------------
-// Fonts
-// ----------------------------------------------------------------------------
-
-.montserrat {
-font-family: 'Montserrat', sans-serif;
-}
-
-.lato {
-font-family: 'Lato', sans-serif;
-}
-
-.scribble{
-font-family: 'Give You Glory', cursive;
-}
-
-.quicksand{
-font-family: 'Quicksand', sans-serif;
-}
-.marker{
-font-family: 'Permanent Marker', cursive;
-}
-.bangers{
-font-family: 'Bangers', cursive;
-}
-
-.container-boxshadow{
-	-webkit-box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
-	-moz-box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
-	box-shadow: -4px -4px 23px 4px rgba(36,36,36,1);
-}
-
-.transition(@property) {
-	-webkit-transition: @property;
-	-moz-transition: @property;
-	-ms-transition: @property;
-    -o-transition: @property;
-    transition: @property;
-}
-
-.transform(@value){
-	-webkit-transform: @value;
-	-moz-transform: @value;
-	-ms-transform: @value;
-    -o-transform: @value;
-    transform: @value;
-}
-.transition-02s() {
-	transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-}
-.transition-03s() {
-	transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-}
-
-// ----------------------------------------------------------------------------
-// Colours
-// ----------------------------------------------------------------------------
-@primary-col: #4C96D7;
-@secondary-col: #73D14C;
-@primary-col-rgb: 76,150,215;
-@secondary-col-rgb: 115,209,76;
-@primary-col__hover: #1473C7;
-@secondary-col__hover: #90DC71;
-@background-col__blue: #E5F0F9;
-@background-col__green: #E2F4DB;
-@background-col: #333333;
-@para-col: #7A7A7A;
-@white: #fff;
-@black: #000;
-@padding: 0.8rem;
-
-.blue{
-color: @primary-col;
-}
-
-.green{
-color: @secondary-col;
-}
-
+@import "./variables";
 
 // ----------------------------------------------------------------------------
 // Layout
@@ -243,7 +158,9 @@ background: linear-gradient(to right, @primary-col 0%, @secondary-col 100%);
 -webkit-text-fill-color: transparent;
 }
 
-h1, h2, h4, h4, h5{
+h1, h2, h3, h4, h4, h5{
+	.bebas();
+	width: fit-content;1
 	i{
 		width: fit-content;
 		color: black;
@@ -1552,11 +1469,11 @@ color: black;
 
 .sl--homepage{
 	&--heroimage{
-		background-image: url(/Images/previous-event-SL5.jpg);
-		height: 822px;
+		background-image: url(/Images/sl7-2.jpg);
+		height: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: center;
+		background-position: top;
 	}
 &--backgroundgradient{
 background: -moz-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
@@ -1566,7 +1483,7 @@ background: -o-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53)
 background: -ms-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ie10+ */
 background: linear-gradient(270deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* w3c */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', endColorstr='#73D14C',GradientType=1 ); /* ie6-9 */
-height: 1000px;
+height: 100%;
 position: relative;
 .showmore{
 position: absolute;
@@ -1629,7 +1546,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', end
 			-moz-animation-delay: 0.1s;
 			-ms-animation-delay: 0.1s;
 			animation-delay: 0.1s;
-			.montserrat;
 	}
 	button{
 		font-size: 2em;
@@ -3181,6 +3097,9 @@ justify-content: space-around;
 			&5{
 				background-image: url("/Images/previous-event-SL5.jpg");
 			}
+			&6{
+				background-image: url("/Images/SL7.jpg");
+			}
 		}
 		&--content{
 			position: absolute;
@@ -3193,10 +3112,11 @@ justify-content: space-around;
 			.sl-previousevents-card{
 				&--header{
 					top: 40%;
-					font-size: 2em;
+					font-size: 2.5em;
 					text-align: center;
 					position: relative;
 					transition: all .6s ease-in-out;
+					.bebas();
 				}
 				&--info{
 					font-size: 1em;

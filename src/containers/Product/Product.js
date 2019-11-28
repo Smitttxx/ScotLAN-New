@@ -320,12 +320,12 @@ renderProductDetail(){
     <div className="container">
       <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
     <div className="row product--info">
-      <p className="lead">Events take place over a 3 day weekend starting on a Friday at 7PM and finishing on a Sunday 7PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
+      <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6PM and finishing on a Sunday 6PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
             <li><strong>Gamers:</strong> 32 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li><strong>Event:</strong> Fri 29th Nov 7pm – Sun 1st Dec 7pm (48 Hours)</li>
+            <li><strong>Event:</strong> Fri 6th 6pm – Sun 8th March 6pm (48 Hours)</li>
             <li><strong>Parking Avalible:</strong> Yes </li>
             <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
             <li><strong>Address:</strong> 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</li>
@@ -413,9 +413,9 @@ renderProductDetail(){
               <ul>
                 <li>1x Standard Ticket</li>
                 <li>1x 48 Hour Rental GT Omega Chair</li>
-                <li>Free 5x Random Steam Keys</li>
-                <li>Free ScotLAN Goodie Bag</li>
+                <li>Free ScotLAN gift</li>
               </ul>
+              <br/>
               <label>Choose a quantity of VIP BYOC* tickets</label>
               <div className="row">
               <div className="col-md-7">
@@ -430,7 +430,7 @@ renderProductDetail(){
                 <div class="ribbon-back-left"></div>
                 <div class="ribbon-back-right"></div>
               </div>
-              <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>40</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
+              <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>45</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
               </div>
               <div className="col-md-5">
               <div className="sl-searchform__option">
@@ -459,7 +459,7 @@ renderProductDetail(){
           <div className="row sl-product-gotopayment">
           <div className="col-md-4">
             <small><i>*BYOC - bring your own computer</i></small><br/>
-            <small><i>*EARLYBIRD pricing ended 14/09/2019</i></small>
+            <small><i>*EARLYBIRD pricing ended 31/12/2019</i></small>
           </div>
           <div className="col-md-8">
             <div className="sl-but--header">

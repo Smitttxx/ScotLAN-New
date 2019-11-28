@@ -111,7 +111,7 @@ export default class SL4_Prev extends Component {
               <div class="attendance-list">
               <div class="row">
               <div class="sl-previousevents-attendance header"><i class="fas fa-headset"></i> Gamers </div>
-              <div className="col-md-8 sl-previousevents-attendance__list">
+              <div className="col-md-7 sl-previousevents-attendance__list">
                 <div className="attendance-col attendance-col-1">
                     <div>Andy_M </div>
                     <div>Carvid </div>
@@ -151,7 +151,7 @@ export default class SL4_Prev extends Component {
                     <div>Carb0n </div>
                   </div>
                 </div>
-                <div className="col-md-4 sl-previousevents-attendance__seats">
+                <div className="col-md-5 sl-previousevents-attendance__seats">
                       <div className="small-floorplan">
                        <div className="row small-floorplan--areas">
                          <div className="col-lg-12">
