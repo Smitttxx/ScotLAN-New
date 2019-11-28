@@ -195,7 +195,7 @@ export default class NextEvents extends Component {
                       </div>
                     </div>
                   </div>
-                                <a class="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-button-accordion" href="/Product/Event/ScotLAN%20Event%205" role="button">Buy Tickets Today <i class="fas fa-chevron-right"></i></a> 
+                                <a class="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-button-accordion" href="/Product/Event/ScotLAN%20Event%207" role="button">Buy Tickets Today <i class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
             </div>
