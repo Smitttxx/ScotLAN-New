@@ -241,7 +241,7 @@ async onToken(token) {
     )} else {
       return (
       <div> Ohno <i class="far fa-sad-tear"></i> there are no items in your basket <br/>
-      Would you like to go back to the <Link to="/">Homepage</Link> or the <a href="/Product/Event/ScotLAN%20Event%205" >Events Page</a>?
+      Would you like to go back to the <Link to="/">Homepage</Link> or the <a href="/Product/Event/ScotLAN%20Event%207" >Events Page</a>?
       </div>
     )
     }
