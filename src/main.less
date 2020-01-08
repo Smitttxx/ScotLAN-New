@@ -628,6 +628,12 @@ cursor: not-allowed;
 }
 }
 
+.btn-green-disabled{
+	background-color: @secondary-col__hover;
+	color: darkslategrey !important;
+	cursor: not-allowed;
+}
+
 .google-map{
 	margin-bottom: 3em;
 }
@@ -1465,106 +1471,6 @@ color: black;
 ///////////////////// END OF FAQS /////////////////////////////
 
 
-///////////////////// START OF HOMEPAGE /////////////////////////////
-
-.sl--homepage{
-	&--heroimage{
-		background-image: url(/Images/sl7-2.jpg);
-		height: 100%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: top;
-	}
-&--backgroundgradient{
-background: -moz-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(76,150,215,0.6)), color-stop(35%, rgba(0,0,0,0.53)), color-stop(100%, rgba(115,209,76,0.4))); /* safari4+,chrome */
-background: -webkit-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* safari5.1+,chrome10+ */
-background: -o-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* opera 11.10+ */
-background: -ms-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ie10+ */
-background: linear-gradient(270deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* w3c */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', endColorstr='#73D14C',GradientType=1 ); /* ie6-9 */
-height: 100%;
-position: relative;
-.showmore{
-position: absolute;
-font-size: 3em;
-color: white;
-width: 100%;
-text-align: center;
-bottom: 0;
-&:hover{
-background: -moz-linear-gradient(180deg, rgba(115,209,76,0.6) 0%, rgba(0,0,0,0.6) 65%, rgba(76,150,215,0.6) 100%); /* ff3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(76,150,215,0.6)), color-stop(35%, rgba(0,0,0,0.53)), color-stop(100%, rgba(115,209,76,0.4))); /* safari4+,chrome */
-background: -webkit-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* safari5.1+,chrome10+ */
-background: -o-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* opera 11.10+ */
-background: -ms-linear-gradient(180deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* ie10+ */
-background: linear-gradient(270deg, rgba(115,209,76,0.4) 0%, rgba(0,0,0,0.53) 65%, rgba(76,150,215,0.6) 100%); /* w3c */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C96D7', endColorstr='#73D14C',GradientType=1 ); /* ie6-9 */
-}
-}
-}
-&--text{
-	text-align: center;
-  display: flex;
-  flex-direction: column;
-	top: 4em;
-	text-align: center;
-	background-color: rgba(65, 65, 65, 0.7);
-	border-radius: 10px;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	position: relative;
-  padding: 2em;
-	top: 250px;
-	.container-boxshadow();
-
-
-	h4{
-		font-size: 4em;
-    font-weight: bold;
-    padding-bottom: 0.2em;
-		-webkit-animation: blurFadeIn 0.2s ease-in backwards;
-		-moz-animation: blurFadeIn 0.2s ease-in backwards;
-		-ms-animation: blurFadeIn 0.2s ease-in backwards;
-		animation: blurFadeIn 0.2s ease-in backwards;
-		-webkit-animation-delay: 0.1s;
-		-moz-animation-delay: 0.1s;
-		-ms-animation-delay: 0.1s;
-		animation-delay: 0.1s;
-	}
-	h3{
-		color: white;
-		margin-bottom: 0.8em;
-		font-size: 3em;
-		  font-weight: bold;
-			-webkit-animation: blurFadeIn 0.2s ease-in backwards;
-			-moz-animation: blurFadeIn 0.2s ease-in backwards;
-			-ms-animation: blurFadeIn 0.2s ease-in backwards;
-			animation: blurFadeIn 0.2s ease-in backwards;
-			-webkit-animation-delay: 0.1s;
-			-moz-animation-delay: 0.1s;
-			-ms-animation-delay: 0.1s;
-			animation-delay: 0.1s;
-	}
-	button{
-		font-size: 2em;
-	  margin-top: 1em;
-		}
-		p{
-			font-size: 1.5em;
-			-webkit-animation: blurFadeIn 0.2s ease-in backwards;
-			-moz-animation: blurFadeIn 0.2s ease-in backwards;
-			-ms-animation: blurFadeIn 0.2s ease-in backwards;
-			animation: blurFadeIn 0.2s ease-in backwards;
-			-webkit-animation-delay: 0.1s;
-			-moz-animation-delay: 0.1s;
-			-ms-animation-delay: 0.1s;
-			animation-delay: 0.1s;
-			}
-		}
-}
-
 .keyboard-background{
 	background-attachment: fixed;
 	background-image: url(https://images.unsplash.com/photo-1523754346425-2f3e98dacb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
@@ -2017,6 +1923,7 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 }
 
+
 .ribbon {
 	position: absolute;
 	right: 25px;
@@ -2045,19 +1952,17 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 				content: "";
 				position: absolute; left: 0px; top: 100%;
 				z-index: -1;
-				border-left: 3px solid #8F0808;
 				border-right: 3px solid transparent;
 				border-bottom: 3px solid transparent;
-				border-top: 3px solid #8F0808;
 			}
 			&:after {
 				content: "";
 				position: absolute; right: 0px; top: 100%;
 				z-index: -1;
 				border-left: 3px solid transparent;
-				border-right: 3px solid #8F0808;
+
 				border-bottom: 3px solid transparent;
-				border-top: 3px solid #8F0808;
+
 			}
 	}
 }
