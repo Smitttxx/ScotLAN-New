@@ -4,6 +4,7 @@ import Home from "./containers/Home/Home";
 import Login from "./containers/Login/Login";
 import Signup from "./containers/Signup/Signup";
 import Products from "./containers/Products/Products";
+import ProductSoldOut from "./containers/ProductSoldOut/ProductSoldOut";
 import Product from "./containers/Product/Product";
 import Checkout from "./containers/Checkout/Checkout";
 import Orders from "./containers/Orders/Orders";
@@ -38,6 +39,7 @@ export default ({ childProps }) =>
     <UnauthenticatedRoute path="/login/reset" exact component={ResetPassword} props={childProps} />
     <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
     <AppliedRoute path="/Products" exact component={Products} props={childProps} />
+    <AppliedRoute path="/ProductSoldOut/:Type/:Name" exact component={ProductSoldOut} props={childProps} />
     <AppliedRoute path="/Gallery" exact component={Gallery} props={childProps} />
     <AppliedRoute path="/NewGallery" exact component={NewGallery} props={childProps} />
     <AppliedRoute path="/FAQS" exact component={FAQS} props={childProps} />

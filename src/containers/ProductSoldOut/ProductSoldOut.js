@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import { Label, FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
-import "./Product.css";
+import "./ProductSoldOut.css";
 import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
@@ -28,7 +28,7 @@ const AnyReactComponent = ({ text }) => (
   </div>
 );
 
-export default class Product extends Component {
+export default class ProductSoldOut extends Component {
   constructor(props) {
     super(props);
 
@@ -318,18 +318,19 @@ renderProductDetail(){
           <div className="section-container-keyboard">
   <div className="sl-products--container">
     <div className="container">
-      <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
+      <h2 className="product-heading">{this.state.product.Item.Name.S} - SOLD OUT<span className="text-muted"></span></h2>
     <div className="row product--info">
       <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6PM and finishing on a Sunday 6PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li><strong>Gamers:</strong> {this.state.product.Item.TotalGamers.N} ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li><strong>Event:</strong> {this.state.product.Item.StartDate.S} – {this.state.product.Item.EndDate.S} (48 Hours)</li>
-            <li><strong>Parking Avalible:</strong> {this.state.product.Item.ParkingAvalible.S} </li>
+            <li><strong>Gamers:</strong> 32 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li><strong>Event:</strong> Fri 6th 6pm – Sun 8th March 6pm (48 Hours)</li>
+            <li><strong>Parking Avalible:</strong> Yes </li>
             <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
-            <li><strong>Address:</strong>{this.state.product.Item.Address.S}</li>
+            <li><strong>Address:</strong> 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</li>
           </ul>
+                <strong><p>SORRY, IT IS NO LONGER POSSIBLE TO PURCHASE TICKETS FOR THIS EVENT.</p></strong>
       </div>
       <div className="col-md-4">
 
@@ -349,129 +350,6 @@ renderProductDetail(){
       <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--seatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan <i class="fas fa-chair"></i></button>
       </div>
     </div>
-    <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
-    <div className="product--info">
-        <div className="accordion">
-          <div className="row">
-            <div className="col-md-6">
-            <div id="ticket standard" className="ticket standard" aria-expanded="false">
-            <div className="ticket--header">Buy Standard BYOC Tickets</div>
-              <div>Quantity Available : {this.state.product.Item.AvailableQtyStd.N} / {this.state.product.Item.MaxQtyStd.N}</div>
-              This ticket includes:
-              <ul>
-                <li>48 Hour Access to the Event</li>
-                <li>Indoor Sleeping Area</li>
-                <li>1x Ethernet Cable</li>
-                <li>3ft Desk</li>
-              </ul>
-
-              <label>Choose a quantity of Standard BYOC* tickets</label>
-              <div className="row">
-              <div className="col-md-7">
-              <div class="ribbon-wrapper">
-              <div class="ribbon-front">
-                EARLYBIRD PRICING
-              </div>
-              <div class="ribbon-edge-topleft"></div>
-              <div class="ribbon-edge-topright"></div>
-              <div class="ribbon-edge-bottomleft"></div>
-              <div class="ribbon-edge-bottomright"></div>
-              <div class="ribbon-back-left"></div>
-              <div class="ribbon-back-right"></div>
-              </div>
-
-              <label className="green ticket--price">Price Per Ticket: <span class="strike"><small>£</small>{this.state.product.Item.DiscountStdPrice.N}</span> <strong><small>£</small>{this.state.product.Item.PriceStd.N}</strong></label>
-              </div>
-              <div className="col-md-5">
-              <div className="sl-searchform__option">
-                <span className="sl-select">
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeStd} value={this.state.quantityStd}>
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-              </span>
-              </div>
-              </div>
-              </div>
-              </div>
-          </div>
-            <div className="col-md-6">
-             <div class="ribbon ribbon-red "><span>V I P</span></div>
-            <div id="vip" className="vip">
-            <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-              <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} / {this.state.product.Item.MaxQtyVip.N}</div>
-              This ticket includes:
-              <ul>
-                <li>1x Standard Ticket</li>
-                <li>1x 48 Hour Rental GT Omega Chair</li>
-                <li>Free ScotLAN gift</li>
-              </ul>
-              <br/>
-              <label>Choose a quantity of VIP BYOC* tickets</label>
-              <div className="row">
-              <div className="col-md-7">
-              <div class="ribbon-wrapper ribbon-wrapper--blue">
-                <div class="ribbon-front">
-                    EARLYBIRD PRICING
-                </div>
-                <div class="ribbon-edge-topleft"></div>
-                <div class="ribbon-edge-topright"></div>
-                <div class="ribbon-edge-bottomleft"></div>
-                <div class="ribbon-edge-bottomright"></div>
-                <div class="ribbon-back-left"></div>
-                <div class="ribbon-back-right"></div>
-              </div>
-              <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>{this.state.product.Item.DiscountVipPrice.N}</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
-              </div>
-              <div className="col-md-5">
-              <div className="sl-searchform__option">
-                <span className="sl-select" >
-                  <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
-                  <option value="0" selected>0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  </select>
-              </span>
-              </div>
-          </div>
-            </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row sl-product-gotopayment">
-          <div className="col-md-4">
-            <small><i>*BYOC - bring your own computer</i></small><br/>
-            <small><i>*EARLYBIRD pricing ends {this.state.product.Item.EarlybirdEndDate.S}</i></small>
-          </div>
-          <div className="col-md-8">
-            <div className="sl-but--header">
-            Got a question? <Link to="/Contact" className="sl-button-contact"> Contact Us </Link> or
-            <form onSubmit={this.handleSubmit}>
-                 <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Add to Basket</button>
-            </form>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
       </div>
         </div>
