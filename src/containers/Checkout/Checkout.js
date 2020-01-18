@@ -28,9 +28,6 @@ export default class Checkout extends Component {
 
     this.setState({ isLoading: true });
 
-    this.checkQuantity();
-
-    if (this.state.checkoutQuantityValid) {
       let user = await Auth.currentAuthenticatedUser();
 
       const res = await fetch(config.stripe.API_URL, {
@@ -61,14 +58,7 @@ export default class Checkout extends Component {
         this.setState({ orderFailed: true });
       }
 
-      this.setState({ isLoading: false });
-    }
-    else {
-      this.alertQuantityPrompt();
-      this.props.clearCheckout();
-      this.setState({ orderFailed: true });
-      this.setState({ isLoading: false });
-    }
+      this.setState({ isLoading: false });    
   }
 
   async componentDidMount() {
@@ -113,7 +103,7 @@ export default class Checkout extends Component {
       }
     }
 
-    return API.post("product", `/checkquantity`, request);
+    return API.post("checkquantity", `/checkquantity`, request);
   }
 
   handleChange = event => {
