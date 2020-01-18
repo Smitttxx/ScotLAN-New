@@ -31,7 +31,7 @@
     "postdeploy": "aws cloudfront create-invalidation --distribution-id ELJ4B0DFSQZJP --paths /*",
     "predeploy:prod": "set REACT_APP_STAGE=production && npm run build",
     "deploy:prod": "aws s3 sync build/ s3://scotlanproduction --acl public-read --cache-control max-age=0,no-cache,no-store,must-revalidate",
-    "postdeploy:prod": "aws cloudfront create-invalidation --distribution-id E1D6E5W8DM785D --paths /*",
+    "postdeploy:prod": "aws cloudfront create-invalidation --distribution-id E1DF4OHDHCZOYX --paths /*",
     "eject": "react-scripts eject"
   }
 }
