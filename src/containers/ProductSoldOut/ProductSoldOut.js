@@ -319,6 +319,8 @@ renderProductDetail(){
   <div className="sl-products--container">
     <div className="container">
       <h2 className="product-heading">{this.state.product.Item.Name.S} - SOLD OUT<span className="text-muted"></span></h2>
+      <br/>
+      <strong><p> SORRY! AS THIS EVENT IS SOLD OUT - IT'S NO LONGER POSSIBLE TO PURCHASE TICKETS.</p></strong>
     <div className="row product--info">
       <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6PM and finishing on a Sunday 6PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
       <div className="col-md-8">
@@ -330,7 +332,6 @@ renderProductDetail(){
             <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
             <li><strong>Address:</strong> 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</li>
           </ul>
-                <strong><p>SORRY, IT IS NO LONGER POSSIBLE TO PURCHASE TICKETS FOR THIS EVENT.</p></strong>
       </div>
       <div className="col-md-4">
 

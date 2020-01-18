@@ -71,7 +71,7 @@ export default class Product extends Component {
 
   closeModal() {
     this.setState({ showModal: !this.state.showModal });
-  }
+  }1
 
 
   seatPlanSplit(seatPlan){
@@ -132,24 +132,21 @@ export default class Product extends Component {
   }
 
   handleSubmit = async event => {
+
+  //product = await this.product();
+
     event.preventDefault();
 
     this.setState({ isLoading: true });
 
     var success = true;
-
     if(this.state.quantityStd !== "0" || this.state.quantityVip !== "0") {
-
         if(this.state.quantityStd !== "0") {
-
         var CheckNumber = /^\d+$/.test(this.state.quantityStd);
-
         var CheckQty = false;
-
         if(this.state.quantityStd <= parseInt(this.state.product.Item.AvailableQtyStd.N, 10)) {
           CheckQty = true;
         }
-
         var CheckPositive = false;
 
         if(parseInt(this.state.product.Item.AvailableQtyStd.N, 10) > 0) {
