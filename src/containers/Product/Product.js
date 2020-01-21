@@ -57,7 +57,7 @@ export default class Product extends Component {
         this.setState({ product });
 
         var date = new Date();
-        var onSale=new Date('2020-01-24 18:00');
+        var onSale=new Date(this.state.product.Item.OnSaleDate.S);
         var now = new Date().getTime();
         var distance = onSale - now;
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
