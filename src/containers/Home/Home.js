@@ -8,7 +8,7 @@ import '../../main.css';
 export default class Home extends Component {
   render(){
     var date = new Date();
-    var onSale=new Date('2020-01-24 17:00');
+    var onSale=new Date('2020-01-24 18:00');
     var now = new Date().getTime();
     var distance = onSale - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -18,13 +18,11 @@ export default class Home extends Component {
 
     if ( days > 0) {
       var onSaleCountdown = days + " Days to go!";
-    } else if ( days <= 0 && hours > 1 ) {
+    } else if ( days <= 0 && hours >= 1 ) {
       var onSaleCountdown = hours + " Hrs to go!";
     } else {
       var onSaleCountdown = minutes + " Mins to go!";
     }
-
-    console.log(days, hours);
 
     if(date > onSale) {
       return (
@@ -38,19 +36,19 @@ export default class Home extends Component {
                     <div class="ribbon  ribbon-top-left"><span>SOLD OUT</span></div>
                       <div> <h4>ScotLAN <span><small>#</small>7!</span></h4> </div>
                       <h3>March 6<small>th</small> - 8<small>th</small> 2020</h3>
-                      <p><strong><i class="fas fa-user-friends"></i> 32</strong> <small>player event</small></p>
-                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/ProductSoldOut/Event/ScotLAN%20Event%207" role="button">Event Info</a></p>
+                      <p><strong class="bebas"><i class="fas fa-user-friends"></i> 32</strong> <small>player event</small></p>
+                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary bebas" href="/ProductSoldOut/Event/ScotLAN%20Event%207" role="button">Event Info</a></p>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="sl--homepage--text">
                     <div class="box">
-                      <div class="ribbon green-ribbon ribbon-top-left"><span>ON SALE NOW</span></div>
+                      <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas">ON SALE NOW</span></div>
                       <div> <h4>ScotLAN <small>#</small>8!</h4> </div>
                       <h3>June 26<small>th</small> - 28<small>th</small> 2020</h3>
-                      <p><strong><i class="fas fa-users"></i> 100</strong> <small>player event</small></p>
-                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/Product/Event/ScotLAN%20Event%208" role="button" >Buy Tickets</a></p>
+                      <p><strong class="bebas"><i class="fas fa-users"></i> 100</strong> <small>player event</small></p>
+                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary bebas" href="/Product/Event/ScotLAN%20Event%208" role="button" >Buy Tickets</a></p>
                     </div>
                   </div>
                 </div>
@@ -68,22 +66,22 @@ export default class Home extends Component {
                 <div className="col-md-6">
                   <div className="sl--homepage--text">
                   <div class="box">
-                    <div class="ribbon  ribbon-top-left"><span>SOLD OUT</span></div>
+                    <div class="ribbon  ribbon-top-left"><span class="bebas">SOLD OUT</span></div>
                       <div> <h4>ScotLAN <span><small>#</small>7!</span></h4> </div>
                       <h3>March 6<small>th</small> - 8<small>th</small> 2020</h3>
-                      <p><strong><i class="fas fa-user-friends"></i> 32</strong> <small>player event</small></p>
-                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary" href="/ProductSoldOut/Event/ScotLAN%20Event%207" role="button">Event Info</a></p>
+                      <p><strong class="bebas"><i class="fas fa-user-friends"></i> 32</strong> <small class="bebas">player event</small></p>
+                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary bebas" href="/ProductSoldOut/Event/ScotLAN%20Event%207" role="button">Event Info</a></p>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="sl--homepage--text">
                     <div class="box">
-                      <div class="ribbon green-ribbon ribbon-top-left"><span> {onSaleCountdown}</span></div>
+                      <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas"> {onSaleCountdown}</span></div>
                       <div> <h4>ScotLAN <small>#</small>8!</h4> </div>
                       <h3>June 26<small>th</small> - 28<small>th</small> 2020</h3>
-                      <p><strong><i class="fas fa-users"></i> 100</strong> <small>player event</small></p>
-                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary btn-green-disabled"  role="button" disabled>Coming soon!</a></p>
+                      <p><strong class="bebas"><i class="fas fa-users"></i> 100</strong> <small class="bebas">player event</small></p>
+                      <p className=""><a className="btn btn-lg btn-secondary sl-btn sl-btn--secondary btn-green-disabled bebas"  role="button" disabled>On sale @ 6pm on 24th Jan!</a></p>
                     </div>
                   </div>
                 </div>

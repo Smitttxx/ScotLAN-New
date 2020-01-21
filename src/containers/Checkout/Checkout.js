@@ -20,6 +20,7 @@ export default class Checkout extends Component {
       message: "",
       orderID: "",
       orderFailed: false,
+      orderQuantityFailed: false,
       checkoutQuantityValid: true
     };
   }
@@ -50,19 +51,24 @@ export default class Checkout extends Component {
 
       console.log(data);
 
-      if (data.message === "Payment processed") {
+
+      if(data.message === "Payment processed") {
         var orderID = data.charge.id;
         this.setState({ orderID: orderID });
+        this.props.clearCheckout();
+      } else if(data.error === "The quantity of tickets in the basket exceed the number of available tickets") {
+        this.setState({ orderQuantityFailed: true });
         this.props.clearCheckout();
       } else {
         this.setState({ orderFailed: true });
       }
 
-      this.setState({ isLoading: false });    
+
+      this.setState({ isLoading: false });
   }
 
   async componentDidMount() {
-    try {      
+    try {
         let quantityCheck = await this.checkQuantity();
         console.log(quantityCheck);
         if(quantityCheck) {
@@ -158,6 +164,23 @@ export default class Checkout extends Component {
         <div className="sl--sitecontainer--background__keyboard">
           <div className="container">
             <div>Payment declined, please contact your card provider.</div>
+          </div>
+        </div>
+      )
+    }
+    else if (this.state.orderQuantityFailed) {
+      return (
+        <div className="keyboard-background">
+          <div className="section-container">
+            <div className="section-container-keyboard">
+              <div className="container container--404">
+                <div class="row">
+                    <h3>Oh no.</h3>
+                    <p>It looks like someone snapped that ticket up before your payment went through, Dont worry your card has not been charged.</p>
+                    <p>Would you like to go to the <Link to="/">Homepage</Link>?</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -266,8 +289,10 @@ export default class Checkout extends Component {
       )
     } else {
       return (
-        <div> Ohno <i class="far fa-sad-tear"></i> there are no items in your basket <br />
-          Would you like to go back to the <Link to="/">Homepage</Link> or the <a href="/Product/Event/ScotLAN%20Event%207" >Events Page</a>?
+
+      <div> <br/>Ohno <i class="far fa-sad-tear"></i> there are no items in your basket <br/><br/>
+      Would you like to go back to the <Link to="/">Homepage</Link>?
+
       </div>
       )
     }
