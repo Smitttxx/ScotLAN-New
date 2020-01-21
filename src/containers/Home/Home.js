@@ -8,7 +8,7 @@ import '../../main.css';
 export default class Home extends Component {
   render(){
     var date = new Date();
-    var onSale=new Date('2020-01-04 18:00');
+    var onSale=new Date('2020-01-24 18:00');
     var now = new Date().getTime();
     var distance = onSale - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));

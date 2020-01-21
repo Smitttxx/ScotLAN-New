@@ -1,4 +1,4 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"); // ----------------------------------------------------------------------------
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
 @import "./variables";
 
 // ----------------------------------------------------------------------------
@@ -777,7 +777,6 @@ background: -webkit-linear-gradient(bottom, #414141 0%,#545454 0%,#181818 100%);
 /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, #414141 0%,#545454 0%,#181818 100%);
 color: @primary-col;
-
 small{
 	color: white;
 text-align: center;
@@ -1277,10 +1276,15 @@ visibility: visible;
 		&--enquire{
 			text-align: center;
 		}
+		&--not-onsale{
+			width: 100%;
+	    text-align: center;
+	    margin: 1em;
+	    line-height: 2em;
+	    font-size: 1.5rem;
 	}
 }
-
-
+}
 
 .accordion {
 .row{
@@ -1478,7 +1482,7 @@ color: black;
 	background-position: top;
 	background-size: cover;
 	padding-bottom: 4em;
-	min-height: 100%;
+  min-height: 76vh;
 	.container{
 		background-color: rgba(65, 65, 65, 0.7);
 		border-radius: 10px;
