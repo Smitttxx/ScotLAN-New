@@ -17,12 +17,12 @@ export default class Home extends Component {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     if ( days > 0) {
-      var onSaleCountdown = days + " Days to go!";
-    } else if ( days <= 0 && hours >= 1 ) {
-      var onSaleCountdown = hours + " Hrs to go!";
-    } else {
-      var onSaleCountdown = minutes + " Mins to go!";
-    }
+          var onSaleCountdown = "Buy In " + days + " days";
+        } else if ( days <= 0 && hours >= 1 ) {
+          var onSaleCountdown = "Buy In " + hours + " hrs";
+        } else {
+          var onSaleCountdown = "Buy In " + minutes + " mins";
+        }
 
     if(date > onSale) {
       return (
