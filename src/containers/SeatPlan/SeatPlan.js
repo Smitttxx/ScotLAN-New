@@ -66,6 +66,8 @@ export default class SeatPlan extends Component {
   seatPlanSplit(seatPlan){
     var seatPlanRowSplit = [];
 
+    console.log(seatPlan[0].Seats.L.length);
+
     //Split seat plan array
     if(seatPlan[0].Seats.L.length === 32) {
       var seatPlanRow1 = seatPlan[0].Seats.L.slice(0,8);
@@ -314,7 +316,7 @@ export default class SeatPlan extends Component {
         </div>
           </div>
       </div>
-      {!this.state.isLoading && this.renderSeatingPlan32Person()}
+      {!this.state.isLoading && this.renderSeatingPlan96Person()}
       </div></div>
       </div>
       </div>
@@ -386,24 +388,39 @@ renderSeatingPlan32Person() {
              <div className="large-floorplan--row-admin">
                <div className="large-floorplan--support">
                 <div class="">
-                  <Tooltip title='AndyM'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Carvid'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Rob'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Smitttxx'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Skillin'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Grandy'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
+                 <Tooltip title='Gratz'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carvid'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='MuckinFinted'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Kyudo'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Smitttxx'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Rob'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='J4M3S'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Gingie'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Slipshod'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
                  </div>
                  <div>
                   <span>| Support and Registration |</span>
