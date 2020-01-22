@@ -271,7 +271,7 @@ export default class Product extends Component {
       return(
           <div>
         <div>
-        {this.renderSeatingPlan96Person()}
+        {this.renderSeatingPlan32Person()}
         </div>
         <div>
         {this.renderProducts(this.state.product)}
@@ -616,37 +616,22 @@ renderSeatingPlan96Person() {
                  <div className="large-floorplan--row-admin">
                     <div className="large-floorplan--support">
                      <div class="">
-                       <Tooltip title='Gratz'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Grandy'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Carb0n'>
+                       <Tooltip title='AndyM'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Carvid'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='MuckinFinted'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Kyudo'>
+                       <Tooltip title='Rob'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Smitttxx'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Rob'>
+                       <Tooltip title='Skillin'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='J4M3S'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Slipshod'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Gingie'>
+                       <Tooltip title='Grandy'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                       </div>
