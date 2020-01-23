@@ -30,7 +30,7 @@ export default class Home extends Component {
           <div className="sl--homepage--backgroundgradient">
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-1">
                   <div className="sl--homepage--text">
                   <div class="box">
                     <div class="ribbon  ribbon-top-left"><span>SOLD OUT</span></div>
@@ -41,7 +41,7 @@ export default class Home extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-2">
                   <div className="sl--homepage--text">
                     <div class="box">
                       <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas">ON SALE NOW</span></div>
@@ -63,7 +63,7 @@ export default class Home extends Component {
           <div className="sl--homepage--backgroundgradient">
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-1">
                   <div className="sl--homepage--text">
                   <div class="box">
                     <div class="ribbon  ribbon-top-left"><span class="bebas">SOLD OUT</span></div>
@@ -74,7 +74,7 @@ export default class Home extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-2">
                   <div className="sl--homepage--text">
                     <div class="box">
                       <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas"> {onSaleCountdown}</span></div>
