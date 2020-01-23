@@ -26,7 +26,7 @@ export default class Home extends Component {
 
     if(date > onSale) {
       return (
-        <div className="sl--homepage sl--homepage--heroimage">3
+        <div className="sl--homepage sl--homepage--heroimage">
           <div className="sl--homepage--backgroundgradient">
             <div className="container">
               <div className="row">
