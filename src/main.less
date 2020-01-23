@@ -1194,24 +1194,24 @@ margin-bottom: 10px;
 &--console-corner-design {
 	height: 90px;
 	position: absolute;
-	right: 13%;
+	right: 10%;
 	bottom: -135px;
-	border: 3px dashed #ffa500;
+	border: 3px dashed #ffa500; 
 	border-radius: 5px;
 	background: #ffe4b2;
-	color: #ffa500;
+	color: #ffa500; 
 	font-weight: 700;
-	width: 180px;
+	width: 160px;
 }
 
-&--support {
-	width: 260px;
+&--support { 
+	width: 345px;
 	height: 80px;
 	bottom: -134px;
 	position: absolute;
 	border: 3px dashed @primary-col;
 	border-radius: 5px;
-	left: 49px;
+	left: 19px; 
 	background-color: @background-col__blue;
 	color: @primary-col;
 	display: flex;
@@ -1609,13 +1609,6 @@ text-align: right;
 // Payment details
 
 .modal{
-&-dialog{
-position: absolute;
-    top: 40%;
-    left: 50%;
-		width: 1000px;
-    min-width: 1000px;
-}
 &-content{
 	  border: 3px solid #4c96d7;
 		background: rgba(65,65,65,1);
@@ -1766,7 +1759,6 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 
 
 .sl-seatingplan-picker{
-	    padding: 1em;
 	.container{
 	margin: 0 0 0 0;
 	}
@@ -1806,17 +1798,19 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 }
 
 .mobile-menu, .mobile-menu-close, .mobile-menu-logos{
-		display: none;
+		display: none; 
 }
 
 @media only screen and (max-width: 768px) {
 
-	.modal-dialog{
-		width: 700px;
-		max-width: 700px;
-		min-width: 700px;
+	.modal{
+		&-dialog{
+			max-width: 98vw !important;
+			width: 98vw !important;
+			top: 6em !important;
+		
+		}
 	}
-
 	.mobile-menu{
 		display: flex;
 		&-logos{
@@ -1893,6 +1887,9 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(@primary-col
 		   height: 610px;
 				&--boardgames-area-design, &--sleeping-area-design, &--support, &--console-corner-design{
 				display: none;
+			}
+			.large-floorplan--row-admin{
+			display: none;
 			}
 	}
 }
@@ -2217,6 +2214,12 @@ height: 40px;
 	}
 }
 
+.modal{
+	&-dialog{
+		max-width: 1000px;
+	}
+}
+
 .sl-orders-container{
 	    margin-bottom: 3em;
 			line-height: 3em;
@@ -2471,12 +2474,8 @@ justify-content: space-between;
 
 	.modal{
 		&-dialog{
-			min-width: 95% !important;
-			max-width: 95% !important;
-			width: 95% !important;
-			margin: 0 !important;
 		.btn-primary{
-			width: 100%;
+			width: 100%; 
 		    margin-top: 1em;
 			}
 			.btn-lg{
@@ -2547,6 +2546,9 @@ justify-content: space-between;
 						display: flex;
 					}
 					&--boardgames-area-design, &--sleeping-area-design, &--support, &--console-corner-design{
+					display: none;
+				}
+				.large-floorplan--row-admin{
 					display: none;
 				}
 		}

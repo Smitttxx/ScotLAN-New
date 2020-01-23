@@ -136,7 +136,7 @@ export default class Checkout extends Component {
 
   render() {
 
-    var countDownDate = new Date("Nov 29, 2019 18:00:00").getTime();
+    var countDownDate = new Date("Jun 26, 2020 18:00:00").getTime();
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -197,7 +197,7 @@ export default class Checkout extends Component {
                 <div class="row">
                   <div class="col-md-8">
                     <div className="sl--confimation--header"><h3>Payment Sucessfull! </h3></div><br />
-                    <div className="sl--confimation--header"><h4>You're going to ScotLAN #7!</h4></div><br />
+                    <div className="sl--confimation--header"><h4>You're going to ScotLAN #8!</h4></div><br />
                     <p> You will receive an email with your order details and if you have any queries about your order please do not hesitate to email payments@scotlan.events</p>
                     <p> Remember to head over to your account to <Link to={`/SeatPlan/${this.state.orderID}`}>pick your seat!</Link></p>
 
@@ -268,7 +268,7 @@ export default class Checkout extends Component {
           <div className="sl-payment-buttons">
             <p>*seat selection available after checkout</p>
             <div className="text--align--right">
-              <button className="sl-btn sl-btn--secondary" onClick={this.clearCheckout}>Clear checkout</button>
+              <button className="sl-btn sl-btn--primary" onClick={this.clearCheckout}>Clear checkout</button>
 
               <StripeCheckout
                 name="ScotLAN"
@@ -279,7 +279,7 @@ export default class Checkout extends Component {
                 stripeKey={config.stripe.API_KEY}
                 allowRememberMe={false}
               >
-                <button className="sl-btn sl-btn--primary">
+                <button className="sl-btn sl-btn--secondary">
                   Payment
          </button>
               </StripeCheckout>

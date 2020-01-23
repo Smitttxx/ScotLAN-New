@@ -271,7 +271,7 @@ export default class Product extends Component {
       return(
           <div>
         <div>
-        {this.renderSeatingPlan32Person()}
+        {this.renderSeatingPlan96Person()}
         </div>
         <div>
         {this.renderProducts(this.state.product)}
@@ -616,22 +616,37 @@ renderSeatingPlan96Person() {
                  <div className="large-floorplan--row-admin">
                     <div className="large-floorplan--support">
                      <div class="">
-                       <Tooltip title='AndyM'>
+                     <Tooltip title='Gratz'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Carvid'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Rob'>
+                       <Tooltip title='MuckinFinted'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Kyudo'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Smitttxx'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Skillin'>
+                       <Tooltip title='Rob'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Grandy'>
+                       <Tooltip title='J4M3S'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Gingie'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Slipshod'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                       </div>

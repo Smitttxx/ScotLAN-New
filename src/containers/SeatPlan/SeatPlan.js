@@ -180,9 +180,14 @@ export default class SeatPlan extends Component {
 
   alertPrompt(message) {
     return Swal.fire({
-      type: 'information',
-      title: 'Seat unselected',
-      text: message
+      title: '<strong><u>Seat unselected</u></strong>',
+      icon: 'info',
+      showCloseButton: true,
+      showCancelButton: false,
+      focusConfirm: false,
+      confirmButtonText:
+      message,
+      confirmButtonAriaLabel: message,
     })
   }
 
@@ -284,6 +289,9 @@ export default class SeatPlan extends Component {
             <FormGroup controlId="sleeping">
               <div class="sl-checkboxes">
                 <div class="sl-option-input">
+                  <p>Please note space in the dedicated sleeping areas are on a first come first server basis.</p>
+                  <p><strong>No single occupancy double airbeds.</strong></p>
+                  <br/>
                   <input class="sl-checkbox" type="checkbox" defaultChecked={this.state.sleeping} onChange={this.handleChangeChk} id="sleeping"/>
                   <ControlLabel >Will you be sleeping onsite?</ControlLabel>
                 </div>
@@ -309,12 +317,12 @@ export default class SeatPlan extends Component {
         <p> Seating Plan Key </p>
           <button class="seat seat--taken"></button> - Taken
           <button class="seat seat--avalible"></button> - Available
-          <button class="seat seat--edit"></button> - Your seat
+          <button class="seat seat--edit"></button> - Remove
         </div>
         </div>
           </div>
       </div>
-      {!this.state.isLoading && this.renderSeatingPlan32Person()}
+      {!this.state.isLoading && this.renderSeatingPlan96Person()}
       </div></div>
       </div>
       </div>
@@ -354,7 +362,6 @@ renderSeatingPlan32Person() {
     return (
       <div className="large-floorplan">
        <div className="large-floorplan--image">
-         <img src="/Images/ScotLAN-BIG.JPG" />
        </div>
        <div className="row large-floorplan--areas">
          <div className="col-lg-8">
@@ -386,24 +393,39 @@ renderSeatingPlan32Person() {
              <div className="large-floorplan--row-admin">
                <div className="large-floorplan--support">
                 <div class="">
-                  <Tooltip title='AndyM'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Carvid'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Rob'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Smitttxx'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Skillin'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
-                  <Tooltip title='Grandy'>
-                      <button class="seat seat--staff"></button>
-                  </Tooltip>
+                      <Tooltip title='Gratz'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Grandy'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carb0n'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Carvid'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='MuckinFinted'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Kyudo'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Smitttxx'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Rob'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='J4M3S'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Gingie'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
+                       <Tooltip title='Slipshod'>
+                           <button class="seat seat--staff"></button>
+                       </Tooltip>
                  </div>
                  <div>
                   <span>| Support and Registration |</span>
