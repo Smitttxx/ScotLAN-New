@@ -17,20 +17,20 @@ export default class Home extends Component {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     if ( days > 0) {
-      var onSaleCountdown = days + " Days to go!";
-    } else if ( days <= 0 && hours >= 1 ) {
-      var onSaleCountdown = hours + " Hrs to go!";
-    } else {
-      var onSaleCountdown = minutes + " Mins to go!";
-    }
+          var onSaleCountdown = "Buy In " + days + " days";
+        } else if ( days <= 0 && hours >= 1 ) {
+          var onSaleCountdown = "Buy In " + hours + " hrs";
+        } else {
+          var onSaleCountdown = "Buy In " + minutes + " mins";
+        }
 
     if(date > onSale) {
       return (
-        <div className="sl--homepage sl--homepage--heroimage">
+        <div className="sl--homepage sl--homepage--heroimage">3
           <div className="sl--homepage--backgroundgradient">
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-1">
                   <div className="sl--homepage--text">
                   <div class="box">
                     <div class="ribbon  ribbon-top-left"><span>SOLD OUT</span></div>
@@ -41,7 +41,7 @@ export default class Home extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-2">
                   <div className="sl--homepage--text">
                     <div class="box">
                       <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas">ON SALE NOW</span></div>
@@ -63,7 +63,7 @@ export default class Home extends Component {
           <div className="sl--homepage--backgroundgradient">
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-1">
                   <div className="sl--homepage--text">
                   <div class="box">
                     <div class="ribbon  ribbon-top-left"><span class="bebas">SOLD OUT</span></div>
@@ -74,7 +74,7 @@ export default class Home extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 sl-event-2">
                   <div className="sl--homepage--text">
                     <div class="box">
                       <div class="ribbon green-ribbon ribbon-top-left"><span class="bebas"> {onSaleCountdown}</span></div>
