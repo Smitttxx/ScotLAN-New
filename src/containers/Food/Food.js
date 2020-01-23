@@ -140,7 +140,7 @@ export default class Food extends Component {
     } else {
       this.state.foodBasket.push({"ProductName":splitBasketItem[0], "Price": splitBasketItem[1], "Type": splitBasketItem[2]});
     }
-    var newTotal = parseInt(this.state.foodBasketTotalValue, 10) + parseInt(splitBasketItem[1], 10);
+    var newTotal = parseFloat(this.state.foodBasketTotalValue, 10) + parseFloat(splitBasketItem[1], 10);
     this.setState({foodBasketTotalValue: newTotal});
   }
 
@@ -195,7 +195,7 @@ export default class Food extends Component {
 
   createTable = () => {
     let table = []
-    for (var i = 0; i < 114; i++) {
+    for (var i = 0; i < 32; i++) {
       table.push(<option value={i + 1}>{i + 1}</option>)
     }
     return table
@@ -279,8 +279,8 @@ export default class Food extends Component {
                     <div class="food-panel-intro">
                       <p><i class="fas fa-chair"></i> Order Breakfast rolls here for it to be delivered straight to your desk!</p>
                       <p><i class="fas fa-utensils"></i> Our Rolls are delivered from <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g186528-d5422814-r193245852-Jo_s2go-Grangemouth_Falkirk_District_Scotland.html">Mamas Rolls</a></p>
-                      <p><b><i class="fas fa-stopwatch"></i> Roll Order closes @ <u>04:00</u> on the morning of delivery </b></p>
-                      <p><b><i class="fas fa-truck"></i> Rolls will be delivered between 09:00 and 10:00 on your chosen morning</b></p>
+                      <p><b><i class="fas fa-stopwatch"></i> Roll Order closes @ <u>05:00</u> on the morning of delivery </b></p>
+                      <p><b><i class="fas fa-truck"></i> Rolls will be delivered between 10:00 and 10:30 on your chosen morning</b></p>
                     </div>
                     <div class="container food-products-panel">
                     <div class="food-product-header-rolls"><i class="fas fa-sun"></i> What Morning ?</div>
@@ -351,8 +351,10 @@ export default class Food extends Component {
 
   renderRollRadioButtons() {
     var date = new Date();
-    //var lastOrder=new Date('2019-06-20 23:45'); //Testing
-    var lastOrder=new Date('2019-07-06 04:00');
+    var lastOrder=new Date('2019-11-30 04:00');
+    var lastOrder2=new Date('2019-12-01 04:00');
+  //  var lastOrder=new Date('2019-06-29 22:47');
+  //  var lastOrder2=new Date('2019-06-29 22:48');
 
     if(date < lastOrder) {
       return (
@@ -385,7 +387,7 @@ export default class Food extends Component {
         </div>
         </form>
       )
-    } else {
+    } else if (date < lastOrder2) {
       return (
         <form class="row food-product-rolls-items">
         <div className="form-check">
@@ -403,22 +405,26 @@ export default class Food extends Component {
         </div>
         </form>
       )
+    } else {
+      return(
+        <div>Too late</div>
+      )
     }
   }
 
   renderPizza(){
     var date = new Date();
     //var lastOrder=new Date('2019-06-20 23:34'); //Testing
-    var lastOrder=new Date('2019-07-06 17:00');
+    var lastOrder=new Date('2019-11-30 16:00');
 
     if(date < lastOrder) {
       return (
         <TabPanel>
         <div class="food-panel-intro">
           <p><i class="fas fa-chair"></i> Order food here for it to be delivered straight to your desk!</p>
-          <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from <a href="https://www.papajohns.co.uk/">Papa Johns</a></p>
-          <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>17:00</u> on Saturday Evening </b></p>
-          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 19:00 and 20:00</b></p>
+          <p><i class="fas fa-utensils"></i> Our Pizzas are delivered from Domino's</p>
+          <p><b><i class="fas fa-stopwatch"></i> Pizza Order closes @ <u>16:00</u> on Saturday Evening </b></p>
+          <p><b><i class="fas fa-truck"></i> Pizza will be delivered between 18:00 and 18:30</b></p>
         </div>
           <div class="container food-products-panel">
             <div class="food-product-header"> Pizzas </div>

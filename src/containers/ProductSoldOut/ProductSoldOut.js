@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import { Label, FormGroup, FormControl, ControlLabel, Table, Button, Modal } from "react-bootstrap";
-import "./Product.css";
+import "./ProductSoldOut.css";
 import "../../components/Loading.css";
 import { API, Auth } from "aws-amplify";
 import GoogleMapReact from 'google-map-react';
@@ -28,8 +28,7 @@ const AnyReactComponent = ({ text }) => (
   </div>
 );
 
-
-export default class Product extends Component {
+export default class ProductSoldOut extends Component {
   constructor(props) {
     super(props);
 
@@ -50,43 +49,14 @@ export default class Product extends Component {
     };
     this.closeModal = this.closeModal.bind(this);
   }
+
   async componentDidMount() {
       try {
         window.scrollTo(0, 0);
         const product = await this.product();
         this.setState({ product });
-
-        var date = new Date();
-        var onSale=new Date(this.state.product.Item.OnSaleDate.S);
-        var now = new Date().getTime();
-        var distance = onSale - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        var onSaleCountdown = "";
-
-        if ( days > 0) {
-          var onSaleCountdown = days + " Days to go!";
-        } else if ( days <= 0 && hours >= 1 ) {
-          var onSaleCountdown = hours + " Hrs to go!";
-        } else {
-          var onSaleCountdown = minutes + " Mins to go!";
-        }
-
-        console.log(onSaleCountdown);
-
-        this.setState({ onSaleNow: false });
-        if(date > onSale) {
-            this.setState({ onSaleNow: true });
-        }
-
-        this.setState({ soldOut: false });
-        if(this.state.product.Item.AvailableQtyVip.N == 0 && this.state.product.Item.AvailableQtyStd.N == 0) {
-            this.setState({ soldOut: true });
-        }
-
         this.setState({ isLoading: false });
+
         const seatPlanData = await this.seatPlan(this.props.match.params.Name);
         this.seatPlanSplit(seatPlanData);
         this.setState({ seatPlan: seatPlanData });
@@ -102,6 +72,7 @@ export default class Product extends Component {
   closeModal() {
     this.setState({ showModal: !this.state.showModal });
   }
+
 
   seatPlanSplit(seatPlan){
     var seatPlanRowSplit = [];
@@ -150,6 +121,7 @@ export default class Product extends Component {
     const seatPlanData = await this.seatPlan(this.props.match.params.Name);
     this.seatPlanSplit(seatPlanData);
     this.setState({ seatPlan: seatPlanData });
+
     this.setState({ showModal: true});
   }
 
@@ -160,21 +132,24 @@ export default class Product extends Component {
   }
 
   handleSubmit = async event => {
-
-  //product = await this.product();
-
     event.preventDefault();
 
     this.setState({ isLoading: true });
 
     var success = true;
+
     if(this.state.quantityStd !== "0" || this.state.quantityVip !== "0") {
+
         if(this.state.quantityStd !== "0") {
+
         var CheckNumber = /^\d+$/.test(this.state.quantityStd);
+
         var CheckQty = false;
+
         if(this.state.quantityStd <= parseInt(this.state.product.Item.AvailableQtyStd.N, 10)) {
           CheckQty = true;
         }
+
         var CheckPositive = false;
 
         if(parseInt(this.state.product.Item.AvailableQtyStd.N, 10) > 0) {
@@ -196,6 +171,7 @@ export default class Product extends Component {
           }
         }
     }
+
   ///////////////vip
 
   if(this.state.quantityVip !== "0") {
@@ -210,7 +186,7 @@ export default class Product extends Component {
 
       var CheckPositive = false;
 
-      if(parseInt(this.state.product.Item.AvailableQtyVip.N, 10) > 0) {
+      if(parseInt(this.state.product.Item.AvailableQtyStd.N, 10) > 0) {
         CheckPositive = true;
       }
 
@@ -226,7 +202,6 @@ export default class Product extends Component {
         else {
           this.alertPrompt("You have entered a number that exceeds the quantity of VIP tickets available");
           success = false;
-          console.log(this.state.quantityVip);
         }
       }
     }
@@ -252,6 +227,43 @@ export default class Product extends Component {
     })
   }
 
+
+//    handleSubmitVip = async event => {
+//      event.preventDefault();
+//
+//      this.setState({ isLoading: true });
+//
+//      var CheckNumber = /^\d+$/.test(this.state.quantityVip);
+//
+//      var CheckQty = false;
+//
+//      if(this.state.quantityVip <= parseInt(this.state.product.Item.AvailableQtyVip.N, 10)) {
+//        CheckQty = true;
+//      }
+//
+//      var CheckPositive = false;
+//
+//      if(parseInt(this.state.product.Item.AvailableQtyStd.N, 10) > 0) {
+//        CheckPositive = true;
+//      }
+//
+//      if(CheckNumber && CheckQty && CheckPositive) {
+//        this.props.addToBasket(this.state.product.Item.Name.S + " - VIP;" + this.state.quantityVip + ";" + this.state.product.Item.PriceVip.N + ";" + this.state.product.Item.Type.S);
+//        this.setState({ message: "Item added to basket" });
+//        this.setState({ redirectToCheckout: true });
+//      }
+//      else {
+//        if(!CheckNumber) {
+//          alert("Please enter a valid positive number");
+//        }
+//        else {
+//          alert("You have entered a number that exceeds the quantity available");
+//        }
+//      }
+//
+//      this.setState({ isLoading: false });
+//    }
+
   render() {
     if(this.state.isLoading)
     {
@@ -271,7 +283,7 @@ export default class Product extends Component {
       return(
           <div>
         <div>
-        {this.renderSeatingPlan96Person()}
+        {this.renderSeatingPlan32Person()}
         </div>
         <div>
         {this.renderProducts(this.state.product)}
@@ -291,32 +303,33 @@ export default class Product extends Component {
   }
 }
 
-  renderProducts(product){
+renderProducts(product){
 
-      return <div>
-                { this.renderProductDetail() }
-             </div>
-  }
+    return <div>
+              { this.renderProductDetail() }
+           </div>
+}
 
 renderProductDetail(){
-  if(this.state.product.Item.Type.S === "Event" && this.state.onSaleNow === true) {
+  if(this.state.product.Item.Type.S === "Event") {
     return (
       <div className="keyboard-background">
         <div className="section-container">
           <div className="section-container-keyboard">
   <div className="sl-products--container">
     <div className="container">
-      <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span> {this.state.soldOut && '- SOLD OUT' }</h2>
+      <h2 className="product-heading">{this.state.product.Item.Name.S} - SOLD OUT<span className="text-muted"></span></h2>
+      <br/>
     <div className="row product--info">
       <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6PM and finishing on a Sunday 6PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
       <div className="col-md-8">
         <li> What you need to know </li>
           <ul>
-            <li><strong>Gamers:</strong> {this.state.product.Item.TotalGamers.N} ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-            <li><strong>Event:</strong> {this.state.product.Item.StartDate.S} – {this.state.product.Item.EndDate.S} (48 Hours)</li>
-            <li><strong>Parking Avalible:</strong> {this.state.product.Item.ParkingAvalible.S} </li>
+            <li><strong>Gamers:</strong> 32 ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
+            <li><strong>Event:</strong> Fri 6th 6pm – Sun 8th March 6pm (48 Hours)</li>
+            <li><strong>Parking Avalible:</strong> Yes </li>
             <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
-            <li><strong>Address:</strong>{this.state.product.Item.Address.S}</li>
+            <li><strong>Address:</strong> 31st Pentland (Juniper Green) Scout Hall, 45 Lanark Rd W, Currie EH14 5JX</li>
           </ul>
       </div>
       <div className="col-md-4">
@@ -335,204 +348,37 @@ renderProductDetail(){
             </GoogleMapReact>
           </div>
       <button className="btn btn-lg btn-secondary sl-btn sl-btn--secondary sl-btn--seatingplan" onClick={()=>{this.showSeatPlan()}}>View seating plan <i class="fas fa-chair"></i></button>
+
       </div>
     </div>
-      {this.state.soldOut ? (
-              <div>
-              <br/>
-              <br/>
-              <h2> SORRY! THIS EVENT IS NOW SOLD OUT - IT'S NO LONGER POSSIBLE TO PURCHASE TICKETS.</h2>
-              <br/>
-              <p> Sorry you just missed out on all the tickets to the next event but feel free to post in our <a href="https://discordapp.com/invite/pMxdGfk"> Discord </a></p>
-              <br/>
-              <p>If you managed to secure a ticket for this event, Remember to head over to your account to <Link to={`/orders`}>pick your seat!</Link>.</p>
-              <br/>
+    <br/>
+    <br/>
+      <h2> SORRY! THIS EVENT IS NOW SOLD OUT - IT'S NO LONGER POSSIBLE TO PURCHASE TICKETS.</h2>
+      <br/>
+      <p>If you managed to secure a ticket for this event, Remember to head over to your account to <Link to={`/orders`}>pick your seat!</Link>.</p>
 
-              </div>
-      ) : (
-              <div>
-              <h2 className="product-heading product-heading-tickets">Choose Your Tickets<span className="text-muted"></span></h2>
-              <div className="product--info">
-                  <div className="accordion">
-                    <div className="row">
-                      <div className="col-md-6">
-                      <div id="ticket standard" className="ticket standard" aria-expanded="false">
-                      <div className="ticket--header">Buy Standard BYOC Tickets</div>
-                        <div>Quantity Available : {this.state.product.Item.AvailableQtyStd.N} / {this.state.product.Item.MaxQtyStd.N}</div>
-                        This ticket includes:
-                        <ul>
-                          <li>48 Hour Access to the Event</li>
-                          <li>Indoor Sleeping Area</li>
-                          <li>1x Ethernet Cable</li>
-                          <li>3ft Desk</li>
-                        </ul>
-
-                        <label>Choose a quantity of Standard BYOC* tickets</label>
-                        <div className="row">
-                        <div className="col-md-7">
-                        <div class="ribbon-wrapper">
-                        <div class="ribbon-front">
-                          EARLYBIRD PRICING
-                        </div>
-                        <div class="ribbon-edge-topleft"></div>
-                        <div class="ribbon-edge-topright"></div>
-                        <div class="ribbon-edge-bottomleft"></div>
-                        <div class="ribbon-edge-bottomright"></div>
-                        <div class="ribbon-back-left"></div>
-                        <div class="ribbon-back-right"></div>
-                        </div>
-
-                        <label className="green ticket--price">Price Per Ticket: <span class="strike"><small>£</small>{this.state.product.Item.DiscountStdPrice.N}</span> <strong><small>£</small>{this.state.product.Item.PriceStd.N}</strong></label>
-                        </div>
-                        <div className="col-md-5">
-                        <div className="sl-searchform__option">
-                          <span className="sl-select">
-                            <select size="1" className="sl-component sl-select" onChange={this.handleChangeStd} value={this.state.quantityStd}>
-                              <option value="0" selected>0</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
-                            </select>
-                        </span>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                      <div className="col-md-6">
-                       <div class="ribbon ribbon-red "><span>V I P</span></div>
-                      <div id="vip" className="vip">
-                      <div className="ticket--header">Buy V.I.P BYOC Tickets</div>
-                        <div>Quantity Available : {this.state.product.Item.AvailableQtyVip.N} / {this.state.product.Item.MaxQtyVip.N}</div>
-                        This ticket includes:
-                        <ul>
-                          <li>1x Standard Ticket</li>
-                          <li>1x 48 Hour Rental GT Omega Chair</li>
-                          <li>Free ScotLAN gift</li>
-                        </ul>
-                        <br/>
-                        <label>Choose a quantity of VIP BYOC* tickets</label>
-                        <div className="row">
-                        <div className="col-md-7">
-                        <div class="ribbon-wrapper ribbon-wrapper--blue">
-                          <div class="ribbon-front">
-                              EARLYBIRD PRICING
-                          </div>
-                          <div class="ribbon-edge-topleft"></div>
-                          <div class="ribbon-edge-topright"></div>
-                          <div class="ribbon-edge-bottomleft"></div>
-                          <div class="ribbon-edge-bottomright"></div>
-                          <div class="ribbon-back-left"></div>
-                          <div class="ribbon-back-right"></div>
-                        </div>
-                        <label className="blue ticket--price">Price Per Ticket: <span class="strike"><small>£</small>{this.state.product.Item.DiscountVipPrice.N}</span> <strong><small>£</small>{this.state.product.Item.PriceVip.N}</strong></label>
-                        </div>
-                        <div className="col-md-5">
-                        <div className="sl-searchform__option">
-                          <span className="sl-select" >
-                            <select size="1" className="sl-component sl-select" onChange={this.handleChangeVip} value={this.state.quantityVip}>
-                            <option value="0" selected>0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            </select>
-                        </span>
-                        </div>
-                    </div>
-                      </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row sl-product-gotopayment">
-                    <div className="col-md-4">
-                      <small><i>*BYOC - bring your own computer</i></small><br/>
-                      <small><i>*EARLYBIRD pricing ends {this.state.product.Item.EarlybirdEndDate.S}</i></small>
-                    </div>
-                    <div className="col-md-8">
-                      <div className="sl-but--header">
-                      Got a question? <Link to="/Contact" className="sl-button-contact"> Contact Us </Link> or
-                      <form onSubmit={this.handleSubmit}>
-                           <button type="submit" className="btn btn-lg btn-primary sl-btn sl-btn--primary">Add to Basket</button>
-                      </form>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-      )}
-
-        </div>
+      </div>
       </div>
         </div>
         </div>
           </div>
     )
-  }
-  else if(this.state.onSaleNow === false) {
-    return (
-      <div>
-      <div className="keyboard-background">
-        <div className="section-container">
-          <div className="section-container-keyboard">
-            <div className="sl-products--container">
-              <div className="container">
-                <h2 className="product-heading">{this.state.product.Item.Name.S}<span className="text-muted"></span></h2>
-                  <div className="row product--info">
-                    <p className="lead">Events take place over a 3 day weekend starting on a Friday at 6PM and finishing on a Sunday 6PM so games can be played 24hrs a day, if you have enough energy drinks.</p>
-                      <li> What you need to know </li>
-                      <br/>
-                        <ul>
-                          <li><strong>Gamers:</strong> {this.state.product.Item.TotalGamers.N} ({parseInt(this.state.product.Item.AvailableQtyStd.N,10) + parseInt(this.state.product.Item.AvailableQtyVip.N,10)} tickets available)</li>
-                          <li><strong>Event:</strong> {this.state.product.Item.StartDate.S} – {this.state.product.Item.EndDate.S} (48 Hours)</li>
-                          <li><strong>Parking Avalible:</strong> {this.state.product.Item.ParkingAvalible.S} </li>
-                          <li><strong>Ticket Price:</strong> from £{this.state.product.Item.PriceStd.N}</li>
-                          <li><strong>Address:</strong>{this.state.product.Item.Address.S}</li>
-                        </ul>
-                        <div className="gradient-line"></div>
-                        <div class="product--info--not-onsale">
-                          <div> Tickets for this event are not yet on sale! </div>
-                          <div>Please check back soon! </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    )
-  }
-  else {
-    return (
-      <div><h2>
-        <Label>Name</Label> {this.state.product.Item.Name.S}
-      </h2>
-      <h2>
-        <Label>Price</Label> £{this.state.product.Item.Price.N}
-      </h2>
-      <h2>
-        <Label>Description</Label> {this.state.product.Item.Description.S}
-      </h2>
+}
+else {
+  return (
+    <div><h2>
+      <Label>Name</Label> {this.state.product.Item.Name.S}
+    </h2>
+    <h2>
+      <Label>Price</Label> £{this.state.product.Item.Price.N}
+    </h2>
+    <h2>
+      <Label>Description</Label> {this.state.product.Item.Description.S}
+    </h2>
 
-      </div>
-    )
-  }
+    </div>
+  )
+}
 }
 
 renderSeatingPlan32Person() {
@@ -616,37 +462,22 @@ renderSeatingPlan96Person() {
                  <div className="large-floorplan--row-admin">
                     <div className="large-floorplan--support">
                      <div class="">
-                     <Tooltip title='Gratz'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Grandy'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Carb0n'>
+                       <Tooltip title='AndyM'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Carvid'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='MuckinFinted'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Kyudo'>
+                       <Tooltip title='Rob'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                        <Tooltip title='Smitttxx'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='Rob'>
+                       <Tooltip title='Skillin'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
-                       <Tooltip title='J4M3S'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Gingie'>
-                           <button class="seat seat--staff"></button>
-                       </Tooltip>
-                       <Tooltip title='Slipshod'>
+                       <Tooltip title='Grandy'>
                            <button class="seat seat--staff"></button>
                        </Tooltip>
                       </div>

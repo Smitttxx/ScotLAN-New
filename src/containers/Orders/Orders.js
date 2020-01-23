@@ -97,13 +97,13 @@ export default class Orders extends Component {
         <div className="static-modal">
          <Modal.Dialog>
             <Modal.Header>
-              <Modal.Title>Order Details</Modal.Title>
+              <Modal.Title>Order Details -  </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>Order ID: {this.state.selectedOrder.OrderID.S}</h4>
-              <h4>Order Date: { new Intl.DateTimeFormat('en-GB').format(new Date(this.state.selectedOrder.CreateDate.S))}</h4>
-              <h4>Order Email: {this.state.selectedOrder.PaymentEmail.S}</h4>
-              <h4>Last 4 digits of card: {this.state.selectedOrder.CardLast4.S}</h4>
+              <div>Order ID: {this.state.selectedOrder.OrderID.S}</div>
+              <div>Order Date: { new Intl.DateTimeFormat('en-GB').format(new Date(this.state.selectedOrder.CreateDate.S))}</div>
+              <div>Order Email: {this.state.selectedOrder.PaymentEmail.S}</div>
+              <div>Last 4 digits of card: {this.state.selectedOrder.CardLast4.S}</div>
               <br/>
               <Table striped bordered condensed hover>
               <thead>
@@ -123,8 +123,8 @@ export default class Orders extends Component {
               ))}
               </tbody>
               </Table>
-              <h4>Total Order Cost: £{this.state.selectedOrder.BasketTotal.S}</h4>
-              {this.state.selectedOrder.EventTicketIncluded.BOOL && this.state.selectedOrder.EventTicketUsedCount.S === this.state.selectedOrder.EventTicketCount.S ? [<h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to view your seats</Link></h3>] : <h3><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></h3>}
+              <div>Total Order Cost: £{this.state.selectedOrder.BasketTotal.S}</div>
+              {this.state.selectedOrder.EventTicketIncluded.BOOL && this.state.selectedOrder.EventTicketUsedCount.S === this.state.selectedOrder.EventTicketCount.S ? [<div><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to view your seats</Link></div>] : <div><Link to={`/SeatPlan/${this.state.selectedOrder.OrderID.S}`}>Click here to select your seats</Link></div>}
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.closeModal}><i class="fas fa-times"></i></Button>
@@ -134,11 +134,9 @@ export default class Orders extends Component {
 
       }
 
-      <h3>Orders info for Upcoming Events</h3>
+      <h3>Your Orders</h3>
       {!this.state.isLoading && this.renderOrders()}
-      <h3>Order info for Previous Events</h3>
       <div>
-      No events to show
       </div>
       </div>
       </div>
@@ -157,14 +155,14 @@ export default class Orders extends Component {
 
     return (
       <div class="sl-orders-container">
-        {this.state.orders.length > 0 ? [<span>You're going to <h4>ScotLAN #5!</h4><br/></span>] : <h3><br/>You have no orders.</h3>}
+        {this.state.orders.length > 0 ? [<span></span>] : <h3><br/>You have no orders.</h3>}
         {this.state.orders.map(item => (
           <div>
-          <div class="sl-orders-order"><div class=""><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div>You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>.</div>}</div>
+          {JSON.parse(item.BasketData.S)[0].ProductName.split(" - ")[0]}
+          <div class="sl-orders-order"><div class=""><a href="#" onClick={()=>{this.showModal(item.OrderID.S)}}>Order Details</a> - </div>{item.EventTicketIncluded.BOOL && item.EventTicketUsedCount.S === item.EventTicketCount.S ? [<div><i class="fas fa-chair"></i> You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. <Link to={`/SeatPlan/${item.OrderID.S}`}>Click here to view the seating plan</Link>.</div>] : <div><i class="fas fa-chair"></i> You have chosen {item.EventTicketUsedCount.S} of {item.EventTicketCount.S} seats for this event. Dont forget to <Link to={`/SeatPlan/${item.OrderID.S}`}>pick your seat!</Link>.</div>}</div>
           <div class="gradient-line"></div></div>
         ))}
-{/*   {this.state.orders.length > 0 ? [ <span>Would you like to <Link to={`/SeatPlan/${this.state.orders[0].OrderID.S}`}>view the seating plan</Link> or <a href="/Product/Event/ScotLAN%20Event%205" role="button">buy more tickets</a>?</span>] : <div></div>} */}
-        <div>Only {days} days to go until ScotLAN #5!</div>
+{/*   {this.state.orders.length > 0 ? [ <span>Would you like to <Link to={`/SeatPlan/${this.state.orders[0].OrderID.S}`}>view the seating plan</Link> or <a href="/Product/Event/ScotLAN%20Event%207" role="button">buy more tickets</a>?</span>] : <div></div>} */}
        </div>
     )
   }
